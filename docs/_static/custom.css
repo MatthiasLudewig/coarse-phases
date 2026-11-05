@@ -34,7 +34,7 @@ html[data-theme="dark"] {
   background-color: var(--pst-color-surface);
   padding-left: 1rem;
 }
-.proof.admonition > .admonition-title::before { display: none; }
+.proof.admonition > .admonition-title::after { display: none; }
 .bd-header-announcement {
   background-color: var(--pst-color-surface);
   color: var(--pst-color-text-base);
