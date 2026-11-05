@@ -26,14 +26,16 @@ html_theme = "pydata_sphinx_theme"
 html_title = project
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
+templates_path = ["_templates"]
 html_show_sourcelink = False
-html_sidebars = {"**": ["sidebar-nav-bs"]}
+html_sidebars = {"**": ["global-navigation.html"]}
 html_theme_options = {
     "logo": {"text": "Coarse geometry & topological phases"},
     "show_nav_level": 2,
     "navigation_depth": 2,
     "show_toc_level": 2,
     "use_edit_page_button": True,
+    "navbar_center": [],
     "navbar_end": ["theme-switcher", "navbar-icon-links"],
     "icon_links": [
         {

@@ -60,6 +60,8 @@ def main():
             page.on("pageerror", lambda error: errors.append(str(error)))
             page.goto(f"{base}/index.html")
             expect(page.get_by_role("heading", name="Coarse Geometry and Topological Phases", exact=True)).to_be_visible()
+            navigation = page.get_by_role("navigation", name="Wiki navigation")
+            expect(navigation.get_by_role("link", name="Coarse maps and equivalences", exact=True)).to_be_visible()
             page.screenshot(path=str(SCREENSHOTS / "home-desktop.png"), full_page=True)
 
             page.locator("article a[href='geometry/coarse-spaces.html']").first.click()
@@ -87,9 +89,14 @@ def main():
             proof.locator("summary").focus()
             page.keyboard.press("Enter")
             assert not proof.evaluate("element => element.open"), "Proof must toggle by keyboard"
+            # Reset scroll and keyboard focus before recording full-page previews.
+            page.goto(f"{base}/reference/coarse-maps.html")
             math_ready(page)
             page.screenshot(path=str(SCREENSHOTS / "reference-desktop.png"), full_page=True)
-            page.evaluate("document.documentElement.dataset.theme = 'dark'")
+            page.locator("#pst-header").get_by_role("button", name="Color mode", exact=True).click()
+            page.locator("#pst-header").get_by_role("button", name="Dark", exact=True).click()
+            expect(page.locator("html")).to_have_attribute("data-theme", "dark")
+            page.locator("h1").click()
             page.screenshot(path=str(SCREENSHOTS / "reference-dark.png"), full_page=True)
             print("PASS: labelled theorem, collapsed proof, mouse and keyboard toggles", flush=True)
 
@@ -117,6 +124,12 @@ def main():
                     "document.documentElement.scrollWidth <= window.innerWidth + 1"
                 ), f"Page overflows the mobile viewport: {path}"
                 mobile_page.screenshot(path=str(SCREENSHOTS / name), full_page=True)
+
+            mobile_page.get_by_role("button", name="Site navigation", exact=True).click()
+            mobile_nav = mobile_page.get_by_role("navigation", name="Wiki navigation")
+            expect(mobile_nav.get_by_role("link", name="Roe algebras", exact=True)).to_be_visible()
+            mobile_nav.get_by_role("link", name="Roe algebras", exact=True).click()
+            expect(mobile_page).to_have_url(f"{base}/algebras/roe-algebras.html")
 
             # Native proof dropdown also works with JavaScript disabled.
             plain = browser.new_context(java_script_enabled=False)
