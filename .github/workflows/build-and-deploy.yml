@@ -16,7 +16,7 @@ concurrency:
 jobs:
   build:
     name: Wiki checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
       WIKI_EDIT_BRANCH: ${{ github.head_ref || github.ref_name }}
@@ -74,7 +74,7 @@ jobs:
       github.ref == 'refs/heads/main' &&
       github.event_name != 'pull_request' &&
       !github.event.repository.private && vars.ENABLE_PAGES == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       pages: write
