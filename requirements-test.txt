@@ -1,0 +1,2 @@
+# Browser checks run on the GitHub runner, not on the author's computer.
+playwright==1.56.0
