@@ -7,13 +7,13 @@ Agent-generated, not reviewed yet
 
 Coarse $K$-theory is the $K$-theory of the Roe algebra, made functorial in the
 underlying coarse space. Since it is covariant in the space, the same theory
-is often called **coarse $K$-homology**. We use $K\mathcal X$ for its
+is often called *coarse $K$-homology*. We use $K\mathcal X$ for its
 spectrum-valued version.
 
 ## Classical group-valued definition
 
 For a separable proper metric space $X$, choose a separable
-{prf:ref}`ample module <def-ample-module>` $H_X$ and define
+{prf:ref}`ample module <def-ample-module>` $H_X$. The *coarse $K$-theory groups* are
 
 $$
 K\mathcal X_n(X)=K_n(C^*(X;H_X)),\qquad n\in\mathbb Z.
@@ -43,9 +43,10 @@ Let $X$ now be any bornological coarse space.
 :nonumber:
 :label: def-roe-category
 
-The objects of $\mathbf C(X)$ are locally finite, point-determined geometric
-modules over $X$. Morphisms are the operator-norm limits of bounded controlled
-operators. Composition and involution are composition and adjoint of operators.
+The *locally finite Roe category* $\mathbf C(X)$ has as objects locally finite,
+point-determined geometric modules over $X$. Morphisms are the operator-norm
+limits of bounded controlled operators. Composition and involution are
+composition and adjoint of operators.
 ```
 
 Since $\chi_BH$ is finite-dimensional for bounded $B$, every bounded operator
@@ -67,7 +68,7 @@ operators. On the underlying operators the pushforward functor is the identity.
 :nonumber:
 :label: def-coarse-k-theory
 
-The coarse $K$-theory spectrum is
+The *coarse $K$-theory spectrum* is
 
 $$
 K\mathcal X(X)=K(\mathbf C(X)),

@@ -15,7 +15,7 @@ of the Eilenberg swindle.
 :nonumber:
 :label: def-flasque-space
 
-A coarse space $X$ is flasque if there is a coarse map $f:X\to X$ such that:
+A coarse space $X$ is *flasque* if there is a coarse map $f:X\to X$ such that:
 
 1. $f$ is close to $\mathrm{id}_X$;
 2. for every entourage $E$, the union $\bigcup_{n\geq0}(f^n\times f^n)(E)$
@@ -40,7 +40,7 @@ an additional condition on the motion.
 :nonumber:
 :label: def-generalized-flasqueness
 
-A coarse space is flasque in the generalized sense if there are coarse maps
+A coarse space is *flasque in the generalized sense* if there are coarse maps
 $f_n:X\to X$, $n\geq0$, with $f_0=\mathrm{id}_X$, such that
 
 $$

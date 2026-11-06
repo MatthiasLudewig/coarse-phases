@@ -24,8 +24,8 @@ No convergence of this sum is intended.
 :nonumber:
 :label: def-coarse-chain
 
-A chain is locally finite if, for each bounded $B\subseteq X$, only finitely
-many tuples with nonzero coefficient have a coordinate in $B$. It is controlled
+A chain is *locally finite* if, for each bounded $B\subseteq X$, only finitely
+many tuples with nonzero coefficient have a coordinate in $B$. It is *controlled*
 if there is an entourage $E$ such that every pair of coordinates of every
 nonzero tuple lies in $E$. Let $CX_n(X;A)$ be the group of chains satisfying
 both conditions.
@@ -77,7 +77,7 @@ control for its support.
 :nonumber:
 :label: def-ordinary-coarse-homology
 
-The ordinary coarse homology groups with coefficients in $A$ are
+The *ordinary coarse homology groups* with coefficients in $A$ are
 
 $$
 HX_n(X;A)=H_n(CX_\bullet(X;A)).

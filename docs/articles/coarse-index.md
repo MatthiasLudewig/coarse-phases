@@ -16,7 +16,7 @@ Let $D$ be a self-adjoint Dirac-type operator on a Hermitian Clifford module
 over a complete Riemannian manifold $M$, with the usual finite propagation
 speed for $e^{itD}$. Work on its $L^2$-module, enlarged to an ample module
 when necessary. Let $D^*(M)$ be the norm closure of finite-propagation
-pseudolocal operators, where pseudolocal means $[T,f]$ is compact for all
+pseudolocal operators, where *pseudolocal* means $[T,f]$ is compact for all
 $f\in C_0(M)$. Then $C^*(M)$ is an ideal in $D^*(M)$.
 
 Choose an odd continuous normalizing function $\chi$ with
@@ -28,7 +28,8 @@ The latter is a local compactness statement, not in general global compactness.
 :nonumber:
 :label: def-coarse-index
 
-In the ungraded case, $p=(F+1)/2$ is a projection modulo $C^*(M)$. Set
+In the ungraded case, $p=(F+1)/2$ is a projection modulo $C^*(M)$.
+The *coarse index* is
 
 $$
 \operatorname{Ind}_{\mathrm c}(D)

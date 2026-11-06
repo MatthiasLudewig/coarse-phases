@@ -29,9 +29,9 @@ $H=\bigoplus_{x\in X}H_x$ and $H_B=\bigoplus_{x\in B}H_x$.
 :nonumber:
 :label: def-geometric-module
 
-A point-determined geometric module over $X$ is a Hilbert space with an
+A *point-determined geometric module* over $X$ is a Hilbert space with an
 orthogonal decomposition $H=\bigoplus_{x\in X}H_x$. Write $\chi_B$ for the
-projection onto $\bigoplus_{x\in B}H_x$. It is locally finite if
+projection onto $\bigoplus_{x\in B}H_x$. It is *locally finite* if
 $\chi_BH$ is finite-dimensional for every bounded $B$.
 ```
 
@@ -40,8 +40,8 @@ is determined by its singleton projections. A more general finitely additive
 projection-valued measure on $\mathcal P(X)$ need not be determined on points;
 we specify this condition whenever the discrete model is used.
 
-A bounded operator $T:H\to H'$ is $E$-controlled if
-$\chi'_CT\chi_B=0$ whenever $C\cap E[B]=\varnothing$. This is the
+A bounded operator $T:H\to H'$ is *$E$-controlled* if
+$\chi'_CT\chi_B=0$ whenever $C\cap B_E=\varnothing$. This is the
 Hilbert-space version of a controlled morphism. Direct sums of finite-dimensional
 fibers on locally finite supports provide the objects used in the categorical
 construction of {ref}`coarse K-theory <article-coarse-k-theory>`.
@@ -75,7 +75,7 @@ algebras; one should not identify the two representations literally.
 :nonumber:
 :label: def-ample-module
 
-A nondegenerate $X$-module $(H,\rho)$ is ample if $\rho(f)$ is compact only
+A nondegenerate $X$-module $(H,\rho)$ is *ample* if $\rho(f)$ is compact only
 when $f=0$.
 ```
 

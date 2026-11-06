@@ -14,19 +14,19 @@ in a bounded region, even after arbitrary controlled thickenings.
 :nonumber:
 :label: def-coarse-transversality
 
-Big families $\mathcal Y_0,\ldots,\mathcal Y_n$ on $X$ are coarsely transverse
+Big families $\mathcal Y_0,\ldots,\mathcal Y_n$ on $X$ are *coarsely transverse*
 if every member of $\mathcal Y_0\Cap\cdots\Cap\mathcal Y_n$ is bounded:
 
 $$
 \mathcal Y_0\Cap\cdots\Cap\mathcal Y_n\subseteq\mathcal B_X.
 $$
 
-Subsets $A_0,\ldots,A_n$ are coarsely transverse if their generated big
+Subsets $A_0,\ldots,A_n$ are *coarsely transverse* if their generated big
 families are coarsely transverse.
 ```
 
 For metric spaces this is equivalent to boundedness of
-$E_R[A_0]\cap\cdots\cap E_R[A_n]$ for every finite $R$.
+$(A_0)_{E_R}\cap\cdots\cap (A_n)_{E_R}$ for every finite $R$.
 If all the families contain $\mathcal B_X$, the inclusion in the definition
 is an equality. The inclusion formulation also accommodates empty subsets
 and coarse spaces with several coarse components.
@@ -35,7 +35,7 @@ and coarse spaces with several coarse components.
 :nonumber:
 :label: def-coarsely-transverse-partition
 
-A coarsely transverse $n$-partition of a proper metric space $X$ is an ordered
+A *coarsely transverse $n$-partition* of a proper metric space $X$ is an ordered
 collection $(A_0,\ldots,A_n)$ of pairwise disjoint Borel subsets with union
 $X$, which is coarsely transverse.
 ```
@@ -79,7 +79,7 @@ Its cohomology is denoted $HX^n(X;\mathbb C)$.
 :label: def-partition-class
 
 Let $(A_0,\ldots,A_n)$ be a coarsely transverse partition, and write
-$\chi_i=\mathbf1_{A_i}$. Its partition cocycle is
+$\chi_i=\mathbf1_{A_i}$. Its *partition cocycle* is
 
 $$
 \theta_A(x_0,\ldots,x_n)
@@ -88,7 +88,7 @@ $$
    \prod_{i=0}^n\chi_i(x_{\sigma(i)}).
 $$
 
-The partition class is $[\theta_A]\in HX^n(X;\mathbb C)$.
+The *partition class* is $[\theta_A]\in HX^n(X;\mathbb C)$.
 ```
 
 This uses the unnormalised alternating product of indicator functions.

@@ -20,7 +20,7 @@ We regard the bornology as a category under inclusion.
 :nonumber:
 :label: def-controlled-object
 
-A controlled object over $X$ with values in $\mathcal C$ is a functor
+A *controlled object* over $X$ with values in $\mathcal C$ is a functor
 $V:\mathcal B_X\to\mathcal C$ such that its structure morphisms are
 monomorphisms, $V(\varnothing)=\mathbf1$, and for every directed collection
 of bounded subsets $(B_i)$ with union a bounded set $B$, the canonical map
@@ -48,10 +48,10 @@ $(V\otimes W)(B)=V(B)\otimes W(B)$ again defines a controlled object.
 :nonumber:
 :label: def-controlled-morphism
 
-An $E$-controlled presentation of a morphism $V\to W$ is a natural collection
-of maps $\varphi_B:V(B)\to W(E[B])$, with $E$ a fixed entourage containing
-the diagonal. Two presentations define the same controlled morphism if their
-maps agree after passage to $W(G[B])$ for a common larger entourage $G$.
+An *$E$-controlled presentation* of a morphism $V\to W$ is a natural collection
+of maps $\varphi_B:V(B)\to W(B_E)$, with $E$ a fixed entourage containing
+the diagonal. Two presentations define the same *controlled morphism* if their
+maps agree after passage to $W(B_G)$ for a common larger entourage $G$.
 ```
 
 Composing an $E$-controlled presentation with an $F$-controlled one gives an
@@ -62,7 +62,7 @@ has a presentation controlled by $\Delta_X$.
 
 In concrete categories one can often form a global object
 $V_X=\operatorname*{colim}_{B\in\mathcal B_X}V(B)$. Then a controlled
-morphism is a morphism of global objects sending $V(B)$ into $W(E[B])$.
+morphism is a morphism of global objects sending $V(B)$ into $W(B_E)$.
 For Hilbert spaces we additionally require global operators to be bounded;
 boundedness is not implied merely by boundedness on each local piece.
 
@@ -75,7 +75,7 @@ tensor product.
 :nonumber:
 :label: def-local-controlled-object
 
-A semilocal object is a controlled object with natural tensor-extension maps
+A *semilocal object* is a controlled object with natural tensor-extension maps
 
 $$
 \tau_{B,C}:V(B)\otimes V(C)\longrightarrow V(B\sqcup C)
@@ -83,7 +83,7 @@ $$
 $$
 
 restricting to the structure maps on each factor. They satisfy the unit,
-symmetry, and associativity compatibilities. The object is local if all
+symmetry, and associativity compatibilities. The object is *local* if all
 $\tau_{B,C}$ are isomorphisms.
 ```
 
@@ -120,9 +120,9 @@ $\mathcal C\subseteq\widehat{\mathcal C}$ with the same initial unit.
 :nonumber:
 :label: def-azumaya-controlled-object
 
-A semilocal $\widehat{\mathcal C}$-valued object $V$ is Azumaya relative to
-$\mathcal C$ if there is a semilocal object $W$ such that $V\otimes W$ is
-controlled-isomorphic to a local $\mathcal C$-valued object.
+A semilocal $\widehat{\mathcal C}$-valued object $V$ is
+*Azumaya relative to $\mathcal C$* if there is a semilocal object $W$ such that
+$V\otimes W$ is controlled-isomorphic to a local $\mathcal C$-valued object.
 ```
 
 For matrix nets, take $\mathcal C$ to be full matrix algebras and

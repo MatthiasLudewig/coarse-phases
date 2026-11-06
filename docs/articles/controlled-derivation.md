@@ -18,7 +18,7 @@ $X$, and work on its algebraic union $\mathcal A_X^{\mathrm{alg}}$.
 :nonumber:
 :label: def-controlled-derivation
 
-A controlled $*$-derivation is a complex-linear map
+A *controlled $*$-derivation* is a complex-linear map
 $D:\mathcal A_X^{\mathrm{alg}}\to\mathcal A_X^{\mathrm{alg}}$ satisfying
 
 $$
@@ -28,7 +28,7 @@ $$
 and, for some entourage $E$,
 
 $$
-D(\mathcal A_B)\subseteq\mathcal A_{E[B]}
+D(\mathcal A_B)\subseteq\mathcal A_{B_E}
 \quad\text{for every bounded }B.
 $$
 
@@ -49,7 +49,7 @@ the completed quasi-local algebra.
 :nonumber:
 :label: def-locally-generated-derivation
 
-A derivation is locally generated if there are self-adjoint
+A derivation is *locally generated* if there are self-adjoint
 $h_i\in\mathcal A_{B_i}$ with the family $(B_i)$ locally finite and uniformly
 bounded, such that
 
@@ -57,8 +57,8 @@ $$
 D(a)=i\sum_i[h_i,a].
 $$
 
-Here local finiteness means that each bounded subset meets only finitely many
-$B_i$, and uniform boundedness means
+Here *local finiteness* means that each bounded subset meets only finitely many
+$B_i$, and *uniform boundedness* means
 $\bigcup_i(B_i\times B_i)\in\mathcal C_X$.
 ```
 

@@ -19,9 +19,9 @@ to let bounded Borel functions act on $H$.
 :nonumber:
 :label: def-roe-operators
 
-A bounded operator $T$ has propagation at most $R$ if
+A bounded operator $T$ has *propagation at most $R$* if
 $\chi_AT\chi_B=0$ whenever $A,B$ are Borel subsets with $d(A,B)>R$.
-It has finite propagation if such a finite $R$ exists. It is locally compact
+It has *finite propagation* if such a finite $R$ exists. It is *locally compact*
 if $fT$ and $Tf$ are compact for every $f\in C_0(X)$.
 ```
 
@@ -35,7 +35,7 @@ uniform approximation of a function in $C_0(X)$ by compactly supported ones.
 :label: def-roe-algebra
 
 Let $\mathbb C[X;H]$ be the $*$-algebra of locally compact, finite propagation
-operators on $H$. The Roe algebra is its operator-norm closure:
+operators on $H$. The *Roe algebra* is its operator-norm closure:
 
 $$
 C^*(X;H)=\overline{\mathbb C[X;H]}^{\|\cdot\|}\subseteq\mathcal B(H).
@@ -65,8 +65,9 @@ by definition the ample Roe algebra, which uses infinite-dimensional fibers.
 :nonumber:
 :label: def-trace-roe-algebra
 
-A bounded operator is locally trace-class if $fT$ and $Tf$ are trace-class
-for every bounded Borel function $f$ with bounded support. Let
+A bounded operator is *locally trace-class* if $fT$ and $Tf$ are trace-class
+for every bounded Borel function $f$ with bounded support. The
+*finite propagation locally trace-class algebra* is
 
 $$
 \mathcal B_{\mathrm{tr}}(X;H)

@@ -18,7 +18,7 @@ Let $X$ be a coarse space.
 :nonumber:
 :label: def-local-matrix-net
 
-A local matrix net on $X$ assigns a full matrix algebra $\mathcal A_B$ to each
+A *local matrix net* on $X$ assigns a full matrix algebra $\mathcal A_B$ to each
 bounded $B\subseteq X$, with compatible unital injective $*$-homomorphisms for
 inclusions, such that:
 
@@ -28,13 +28,13 @@ inclusions, such that:
 3. if $(B_i)$ is directed with bounded union $B$, then
    $\operatorname*{colim}_i\mathcal A_{B_i}\cong\mathcal A_B$.
 
-A spin system, in the present convention, is a local matrix net.
+A *spin system*, in the present convention, is a local matrix net.
 ```
 
 The tensor product is unambiguous for matrix algebras. For a general subset
 $Y\subseteq X$, let $\mathcal A_Y^{\mathrm{alg}}$ be the union of the local
 algebras over bounded subsets of $Y$, and let $\mathcal A_Y$ be its norm
-completion. The global algebra $\mathcal A_X$ is the quasi-local algebra.
+completion. The global algebra $\mathcal A_X$ is the *quasi-local algebra*.
 Keeping the algebraic union distinct from its completion is useful when
 working with {ref}`derivations <article-controlled-derivation>`.
 
@@ -56,11 +56,11 @@ Taking unital algebras as coefficient objects and tensor product as monoidal
 operation identifies the preceding definition with the matrix-algebra case of
 {prf:ref}`local controlled objects <def-local-controlled-object>`.
 
-A controlled homomorphism $\varphi:\mathcal A\to\mathcal B$ is a unital
+A *controlled homomorphism* $\varphi:\mathcal A\to\mathcal B$ is a unital
 $*$-homomorphism of quasi-local algebras with
 
 $$
-\varphi(\mathcal A_B)\subseteq\mathcal B_{E[B]}
+\varphi(\mathcal A_B)\subseteq\mathcal B_{B_E}
 $$
 
 for every bounded $B$, for one fixed entourage $E$. It restricts to a map of
@@ -83,7 +83,7 @@ $$
 :nonumber:
 :label: def-subset-conditional-expectation
 
-The conditional expectation onto $\mathcal A_Y$ is
+The *conditional expectation onto $\mathcal A_Y$* is
 
 $$
 \mathbb E_Y=\mathrm{id}_{\mathcal A_Y}\otimes\tau_{X\setminus Y}:

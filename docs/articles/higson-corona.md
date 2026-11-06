@@ -25,7 +25,7 @@ The supremum of an empty set of nonnegative variations is understood as zero.
 :nonumber:
 :label: def-higson-function
 
-A bounded continuous function $f:X\to\mathbb C$ is a Higson function if, for
+A bounded continuous function $f:X\to\mathbb C$ is a *Higson function* if, for
 every entourage $E$ and every $\varepsilon>0$, there is a bounded $B$ such
 that $\operatorname{Var}_E(f;X\setminus B)<\varepsilon$.
 ```
@@ -37,7 +37,7 @@ $C_0(X)$ as an ideal.
 :nonumber:
 :label: def-higson-corona
 
-The Higson compactification is $hX=\operatorname{Spec}C_h(X)$. Evaluation
+The *Higson compactification* is $hX=\operatorname{Spec}C_h(X)$. Evaluation
 identifies $X$ with a dense open subspace of $hX$. Its remainder
 
 $$
@@ -45,7 +45,7 @@ $$
  =\operatorname{Spec}\bigl(C_h(X)/C_0(X)\bigr)
 $$
 
-is the Higson corona.
+is the *Higson corona*.
 ```
 
 Compact $X$ has empty corona. For a general coarse map, pullback is most
@@ -78,7 +78,7 @@ $\operatorname{Spec}\ell^\infty(X)$ instead compactifies the set with the
 :nonumber:
 :label: def-higson-dominated-corona
 
-A compactification $\overline X$ is Higson-dominated if the identity on $X$
+A compactification $\overline X$ is *Higson-dominated* if the identity on $X$
 extends to a continuous map $hX\to\overline X$. Its boundary
 $\partial\overline X$ is then a continuous image of $\nu X$.
 Equivalently, every restriction to $X$ of a function in $C(\overline X)$ is
@@ -124,7 +124,7 @@ ideal in the second.
 :nonumber:
 :label: def-big-family-corona
 
-The coarse $\mathcal Y$-corona is the compact Hausdorff space defined by
+The *coarse $\mathcal Y$-corona* is the compact Hausdorff space defined by
 
 $$
 C(\partial^{\mathcal Y}X)

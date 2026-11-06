@@ -26,7 +26,7 @@ A $*$-derivation of $\mathcal A_X^{\mathrm{alg}}$ is
 Use the {ref}`point-object description <theorem-local-objects-points>` to write
 the net on a locally finite support $\Lambda$. Fix a symmetric control $E$
 containing the diagonal. For bounded $B$, there is a unique self-adjoint
-$h_B\in\mathcal A_{E[B]}$ such that
+$h_B\in\mathcal A_{B_E}$ such that
 
 $$
 D(a)=i[h_B,a]\quad(a\in\mathcal A_B),\qquad
@@ -35,7 +35,7 @@ $$
 
 To see existence, regard $D|_{\mathcal A_B}$ as a derivation from the matrix
 algebra $M_d(\mathbb C)=\mathcal A_B$ into the bimodule
-$\mathcal A_{E[B]}$. For matrix units $e_{ij}$, set
+$\mathcal A_{B_E}$. For matrix units $e_{ij}$, set
 
 $$
 K=\sum_i D(e_{i1})e_{1i}.
@@ -49,7 +49,7 @@ $h=h^*$, and subtract $\mathbb E_{X\setminus B}(h)$.
 The subtracted term lies in the relative commutant and does not change $D$.
 
 For uniqueness, two normalized implementers differ by an element of
-$\mathcal A_B'\cap\mathcal A_{E[B]}=\mathcal A_{E[B]\setminus B}$.
+$\mathcal A_B'\cap\mathcal A_{B_E}=\mathcal A_{B_E\setminus B}$.
 Conditional expectation onto $X\setminus B$ fixes this difference and also
 annihilates it, so it is zero.
 
@@ -80,13 +80,13 @@ h^F=p_F(h_F).
 $$
 
 For every $x\in F$ the compatibility just proved gives
-$h^F=p_F(h_{\{x\}})$. Since $h_{\{x\}}\in\mathcal A_{E[\{x\}]}$,
-a nonzero $h^F$ requires $F\subseteq E[\{x\}]$ for every $x\in F$.
+$h^F=p_F(h_{\{x\}})$. Since $h_{\{x\}}\in\mathcal A_{\{x\}_E}$,
+a nonzero $h^F$ requires $F\subseteq \{x\}_E$ for every $x\in F$.
 In particular $F\times F\subseteq E$, so the nonzero interaction supports
 are uniformly bounded.
 
 They are locally finite as a family: if $F$ meets a bounded set $B$, then
-$F\subseteq E[B]\cap\Lambda$, a finite set. There are only finitely many
+$F\subseteq B_E\cap\Lambda$, a finite set. There are only finitely many
 possible nonempty subsets $F$ of that finite set.
 Finally, for $a\in\mathcal A_B$,
 
@@ -103,8 +103,8 @@ finite, uniformly controlled interaction.
 Suppose $D(a)=i\sum_i[h_i,a]$ with the prescribed support conditions. If
 $a\in\mathcal A_B$, only terms with $B_i\cap B\neq\varnothing$ contribute.
 Choose a symmetric entourage $E$ containing the diagonal and every
-$B_i\times B_i$. Each such $B_i$ lies in $E[B]$. Hence
-$D(a)\in\mathcal A_{E[B]}$, proving controlledness. The sum is finite on
+$B_i\times B_i$. Each such $B_i$ lies in $B_E$. Hence
+$D(a)\in\mathcal A_{B_E}$, proving controlledness. The sum is finite on
 each local algebra and thus satisfies the Leibniz and $*$ identities there.
 
 ## Related articles
