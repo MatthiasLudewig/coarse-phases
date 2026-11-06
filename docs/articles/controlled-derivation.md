@@ -19,14 +19,18 @@ $X$, and work on its algebraic union $\mathcal A_X^{\mathrm{alg}}$.
 
 A controlled $*$-derivation is a complex-linear map
 $D:\mathcal A_X^{\mathrm{alg}}\to\mathcal A_X^{\mathrm{alg}}$ satisfying
+
 $$
 D(ab)=D(a)b+aD(b),\qquad D(a^*)=D(a)^*,
 $$
+
 and, for some entourage $E$,
+
 $$
 D(\mathcal A_B)\subseteq\mathcal A_{E[B]}
 \quad\text{for every bounded }B.
 $$
+
 ```
 
 The real vector space of controlled $*$-derivations is a real Lie algebra under
@@ -46,9 +50,11 @@ the completed quasi-local algebra.
 A derivation is locally generated if there are self-adjoint
 $h_i\in\mathcal A_{B_i}$ with the family $(B_i)$ locally finite and uniformly
 bounded, such that
+
 $$
 D(a)=i\sum_i[h_i,a].
 $$
+
 Here local finiteness means that each bounded subset meets only finitely many
 $B_i$, and uniform boundedness means
 $\bigcup_i(B_i\times B_i)\in\mathcal C_X$.
@@ -75,13 +81,16 @@ the multiplicities may be unbounded across $X$.
 Their homology is Lie algebra homology with trivial complex coefficients.
 It has a Hopf algebra structure; the primitive part consists of classes $v$
 with coproduct $v\otimes1+1\otimes v$. Their suspension result identifies
+
 $$
 \operatorname{Prim}H_p(\mathfrak{lgd}(\mathbb Z^{n-1});\mathbb C)
  \cong
 \operatorname{Prim}H_{p+1}(\mathfrak{lgd}(\mathbb Z^n);\mathbb C)
 \quad(n,p\geq1).
 $$
+
 The resulting computation is
+
 $$
 \operatorname{Prim}H_p(\mathfrak{lgd}(\mathbb Z^n);\mathbb C)
 \cong
@@ -90,6 +99,7 @@ $$
 0,&\text{otherwise}.
 \end{cases}
 $$
+
 The full homology is recovered from the graded commutative Hopf algebra
 structure: primitive generators in odd degree contribute exterior factors,
 and those in even degree contribute polynomial factors. Their argument

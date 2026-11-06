@@ -5,6 +5,7 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import os
+import re
 import threading
 
 from playwright.sync_api import expect, sync_playwright
@@ -154,13 +155,22 @@ def check_article_collection(browser, errors):
             page = context.new_page()
             page.on('pageerror', lambda error: errors.append(str(error)))
             for source in documents:
+                text = source.read_text()
                 path = source.relative_to(ROOT / 'docs').with_suffix('.html').as_posix()
                 page.goto(f'{base}/{path}')
                 expect(page.locator('article h1')).to_be_visible()
-                if warning in source.read_text():
+                if warning in text:
                     expect(page.locator('article .warning').get_by_text(warning, exact=True)).to_be_visible()
+                # MyST can misread $$ adjacent to prose as inline mathematics,
+                # producing malformed text without a Sphinx or MathJax error.
+                delimiters = re.findall(r'^\s*\$\$\s*$', text, re.MULTILINE)
+                assert len(delimiters) % 2 == 0, path
+                displays = len(delimiters) // 2
+                displays += len(re.findall(r'^\s*`{3,}\{math\}', text, re.MULTILINE))
+                expect(page.locator('article div.math')).to_have_count(displays)
                 if page.locator('article .math').count():
                     math_ready(page)
+                    expect(page.locator('article mjx-container[display="true"]')).to_have_count(displays)
                 assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1'), path
                 if source.stem in screenshots:
                     page.screenshot(path=str(SCREENSHOTS / f'{source.stem}-{mode}.png'), full_page=True)

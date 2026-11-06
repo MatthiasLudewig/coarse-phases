@@ -18,9 +18,11 @@ $\rho_i:C_0(X)\to\mathcal B(H_i)$, $i=1,2$, be nondegenerate ample
 representations on separable complex Hilbert spaces. There exists a
 finite-propagation unitary $U:H_1\to H_2$. Conjugation by $U$ gives an
 isomorphism
+
 $$
 C^*(X;H_1)\xrightarrow{\cong}C^*(X;H_2).
 $$
+
 ```
 
 ## A uniformly bounded Borel partition
@@ -37,10 +39,12 @@ bounded $r$-thickening of that set and are $r$-separated.
 ## Construction of the unitary
 
 Borel functional calculus gives orthogonal decompositions
+
 $$
 H_i=\bigoplus_{\lambda\in\Lambda}H_{i,\lambda},\qquad
 H_{i,\lambda}=\rho_i(\mathbf1_{B_\lambda})H_i.
 $$
+
 Choose a nonzero compactly supported continuous function in the interior of
 $B_\lambda$. Its action has range in $H_{i,\lambda}$ and is noncompact by
 ampleness. Therefore every $H_{i,\lambda}$ is infinite-dimensional. Since
@@ -56,9 +60,11 @@ This proves the controlled equivalence.
 If $T$ has propagation at most $R$, then $UTU^*$ has propagation at most
 $R+4r$. To check local compactness, fix a bounded Borel set $B$. The finitely
 many cells meeting $B$ have bounded union $C$, and
+
 $$
 \chi_B^{(2)}U=\chi_B^{(2)}U\chi_C^{(1)}.
 $$
+
 Thus $\chi_B^{(2)}UTU^*$ is compact if $T$ is locally compact; the analogous
 argument works on the other side. Applying the same reasoning to $U^*$ gives
 the converse. Conjugation therefore identifies the finite-propagation locally

@@ -14,9 +14,11 @@ spectrum-valued version.
 
 For a separable proper metric space $X$, choose a separable
 {prf:ref}`ample module <def-ample-module>` $H_X$ and define
+
 $$
 K\mathcal X_n(X)=K_n(C^*(X;H_X)),\qquad n\in\mathbb Z.
 $$
+
 Here $K_n$ is complex topological $K$-theory, with its two-periodic grading.
 The {ref}`ample-module comparison <theorem-ample-modules>` makes these groups
 independent of the chosen module under the canonical comparison in $K$-theory.
@@ -51,10 +53,12 @@ is a unital $C^*$-category. Morphisms still have to be approximable by controlle
 operators; local compactness alone is not sufficient.
 
 For a coarse map $f$, push a module forward by
+
 $$
 (f_*H)_y=\bigoplus_{x\in f^{-1}(y)}H_x,
 \qquad \chi_B^{f_*H}=\chi_{f^{-1}(B)}^H.
 $$
+
 Properness preserves local finiteness, and controlledness preserves controlled
 operators. On the underlying operators the pushforward functor is the identity.
 
@@ -62,9 +66,11 @@ operators. On the underlying operators the pushforward functor is the identity.
 :label: def-coarse-k-theory
 
 The Bunke–Engel coarse $K$-theory spectrum is
+
 $$
 K\mathcal X(X)=K(\mathbf C(X)),
 $$
+
 where $K$ is topological $K$-theory of $C^*$-categories. It takes values in
 $KU$-module spectra, or in spectra after forgetting the module structure.
 ```
@@ -72,11 +78,13 @@ $KU$-module spectra, or in spectra after forgetting the module structure.
 This is a {prf:ref}`coarse homology theory <def-stable-coarse-homology>`.
 On separable proper metric spaces its homotopy groups recover the classical
 ample Roe-algebra groups. At a point its value is $KU$. Consequently
+
 $$
 K\mathcal X(\mathbb R^d)\simeq\Sigma^d KU,\qquad
 K\mathcal X_n(\mathbb R^d)\cong
 \begin{cases}\mathbb Z,&n\equiv d\pmod2,\\0,&\text{otherwise}.\end{cases}
 $$
+
 The Euclidean Dirac index represents the generator in the corresponding parity.
 
 ## Using all nondegenerate modules

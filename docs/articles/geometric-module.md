@@ -15,9 +15,11 @@ the latter also accommodates continuum spaces such as $L^2(M)$.
 Take Hilbert spaces with isometric embeddings and direct sum as the symmetric
 monoidal operation. A local controlled object assigns a closed subspace $H_B$
 to each bounded subset, with
+
 $$
 H_{B\sqcup C}\cong H_B\oplus H_C\qquad(B\cap C=\varnothing),
 $$
+
 and continuity under directed unions. Its global Hilbert space is the completed
 union of these subspaces. By the
 {ref}`point-object description <theorem-local-objects-points>`, it has the form
@@ -47,10 +49,12 @@ construction of {ref}`coarse K-theory <article-coarse-k-theory>`.
 
 For a locally compact Hausdorff space $X$, the usual topological definition is
 a Hilbert space $H$ with a nondegenerate representation
+
 $$
 \rho:C_0(X)\longrightarrow\mathcal B(H),\qquad
 \overline{\rho(C_0(X))H}=H.
 $$
+
 We also call $(H,\rho)$ an $X$-module. The spectral theorem extends $\rho$
 canonically to bounded **Borel** functions, giving projections
 $\chi_B=\rho(\mathbf1_B)$ for Borel sets $B$.

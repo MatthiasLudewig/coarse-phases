@@ -15,9 +15,11 @@ in a bounded region, even after arbitrary controlled thickenings.
 
 Big families $\mathcal Y_0,\ldots,\mathcal Y_n$ on $X$ are coarsely transverse
 if every member of $\mathcal Y_0\Cap\cdots\Cap\mathcal Y_n$ is bounded:
+
 $$
 \mathcal Y_0\Cap\cdots\Cap\mathcal Y_n\subseteq\mathcal B_X.
 $$
+
 Subsets $A_0,\ldots,A_n$ are coarsely transverse if their generated big
 families are coarsely transverse.
 ```
@@ -41,6 +43,7 @@ $\partial H_1\Cap\cdots\Cap\partial H_n\subseteq\mathcal B_X$, with
 $\partial H_i$ the {ref}`coarse boundary <article-big-family>`.
 For example, the coordinate half-spaces $H_i=\{x_i\geq0\}$ in $\mathbb R^n$
 have this property. They give the partition
+
 $$
 A_0=\bigcap_{j=1}^nH_j,\qquad
 A_i=H_i^c\cap\bigcap_{j=i+1}^nH_j\quad(1\leq i\leq n).
@@ -54,15 +57,19 @@ homology cycle.
 
 For a proper metric space, let $CX^n(X;\mathbb C)$ consist of the locally
 bounded Borel functions $\theta:X^{n+1}\to\mathbb C$ such that, for each $R$,
+
 $$
 \operatorname{supp}(\theta)\cap
 \{(x_0,\ldots,x_n):d(x_i,x_j)\leq R\text{ for all }i,j\}
 $$
+
 is bounded. The differential is the Alexander–Spanier coboundary
+
 $$
 (\delta\theta)(x_0,\ldots,x_{n+1})
  =\sum_{j=0}^{n+1}(-1)^j\theta(x_0,\ldots,\widehat{x_j},\ldots,x_{n+1}).
 $$
+
 Its cohomology is denoted $HX^n(X;\mathbb C)$.
 
 ```{prf:definition} Partition class
@@ -70,12 +77,14 @@ Its cohomology is denoted $HX^n(X;\mathbb C)$.
 
 Let $(A_0,\ldots,A_n)$ be a coarsely transverse partition, and write
 $\chi_i=\mathbf1_{A_i}$. Its partition cocycle is
+
 $$
 \theta_A(x_0,\ldots,x_n)
  =\det\bigl(\chi_i(x_j)\bigr)_{0\leq i,j\leq n}
  =\sum_{\sigma\in S_{n+1}}\operatorname{sgn}(\sigma)
    \prod_{i=0}^n\chi_i(x_{\sigma(i)}).
 $$
+
 The partition class is $[\theta_A]\in HX^n(X;\mathbb C)$.
 ```
 
@@ -83,20 +92,24 @@ This uses the unnormalised alternating product of indicator functions.
 If $\theta_A$ is nonzero on an $R$-controlled tuple, every coordinate is within
 $R$ of every member of the partition. Coarse transversality therefore gives
 precisely the required bounded-support condition. Moreover,
+
 $$
 \delta(\chi_0\wedge\cdots\wedge\chi_n)
  =\mathbf1\wedge\chi_0\wedge\cdots\wedge\chi_n=0,
 $$
+
 since $\mathbf1=\sum_i\chi_i$. This proves that the displayed cochain is closed.
 Permuting the ordered partition multiplies its class by the sign of the
 permutation.
 
 The pairing with {ref}`ordinary coarse homology <article-ordinary-coarse-homology>`
 is, on an atomic chain $c=\sum c_{x_0,\ldots,x_n}(x_0,\ldots,x_n)$,
+
 $$
 \langle\theta,c\rangle
  =\sum c_{x_0,\ldots,x_n}\theta(x_0,\ldots,x_n).
 $$
+
 Only finitely many terms contribute, by control, local finiteness, and the
 support condition on $\theta$. In the measure model the sum is replaced by
 $\int\theta\,d\mu$. The differential and boundary are adjoint, so this gives

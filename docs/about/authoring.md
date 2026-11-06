@@ -123,6 +123,10 @@ an unknown proof or a conjecture; state the status accurately.
 
 Use `$x\in X$` for inline mathematics and `$$...$$` for a display. Use a
 `{math}` directive with `:label:` when an equation needs a stable target.
+For a multiline `$$` display, put the delimiters on their own lines and leave
+a blank line before the opening delimiter and after the closing delimiter.
+This lets MyST recognize a display even when it follows a sentence or appears
+inside a definition.
 
 A short proof can stay with a theorem inside an article. To make a proof
 collapsible, use a native dropdown around `prf:proof`:

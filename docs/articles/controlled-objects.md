@@ -23,9 +23,11 @@ A controlled object over $X$ with values in $\mathcal C$ is a functor
 $V:\mathcal B_X\to\mathcal C$ such that its structure morphisms are
 monomorphisms, $V(\varnothing)=\mathbf1$, and for every directed collection
 of bounded subsets $(B_i)$ with union a bounded set $B$, the canonical map
+
 $$
 \operatorname*{colim}_iV(B_i)\longrightarrow V(B)
 $$
+
 is an isomorphism.
 ```
 
@@ -71,10 +73,12 @@ tensor product.
 :label: def-local-controlled-object
 
 A semilocal object is a controlled object with natural tensor-extension maps
+
 $$
 \tau_{B,C}:V(B)\otimes V(C)\longrightarrow V(B\sqcup C)
 \qquad(B\cap C=\varnothing),
 $$
+
 restricting to the structure maps on each factor. They satisfy the unit,
 symmetry, and associativity compatibilities. The object is local if all
 $\tau_{B,C}$ are isomorphisms.
@@ -86,10 +90,12 @@ spaces with direct sum and isometric embeddings, it expresses orthogonality
 of the two local subspaces.
 
 Assigning an object $V_x$ to each point gives a local object by
+
 $$
 V(B)=\operatorname*{colim}_{F\subseteq B,\ F\text{ finite}}
                        \bigotimes_{x\in F}V_x,
 $$
+
 provided these colimits exist in the chosen category. The converse, including
 the finite-dimensional cases where only locally finitely many $V_x$ are
 nontrivial, is proved on the separate page

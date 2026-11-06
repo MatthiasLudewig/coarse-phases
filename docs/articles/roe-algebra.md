@@ -34,9 +34,11 @@ uniform approximation of a function in $C_0(X)$ by compactly supported ones.
 
 Let $\mathbb C[X;H]$ be the $*$-algebra of locally compact, finite propagation
 operators on $H$. The Roe algebra is its operator-norm closure:
+
 $$
 C^*(X;H)=\overline{\mathbb C[X;H]}^{\|\cdot\|}\subseteq\mathcal B(H).
 $$
+
 ```
 
 Propagation bounds add under composition. Local compactness is preserved under
@@ -62,10 +64,12 @@ by definition the ample Roe algebra, which uses infinite-dimensional fibers.
 
 A bounded operator is locally trace-class if $fT$ and $Tf$ are trace-class
 for every bounded Borel function $f$ with bounded support. Let
+
 $$
 \mathcal B_{\mathrm{tr}}(X;H)
  =\{T:T\text{ has finite propagation and is locally trace-class}\}.
 $$
+
 ```
 
 This is a $*$-algebra contained in $\mathbb C[X;H]$. For a bounded Borel set

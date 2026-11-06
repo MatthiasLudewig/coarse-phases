@@ -18,9 +18,11 @@ Let $X$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>
 
 A big family on $X$ is a nonempty collection $\mathcal Y\subseteq\mathcal P(X)$
 closed under subsets, finite unions, and coarse thickenings:
+
 $$
 Y\in\mathcal Y,\ E\in\mathcal C_X\quad\Longrightarrow\quad E[Y]\in\mathcal Y.
 $$
+
 ```
 
 The family need not cover $X$. In particular, $\{\varnothing\}$ is a big
@@ -34,6 +36,7 @@ $\{A\subseteq X:A\subseteq Y_i\text{ for some }i\}$.
 ## Elementwise intersection and union
 
 For big families $\mathcal Y,\mathcal Z$, put
+
 $$
 \begin{aligned}
 \mathcal Y\Cap\mathcal Z
@@ -60,9 +63,11 @@ distributive lattice of support conditions.
 :label: def-generated-big-family
 
 For $A\subseteq X$, write
+
 $$
 \{A\}=\{Y\subseteq X:\exists E\in\mathcal C_X,\ Y\subseteq E[A]\}.
 $$
+
 This is the smallest big family containing $A$.
 ```
 
@@ -78,9 +83,11 @@ right-hand side is the family of strips, whereas the left-hand side is
 $\{\varnothing\}$.
 
 The coarse boundary of a subset $A$ is the big family
+
 $$
 \partial A:=\{A\}\Cap\{X\setminus A\}.
 $$
+
 It records the controlled overlap of the two sides. It is used in
 {ref}`coarse transversality <article-coarse-transversality>` and coarse excision.
 

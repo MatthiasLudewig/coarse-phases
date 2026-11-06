@@ -20,17 +20,21 @@ values in a symmetric monoidal category whose unit $\mathbf1$ is initial.
 Assume the directed colimits in the definition of a controlled object exist
 in the specified ambient category. Set $V_x=V(\{x\})$. Then, naturally in
 bounded $B$,
+
 $$
 V(B)\cong\operatorname*{colim}_{F\subseteq B,\ F\text{ finite}}
                       \bigotimes_{x\in F}V_x.
 $$
+
 If the coefficient objects are finite-dimensional Hilbert spaces under direct
 sum, or full finite-dimensional complex matrix algebras under tensor product,
 then $\Lambda=\{x:V_x\not\cong\mathbf1\}$ meets each bounded set in finitely
 many points. In these cases the formula reduces to
+
 $$
 V(B)\cong\bigotimes_{x\in B\cap\Lambda}V_x,
 $$
+
 with direct sum in the Hilbert-space case. Conversely, any such locally finite
 point assignment gives a local controlled object.
 ```

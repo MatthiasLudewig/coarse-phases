@@ -12,10 +12,12 @@ infinite chains, while the control condition retains the large-scale geometry.
 ## The chain-complex-valued functor
 
 Let $X$ be a coarse space and $A$ an abelian group. Write a chain formally as
+
 $$
 c=\sum_{(x_0,\ldots,x_n)\in X^{n+1}}
        c(x_0,\ldots,x_n)(x_0,\ldots,x_n),\qquad c(x_0,\ldots,x_n)\in A.
 $$
+
 No convergence of this sum is intended.
 
 ```{prf:definition} Locally finite controlled chain
@@ -29,34 +31,42 @@ both conditions.
 ```
 
 The boundary is the alternating deletion of coordinates:
+
 $$
 \partial(x_0,\ldots,x_n)
  =\sum_{j=0}^n(-1)^j(x_0,\ldots,\widehat{x_j},\ldots,x_n),
 \qquad n>0,
 $$
+
 and $\partial:C X_0\to0$ is zero. The coefficient of any fixed tuple in this
 formula is a finite sum, because a singleton is bounded and the original chain
 is locally finite. The boundary preserves local finiteness and control, and
 $\partial^2=0$.
 
 A coarse map $f:X\to Y$ induces a chain map by
+
 $$
 f_*(x_0,\ldots,x_n)=(f(x_0),\ldots,f(x_n)).
 $$
+
 Properness makes the sums over fibers finite, and controlledness preserves the
 control condition. Thus
+
 $$
 CX(-;A):\mathrm{BornCoarse}\longrightarrow\mathrm{Ch}(\mathrm{Ab})
 $$
+
 is a functor. Ordered tuples are used here; repeated vertices are permitted.
 Passing to the normalized chain complex gives the same homology.
 
 Close coarse maps give chain-homotopic maps. Explicitly, the usual prism
 operator is
+
 $$
 P(x_0,\ldots,x_n)=\sum_{i=0}^n(-1)^i
 (f(x_0),\ldots,f(x_i),g(x_i),\ldots,g(x_n)),
 $$
+
 and satisfies $\partial P+P\partial=g_*-f_*$. Closeness supplies a uniform
 control for its support.
 
@@ -66,9 +76,11 @@ control for its support.
 :label: def-ordinary-coarse-homology
 
 The ordinary coarse homology groups with coefficients in $A$ are
+
 $$
 HX_n(X;A)=H_n(CX_\bullet(X;A)).
 $$
+
 The derived version is the image of $CX_\bullet(X;A)$ in the stable
 $\infty$-category obtained by inverting quasi-isomorphisms of chain complexes.
 ```
@@ -80,10 +92,12 @@ complex need not literally be zero on a flasque space; it becomes zero after
 passing to the derived category.
 
 For a big family $\mathcal Y$, take the subcomplex
+
 $$
 CX_\bullet(\mathcal Y;A)
  =\bigcup_{Y\in\mathcal Y}CX_\bullet(Y;A).
 $$
+
 Its chains must be supported in one member of the family. Since filtered
 colimits are exact in abelian groups,
 $HX_n(\mathcal Y;A)=\operatorname*{colim}_{Y\in\mathcal Y}HX_n(Y;A)$.

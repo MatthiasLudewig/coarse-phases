@@ -28,10 +28,12 @@ The latter is a local compactness statement, not in general global compactness.
 :label: def-coarse-index
 
 In the ungraded case, $p=(F+1)/2$ is a projection modulo $C^*(M)$. Set
+
 $$
 \operatorname{Ind}_{\mathrm c}(D)
  =\partial[p]\in K_1(C^*(M)),
 $$
+
 where $\partial$ is the boundary map of
 $0\to C^*(M)\to D^*(M)\to D^*(M)/C^*(M)\to0$.
 
@@ -56,12 +58,15 @@ $(1+D^2)^{-N}$ is locally trace-class for some $N$, so $F^2-1$ is locally
 trace-class as well.
 
 In even degree, write
+
 $$
 F=\begin{pmatrix}0&Q\\P&0\end{pmatrix},\qquad
 S=1-QP,\quad T=1-PQ.
 $$
+
 The remainders $S,T$ are locally trace-class and have finite propagation.
 An index idempotent is
+
 $$
 e_F=
 \begin{pmatrix}
@@ -70,6 +75,7 @@ TP&1-T^2
 \end{pmatrix},\qquad
  e_0=\begin{pmatrix}0&0\\0&1\end{pmatrix}.
 $$
+
 The identities $SQ=QT$ and $TP=PS$ imply $e_F^2=e_F$, and every entry of
 $e_F-e_0$ is locally trace-class with finite propagation. Thus
 $[e_F]-[e_0]$ represents the even index. This is the algebraic boundary
@@ -84,9 +90,11 @@ approximates $e^{2\pi it}$ closely enough on an interval containing
 $\operatorname{spec}(A)$ to remain nonzero there. Then $q(A)$ is invertible,
 has finite propagation, and represents the same $K_1$-class by a straight-line
 homotopy through invertibles. Moreover,
+
 $$
 q(A)-1=A(A-1)r(A)=\tfrac14(F^2-1)r(A)
 $$
+
 for a polynomial $r$, so the difference is locally trace-class.
 The resulting representative is invertible in the completed algebra; it need
 not be unitary, and its inverse need not have finite propagation. These are

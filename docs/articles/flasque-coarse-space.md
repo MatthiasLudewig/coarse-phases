@@ -40,11 +40,13 @@ an additional condition on the motion.
 
 A coarse space is flasque in the generalized sense if there are coarse maps
 $f_n:X\to X$, $n\geq0$, with $f_0=\mathrm{id}_X$, such that
+
 $$
 \bigcup_{n\geq0}\{(f_n(x),f_{n+1}(x)):x\in X\}\in\mathcal C_X,
 \qquad
 \bigcup_{n\geq0}(f_n\times f_n)(E)\in\mathcal C_X
 $$
+
 for every entourage $E$, and for every bounded $B$ there is an $N$ such that
 $f_n(X)\cap B=\varnothing$ for all $n\geq N$.
 ```
@@ -54,9 +56,11 @@ $f_n(X)\cap B=\varnothing$ for all $n\geq N$.
 
 Generalized flasqueness is equivalent to the existence of a coarse map
 $F:X\otimes\mathbb N\to X$ such that $F(x,0)=x$. Equivalently,
+
 $$
 \mathrm{id}_X=F\circ i_0,\qquad i_0(x)=(x,0).
 $$
+
 ```
 
 ```{prf:proof}
@@ -64,9 +68,11 @@ Given the family $(f_n)$, set $F(x,n)=f_n(x)$. The first uniform control
 condition controls consecutive levels, and the second controls pairs at the
 same level. These generate the product coarse structure, so $F$ is controlled.
 For bounded $B$, the escape condition gives
+
 $$
 F^{-1}(B)\subseteq\bigcup_{n<N} f_n^{-1}(B)\times\{n\},
 $$
+
 a bounded set. Thus $F$ is proper.
 
 Conversely, restrict a coarse $F$ to each level to obtain $f_n$. Images under

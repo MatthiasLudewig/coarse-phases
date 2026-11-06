@@ -13,10 +13,12 @@ boundary, but often maps onto such a boundary.
 
 First let $X$ be a proper metric space. For a bounded function $f$ and an
 entourage $E$, put
+
 $$
 \operatorname{Var}_E(f;W)
  =\sup\{|f(x)-f(y)|:(x,y)\in E\cap(W\times W)\}.
 $$
+
 The supremum of an empty set of nonnegative variations is understood as zero.
 
 ```{prf:definition} Higson function
@@ -35,10 +37,12 @@ $C_0(X)$ as an ideal.
 
 The Higson compactification is $hX=\operatorname{Spec}C_h(X)$. Evaluation
 identifies $X$ with a dense open subspace of $hX$. Its remainder
+
 $$
 \nu X=hX\setminus X
  =\operatorname{Spec}\bigl(C_h(X)/C_0(X)\bigr)
 $$
+
 is the Higson corona.
 ```
 
@@ -53,9 +57,11 @@ vanishing at infinity.
 The Stone–Čech compactification of the underlying topological space is
 $\beta X=\operatorname{Spec}C_b(X)$. Inclusion $C_h(X)\hookrightarrow C_b(X)$
 dualizes to a continuous surjection
+
 $$
 \beta X\longrightarrow hX
 $$
+
 which restricts to the identity on $X$. Thus $hX$ is a quotient of $\beta X$:
 only those bounded continuous functions satisfying the Higson condition are
 retained. The induced map on remainders is also surjective.
@@ -82,9 +88,11 @@ bounded while $|x|,|y|\to\infty$, the images of $x$ and $y$ in the closed ball
 approach each other. Uniform continuity on the compact ball therefore implies
 that every continuous function on the radial compactification is Higson.
 Consequently there is a surjection
+
 $$
 \nu\mathbb R^n\longrightarrow S^{n-1}.
 $$
+
 The sphere is a Higson-dominated corona, not an identification of the Higson
 corona itself. For instance, a continuous extension over the origin of
 $\sin(\log |x|)$ is Higson but has no limit along a radial ray.
@@ -94,6 +102,7 @@ $\sin(\log |x|)$ is Higson but has no limit along a radial ray.
 The construction of Bunke–Ludewig applies without a topology. Let $X$ be a
 coarse space and $\mathcal Y$ a {prf:ref}`big family <def-big-family>`.
 Define
+
 $$
 \begin{aligned}
 \ell^\infty(\mathcal Y)
@@ -104,6 +113,7 @@ $$
        \lim_{Y\in\mathcal Y}\operatorname{Var}_E(f;X\setminus Y)=0\}.
 \end{aligned}
 $$
+
 Limits are over inclusion in the directed family. The first algebra is an
 ideal in the second.
 
@@ -111,10 +121,12 @@ ideal in the second.
 :label: def-big-family-corona
 
 The coarse $\mathcal Y$-corona is the compact Hausdorff space defined by
+
 $$
 C(\partial^{\mathcal Y}X)
  =\ell^\infty_{\mathcal Y}(X)/\ell^\infty(\mathcal Y).
 $$
+
 ```
 
 For a proper metric space and $\mathcal Y=\mathcal B_X$, this is the Higson

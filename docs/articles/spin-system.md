@@ -39,9 +39,11 @@ working with {ref}`derivations <article-controlled-derivation>`.
 
 Choose a locally finite subset $\Lambda\subseteq X$ and integers $q_x\geq2$
 for $x\in\Lambda$. Then
+
 $$
 \mathcal A_B=\bigotimes_{x\in B\cap\Lambda}M_{q_x}(\mathbb C)
 $$
+
 defines a local matrix net. Every local matrix net has this form up to a
 propagation-zero isomorphism, as proved in
 {ref}`the point-object proposition <theorem-local-objects-points>`. No uniform
@@ -55,9 +57,11 @@ operation identifies the preceding definition with the matrix-algebra case of
 
 A controlled homomorphism $\varphi:\mathcal A\to\mathcal B$ is a unital
 $*$-homomorphism of quasi-local algebras with
+
 $$
 \varphi(\mathcal A_B)\subseteq\mathcal B_{E[B]}
 $$
+
 for every bounded $B$, for one fixed entourage $E$. It restricts to a map of
 the algebraic unions. The local matrix nets and these morphisms form a
 symmetric monoidal category. Controlled isomorphisms, with controlled inverses,
@@ -69,6 +73,7 @@ form its maximal subgroupoid. A {ref}`quantum cellular automaton
 Each matrix algebra has a unique normalized trace. Their compatible tensor
 products determine a tracial state $\tau_Y$ on $\mathcal A_Y$ for every
 subset $Y$. Locality gives a canonical identification
+
 $$
 \mathcal A_X\cong\mathcal A_Y\otimes\mathcal A_{X\setminus Y}.
 $$
@@ -77,10 +82,12 @@ $$
 :label: def-subset-conditional-expectation
 
 The conditional expectation onto $\mathcal A_Y$ is
+
 $$
 \mathbb E_Y=\mathrm{id}_{\mathcal A_Y}\otimes\tau_{X\setminus Y}:
 \mathcal A_X\longrightarrow\mathcal A_Y.
 $$
+
 ```
 
 It is a unital completely positive contraction, fixes $\mathcal A_Y$, and
@@ -94,10 +101,12 @@ and then on the completion by continuity.
 Write $\mathcal A_x^\circ=\ker\tau_x$ for $x\in\Lambda$, and set
 $\mathcal A_F^\circ=\bigotimes_{x\in F}\mathcal A_x^\circ$, with
 $\mathcal A_\varnothing^\circ=\mathbb C\mathbf1$. Then
+
 $$
 \mathcal A_X^{\mathrm{alg}}
  =\bigoplus_{F\subseteq\Lambda,\ F\text{ finite}}\mathcal A_F^\circ.
 $$
+
 This is a direct sum of vector spaces, not a decomposition into subalgebras.
 On its $F$-summand, $\mathbb E_Y$ is the identity if $F\subseteq Y$ and zero
 otherwise. This exact-support decomposition is used in the proof that
