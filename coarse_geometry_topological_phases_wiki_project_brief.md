@@ -1,6 +1,6 @@
 # Project brief: A mathematical wiki for coarse geometry and topological phases
 
-**Status:** Infrastructure drafted; editorial architecture revised
+**Status:** Infrastructure and first requested article collection drafted; mathematical review pending
 **Last updated:** 6 November 2026
 **Purpose of this document:** Record the intended features, the agreed technical direction, the implementation plan, and decisions that remain open. This specifies the intended system. See `SETUP.md` for implementation status. The editorial decision of 6 November 2026 replaces the original definition-fragment architecture.
 
@@ -105,9 +105,12 @@ to its labelled target. Do not transclude definitions or theorem pages into othe
 articles. The previous separate definition-reference layer and shared-fragment
 idea have been retired.
 
-The homepage, authoring guide, and bibliography support these two mathematical
-page types. The initial sample articles have been deleted. Wait for the author's
-article list before drafting replacement mathematical content.
+The homepage, authoring guide, bibliography, and review notes support these two
+mathematical page types. The initial sample articles have been deleted. Their
+replacement follows `input/requested_articles.txt`: 15 topic articles, three
+stubs, and three standalone theorem pages with proofs. Every agent-authored
+article, stub, and theorem page carries the warning
+**Agent-generated, not reviewed yet** until the author reviews it.
 
 ```text
 coarse-phases/
@@ -275,7 +278,9 @@ GitHub Pages should be configured with **GitHub Actions** as its publishing sour
 
 **Where to find failures:** In the GitHub repository's **Actions** tab and in the checks attached to a pull request. Logs show Sphinx warnings/errors and the files involved. A failed build should prevent deployment; the previously successful published version remains available.
 
-For optional local testing, install the project dependencies and run the same `sphinx-build` command locally. No Python installation is required on the existing PHP hosting package.
+Builds and browser checks run on GitHub Actions. Edit source locally and download
+the generated HTML for review; a local Sphinx installation is not required.
+No Python installation is required on the existing PHP hosting package.
 
 ## 8. Configuration
 
@@ -287,9 +292,10 @@ MathJax, and Sphinx's GitHub Pages support. The theme is PyData. The configurati
 uses the actual `MatthiasLudewig/coarse-phases` repository and links preview edits
 to the pull-request branch; published pages will link edits to `main`.
 
-`docs/index.md` supplies navigation. Future mathematical pages belong in separate
-Articles and Theorems toctrees. The site currently retains only its homepage,
-authoring guide, and bibliography shell while awaiting the author's article list.
+`docs/index.md` supplies navigation. Mathematical pages belong in subject-grouped
+Articles toctrees and a separate Theorems toctree. The first requested collection
+is drafted; `docs/about/draft-review.md` maps its sources and records mathematical
+qualifications for the author's review.
 There is no shared definition-fragment directory or special source exclusion
 for one. Keep generated `_build` directories excluded from source discovery.
 
@@ -331,7 +337,8 @@ requests.
 
 Remaining choices:
 
-1. **Article list and taxonomy:** await the author's next list before drafting.
+1. **Article review and taxonomy:** review the first requested collection and
+   refine its navigation as the wiki grows.
 2. **Publication timing and domain:** the author decides when to make the
    repository public and enable Pages, and whether to use a custom subdomain.
 3. **Editorial refinements:** numbering and other presentation details can be
@@ -347,13 +354,13 @@ The private repository and initial Sphinx infrastructure have been created.
 The original five demonstration articles and definition fragment have been
 removed following the author's revised editorial decision.
 
-Next steps:
+Article collection and remaining steps:
 
-- [ ] Receive the author's list of articles to draft.
-- [ ] Draft regular articles with their own labelled definitions.
-- [ ] Add standalone theorem pages where a full statement or longer proof is
+- [x] Receive the author's list of articles to draft.
+- [x] Draft regular articles with their own labelled definitions.
+- [x] Add standalone theorem pages where a full statement or longer proof is
       useful; include intermediate lemmas as needed. Proofs are optional.
-- [ ] Link informal discussions to full results and prerequisite definitions.
+- [x] Link informal discussions to full results and prerequisite definitions.
 - [ ] Review the mathematics and rendered output before merging.
 - [ ] Decide on a licence and eventual public visibility.
 - [ ] Enable Pages and verify the live site when publication is requested.

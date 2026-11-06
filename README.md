@@ -1,8 +1,10 @@
 # Coarse Geometry and Topological Phases
 
 A mathematical wiki built with **Sphinx, MyST Markdown, and the PyData theme**.
-The site infrastructure is ready for the author's article list. The initial
-demonstration articles have been removed.
+The first requested collection contains 15 topic articles, three stubs, and
+three standalone theorem pages with proofs. Every mathematical page is marked
+`Agent-generated, not reviewed yet`. See the
+[draft review notes](docs/about/draft-review.md) for coverage and source conventions.
 
 ## Content model
 
@@ -88,7 +90,8 @@ python -m sphinx -b html -n -W --keep-going docs docs/_build/html
 
 Warnings fail the build. Tests also deliberately introduce a duplicate theorem
 label and unresolved references in temporary copies and require those builds to
-fail. Chromium checks the site's navigation, search, edit URLs, and mobile layout.
+fail. Chromium checks the site's navigation, search, edit URLs, and mobile layout,
+as well as the actual articles' review warnings, mathematical rendering, and links.
 Separate temporary fixtures check links to definitions in full articles,
 standalone theorems with and without proofs, inline results, proof expansion,
 and MathJax. Fixtures are never included in the preview artifacts.

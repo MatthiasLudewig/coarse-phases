@@ -142,6 +142,42 @@ def check_mathematical_pages(browser, errors):
         print('PASS: whole-article definition links; standalone results with/without proofs; inline results; lemma links; MathJax; proof toggles', flush=True)
 
 
+def check_article_collection(browser, errors):
+    """Exercise the actual drafts, including their TeX and review warnings."""
+    documents = sorted((ROOT / 'docs' / 'articles').glob('*.md'))
+    documents += sorted((ROOT / 'docs' / 'theorems').glob('*.md'))
+    warning = 'Agent-generated, not reviewed yet'
+    screenshots = {'coarse-space', 'coarse-index', 'controlled-derivations-locally-generated'}
+    with serve(HTML) as base:
+        for width, height, mode in [(1440, 1000, 'desktop'), (390, 844, 'mobile')]:
+            context = browser.new_context(viewport={'width': width, 'height': height})
+            page = context.new_page()
+            page.on('pageerror', lambda error: errors.append(str(error)))
+            for source in documents:
+                path = source.relative_to(ROOT / 'docs').with_suffix('.html').as_posix()
+                page.goto(f'{base}/{path}')
+                expect(page.locator('article h1')).to_be_visible()
+                if warning in source.read_text():
+                    expect(page.locator('article .warning').get_by_text(warning, exact=True)).to_be_visible()
+                if page.locator('article .math').count():
+                    math_ready(page)
+                assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1'), path
+                if source.stem in screenshots:
+                    page.screenshot(path=str(SCREENSHOTS / f'{source.stem}-{mode}.png'), full_page=True)
+
+            # Check a real definition link loads its owning article, then a
+            # real result link loads its separate statement and proof.
+            page.goto(f'{base}/theorems/controlled-derivations-locally-generated.html')
+            page.locator("article a[href='../articles/controlled-derivation.html#def-controlled-derivation']").click()
+            expect(page).to_have_url(f'{base}/articles/controlled-derivation.html#def-controlled-derivation')
+            expect(page.locator('#def-controlled-derivation')).to_be_visible()
+            page.locator("article a[href^='../theorems/controlled-derivations-locally-generated.html']").click()
+            expect(page.locator('#thm-controlled-locally-generated')).to_be_visible()
+            expect(page.get_by_role('heading', name='Construction of the interaction', exact=True)).to_be_visible()
+            context.close()
+    print(f'PASS: {len(documents)} mathematical pages on desktop and mobile; review warnings; MathJax; actual definition and theorem links', flush=True)
+
+
 def main():
     SCREENSHOTS.mkdir(parents=True, exist_ok=True)
     errors = []
@@ -149,6 +185,7 @@ def main():
         browser = playwright.chromium.launch()
         try:
             check_site(browser, errors)
+            check_article_collection(browser, errors)
             check_mathematical_pages(browser, errors)
             assert not errors, f'Browser script errors: {errors}'
         finally:

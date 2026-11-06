@@ -1,32 +1,75 @@
 # Coarse Geometry and Topological Phases
 
 A mathematical wiki about locality, large-scale geometry, and the topology of
-quantum systems.
+quantum systems. Definitions live in their relevant articles; references open
+the whole article at the labelled statement. Longer arguments have standalone
+theorem pages.
 
-The initial demonstration articles have been removed. The first article list
-will be supplied by the author before new mathematical content is drafted.
+```{warning}
+Agent-generated, not reviewed yet
+```
 
-## Articles
+The first collection contains 15 topic articles, three stubs, and three theorem
+pages with proofs. All await mathematical review. The
+[review notes](about/draft-review.md) record source conventions and points
+requiring particular attention.
 
-Regular articles combine motivation, definitions, examples, and explanations.
-Each definition belongs to its relevant article and has a stable label. A
-reference to that definition opens the whole article at the labelled statement.
-Short theorems and proofs may also appear directly in an article.
+```{toctree}
+:maxdepth: 1
+:caption: Articles — coarse geometry
 
-## Theorem pages
+articles/coarse-space
+articles/big-family
+articles/coarse-transversality
+articles/flasque-coarse-space
+articles/higson-corona
+articles/coarse-homology-theory
+articles/ordinary-coarse-homology
+```
 
-A standalone theorem page contains a full formal statement, with or without a
-proof. It can develop a longer argument using intermediate lemmas. Articles can
-give an informal account of the result and link to its theorem page, keeping
-the main exposition concise.
+```{toctree}
+:maxdepth: 1
+:caption: Articles — controlled systems
 
-Both articles and theorem pages can be read independently. New pages will be
-listed here as they are drafted.
+articles/controlled-objects
+articles/spin-system
+articles/quantum-cellular-automaton
+articles/controlled-derivation
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Articles — operators and K-theory
+
+articles/geometric-module
+articles/roe-algebra
+articles/coarse-index
+articles/coarse-k-theory
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Stubs
+
+articles/wannier-basis
+articles/coarse-cyclic-homology
+articles/freed-hopkins-classification
+```
+
+```{toctree}
+:maxdepth: 1
+:caption: Theorem pages
+
+theorems/local-objects-points
+theorems/controlled-derivations-locally-generated
+theorems/ample-modules
+```
 
 ```{toctree}
 :maxdepth: 1
 :caption: About this wiki
 
 about/authoring
+about/draft-review
 bibliography/index
 ```

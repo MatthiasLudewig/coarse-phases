@@ -17,8 +17,10 @@ and expository articles, and the reuse of definitions through include fragments.
 There is no transclusion of mathematical statements between pages.
 
 The five sample mathematical articles, shared definition fragment, and sample
-bibliography records have been removed. No replacement mathematical content has
-been drafted; the author's article list is the next input.
+bibliography records have been removed. The author's requested replacement
+collection is now drafted: 15 articles, three stubs, and three theorem pages
+with proofs. Every page carries the warning `Agent-generated, not reviewed yet`.
+Source mapping and mathematical qualifications are in `docs/about/draft-review.md`.
 
 ## Infrastructure retained
 
@@ -30,13 +32,14 @@ been drafted; the author's article list is the next input.
 - Optional native `sphinx-design` dropdowns for proofs and `sphinx-togglebutton`
   for titled technical remarks.
 - Strict builds and browser checks on GitHub Actions. Reader checks exercise
-  the actual website; mathematical interaction checks use temporary test
-  fixtures that never enter the website preview or its search/navigation.
+  the actual articles on desktop and mobile, including their mathematics and
+  review warnings. Additional interaction checks use temporary test fixtures
+  that never enter the website preview or its search/navigation.
 - Downloadable HTML and screenshot artifacts. Pages deployment stays disabled.
 
 ## Deliberately pending
 
-- The author's article list, drafting, and mathematical review.
+- Mathematical review of the requested article collection and its proof pages.
 - Approval and merge of the setup pull request.
 - Public visibility, enabling Pages, and verification of the live site.
 - Branch protection, unavailable for this private repository on GitHub Free.

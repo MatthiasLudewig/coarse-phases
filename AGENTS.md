@@ -7,9 +7,9 @@
   complete, independently navigable pages. Preserve labels and URLs of retained
   content; the initial demonstration articles have intentionally been deleted.
 - Put each definition directly in its owning article, alongside motivation,
-  related definitions, examples, and discussion. For example, the future
-  bornological coarse space article can define coarse structure, bornological
-  space, and bornological coarse space, each with its own stable label.
+  related definitions, examples, and discussion. For example, the Coarse space
+  article defines coarse structure, bornological space, and bornological coarse
+  space, each with its own stable label.
 - Refer to definitions using ordinary cross-document links to those labels.
   Following a link must load the whole owning article at the target. Do not
   transclude definitions or maintain separate shared definition fragments.
@@ -25,8 +25,12 @@
   labels unique. Do not embed theorem pages into articles as fragments.
 - Here, "coarse space" abbreviates **bornological coarse space**. State the
   bornology, and distinguish controlled maps from proper, controlled coarse maps.
-- The sample articles and their sample bibliography have been removed. Wait for
-  the author's next article list before drafting replacement mathematical pages.
+- The sample articles and their sample bibliography have been removed. The first
+  requested collection is now drafted from `input/requested_articles.txt` and the
+  supplied mathematical sources. Keep the exact warning
+  `Agent-generated, not reviewed yet` on every agent-authored article, stub, and
+  theorem page until the author has reviewed it. See `docs/about/draft-review.md`
+  for source conventions and mathematical qualifications requiring review.
 - Test-only fixtures belong under `tests/` or in temporary build directories,
   never in the published documentation or its navigation.
 - Mathematical content is a draft until the principal author reviews it. Verify
