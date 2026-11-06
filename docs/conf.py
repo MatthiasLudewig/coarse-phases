@@ -57,3 +57,25 @@ html_context = {
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
 togglebutton_hint = "Show details"
 togglebutton_hint_hide = "Hide details"
+
+
+def unique_statement_anchors(app, pagename, templatename, context, doctree):
+    """Keep the statement anchor, without duplicating it on its heading."""
+    from html import escape
+    from sphinx_proof.nodes import unenumerable_node
+
+    if doctree is None:
+        return
+    # sphinx-proof 0.4.0 needs the duplicate title ID during HTML translation.
+    # Remove it only after translation, leaving the outer statement ID intact.
+    for statement in doctree.findall(unenumerable_node):
+        for label in statement.get("ids", []):
+            context["body"] = context["body"].replace(
+                f'<p class="admonition-title" id="{escape(label, quote=True)}">',
+                '<p class="admonition-title">',
+                1,
+            )
+
+
+def setup(app):
+    app.connect("html-page-context", unique_statement_anchors)

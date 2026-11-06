@@ -161,6 +161,11 @@ def check_article_collection(browser, errors):
                 expect(page.locator('article h1')).to_be_visible()
                 for title in page.locator('article .proof > .admonition-title').all_inner_texts():
                     assert not re.match(r'\s*(Definition|Proposition|Theorem|Lemma|Corollary)\s+\d', title), (path, title)
+                labels = page.locator('article .proof > .admonition-title').evaluate_all(
+                    '(titles) => titles.map(title => title.parentElement.id)'
+                )
+                for label in labels:
+                    expect(page.locator(f'[id="{label}"]')).to_have_count(1)
                 if warning in text:
                     expect(page.locator('article .warning').get_by_text(warning, exact=True)).to_be_visible()
                 # MyST can misread $$ adjacent to prose as inline mathematics,
