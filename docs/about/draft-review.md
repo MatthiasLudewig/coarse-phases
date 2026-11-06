@@ -10,30 +10,29 @@ structure. It contains 15 full topic articles, three deliberately short stubs,
 and three standalone theorem pages with proofs. Passing the website checks
 verifies references and rendering, not the mathematics.
 
-## Coverage and principal sources
+## Coverage
 
-| Requested article | Principal material used |
+| Article | Scope |
 | --- | --- |
-| [Coarse space](../articles/coarse-space.md) | Bunke–Engel, Chapter 2; QCA manuscript preliminaries |
-| [Big family](../articles/big-family.md) | Bunke–Ludewig §2.1; Sparse sets; Singly generated big families |
-| [Coarse transversality](../articles/coarse-transversality.md) | Ludewig–Thiang, supplied 2026 revision, §§2.1, 3, 5.2 |
-| [Flasque coarse space](../articles/flasque-coarse-space.md) | Bunke–Engel, Definitions 3.21, 3.27 and Lemma 3.28 |
-| [Higson corona](../articles/higson-corona.md) | Roe §5.1; Bunke–Ludewig §3.1 |
-| [Coarse homology theory](../articles/coarse-homology-theory.md) | Bunke–Engel, Chapters 4, 6, 7; Bunke–Ludewig §2 |
-| [Ordinary coarse homology](../articles/ordinary-coarse-homology.md) | Bunke–Engel §6.3; Ludewig–Thiang §3.1 |
-| [Controlled objects](../articles/controlled-objects.md) | Controlled objects manuscript |
-| [Spin system/local nets](../articles/spin-system.md) | Systems manuscript; QCA manuscript §2.2 |
-| [Quantum cellular automaton](../articles/quantum-cellular-automaton.md) | QCA manuscript §§2–3; GNVW §7; Haah Appendix B |
-| [Controlled derivation](../articles/controlled-derivation.md) | Systems manuscript; Higson–Kato §§2, 7 |
-| [Geometric module](../articles/geometric-module.md) | Systems manuscript; Bunke–Engel §8.1; Ewert–Meyer Theorem 2.1 |
-| [Roe algebra](../articles/roe-algebra.md) | Roe §4; Ludewig–Thiang §2.2 |
-| [Coarse index](../articles/coarse-index.md) | Roe §4.3; Odd generators of finite propagation |
-| [Coarse K-theory](../articles/coarse-k-theory.md) | Bunke–Engel Chapter 8; Ewert–Meyer |
+| [Coarse space](../articles/coarse-space.md) | Coarse structures, bornologies, tensor products, and coarse maps |
+| [Big family](../articles/big-family.md) | Support families, union/intersection, generated families, and sparsity |
+| [Coarse transversality](../articles/coarse-transversality.md) | Transverse families, partitions, cocycles, and pairings |
+| [Flasque coarse space](../articles/flasque-coarse-space.md) | Iterated maps, generalized flasqueness, and ray factorization |
+| [Higson corona](../articles/higson-corona.md) | Compactifications, geometric boundaries, and big-family coronas |
+| [Coarse homology theory](../articles/coarse-homology-theory.md) | Group and spectrum axioms, coarsening, and cones |
+| [Ordinary coarse homology](../articles/ordinary-coarse-homology.md) | Controlled chains, homology groups, and the measure model |
+| [Controlled objects](../articles/controlled-objects.md) | Coefficient categories, morphisms, local objects, and Azumaya objects |
+| [Spin system/local nets](../articles/spin-system.md) | Matrix nets and conditional expectations |
+| [Quantum cellular automaton](../articles/quantum-cellular-automaton.md) | Stable QCA, coarse homology, the GNVW index, and plane vanishing |
+| [Controlled derivation](../articles/controlled-derivation.md) | Local generation and Lie algebra homology |
+| [Geometric module](../articles/geometric-module.md) | Point and continuous models, functional calculus, and ampleness |
+| [Roe algebra](../articles/roe-algebra.md) | Local compactness, propagation, and the local trace-class variant |
+| [Coarse index](../articles/coarse-index.md) | Boundary classes and finite-propagation representatives |
+| [Coarse K-theory](../articles/coarse-k-theory.md) | Classical groups and categorical spectra |
 
-The requested Wannier basis, coarse cyclic homology, and Freed–Hopkins pages
-remain explicitly labelled stubs. The bibliography distinguishes supplied
-unpublished notes from public literature. Online primary sources were used to
-fill the Haah reference and verify public bibliographic details.
+The Wannier basis, coarse cyclic homology, and Freed–Hopkins pages remain
+explicitly labelled stubs. Literature links are reserved for nontrivial results
+used without proof; the bibliography contains only publicly available papers.
 
 ## Mathematical qualifications made explicit
 
@@ -43,7 +42,7 @@ fill the Haah reference and verify public bibliographic details.
 2. **Partition classes:** the Ludewig–Thiang construction is in coarse
    cohomology. The article gives its cocycle and its pairing with coarse homology.
 3. **Ray factorization:** factoring the identity through $X\otimes\mathbb N$
-   characterizes generalized flasqueness in Bunke–Engel. The article also
+   characterizes generalized flasqueness. The article also
    states the usual iterated-map definition and the action condition relating them.
 4. **Point objects:** locality gives a pointwise colimit decomposition. Local
    finiteness of the nontrivial point objects follows in the finite-dimensional
@@ -63,11 +62,10 @@ fill the Haah reference and verify public bibliographic details.
 10. **All-module Roe categories:** these require locally compact morphisms and
     nonunital-category $K$-theory. The locally finite model is used for the
     general bornological coarse definition.
-11. **QCA:** the spectrum construction is attributed to the supplied manuscript.
-    The plane-vanishing discussion uses its stable coarse quotient and comparison
-    with Haah's Brauer group. It does not assert circuit triviality on a fixed
-    spin system. This comparison and the spectrum-level excision argument merit
-    particular attention during the author's review.
+11. **QCA:** the spectrum construction uses the stable coarse quotient.
+    The plane-vanishing discussion compares it with the one-dimensional Brauer
+    group; it does not assert circuit triviality on a fixed spin system.
+    The article links directly to the public papers for the results used.
 
 ## Standalone proof pages
 

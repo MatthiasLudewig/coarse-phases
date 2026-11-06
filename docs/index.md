@@ -11,7 +11,7 @@ Agent-generated, not reviewed yet
 
 The first collection contains 15 topic articles, three stubs, and three theorem
 pages with proofs. All await mathematical review. The
-[review notes](about/draft-review.md) record source conventions and points
+[review notes](about/draft-review.md) record coverage and points
 requiring particular attention.
 
 ```{toctree}

@@ -21,6 +21,4 @@ existence questions and should not be identified without hypotheses.
 
 The future article will discuss the periodic Bloch-bundle picture, generalized
 Wannier bases, and obstructions detected by
-{ref}`Roe-algebra K-theory <article-coarse-k-theory>`. See
-{ref}`Ewert–Meyer <bib-ewert-meyer>` and the supplied Wannier material for the
-coarse viewpoint.
+{ref}`Roe-algebra K-theory <article-coarse-k-theory>`.

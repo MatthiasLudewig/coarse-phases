@@ -12,6 +12,7 @@ of the Eilenberg swindle.
 ## Definition
 
 ```{prf:definition} Flasque space
+:nonumber:
 :label: def-flasque-space
 
 A coarse space $X$ is flasque if there is a coarse map $f:X\to X$ such that:
@@ -30,12 +31,13 @@ no iterate moves the whole space away from a nonempty bounded set.
 
 ## Factorization of the identity through a ray
 
-There are two closely related conventions. In Bunke–Engel the factorization
-criterion characterizes **generalized flasqueness**. Ordinary flasqueness as
+There are two closely related conventions. The factorization criterion below
+characterizes **generalized flasqueness**. Ordinary flasqueness as
 above supplies such a factorization, but the converse is not asserted without
 an additional condition on the motion.
 
 ```{prf:definition} Generalized flasqueness
+:nonumber:
 :label: def-generalized-flasqueness
 
 A coarse space is flasque in the generalized sense if there are coarse maps
@@ -52,6 +54,7 @@ $f_n(X)\cap B=\varnothing$ for all $n\geq N$.
 ```
 
 ```{prf:proposition} Ray factorization criterion
+:nonumber:
 :label: prop-flasque-ray-factorization
 
 Generalized flasqueness is equivalent to the existence of a coarse map
@@ -92,8 +95,3 @@ A {ref}`coarse homology theory <article-coarse-homology-theory>` vanishes on
 flasque spaces by definition. It also vanishes on generalized flasque spaces:
 the identity on $E(X)$ factors through $E(X\otimes\mathbb N)=0$, so $E(X)$
 is zero. No choice of a homology theory is needed in the factorization criterion.
-
-## Sources
-
-See {ref}`Bunke–Engel <bib-bunke-engel>`, Definitions 3.21 and 3.27 and
-Lemma 3.28 in the supplied preprint.

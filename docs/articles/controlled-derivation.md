@@ -15,6 +15,7 @@ Let $\mathcal A$ be a {prf:ref}`local matrix net <def-local-matrix-net>` on
 $X$, and work on its algebraic union $\mathcal A_X^{\mathrm{alg}}$.
 
 ```{prf:definition} Controlled derivation
+:nonumber:
 :label: def-controlled-derivation
 
 A controlled $*$-derivation is a complex-linear map
@@ -45,6 +46,7 @@ the completed quasi-local algebra.
 ## Local generation
 
 ```{prf:definition} Locally generated derivation
+:nonumber:
 :label: def-locally-generated-derivation
 
 A derivation is locally generated if there are self-adjoint
@@ -72,11 +74,13 @@ uniform bound on the dimensions of the point algebras.
 
 ## Results of Higson–Kato
 
-Higson–Kato study a stabilized **complex algebraic** Lie algebra
+[Higson–Kato](https://arxiv.org/abs/2607.08455) study a stabilized
+**complex algebraic** Lie algebra
 $\mathfrak{lgd}(X)$ for a proper discrete metric space $X$. Starting with
 finite matrix algebras at the sites, they take a direct limit over all local
 multiplicity functions. Their generators have uniformly bounded support, but
-the multiplicities may be unbounded across $X$.
+the multiplicities may be unbounded across $X$. The suspension and computation
+below are Theorems 7.2.1 and 7.2.6 of their paper.
 
 Their homology is Lie algebra homology with trivial complex coefficients.
 It has a Hopf algebra structure; the primitive part consists of classes $v$
@@ -108,12 +112,5 @@ sequence. They also study the subalgebra fixing a chosen product state.
 
 These results concern the stabilized algebraic Lie algebra. They do not by
 themselves identify the homology of a fixed finite-spin system, nor a
-completion used to construct Hamiltonian time evolution. The supplied paper
-explicitly keeps these questions separate.
-
-## Sources
-
-See the author's {ref}`Local nets and gapped systems <bib-systems-notes>`,
-§“Controlled derivations”, and {ref}`Higson–Kato <bib-higson-kato>`, especially
-Theorems 7.2.1 and 7.2.6. The proof on the linked theorem page expands the
-finite-dimensional innerness step from the notes.
+completion used to construct Hamiltonian time evolution. The algebraic homology
+calculation alone does not settle these questions.

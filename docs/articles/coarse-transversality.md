@@ -11,6 +11,7 @@ in a bounded region, even after arbitrary controlled thickenings.
 ## Big families and subsets
 
 ```{prf:definition} Coarse transversality
+:nonumber:
 :label: def-coarse-transversality
 
 Big families $\mathcal Y_0,\ldots,\mathcal Y_n$ on $X$ are coarsely transverse
@@ -31,6 +32,7 @@ is an equality. The inclusion formulation also accommodates empty subsets
 and coarse spaces with several coarse components.
 
 ```{prf:definition} Coarsely transverse partition
+:nonumber:
 :label: def-coarsely-transverse-partition
 
 A coarsely transverse $n$-partition of a proper metric space $X$ is an ordered
@@ -51,7 +53,7 @@ $$
 
 ## Coarse classes associated to partitions
 
-The construction of Ludewig–Thiang produces a coarse **cohomology** class.
+An ordered coarsely transverse partition defines a coarse **cohomology** class.
 It pairs with coarse homology; the partition alone does not specify a coarse
 homology cycle.
 
@@ -73,6 +75,7 @@ $$
 Its cohomology is denoted $HX^n(X;\mathbb C)$.
 
 ```{prf:definition} Partition class
+:nonumber:
 :label: def-partition-class
 
 Let $(A_0,\ldots,A_n)$ be a coarsely transverse partition, and write
@@ -115,13 +118,8 @@ support condition on $\theta$. In the measure model the sum is replaced by
 $\int\theta\,d\mu$. The differential and boundary are adjoint, so this gives
 a pairing on (co)homology. Pairing the partition class with the coarse Chern
 character of an operator $K$-class is the source of the trace formulae in
-Ludewig–Thiang.
+[Ludewig–Thiang, Large-scale quantization of trace I](https://arxiv.org/abs/2506.10957).
 
 For $X=\mathbb Z$, the partition $A_0=\{k<0\}$, $A_1=\{k\geq0\}$ pairs to
 $1$ with the coarse cycle $\sum_{k\in\mathbb Z}(k,k+1)$. This fixes the
 orientation convention in the simplest case.
-
-## Sources
-
-See {ref}`Ludewig–Thiang <bib-large-scale-trace>`, §§2.1, 3, and 5.2. The
-cochain above is their $A_0\wedge\cdots\wedge A_n$.

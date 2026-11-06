@@ -16,6 +16,7 @@ to let bounded Borel functions act on $H$.
 ## Locally compact finite propagation operators
 
 ```{prf:definition} Finite propagation and local compactness
+:nonumber:
 :label: def-roe-operators
 
 A bounded operator $T$ has propagation at most $R$ if
@@ -30,6 +31,7 @@ compactly supported continuous function equal to one on $B$; the other uses
 uniform approximation of a function in $C_0(X)$ by compactly supported ones.
 
 ```{prf:definition} Roe algebra
+:nonumber:
 :label: def-roe-algebra
 
 Let $\mathbb C[X;H]$ be the $*$-algebra of locally compact, finite propagation
@@ -60,6 +62,7 @@ by definition the ample Roe algebra, which uses infinite-dimensional fibers.
 ## Locally trace-class variant
 
 ```{prf:definition} Finite propagation locally trace-class algebra
+:nonumber:
 :label: def-trace-roe-algebra
 
 A bounded operator is locally trace-class if $fT$ and $Tf$ are trace-class
@@ -94,10 +97,3 @@ trace norms and strict propagation; these conditions are not retained merely
 by taking the operator-norm closure. For example, coarse transversality can
 force a product of localized finite-propagation operators to be globally
 trace-class even when no individual operator is globally trace-class.
-
-## Sources
-
-See {ref}`Roe <bib-roe-cohomology>`, §§4.1–4.3, and
-{ref}`Ludewig–Thiang <bib-large-scale-trace>`, §2.2.
-The comparison of module choices is discussed in
-{ref}`Ewert–Meyer <bib-ewert-meyer>`, §2.

@@ -4,7 +4,7 @@ A mathematical wiki built with **Sphinx, MyST Markdown, and the PyData theme**.
 The first requested collection contains 15 topic articles, three stubs, and
 three standalone theorem pages with proofs. Every mathematical page is marked
 `Agent-generated, not reviewed yet`. See the
-[draft review notes](docs/about/draft-review.md) for coverage and source conventions.
+[draft review notes](docs/about/draft-review.md) for coverage and mathematical qualifications.
 
 ## Content model
 
@@ -21,6 +21,11 @@ There are two kinds of mathematical pages:
 Both types are standalone. Theorems and short proofs can also stay directly in
 articles when this keeps the exposition clear. This architecture supersedes the
 original definition/exposition split and shared-fragment design.
+
+Statements have descriptive headings without visible numbering. Definitions
+and self-contained arguments do not need literature citations; nontrivial
+results used without proof link directly to public papers, including arXiv
+preprints.
 
 ## Drafting and previewing
 

@@ -17,6 +17,7 @@ used below exist, either in $\mathcal C$ or in a specified ambient category.
 We regard the bornology as a category under inclusion.
 
 ```{prf:definition} Controlled object
+:nonumber:
 :label: def-controlled-object
 
 A controlled object over $X$ with values in $\mathcal C$ is a functor
@@ -32,8 +33,8 @@ is an isomorphism.
 ```
 
 When $\mathcal C$ is symmetric monoidal, we assume its monoidal unit is the
-initial object. This is the convention of the supplied notes: it holds for
-Hilbert spaces under direct sum and for unital complex algebras under tensor
+initial object. This holds for Hilbert spaces under direct sum and for unital
+complex algebras under tensor
 product. It is an additional hypothesis, not a property of every symmetric
 monoidal category.
 
@@ -44,6 +45,7 @@ $(V\otimes W)(B)=V(B)\otimes W(B)$ again defines a controlled object.
 ## Controlled morphisms
 
 ```{prf:definition} Controlled morphism
+:nonumber:
 :label: def-controlled-morphism
 
 An $E$-controlled presentation of a morphism $V\to W$ is a natural collection
@@ -70,6 +72,7 @@ The initial-unit assumption gives canonical maps from each factor into a
 tensor product.
 
 ```{prf:definition} Local controlled object
+:nonumber:
 :label: def-local-controlled-object
 
 A semilocal object is a controlled object with natural tensor-extension maps
@@ -114,6 +117,7 @@ To define Azumaya objects, fix a full symmetric monoidal inclusion
 $\mathcal C\subseteq\widehat{\mathcal C}$ with the same initial unit.
 
 ```{prf:definition} Azumaya controlled object
+:nonumber:
 :label: def-azumaya-controlled-object
 
 A semilocal $\widehat{\mathcal C}$-valued object $V$ is Azumaya relative to
@@ -147,9 +151,3 @@ For a coarse map $f:X\to Y$, pushforward is given by
 $(f_*V)(B)=V(f^{-1}(B))$. Properness ensures that this expression is defined
 on bounded $B$, and controlledness sends a control $E$ to $(f\times f)(E)$.
 This is the geometric origin of functoriality in $X$.
-
-## Sources
-
-This formulation follows the author's {ref}`Controlled objects
-<bib-controlled-notes>`, §§1–3 and the Azumaya construction, with the
-colimit and tensor-product hypotheses made explicit.

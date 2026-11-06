@@ -22,6 +22,7 @@ $$
 The supremum of an empty set of nonnegative variations is understood as zero.
 
 ```{prf:definition} Higson function
+:nonumber:
 :label: def-higson-function
 
 A bounded continuous function $f:X\to\mathbb C$ is a Higson function if, for
@@ -33,6 +34,7 @@ These functions form a unital $C^*$-algebra $C_h(X)\subseteq C_b(X)$ containing
 $C_0(X)$ as an ideal.
 
 ```{prf:definition} Higson compactification and corona
+:nonumber:
 :label: def-higson-corona
 
 The Higson compactification is $hX=\operatorname{Spec}C_h(X)$. Evaluation
@@ -73,6 +75,7 @@ $\operatorname{Spec}\ell^\infty(X)$ instead compactifies the set with the
 ## Higson-dominated coronas
 
 ```{prf:definition} Higson-dominated compactification
+:nonumber:
 :label: def-higson-dominated-corona
 
 A compactification $\overline X$ is Higson-dominated if the identity on $X$
@@ -99,7 +102,7 @@ $\sin(\log |x|)$ is Higson but has no limit along a radial ray.
 
 ## Coronas associated to big families
 
-The construction of Bunke–Ludewig applies without a topology. Let $X$ be a
+The construction extends to coarse spaces without a topology. Let $X$ be a
 coarse space and $\mathcal Y$ a {prf:ref}`big family <def-big-family>`.
 Define
 
@@ -118,6 +121,7 @@ Limits are over inclusion in the directed family. The first algebra is an
 ideal in the second.
 
 ```{prf:definition} Coarse corona of a big family
+:nonumber:
 :label: def-big-family-corona
 
 The coarse $\mathcal Y$-corona is the compact Hausdorff space defined by
@@ -133,18 +137,14 @@ For a proper metric space and $\mathcal Y=\mathcal B_X$, this is the Higson
 corona. Passing from bounded functions to continuous functions does not change
 this quotient: a partition of unity on a uniformly bounded open cover replaces
 a bounded slowly varying function by a continuous one modulo a function
-vanishing away from $\mathcal Y$. This is the continuous-description lemma in
-Bunke–Ludewig.
+vanishing at infinity. Indeed, at large distance the values averaged by the
+partition of unity differ from the original value by arbitrarily little,
+because the cover has uniformly bounded diameter.
 
 For $\mathcal Y=\mathcal P(X)$ the quotient is zero and the corona is empty.
 For $\mathcal Y=\partial W$, the indicator of $W$ has zero variation away from
 a sufficiently thickened coarse boundary. Its class is a projection in the
 corona algebra and separates the two sides at infinity, whenever both classes
 are nonzero. This is one reason big-family coronas are useful for Callias-type
-operators and support conditions in index theory.
-
-## Sources
-
-See {ref}`Roe <bib-roe-cohomology>`, §5.1, and
-{ref}`Bunke–Ludewig <bib-callias>`, §3.1, including the continuous-description
-lemma and the example of the coarse boundary of a subset.
+operators and support conditions in index theory; this application is developed
+in [Bunke–Ludewig, Coronas and Callias type operators in coarse geometry](https://arxiv.org/abs/2411.01646).

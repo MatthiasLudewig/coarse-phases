@@ -41,18 +41,21 @@ mathematical content:
 Motivation and overview.
 
 ```{prf:definition} Coarse structure
+:nonumber:
 :label: def-coarse-structure
 
 Write the complete definition here.
 ```
 
 ```{prf:definition} Bornological space
+:nonumber:
 :label: def-bornological-space
 
 Write the complete definition here.
 ```
 
 ```{prf:definition} Bornological coarse space
+:nonumber:
 :label: def-bornological-coarse-space
 
 Write the complete definition here.
@@ -76,7 +79,8 @@ embedded excerpts or popup definitions.
 
 Use `{eq}` for labelled equations and ordinary Markdown links for page paths.
 All labels must be unique across the project. Preserve labels and URLs as
-reviewed content evolves. Displayed theorem numbers may change; cite labels.
+reviewed content evolves. Statements have no visible numbers: add `:nonumber:`
+to each statement directive and use descriptive text for its links.
 
 ## Standalone results
 
@@ -90,6 +94,7 @@ page can be structured as follows:
 Context and links to the relevant articles and definitions.
 
 ```{prf:theorem} Descriptive result
+:nonumber:
 :label: thm-descriptive-result
 
 Full hypotheses and formal statement.
@@ -103,9 +108,9 @@ Supporting results, when needed, with their own labels and proofs.
 
 The full argument, or an explicit note that no proof is supplied here.
 
-## Related articles and references
+## Related articles
 
-Links to the motivating articles and original literature.
+Links to the motivating articles.
 ````
 
 An article can give an informal description and then link to the result:
@@ -118,6 +123,19 @@ See {prf:ref}`the full statement <thm-descriptive-result>` and its proof.
 Adjust the wording if the target page does not supply a proof. Avoid duplicating
 the full formal statement in both places. Do not confuse an omitted proof with
 an unknown proof or a conjecture; state the status accurately.
+
+## Literature citations
+
+Write definitions and explanations so that they can be read on their own.
+Do not add literature citations for definitions, self-contained arguments,
+or well-known textbook material. Keep ordinary internal links to prerequisite
+articles and named statements.
+
+When using a nontrivial result without giving its proof, cite a publicly
+available paper and link directly to it beside the claim. An arXiv preprint
+is sufficient. Do not cite private notes or inaccessible manuscripts. List only
+the papers actually cited in the bibliography; a routine Sources section is
+unnecessary.
 
 ## Mathematical formatting and proofs
 
@@ -171,4 +189,4 @@ The sample articles were deleted following the editorial decision of
 6 November 2026. The first replacement collection follows the author's requested
 article list. Every agent-authored article, stub, and theorem page must retain
 the warning `Agent-generated, not reviewed yet` until reviewed by the author.
-See {ref}`draft-review` for the source mapping and mathematical qualifications.
+See {ref}`draft-review` for coverage and mathematical qualifications.

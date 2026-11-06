@@ -147,6 +147,7 @@ statements. A definition is authored directly in the appropriate article:
 Motivation and related definitions.
 
 ```{prf:definition} Bornological coarse space
+:nonumber:
 :label: def-bornological-coarse-space
 
 The full definition goes here, directly in the article.
@@ -166,15 +167,25 @@ heading. Equations and intermediate lemmas can also have their own stable labels
 A theorem page should have a descriptive title, a complete statement with all
 hypotheses, links to prerequisite articles, and either a proof or an explicit
 note that no proof is supplied on the page. An omitted proof is not a claim that
-a result is unproved. Cite the original source when available and accurately
-distinguish established results from conjectures.
+a result is unproved. Distinguish established results from conjectures.
+
+Statements have descriptive headings without visible numbers. Add
+`:nonumber:` to definitions, propositions, theorems, and related statement
+directives; keep their stable labels for descriptive internal links.
+
+The exposition should be self-contained. Do not attach literature citations
+to definitions, arguments proved on the page, or well-known textbook material.
+For a nontrivial result used without proof, cite a publicly available paper
+and link directly to it beside the claim; publication on arXiv suffices.
+Do not cite private notes or inaccessible manuscripts. The bibliography lists
+only public papers actually cited in the articles.
 
 ### Labels and linking rules
 
 - Every canonical label must be unique across the complete project.
 - Prefer descriptive identifiers such as `def-coarse-structure`,
   `thm-descriptive-result`, and `eq-controlled-entourage`.
-- Preserve labels when retained articles move or displayed numbers change.
+- Preserve labels when retained articles move or their headings change.
 - Write each definition once in its owning article, not in an include fragment.
 - An informal description of a result links to its full statement; do not copy
   the formal statement into multiple pages or embed a theorem page as a fragment.
@@ -245,7 +256,7 @@ Set a repository branch protection rule so that required build checks and, when 
 
 Codex may help to:
 
-- draft articles from the author's notes and instructions;
+- draft articles from supplied mathematical material and instructions;
 - create or revise definitions, examples, and expository explanations;
 - add cross-references and navigation links;
 - search for existing terms and labels before creating new ones;
@@ -294,7 +305,7 @@ to the pull-request branch; published pages will link edits to `main`.
 
 `docs/index.md` supplies navigation. Mathematical pages belong in subject-grouped
 Articles toctrees and a separate Theorems toctree. The first requested collection
-is drafted; `docs/about/draft-review.md` maps its sources and records mathematical
+is drafted; `docs/about/draft-review.md` lists its coverage and records mathematical
 qualifications for the author's review.
 There is no shared definition-fragment directory or special source exclusion
 for one. Keep generated `_build` directories excluded from source discovery.
@@ -341,8 +352,8 @@ Remaining choices:
    refine its navigation as the wiki grows.
 2. **Publication timing and domain:** the author decides when to make the
    repository public and enable Pages, and whether to use a custom subdomain.
-3. **Editorial refinements:** numbering and other presentation details can be
-   adjusted as the first articles are reviewed; preserve stable labels.
+3. **Editorial refinements:** presentation details can be adjusted as the first
+   articles are reviewed; retain unnumbered statements and stable labels.
 4. **Bibliography and licensing:** citation format and licence for reuse of the
    mathematical exposition.
 5. **Visual design:** further PyData layout and styling changes.

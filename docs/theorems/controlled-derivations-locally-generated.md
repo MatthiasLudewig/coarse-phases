@@ -12,6 +12,7 @@ existence of a dynamics on its norm completion.
 ## Statement
 
 ```{prf:theorem} Controlledness and local generation
+:nonumber:
 :label: thm-controlled-locally-generated
 
 Let $\mathcal A$ be a local matrix net on a bornological coarse space $X$.
@@ -106,10 +107,7 @@ $B_i\times B_i$. Each such $B_i$ lies in $E[B]$. Hence
 $D(a)\in\mathcal A_{E[B]}$, proving controlledness. The sum is finite on
 each local algebra and thus satisfies the Leibniz and $*$ identities there.
 
-## Sources and related articles
+## Related articles
 
-The argument follows the proposition in the author's
-{ref}`Local nets and gapped systems <bib-systems-notes>`, using matrix-unit
-innerness to justify the local implementer. See
-{ref}`Controlled derivation <article-controlled-derivation>` for the definition
-and the relation to Higson–Kato.
+See {ref}`Controlled derivation <article-controlled-derivation>` for the
+definitions and the Lie algebra homology of locally generated derivations.

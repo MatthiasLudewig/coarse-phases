@@ -11,6 +11,7 @@ isomorphism of $C_0(X)$-representations.
 ## Statement
 
 ```{prf:theorem} Comparison of ample modules
+:nonumber:
 :label: thm-ample-modules
 
 Let $X$ be a separable proper metric space, and let
@@ -70,10 +71,7 @@ argument works on the other side. Applying the same reasoning to $U^*$ gives
 the converse. Conjugation therefore identifies the finite-propagation locally
 compact algebras and, by norm continuity, their completions.
 
-## Sources and related articles
+## Related articles
 
-This is the bounded-partition argument in
-{ref}`Higson–Roe <bib-higson-roe>`, §6.3, and
-{ref}`Ewert–Meyer <bib-ewert-meyer>`, Theorem 2.1. See
-{ref}`Geometric module <article-geometric-module>` for the meaning of ampleness
-and {ref}`Roe algebra <article-roe-algebra>` for the completion.
+See {ref}`Geometric module <article-geometric-module>` for ampleness and
+{ref}`Roe algebra <article-roe-algebra>` for the completion.

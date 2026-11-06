@@ -15,6 +15,7 @@ be defined without the categorical terminology.
 Let $X$ be a coarse space.
 
 ```{prf:definition} Local matrix net
+:nonumber:
 :label: def-local-matrix-net
 
 A local matrix net on $X$ assigns a full matrix algebra $\mathcal A_B$ to each
@@ -79,6 +80,7 @@ $$
 $$
 
 ```{prf:definition} Conditional expectation onto a subset
+:nonumber:
 :label: def-subset-conditional-expectation
 
 The conditional expectation onto $\mathcal A_Y$ is
@@ -111,9 +113,3 @@ This is a direct sum of vector spaces, not a decomposition into subalgebras.
 On its $F$-summand, $\mathbb E_Y$ is the identity if $F\subseteq Y$ and zero
 otherwise. This exact-support decomposition is used in the proof that
 {ref}`controlled derivations are locally generated <theorem-controlled-derivations>`.
-
-## Sources
-
-See the author's {ref}`Local nets and gapped systems <bib-systems-notes>`,
-the sections on local nets and conditional expectations, and the
-{ref}`QCA manuscript <bib-qca-notes>`, §2.2.

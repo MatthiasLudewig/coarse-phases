@@ -19,6 +19,7 @@ FIXTURES = {
 This introduction belongs to the whole article, not just its definition.
 
 ```{prf:definition} Fixture object
+:nonumber:
 :label: def-ci-object
 
 A fixture object is an integer $x$.
@@ -32,6 +33,7 @@ Informally, adding zero changes nothing; see
 There is also {prf:ref}`a statement without a supplied proof <thm-ci-statement>`.
 
 ```{prf:theorem} Short inline result
+:nonumber:
 :label: thm-ci-inline
 
 For every fixture object, $x=x$.
@@ -60,6 +62,7 @@ Return to {ref}`article-ci-object` or its
 {prf:ref}`definition <def-ci-object>`.
 
 ```{prf:theorem} Addition of zero
+:nonumber:
 :label: thm-ci-result
 
 For every fixture object $x$, one has $x+0=x$.
@@ -68,6 +71,7 @@ For every fixture object $x$, one has $x+0=x$.
 ## Supporting lemma
 
 ```{prf:lemma} Zero is an additive identity
+:nonumber:
 :label: lem-ci-step
 
 The integer zero is an additive identity.
@@ -79,13 +83,14 @@ The integer zero is an additive identity.
 :class-container: proof-dropdown
 
 ```{prf:proof}
-Apply {prf:ref}`lem-ci-step` to $x$, giving {eq}`eq-ci-identity`.
+Apply {prf:ref}`the identity lemma <lem-ci-step>` to $x$, giving {eq}`eq-ci-identity`.
 ```
 ````
 """,
     WITHOUT_PROOF: r"""# Fixture statement without proof
 
 ```{prf:theorem} Another identity
+:nonumber:
 :label: thm-ci-statement
 
 For any fixture object $x$, one has $0+x=x$.

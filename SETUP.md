@@ -20,7 +20,7 @@ The five sample mathematical articles, shared definition fragment, and sample
 bibliography records have been removed. The author's requested replacement
 collection is now drafted: 15 articles, three stubs, and three theorem pages
 with proofs. Every page carries the warning `Agent-generated, not reviewed yet`.
-Source mapping and mathematical qualifications are in `docs/about/draft-review.md`.
+Coverage and mathematical qualifications are in `docs/about/draft-review.md`.
 
 ## Infrastructure retained
 
@@ -47,5 +47,10 @@ Source mapping and mathematical qualifications are in `docs/about/draft-review.m
 - Bibliography automation, backlinks, dependency graphs, automatic object
   indexes, and a global proof switch.
 
-Statement numbering is currently project-wide within each statement type, with
-no section prefix. Link to stable semantic labels rather than displayed numbers.
+Statement directives use `:nonumber:`: definitions, propositions, theorems, and
+related statements have descriptive headings without visible numbers. Stable
+labels still support links between articles.
+
+Definitions, self-contained arguments, and well-known textbook material do not
+carry literature citations. Nontrivial results used without proof link directly
+to public papers, including arXiv preprints. Private notes are not cited.

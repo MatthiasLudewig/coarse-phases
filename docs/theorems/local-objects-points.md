@@ -13,6 +13,7 @@ objects.
 ## Statement
 
 ```{prf:proposition} Point-object description
+:nonumber:
 :label: prop-local-objects-points
 
 Let $V$ be a local controlled object over a bornological coarse space $X$, with
@@ -70,9 +71,7 @@ unions in the category of Hilbert spaces and isometries, yet every point of
 $X$ has nonzero fiber. Thus the pointwise description is general; local
 finiteness follows from the finite-dimensional coefficient condition.
 
-## Sources and related articles
+## Related articles
 
-Adapted from the point-object proposition in the author's
-{ref}`Controlled objects <bib-controlled-notes>`. See
-{ref}`Spin system and local nets <article-spin-system>` and
+See {ref}`Spin system and local nets <article-spin-system>` and
 {ref}`Geometric module <article-geometric-module>` for the two principal cases.

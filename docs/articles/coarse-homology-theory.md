@@ -15,6 +15,7 @@ the operations on {ref}`big families <article-big-family>`.
 ## Group-valued theories
 
 ```{prf:definition} Group-valued coarse homology theory
+:nonumber:
 :label: def-group-valued-coarse-homology
 
 A group-valued coarse homology theory consists of functors
@@ -54,6 +55,7 @@ using the intersection of the generated big families.
 Let $\mathcal D$ be a cocomplete stable $\infty$-category.
 
 ```{prf:definition} Coarse homology theory with stable target
+:nonumber:
 :label: def-stable-coarse-homology
 
 A functor $E:\mathrm{BornCoarse}\to\mathcal D$ is a coarse homology theory if
@@ -91,8 +93,7 @@ The basic examples are {ref}`ordinary coarse homology
 abelian groups, and {ref}`coarse K-theory <article-coarse-k-theory>`, with
 values in spectra, more precisely $KU$-module spectra in the complex case.
 The {ref}`QCA article <article-quantum-cellular-automaton>` describes a further
-construction from the author's manuscript, including its stabilization and
-quotient conventions.
+example, including its stabilization and quotient conventions.
 
 The decomposition of $X\otimes\mathbb R$ into its positive and negative
 half-spaces gives
@@ -133,19 +134,21 @@ A coarse map induces simplicial maps after increasing the control parameter.
 Close maps induce contiguous maps after a further increase. The scale colimit
 therefore forgets small-scale choices.
 
-For arbitrary bornological coarse spaces, Bunke–Engel use a bornological Rips
-construction and locally finite homology on topological bornological spaces.
+For arbitrary bornological coarse spaces, a bornological Rips construction
+and locally finite homology on topological bornological spaces are used.
 The general construction requires the hypotheses on the target and the locally
 finite theory given in their coarsification theorem. In particular it is not
 obtained by simply applying ordinary, non-locally-finite homology to the set
 $X$. Applied to ordinary homology it yields ordinary coarse homology; applied
-to stable homotopy it yields a coarse stable homotopy theory.
+to stable homotopy it yields a coarse stable homotopy theory. The general
+coarsification theorem is proved in
+[Bunke–Engel, Homotopy theory with bornological coarse spaces, Chapter 7](https://arxiv.org/abs/1607.03657).
 
 ## From coarse to ordinary homology via cones
 
 A cone construction needs uniform information in addition to a coarse
-structure. Let $X$ be a uniform bornological coarse space. In the two-sided
-model of Bunke–Ludewig, $\mathcal O^\infty(X)$ has underlying set
+structure. Let $X$ be a uniform bornological coarse space. The two-sided cone
+$\mathcal O^\infty(X)$ has underlying set
 $\mathbb R\times X$ and the product bornology. Its entourages are product
 coarse entourages whose $X$-components become uniformly small towards
 $+\infty$: for every uniform entourage $V$, there is a $T$ such that
@@ -165,13 +168,15 @@ is a local homology theory. Here strong means that $E$ also vanishes on weakly
 flasque spaces: spaces with a uniformly controlled, escaping self-map as in
 flasqueness, whose action on the universal coarse homology object is equivalent
 to the identity, even if the map itself is not close to the identity.
-This is a stronger requirement on $E$ than the four basic axioms.
+This is a stronger requirement on $E$ than the four basic axioms. The local
+homology property is established in
+[Bunke–Ludewig, Coronas and Callias type operators in coarse geometry, §2](https://arxiv.org/abs/2411.01646).
 
 The identity map from the cone to $\mathbb R\otimes X$ gives an index map
 $F(X)\to E(X)$ after the suspension identification. Suppose that $E$ is also
 additive, meaning that it takes free unions of one-point spaces to products
 of $E(*)$, and that its target is complete. The comparison theorem in
-Bunke–Ludewig identifies $F$ on finite
+[Bunke–Ludewig, §2.3](https://arxiv.org/abs/2411.01646) identifies $F$ on finite
 simplicial complexes, with their compact uniform structures, with the homology
 theory having coefficient object $E(*)$.
 That ordinary theory extends to CW complexes by colimits; a locally finite
@@ -181,9 +186,3 @@ topological spaces.
 
 For $E=K\mathcal X$, this recovers the familiar passage from local
 $K$-homology classes to coarse index classes.
-
-## Sources
-
-See {ref}`Bunke–Engel <bib-bunke-engel>`, Definition 4.22 and Chapters 6–7;
-{ref}`Bunke–Ludewig <bib-callias>`, §§2.1–2.3, for the two-sided cone and its
-index map; and {ref}`Mitchener <bib-mitchener>` for the group-valued viewpoint.

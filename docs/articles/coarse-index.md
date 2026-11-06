@@ -25,6 +25,7 @@ $F=\chi(D)\in D^*(M)$ and $F^2-1\in C^*(M)$.
 The latter is a local compactness statement, not in general global compactness.
 
 ```{prf:definition} Coarse index
+:nonumber:
 :label: def-coarse-index
 
 In the ungraded case, $p=(F+1)/2$ is a projection modulo $C^*(M)$. Set
@@ -49,11 +50,11 @@ modulo the functional calculus comparison, and the coarse index vanishes.
 
 ## Finite propagation representatives
 
-Roe's construction is stronger than the norm-closed description above.
+The index also admits representatives with strict finite propagation.
 Choose an odd smooth chopping function $\chi$ whose Fourier transform is
 compactly supported as a distribution and for which $\chi^2-1$ is rapidly
 decreasing. Finite propagation speed then gives finite propagation of
-$F=\chi(D)$. Under Roe's local elliptic summability hypothesis,
+$F=\chi(D)$. Under the local elliptic summability hypothesis,
 $(1+D^2)^{-N}$ is locally trace-class for some $N$, so $F^2-1$ is locally
 trace-class as well.
 
@@ -112,13 +113,5 @@ paired, through suitable Chern character constructions, with
 The {ref}`cone construction <article-coarse-homology-theory>` provides a
 homological formulation of the passage from local symbol data to the coarse
 index. Positivity away from a big family leads to localized index classes,
-as developed by Bunke–Ludewig.
-
-## Sources
-
-See {ref}`Roe <bib-roe-cohomology>`, §4.3, particularly Definitions 4.26 and
-4.28 and Lemmas 4.29–4.30. The supplied note
-{ref}`Odd generators of finite propagation <bib-finite-propagation-notes>`
-discusses the polynomial replacement in odd degree; the distinction between
-local and global trace class is retained here. See also
-{ref}`Bunke–Ludewig <bib-callias>` for localized coarse indices.
+as developed in
+[Bunke–Ludewig, Coronas and Callias type operators in coarse geometry](https://arxiv.org/abs/2411.01646).

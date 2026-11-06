@@ -23,6 +23,14 @@
 - Give standalone theorem pages a descriptive title, an explicit statement with
   all hypotheses, and links to the relevant articles. Keep page and statement
   labels unique. Do not embed theorem pages into articles as fragments.
+- Do not display numbers on definitions, propositions, theorems, or related
+  statements. Add `:nonumber:` to statement directives and use descriptive link
+  text with their stable labels.
+- Keep the exposition self-contained. Do not cite literature for definitions,
+  arguments proved on the page, or well-known textbook material. For a
+  nontrivial result used without proof, cite a publicly available paper
+  (publication on arXiv suffices) and link directly to it. Do not cite private
+  notes or unpublished material that readers cannot access.
 - Here, "coarse space" abbreviates **bornological coarse space**. State the
   bornology, and distinguish controlled maps from proper, controlled coarse maps.
 - The sample articles and their sample bibliography have been removed. The first
@@ -30,7 +38,7 @@
   supplied mathematical sources. Keep the exact warning
   `Agent-generated, not reviewed yet` on every agent-authored article, stub, and
   theorem page until the author has reviewed it. See `docs/about/draft-review.md`
-  for source conventions and mathematical qualifications requiring review.
+  for coverage and mathematical qualifications requiring review.
 - Test-only fixtures belong under `tests/` or in temporary build directories,
   never in the published documentation or its navigation.
 - Mathematical content is a draft until the principal author reviews it. Verify

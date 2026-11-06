@@ -21,6 +21,7 @@ $$
 No convergence of this sum is intended.
 
 ```{prf:definition} Locally finite controlled chain
+:nonumber:
 :label: def-coarse-chain
 
 A chain is locally finite if, for each bounded $B\subseteq X$, only finitely
@@ -73,6 +74,7 @@ control for its support.
 ## The classical homology groups
 
 ```{prf:definition} Ordinary coarse homology
+:nonumber:
 :label: def-ordinary-coarse-homology
 
 The ordinary coarse homology groups with coefficients in $A$ are
@@ -89,7 +91,8 @@ The derived functor is a {prf:ref}`coarse homology theory
 <def-stable-coarse-homology>`. In particular, its homology groups satisfy coarse
 invariance, excision, vanishing on flasques, and $u$-continuity. The raw chain
 complex need not literally be zero on a flasque space; it becomes zero after
-passing to the derived category.
+passing to the derived category. A proof of the coarse homology axioms is given
+in [Bunke–Engel, Homotopy theory with bornological coarse spaces, §6.3](https://arxiv.org/abs/1607.03657).
 
 For a big family $\mathcal Y$, take the subcomplex
 
@@ -110,8 +113,8 @@ locally finite, even though the chain has infinite support.
 
 ## The measure model used for trace pairings
 
-For proper metric spaces and complex coefficients, the supplied
-Ludewig–Thiang manuscript also uses locally finite complex regular Borel measures
+For proper metric spaces and complex coefficients, one can also use locally
+finite complex regular Borel measures
 on $X^{n+1}$ supported within a fixed neighbourhood of the multidiagonal.
 The boundary is the alternating sum of pushforwards along coordinate-deletion
 maps. An atomic chain embeds as a sum of Dirac measures.
@@ -121,13 +124,9 @@ and both are invariant under measurable coarse equivalences to a discretization.
 The measure model is useful for continuous spaces and operator kernels; the
 atomic model above works directly on all bornological coarse spaces. For
 measures, local finiteness means finite total variation on compact subsets.
+The comparison is proved in
+[Ludewig–Thiang, Large-scale quantization of trace I, §3.1](https://arxiv.org/abs/2506.10957).
 
 {ref}`Coarsely transverse partitions <article-coarse-transversality>` define
 cohomology classes paired with these chains or measures. This is separate
 from specifying an orientation or a homology class on $X$.
-
-## Sources
-
-See {ref}`Bunke–Engel <bib-bunke-engel>`, §6.3, and
-{ref}`Ludewig–Thiang <bib-large-scale-trace>`, §3.1, for the measure model and
-its comparison with locally finite atomic chains.

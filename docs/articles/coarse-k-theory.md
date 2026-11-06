@@ -40,6 +40,7 @@ below also includes $u$-continuity on general bornological coarse spaces.
 Let $X$ now be any bornological coarse space.
 
 ```{prf:definition} Locally finite Roe category
+:nonumber:
 :label: def-roe-category
 
 The objects of $\mathbf C(X)$ are locally finite, point-determined geometric
@@ -63,9 +64,10 @@ Properness preserves local finiteness, and controlledness preserves controlled
 operators. On the underlying operators the pushforward functor is the identity.
 
 ```{prf:definition} Spectrum-valued coarse K-theory
+:nonumber:
 :label: def-coarse-k-theory
 
-The Bunke–Engel coarse $K$-theory spectrum is
+The coarse $K$-theory spectrum is
 
 $$
 K\mathcal X(X)=K(\mathbf C(X)),
@@ -77,7 +79,9 @@ $KU$-module spectra, or in spectra after forgetting the module structure.
 
 This is a {prf:ref}`coarse homology theory <def-stable-coarse-homology>`.
 On separable proper metric spaces its homotopy groups recover the classical
-ample Roe-algebra groups. At a point its value is $KU$. Consequently
+ample Roe-algebra groups. Proofs of these properties are given in
+[Bunke–Engel, Homotopy theory with bornological coarse spaces, Chapter 8](https://arxiv.org/abs/1607.03657).
+At a point its value is $KU$. Consequently
 
 $$
 K\mathcal X(\mathbb R^d)\simeq\Sigma^d KU,\qquad
@@ -102,15 +106,5 @@ is generally **nonunital**. One cannot obtain the locally finite construction
 just by dropping local finiteness while retaining all controlled operators:
 at a point that would introduce $\mathcal B(H)$ instead of the compact
 operators. Nonunital categories require the corresponding multiplier and
-$K$-theory formalism. Bunke–Engel's original locally finite model deliberately
-avoids this issue; see their Remark 8.77. The locally finite model above is the
+$K$-theory formalism. The locally finite model avoids this issue and is the
 one used here on arbitrary bornological coarse spaces.
-
-## Sources
-
-See {ref}`Bunke–Engel <bib-bunke-engel>`, Chapter 8, including Definition 8.74
-and the comparison theorem, and their
-{ref}`Topological equivariant coarse K-homology <bib-coarse-k-categories>`
-for the broader $C^*$-categorical framework. For the classical formulation,
-see {ref}`Higson–Roe <bib-higson-roe>` and
-{ref}`Ewert–Meyer <bib-ewert-meyer>`.

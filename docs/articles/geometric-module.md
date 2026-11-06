@@ -26,6 +26,7 @@ union of these subspaces. By the
 $H=\bigoplus_{x\in X}H_x$ and $H_B=\bigoplus_{x\in B}H_x$.
 
 ```{prf:definition} Point-determined geometric module
+:nonumber:
 :label: def-geometric-module
 
 A point-determined geometric module over $X$ is a Hilbert space with an
@@ -71,6 +72,7 @@ algebras; one should not identify the two representations literally.
 ## Ample modules
 
 ```{prf:definition} Ample topological module
+:nonumber:
 :label: def-ample-module
 
 A nondegenerate $X$-module $(H,\rho)$ is ample if $\rho(f)$ is compact only
@@ -101,10 +103,3 @@ the $C_0(X)$-representations. For example, an atomic ample representation and
 a nonatomic one need not be unitarily equivalent as representations.
 The comparison explains why the Roe algebra is often written $C^*(X)$ without
 mentioning a module, although the algebra identification involves a choice.
-
-## Sources
-
-See {ref}`Bunke–Engel <bib-bunke-engel>`, §8.1 and Remark 8.43;
-{ref}`Higson–Roe <bib-higson-roe>`, §6.3;
-{ref}`Ewert–Meyer <bib-ewert-meyer>`, Theorem 2.1; and the Hilbert-module
-section of the author's {ref}`Local nets and gapped systems <bib-systems-notes>`.
