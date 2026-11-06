@@ -1,36 +1,48 @@
 # Setup and editorial decisions
 
-## Implemented in the initial draft
+## Current architecture — 6 November 2026
+
+There are two mathematical page types:
+
+1. **Regular articles** in `docs/articles/`: definitions are written directly in
+   their owning articles, together with motivation, examples, and discussion.
+   Other pages link to labels in those articles and load the whole target page.
+2. **Standalone theorem pages** in `docs/theorems/`: full formal statements,
+   with or without proofs. These pages may develop long arguments with
+   intermediate lemmas. Articles can explain results informally and link to
+   the theorem pages. Short theorems and proofs can also remain in articles.
+
+This decision replaces the original separation of canonical definition pages
+and expository articles, and the reuse of definitions through include fragments.
+There is no transclusion of mathematical statements between pages.
+
+The five sample mathematical articles, shared definition fragment, and sample
+bibliography records have been removed. No replacement mathematical content has
+been drafted; the author's article list is the next input.
+
+## Infrastructure retained
 
 - Private repository: `MatthiasLudewig/coarse-phases`.
-- Sphinx/MyST project, pinned dependencies, PyData theme, MathJax, and custom CSS.
-- Five connected mathematical articles, with distinct reference and exposition
-  layers, a reading list, and an authoring guide.
-- A definition body included in two places with one canonical label; its
-  expository restatement is an unnumbered admonition.
-- A theorem with a proof in a native, initially collapsed `sphinx-design`
-  dropdown containing `prf:proof`. This avoids assuming that a bare proof node
-  has the title structure expected by `sphinx-togglebutton`.
-- GitHub edit links, search, navigation, light/dark themes, and responsive layout.
-- GitHub-hosted strict builds, negative build tests, browser checks, downloadable
-  HTML, and screenshot artifacts. Logs and checks are attached to the pull request.
-- Pages workflow prepared but gated off during private drafting.
-
-## Author review before the first merge
-
-- Check the bornological convention and terminology in the five starter pages.
-- Review all statements, proofs, hypotheses, and physical interpretations.
-- Decide whether to expand the initial topic list using the local research notes.
-- Theorem numbering currently uses Sphinx's project-wide sequence (no section
-  prefix). Cite semantic labels rather than displayed numbers.
+- Sphinx/MyST, pinned dependencies, PyData theme, MathJax, and custom styling.
+- Full sidebar navigation, GitHub edit links, search, and light/dark modes.
+- Standalone articles and theorem pages use ordinary MyST headings and
+  `sphinx-proof` labels. No new page-rendering extension is needed.
+- Optional native `sphinx-design` dropdowns for proofs and `sphinx-togglebutton`
+  for titled technical remarks.
+- Strict builds and browser checks on GitHub Actions. Reader checks exercise
+  the actual website; mathematical interaction checks use temporary test
+  fixtures that never enter the website preview or its search/navigation.
+- Downloadable HTML and screenshot artifacts. Pages deployment stays disabled.
 
 ## Deliberately pending
 
-- Mathematical approval and merge of the initial draft.
+- The author's article list, drafting, and mathematical review.
+- Approval and merge of the setup pull request.
 - Public visibility, enabling Pages, and verification of the live site.
-- Branch protection: not available for this private repository on GitHub Free.
-- A reuse licence, invited collaborators, and any custom domain.
-- Bibliography automation. BibTeX is retained for later use; the current reading
-  list uses explicit, checked links rather than a citation extension.
-- Backlinks, dependency graphs, automatic object indexes, and a global proof
-  toggle are future work, as described in the project brief.
+- Branch protection, unavailable for this private repository on GitHub Free.
+- A reuse licence, invited contributors, and any custom domain.
+- Bibliography automation, backlinks, dependency graphs, automatic object
+  indexes, and a global proof switch.
+
+Statement numbering is currently project-wide within each statement type, with
+no section prefix. Link to stable semantic labels rather than displayed numbers.

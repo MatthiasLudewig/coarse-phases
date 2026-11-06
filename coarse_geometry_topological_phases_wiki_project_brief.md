@@ -1,8 +1,8 @@
 # Project brief: A mathematical wiki for coarse geometry and topological phases
 
-**Status:** Planning / architecture selected  
-**Last updated:** 4 November 2026  
-**Purpose of this document:** Record the intended features, the agreed technical direction, the implementation plan, and decisions that remain open. This is a specification and starting point for implementation, **not** a claim that the repository or website has already been created.
+**Status:** Infrastructure drafted; editorial architecture revised
+**Last updated:** 6 November 2026
+**Purpose of this document:** Record the intended features, the agreed technical direction, the implementation plan, and decisions that remain open. This specifies the intended system. See `SETUP.md` for implementation status. The editorial decision of 6 November 2026 replaces the original definition-fragment architecture.
 
 ## 1. Project vision
 
@@ -19,8 +19,8 @@ Key design goals:
 
 1. Markdown and LaTeX-based authoring, with files remaining portable and editable outside the website.
 2. Strong, stable cross-references between mathematical objects, not only between pages.
-3. Separation between formal mathematical statements and explanatory articles.
-4. Reuse of centrally maintained definitions or propositions in different expository contexts.
+3. Two mathematical page types: regular articles and standalone theorem pages, with or without proofs.
+4. Definitions written directly in their owning articles, with stable links from other pages; informal accounts of results can link to full formal statements on theorem pages.
 5. Collapsible proofs; readable mathematical typesetting; configurable appearance and navigation.
 6. Git version history, controlled contributions, automated checks, and low-maintenance hosting.
 7. A structure that can later support backlinks, indexes of mathematical objects, and a graph of conceptual dependencies.
@@ -84,122 +84,131 @@ Later the website could use a subdomain such as `https://wiki.example.org/` by c
 
 ## 3. Content architecture
 
-Use two related layers of content:
+Use two kinds of mathematical pages, both readable and navigable as standalone
+pages:
 
-- **Formal layer:** Canonical definitions, propositions, theorems, lemmas, proofs, and constructions, each with stable identifiers when appropriate.
-- **Expository layer:** Articles explaining the significance and use of these formal objects, with examples, motivations, relationships, and physical interpretations.
+- **Regular articles:** motivation, definitions, examples, and discussion of a
+  topic. Each definition is written directly in its owning article. For example,
+  a future *Bornological coarse space* article can define coarse structure,
+  bornological space, and bornological coarse space with individual labels.
+- **Theorem pages:** full formal statements, with or without proofs. A theorem
+  page can develop a long proof through intermediate lemmas and sections, and
+  links to prerequisite definitions and the motivating articles.
 
-Suggested initial topics include coarse spaces, controlled sets, coarse maps and equivalences, Roe algebras, K-theory, and connections to topological phases. The precise topic taxonomy and terminology should be chosen by the author.
+An article can explain a result informally and link to its theorem page for the
+full statement and any proof. Theorems and short proofs are also allowed directly
+in articles; a separate page is an option for keeping longer arguments out of the
+main exposition, not a requirement for every result.
 
-Suggested repository layout (illustrative):
+A reference to a definition or theorem loads the complete owning page and moves
+to its labelled target. Do not transclude definitions or theorem pages into other
+articles. The previous separate definition-reference layer and shared-fragment
+idea have been retired.
+
+The homepage, authoring guide, and bibliography support these two mathematical
+page types. The initial sample articles have been deleted. Wait for the author's
+article list before drafting replacement mathematical content.
 
 ```text
 coarse-phases/
 ├── README.md
+├── AGENTS.md
+├── SETUP.md
 ├── requirements.txt
-├── .gitignore
-├── .github/
-│   └── workflows/
-│       └── build-and-deploy.yml
+├── constraints.txt
+├── .github/workflows/build-and-deploy.yml
+├── tests/                       # Test fixtures stay outside the published site
 └── docs/
     ├── conf.py
     ├── index.md
-    ├── geometry/
-    │   ├── coarse-spaces.md
-    │   └── coarse-maps.md
-    ├── algebras/
-    │   └── roe-algebras.md
-    ├── phases/
-    │   └── introduction.md
-    ├── reference/
-    │   └── coarse-space.md
-    ├── _snippets/
-    │   └── coarse-space.inc.md
-    ├── _static/
-    │   └── custom.css
-    └── bibliography/
-        └── references.bib
+    ├── articles/                # Topic articles with their own definitions
+    ├── theorems/                # Standalone results and optional proofs
+    ├── about/authoring.md
+    ├── bibliography/
+    ├── _static/custom.css
+    └── _templates/
 ```
 
-The directory structure is a proposal, not a constraint. Keep page URLs and semantic identifiers reasonably stable when reorganizing the site.
+Use descriptive filenames. Add topic subdirectories later if they are useful,
+while preserving URLs and semantic identifiers of retained content.
 
 ## 4. Mathematical writing and cross-references
 
-Use MyST Markdown for prose and LaTeX mathematics, with the `sphinx-proof` extension for formal statements.
-
-Example in a canonical article:
+Use MyST Markdown for prose and LaTeX mathematics, with `sphinx-proof` for
+statements. A definition is authored directly in the appropriate article:
 
 ````markdown
-```{prf:definition} Coarse space
-:label: def-coarse-space
+(article-bornological-coarse-space)=
+# Bornological coarse space
 
-A **coarse space** is a pair $(X,\mathcal E)$, where
-$X$ is a set and $\mathcal E$ is a coarse structure on $X$.
+Motivation and related definitions.
+
+```{prf:definition} Bornological coarse space
+:label: def-bornological-coarse-space
+
+The full definition goes here, directly in the article.
 ```
 ````
 
-Another article can refer to it using:
+Another article links to it using:
 
 ```markdown
-See {prf:ref}`def-coarse-space` for the definition.
+See {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
 ```
 
-Other available cross-references include labelled headings, equations, figures, theorems, and propositions. This is stronger than ordinary links between Markdown files because references are resolved and checked during the build.
+This opens the complete article at the definition. A heading reference such as
+`{ref}` with `article-bornological-coarse-space` links to the article's top-level
+heading. Equations and intermediate lemmas can also have their own stable labels.
 
-### Rules for labels
+A theorem page should have a descriptive title, a complete statement with all
+hypotheses, links to prerequisite articles, and either a proof or an explicit
+note that no proof is supplied on the page. An omitted proof is not a claim that
+a result is unproved. Cite the original source when available and accurately
+distinguish established results from conjectures.
 
-- **Every canonical label must be unique across the complete Sphinx project.**
-- Prefer descriptive identifiers such as `def-coarse-space`, `prop-coarse-invariance`, and `eq-controlled-entourage`.
-- Labels should remain stable even when articles move or displayed theorem numbers change.
-- A repeated labelled block inserted into several documents creates duplicate targets and must be avoided.
-- The CI build should treat Sphinx warnings as failures. If necessary, add a dedicated label-uniqueness check for cases not caught by standard warnings.
+### Labels and linking rules
 
-Proposed build command:
+- Every canonical label must be unique across the complete project.
+- Prefer descriptive identifiers such as `def-coarse-structure`,
+  `thm-descriptive-result`, and `eq-controlled-entourage`.
+- Preserve labels when retained articles move or displayed numbers change.
+- Write each definition once in its owning article, not in an include fragment.
+- An informal description of a result links to its full statement; do not copy
+  the formal statement into multiple pages or embed a theorem page as a fragment.
+- References are ordinary links to standalone pages, not popup definitions.
+
+The strict build command is:
 
 ```bash
-sphinx-build -b html -n -W --keep-going docs docs/_build/html
+python -m sphinx -b html -n -W --keep-going docs docs/_build/html
 ```
 
-Here `-n` requests stricter reference checking, `-W` treats warnings as failures, and `--keep-going` reports more than one problem in a build. These checks catch many structural errors; **they do not verify mathematical correctness**.
-
-### Modular statements and inclusion
-
-MyST supports the `{include}` directive. This allows a formal statement to be maintained once in a separate Markdown fragment and displayed in an explanatory article.
-
-For example, `docs/_snippets/coarse-space.inc.md` might contain only the **body** of a definition, without a label. A canonical page can wrap that content in a *labelled* definition; an explanatory page can reuse the same body in an *unlabelled* box or quote.
-
-Canonical page (illustrative):
-
-`````markdown
-# Coarse space
-
-````{prf:definition} Coarse space
-:label: def-coarse-space
-
-```{include} ../_snippets/coarse-space.inc.md
-```
-````
-`````
-
-The underlying principle is **one source for the statement, one canonical label**. If the same text is displayed on multiple pages, avoid repeating the labelled directive. The canonical occurrence should be the target of stable citations and links. Numbering of repeated unlabelled displays must be tested and configured deliberately.
-
-Fragments in `docs/_snippets/` should not become standalone public pages; configure Sphinx's source discovery appropriately. Inclusion does **not** create a full mathematical-object database or automatically understand logical dependencies.
+Warnings fail the build. Checks cover duplicate labels and unresolved references,
+but do not verify mathematical correctness. Automated mathematical interaction
+tests use temporary fixtures outside the published documentation; the site itself
+must not retain demonstration articles solely for testing.
 
 ## 5. Proofs and reader interactions
 
 The site should render formal results prominently while allowing proofs to be collapsed by default.
 
-A possible proof block is:
+An optional collapsible proof block is:
 
-````markdown
+`````markdown
+````{dropdown} Proof
+:class-container: proof-dropdown
+
 ```{prf:proof}
-:class: dropdown
-
 Detailed proof goes here.
 ```
 ````
+`````
 
-This uses `sphinx-proof` and `sphinx-togglebutton`. The exact presentation should be tested with the selected theme and extension versions. A future **Show all / Hide all proofs** switch would require additional custom JavaScript.
+This uses `sphinx-proof` inside a native `sphinx-design` dropdown. Long theorem
+pages can use ordinary sections for intermediate lemmas and stages of a proof;
+collapsing the entire argument is not required. `sphinx-togglebutton` remains
+available for titled technical remarks. A future global proof switch would need
+additional implementation.
 
 Also desirable:
 
@@ -268,57 +277,25 @@ GitHub Pages should be configured with **GitHub Actions** as its publishing sour
 
 For optional local testing, install the project dependencies and run the same `sphinx-build` command locally. No Python installation is required on the existing PHP hosting package.
 
-## 8. Minimum configuration to implement
+## 8. Configuration
 
-Suggested `requirements.txt` (initially unpinned for the prototype; **pin tested versions** before stabilizing deployment):
+The implemented configuration is in `docs/conf.py`. Website dependencies and
+transitive version pins are in `requirements.txt` and `constraints.txt`.
 
-```text
-sphinx
-myst-parser
-sphinx-proof
-sphinx-togglebutton
-sphinx-design
-pydata-sphinx-theme
-```
+The extensions are MyST Parser, sphinx-proof, sphinx-togglebutton, sphinx-design,
+MathJax, and Sphinx's GitHub Pages support. The theme is PyData. The configuration
+uses the actual `MatthiasLudewig/coarse-phases` repository and links preview edits
+to the pull-request branch; published pages will link edits to `main`.
 
-Illustrative `docs/conf.py`:
+`docs/index.md` supplies navigation. Future mathematical pages belong in separate
+Articles and Theorems toctrees. The site currently retains only its homepage,
+authoring guide, and bibliography shell while awaiting the author's article list.
+There is no shared definition-fragment directory or special source exclusion
+for one. Keep generated `_build` directories excluded from source discovery.
 
-```python
-project = "Coarse Geometry and Topological Phases"
-
-extensions = [
-    "myst_parser",
-    "sphinx_proof",
-    "sphinx_togglebutton",
-    "sphinx_design",
-    "sphinx.ext.mathjax",
-]
-
-myst_enable_extensions = [
-    "dollarmath",
-    "amsmath",
-    "colon_fence",
-]
-
-html_theme = "pydata_sphinx_theme"
-html_theme_options = {
-    "use_edit_page_button": True,
-    "show_nav_level": 2,
-}
-html_context = {
-    "github_user": "USERNAME",
-    "github_repo": "coarse-phases",
-    "github_version": "main",
-    "doc_path": "docs",
-}
-
-html_static_path = ["_static"]
-html_css_files = ["custom.css"]
-exclude_patterns = ["_build", "_snippets/**"]
-nitpicky = True
-```
-
-The `USERNAME`, repository name, and actual theme settings must be updated. The configuration is a **starting point**, not yet tested against a created repository. A Sphinx `toctree` in `docs/index.md` should define the initial navigation. A proper deployment workflow YAML must be added and tested.
+GitHub Actions performs the build and browser checks. Publication is gated on a
+public repository, the `main` branch, and `ENABLE_PAGES=true`; it is disabled
+throughout private drafting.
 
 ## 9. Hosting, cost, and portability
 
@@ -354,21 +331,32 @@ These are achievable with extensions or custom development but should not be mis
 7. **Theme:** final PyData layout and detailed visual design.
 8. **Initial contributors:** account/access and review rules for invited colleagues.
 
-## 12. Recommended implementation sequence
+## 12. Implementation and acceptance criteria
 
-- [ ] Create a GitHub repository (initially public if free Pages hosting is desired).
-- [ ] Add the Sphinx project skeleton, MyST configuration, `requirements.txt`, `.gitignore`, and a GitHub Actions workflow.
-- [ ] Choose a minimal `index.md` navigation structure.
-- [ ] Create **five interconnected example articles**, sufficient to test definitions, theorems, proofs, references, reusable fragments, and LaTeX rendering.
-- [ ] Add at least one proof collapsed by default and one canonical definition reused in an explanatory article without duplicated labels.
-- [ ] Confirm that duplicate labels or unresolved references produce an actionable failed build.
-- [ ] Configure GitHub Pages deployment and verify the live example site.
-- [ ] Enable branch protection and pull-request review procedures.
-- [ ] Add an **Edit this page** link and basic custom CSS.
-- [ ] Ask Codex to propose a test article through a pull request; inspect the build log and review flow.
-- [ ] Decide on a custom domain, bibliography workflow, and licence before wider publication.
+The private repository and initial Sphinx infrastructure have been created.
+The original five demonstration articles and definition fragment have been
+removed following the author's revised editorial decision.
 
-**Prototype acceptance criteria:** A reader can browse a public mathematical article, navigate to another article, follow a link to a specific labelled theorem/definition, expand a proof, and open an edit link. A contributor can propose a Markdown edit; GitHub Actions validates it; the author can review it; and an approved merge publishes an updated static site without modifying the existing personal homepage.
+Next steps:
+
+- [ ] Receive the author's list of articles to draft.
+- [ ] Draft regular articles with their own labelled definitions.
+- [ ] Add standalone theorem pages where a full statement or longer proof is
+      useful; include intermediate lemmas as needed. Proofs are optional.
+- [ ] Link informal discussions to full results and prerequisite definitions.
+- [ ] Review the mathematics and rendered output before merging.
+- [ ] Decide on a licence and eventual public visibility.
+- [ ] Enable Pages and verify the live site when publication is requested.
+- [ ] Enable branch protection when available for the repository's plan and
+      visibility; use the pull-request procedure manually while private.
+
+Acceptance criteria: readers can navigate to full articles, follow links to
+labelled definitions in those articles, and open standalone theorem pages with
+or without proofs. Articles can retain short results and proofs. Longer theorem
+pages can organize arguments using intermediate lemmas. Mathematical content is
+not transcluded between pages. Contributors propose edits through pull requests;
+GitHub checks the build and the author reviews the mathematics. After publication
+is explicitly enabled, approved changes on `main` produce the public static site.
 
 ## 13. Reference documentation
 
@@ -386,4 +374,4 @@ These are achievable with extensions or custom development but should not be mis
 
 ---
 
-*This document summarizes current project requirements and proposed implementation details. It can be placed in the future repository as `PROJECT_BRIEF.md` or supplied directly to Codex as the implementation specification.*
+*This document records the current requirements, including the revised editorial architecture of 6 November 2026. See `SETUP.md` for the current implementation state.*

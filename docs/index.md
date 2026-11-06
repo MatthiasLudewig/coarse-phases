@@ -1,51 +1,32 @@
 # Coarse Geometry and Topological Phases
 
 A mathematical wiki about locality, large-scale geometry, and the topology of
-quantum systems. It brings together precise reference statements and articles
-explaining how those statements are used.
+quantum systems.
 
-**Start with [Coarse spaces: the idea](geometry/coarse-spaces.md)** for the
-geometric picture, then follow the path to [Roe algebras](algebras/roe-algebras.md)
-and [topological phases](phases/introduction.md).
+The initial demonstration articles have been removed. The first article list
+will be supplied by the author before new mathematical content is drafted.
 
-The initial articles are working drafts. They establish notation and demonstrate
-the wiki's structure; the author will review the mathematics before publication.
-Throughout this wiki, *coarse space* abbreviates *bornological coarse space*.
+## Articles
 
-```{toctree}
-:maxdepth: 1
-:caption: Exposition
+Regular articles combine motivation, definitions, examples, and explanations.
+Each definition belongs to its relevant article and has a stable label. A
+reference to that definition opens the whole article at the labelled statement.
+Short theorems and proofs may also appear directly in an article.
 
-geometry/coarse-spaces
-algebras/roe-algebras
-phases/introduction
-```
+## Theorem pages
 
-```{toctree}
-:maxdepth: 1
-:caption: Formal reference
+A standalone theorem page contains a full formal statement, with or without a
+proof. It can develop a longer argument using intermediate lemmas. Articles can
+give an informal account of the result and link to its theorem page, keeping
+the main exposition concise.
 
-reference/coarse-space
-reference/coarse-maps
-```
+Both articles and theorem pages can be read independently. New pages will be
+listed here as they are drafted.
 
 ```{toctree}
 :maxdepth: 1
 :caption: About this wiki
 
-bibliography/index
 about/authoring
+bibliography/index
 ```
-
-## Two ways to read
-
-The **expository articles** develop motivation and examples. The **formal
-reference** holds the canonical definitions and results. Links such as
-{prf:ref}`def-coarse-space` take you directly to a mathematical statement.
-
-## Scope
-
-The starting point is coarse spaces and controlled operators. Later articles
-can develop geometric modules, coarse homology, operator K-theory, local nets,
-quantum cellular automata, and Wannier bases. These topics are a roadmap rather
-than a claim that the present draft already covers them.

@@ -42,7 +42,6 @@ html[data-theme="dark"] {
 }
 .proof-dropdown { margin: 1rem 0 2rem; }
 .proof-dropdown .proof { box-shadow: none; }
-.definition-recall { border-left-color: var(--pst-color-secondary); }
 .math { overflow-x: auto; }
 
 @media (max-width: 575px) {

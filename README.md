@@ -1,7 +1,24 @@
 # Coarse Geometry and Topological Phases
 
 A mathematical wiki built with **Sphinx, MyST Markdown, and the PyData theme**.
-The first five interconnected articles are drafts for the author's review.
+The site infrastructure is ready for the author's article list. The initial
+demonstration articles have been removed.
+
+## Content model
+
+There are two kinds of mathematical pages:
+
+- **Articles** combine definitions, motivation, examples, and discussion. Each
+  definition is written directly in its owning article. References point to its
+  label and open that complete article; definitions are not included as shared
+  fragments in other pages.
+- **Theorem pages** contain full formal statements, with or without proofs.
+  Longer proofs may include intermediate lemmas and supporting arguments.
+  Articles can state the idea informally and link to the theorem page.
+
+Both types are standalone. Theorems and short proofs can also stay directly in
+articles when this keeps the exposition clear. This architecture supersedes the
+original definition/exposition split and shared-fragment design.
 
 ## Drafting and previewing
 
@@ -25,18 +42,18 @@ Artifacts expire after seven days; rerun a workflow to generate a fresh preview.
 
 | Path | Purpose |
 | --- | --- |
-| `docs/reference/` | Canonical definitions and results with stable labels |
-| `docs/geometry/`, `algebras/`, `phases/` | Explanations and connections |
-| `docs/_snippets/` | Shared statement bodies, excluded as standalone pages |
-| `docs/about/authoring.md` | Authoring conventions and working examples |
-| `docs/bibliography/` | Reading list and portable BibTeX records |
+| `docs/articles/` | Regular articles, including their own labelled definitions |
+| `docs/theorems/` | Standalone formal results and optional proofs |
+| `docs/about/authoring.md` | Authoring conventions and syntax illustrations |
+| `docs/bibliography/` | Literature references for the articles as they are drafted |
 | `docs/conf.py`, `docs/_static/custom.css` | Sphinx configuration and appearance |
 | `.github/workflows/build-and-deploy.yml` | Validation, previews, optional deployment |
 | `tests/` | Build-failure checks and browser acceptance checks |
 
 `input/` contains local research material and is deliberately ignored by Git.
-The original `coarse_geometry_topological_phases_wiki_project_brief.md` records
-the requirements; implementation status and remaining decisions are in
+`coarse_geometry_topological_phases_wiki_project_brief.md` records the
+requirements, including the revised architecture of 6 November 2026;
+implementation status and remaining decisions are in
 [`SETUP.md`](SETUP.md).
 
 ## Publishing later
@@ -71,8 +88,11 @@ python -m sphinx -b html -n -W --keep-going docs docs/_build/html
 
 Warnings fail the build. Tests also deliberately introduce a duplicate theorem
 label and unresolved references in temporary copies and require those builds to
-fail. Chromium checks navigation, canonical links, proof expansion, MathJax,
-search, edit URLs, and mobile layout. No external link checker blocks ordinary
+fail. Chromium checks the site's navigation, search, edit URLs, and mobile layout.
+Separate temporary fixtures check links to definitions in full articles,
+standalone theorems with and without proofs, inline results, proof expansion,
+and MathJax. Fixtures are never included in the preview artifacts.
+No external link checker blocks ordinary
 edits on temporary failures at literature sites.
 
 ## Licence

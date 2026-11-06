@@ -19,7 +19,7 @@ extensions = [
 ]
 myst_enable_extensions = ["dollarmath", "amsmath", "colon_fence"]
 myst_heading_anchors = 3
-exclude_patterns = ["_build", "_snippets/**", "Thumbs.db", ".DS_Store"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 nitpicky = True
 numfig_secnum_depth = 0
 html_theme = "pydata_sphinx_theme"

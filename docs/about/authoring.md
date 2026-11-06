@@ -1,55 +1,131 @@
 # Writing and reviewing articles
 
-The source is ordinary Markdown with MyST directives and LaTeX mathematics.
-Use the **Edit on GitHub** link to propose a change to the current page.
+The source is Markdown with MyST directives and LaTeX mathematics. Use the
+**Edit on GitHub** link to propose a change to the current page.
 
-## Editorial conventions
+## Two mathematical page types
 
-- Put canonical statements in `reference/`; put motivation and applications in
-  the subject directories. State all hypotheses and distinguish definitions,
-  established results, conjectures, and physical interpretations.
-- In this wiki, *coarse space* means *bornological coarse space*. A coarse map
-  is controlled and proper. Spell out other conventions when they first arise.
-- Use unique, descriptive labels: `def-coarse-space`, `thm-lattice-line`,
-  `eq-fermi-projection`. Keep them stable as the text evolves. The displayed
-  statement numbers are project-wide and may change when articles are inserted.
-- Add each new article to the toctree in `index.md`. Link it to the relevant
-  reference statements and related articles.
-- Add original sources to the reading list and BibTeX file. Check bibliographic
-  details and the hypotheses of cited results against those sources.
+**Regular articles** live in `docs/articles/`. Each article develops a topic
+through motivation, definitions, examples, and explanations. Put definitions
+directly in the article where they belong. For example, an article titled
+*Bornological coarse space* can define coarse structure, bornological space,
+and bornological coarse space, each with its own label.
 
-## Statements and references
+**Theorem pages** live in `docs/theorems/`. Each presents a full formal result
+with all its hypotheses. It may include a proof, or explicitly say that the
+proof is omitted and give a literature reference when available. Long proofs
+can be developed using sections, intermediate lemmas, and supporting arguments.
+Include links back to the related articles and to prerequisite definitions.
 
-Write a labelled statement using a theorem directive:
+Both types are standalone pages. An article may explain a result informally and
+link to the formal statement on its theorem page. Articles may also contain
+theorems and short proofs directly: a separate theorem page is useful when a
+long argument would interrupt the exposition, not mandatory for every result.
+
+The homepage, this guide, and the bibliography are supporting site pages, not
+additional mathematical page types.
+
+## Definitions belong to articles
+
+Write each definition once, directly in its owning article. There is no separate
+definition-reference layer and no collection of definition fragments. Do not
+use `{include}` to reproduce definitions or theorem pages in other articles.
+
+The following is a syntax illustration for a future article, not drafted
+mathematical content:
 
 ````markdown
-```{prf:definition} Example title
-:label: def-your-new-concept
+(article-bornological-coarse-space)=
+# Bornological coarse space
 
-Your mathematical definition, with $x\in X$ for inline mathematics.
+Motivation and overview.
+
+```{prf:definition} Coarse structure
+:label: def-coarse-structure
+
+Write the complete definition here.
 ```
 
-See {prf:ref}`def-your-new-concept`.
+```{prf:definition} Bornological space
+:label: def-bornological-space
+
+Write the complete definition here.
+```
+
+```{prf:definition} Bornological coarse space
+:label: def-bornological-coarse-space
+
+Write the complete definition here.
+```
+
+Examples and further discussion.
 ````
 
-Use `{ref}` for labelled headings, `{eq}` for equations, and ordinary Markdown
-links to other `.md` files. The strict build reports unresolved targets.
+## References open the owning page
 
-## One statement body, one canonical label
+From another article, use a reference to the relevant label:
 
-The body of {prf:ref}`def-coarse-space` lives in `_snippets/coarse-space.inc.md`.
-The reference page wraps its include in a labelled `prf:definition`. The
-[expository page](../geometry/coarse-spaces.md) wraps the same include in an
-unnumbered admonition. Changing the fragment updates both displays.
+```markdown
+See {prf:ref}`coarse structure <def-coarse-structure>`.
+See {ref}`article-bornological-coarse-space` for the broader discussion.
+```
 
-Fragments must not contain canonical labels. They are excluded from standalone
-page discovery, and the explanatory restatement does not consume a theorem
-number. Relative include paths are resolved from the including document.
+The first link opens the whole article and scrolls to the definition. The second
+opens the article at its labelled heading. These are normal page links, not
+embedded excerpts or popup definitions.
 
-## Collapsible proofs
+Use `{eq}` for labelled equations and ordinary Markdown links for page paths.
+All labels must be unique across the project. Preserve labels and URLs as
+reviewed content evolves. Displayed theorem numbers may change; cite labels.
 
-Use a native dropdown around the proof. It starts closed and also works without
-JavaScript:
+## Standalone results
+
+Use descriptive filenames such as `theorems/descriptive-result.md`. A theorem
+page can be structured as follows:
+
+````markdown
+(theorem-descriptive-result)=
+# Descriptive result
+
+Context and links to the relevant articles and definitions.
+
+```{prf:theorem} Descriptive result
+:label: thm-descriptive-result
+
+Full hypotheses and formal statement.
+```
+
+## Supporting lemmas
+
+Supporting results, when needed, with their own labels and proofs.
+
+## Proof
+
+The full argument, or an explicit note that no proof is supplied here.
+
+## Related articles and references
+
+Links to the motivating articles and original literature.
+````
+
+An article can give an informal description and then link to the result:
+
+```markdown
+Informally, the result says ... .
+See {prf:ref}`the full statement <thm-descriptive-result>` and its proof.
+```
+
+Adjust the wording if the target page does not supply a proof. Avoid duplicating
+the full formal statement in both places. Do not confuse an omitted proof with
+an unknown proof or a conjecture; state the status accurately.
+
+## Mathematical formatting and proofs
+
+Use `$x\in X$` for inline mathematics and `$$...$$` for a display. Use a
+`{math}` directive with `:label:` when an equation needs a stable target.
+
+A short proof can stay with a theorem inside an article. To make a proof
+collapsible, use a native dropdown around `prf:proof`:
 
 `````markdown
 ````{dropdown} Proof
@@ -61,24 +137,32 @@ Your proof goes here.
 ````
 `````
 
-See {prf:ref}`thm-lattice-line` for a working example. For a technical remark,
-use an admonition with `:class: dropdown`; `sphinx-togglebutton` supplies its
-expand/collapse button. Do not attach that class directly to `prf:proof`:
-its generated HTML differs from a titled admonition.
+This starts closed and also works without JavaScript. On a long theorem page,
+use ordinary sections for the supporting lemmas and stages of the argument;
+collapsible proof blocks are optional and should preserve readability.
+For a technical remark, an admonition with `:class: dropdown` uses
+`sphinx-togglebutton`. Do not attach that class directly to `prf:proof`, whose
+generated HTML differs from a titled admonition.
 
-## Review in GitHub
+## Conventions, navigation, and review
 
-Create a branch and pull request. GitHub Actions builds the site, checks that
-invalid references and duplicate theorem labels fail, and exercises the browser
-interactions. Download `wiki-html` from the run to inspect the rendered draft.
+- In this wiki, *coarse space* abbreviates *bornological coarse space*. A coarse
+  map is controlled and proper. State other conventions where first needed.
+- Distinguish definitions, established results, conjectures, and physical
+  interpretations, and state the hypotheses of each result explicitly.
+- Add each new mathematical page to an **Articles** or **Theorems** toctree in
+  `index.md`. No empty mathematical toctrees are needed before pages exist.
+- Check citations against original sources. Add the sources needed by the
+  actual articles to the bibliography; do not import a speculative reading list.
+- Create a branch and pull request. GitHub Actions checks the build and reader
+  interactions. Download `wiki-html` from the run to review the rendered pages.
+- The principal author reviews the mathematics before merging. AI-assisted
+  changes follow the same process. Passing CI does not verify correctness.
 
-The principal author reviews mathematical correctness and decides when to
-merge. AI-assisted additions follow the same review process. While the
-repository is private on GitHub Free, this is a manual editorial rule; enforce
-it with branch protection when the repository becomes public.
+While the repository is private on GitHub Free, the review procedure is manual;
+enforced branch protection is reserved for the public stage. Publication remains
+disabled until the author requests it.
 
-## Future features
-
-Backlinks, semantic dependency graphs, automatic statement indexes, and a
-site-wide proof switch are not implemented in this initial version. Keep
-identifiers stable so these features can be added later.
+The sample articles were deleted following the editorial decision of
+6 November 2026. Replacement mathematical pages will be drafted after the
+author provides the next article list.

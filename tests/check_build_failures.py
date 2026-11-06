@@ -3,19 +3,17 @@
 Runs on the GitHub runner. All mutations happen in temporary copies of docs/.
 """
 
-from pathlib import Path
-import shutil
 import subprocess
 import sys
-import tempfile
+
+from support import THEOREM, fixture_source
 
 
-ROOT = Path(__file__).resolve().parents[1]
 CASES = [
     (
         "duplicate theorem-domain label",
-        "\n```{prf:definition} Duplicate\n:label: def-coarse-space\n\nDuplicate.\n```\n",
-        "duplicate definition label 'def-coarse-space'",
+        "\n```{prf:definition} Duplicate\n:label: def-ci-object\n\nDuplicate.\n```\n",
+        "duplicate definition label 'def-ci-object'",
     ),
     (
         "missing theorem-domain reference",
@@ -34,23 +32,20 @@ CASES = [
     ),
     (
         "duplicate heading label",
-        "\n(ref-coarse-space)=\n## Duplicate heading\n",
-        "duplicate label ref-coarse-space",
+        "\n(article-ci-object)=\n## Duplicate heading\n",
+        "duplicate label article-ci-object",
     ),
 ]
 
 
 def main():
     for name, extra, diagnostic in CASES:
-        with tempfile.TemporaryDirectory(prefix="wiki-invalid-") as directory:
-            root = Path(directory)
-            source = root / "docs"
-            shutil.copytree(ROOT / "docs", source, ignore=shutil.ignore_patterns("_build"))
-            page = source / "geometry" / "coarse-spaces.md"
+        with fixture_source() as source:
+            page = source / f"{THEOREM}.md"
             page.write_text(page.read_text(encoding="utf-8") + extra, encoding="utf-8")
             result = subprocess.run(
                 [sys.executable, "-m", "sphinx", "-E", "-b", "html", "-n", "-W",
-                 "--keep-going", "-q", str(source), str(root / "html")],
+                 "--keep-going", "-q", str(source), str(source.parent / "html")],
                 text=True, capture_output=True, timeout=120,
             )
             output = result.stdout + result.stderr
