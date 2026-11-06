@@ -92,6 +92,7 @@ For any fixture object $x$, one has $0+x=x$.
 ```
 
 No proof is supplied on this test-only page.
+
 See the {prf:ref}`definition in its owning article <def-ci-object>`.
 """,
 }

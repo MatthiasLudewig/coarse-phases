@@ -299,11 +299,11 @@ throughout private drafting.
 
 ## 9. Hosting, cost, and portability
 
-The intended starting arrangement uses a **public GitHub repository + GitHub Actions + GitHub Pages**, which can operate under free GitHub offerings for normal public-project use, subject to GitHub's current quotas and service conditions. Sphinx and its discussed extensions/themes are open source. AI-assisted Codex usage is subject to the user's ChatGPT/Codex plan and usage limits.
+Drafting takes place in the **private GitHub repository**, with builds and downloadable previews produced by GitHub Actions. Publication is disabled. When the author requests publication, the intended arrangement is a public repository with GitHub Pages, subject to GitHub's quotas and service conditions. Sphinx and its discussed extensions/themes are open source. AI-assisted Codex usage is subject to the user's ChatGPT/Codex plan and usage limits.
 
 No additional MySQL database, PHP environment, or VPS is needed for the public static site.
 
-If a private repository is needed later, review the relevant GitHub plan/Pages restrictions and alternatives. The generated HTML can alternatively be deployed to the user's **existing personal webspace**, independently of its current PHP/MySQL site. A custom subdomain can be attached to GitHub Pages without moving the homepage.
+If the source must remain private at publication, review the relevant GitHub plan/Pages restrictions and alternatives. The generated HTML can alternatively be deployed to the user's **existing personal webspace**, independently of its current PHP/MySQL site. A custom subdomain can be attached to GitHub Pages without moving the homepage.
 
 The Markdown source remains portable. The Sphinx-specific directive syntax is not necessarily rendered correctly by generic Markdown wiki engines, so portability is high for prose/data but not completely universal for mathematical environments.
 
@@ -320,16 +320,26 @@ The Markdown source remains portable. The Sphinx-specific directive syntax is no
 
 These are achievable with extensions or custom development but should not be mistaken for built-in capabilities of a fresh Sphinx installation.
 
-## 11. Decisions still open
+## 11. Established decisions and remaining choices
 
-1. **Repository identity:** GitHub user/organization and repository name; no actual account or repository has yet been created as part of this plan.
-2. **Repository visibility:** public from the start, or private during drafting and public later? Public is simplest for free GitHub Pages hosting.
-3. **Domain:** keep the GitHub URL initially or configure a subdomain of the existing personal website.
-4. **Site name and scope:** final public title, mathematical taxonomy, and initial entry list.
-5. **Editorial conventions:** theorem numbering, identifier conventions, proof style, language, and treatment of conjectures versus established results.
-6. **Bibliography and licensing:** citation format and licence for reuse of the mathematical exposition.
-7. **Theme:** final PyData layout and detailed visual design.
-8. **Initial contributors:** account/access and review rules for invited colleagues.
+The repository is `MatthiasLudewig/coarse-phases`, private during drafting.
+The site title is **Coarse Geometry and Topological Phases**. PyData is the
+current theme; its HTML layout can be changed later. The two mathematical page
+types and definition ownership rules are specified above and in the authoring
+guide. Builds run on GitHub Actions, and changes are reviewed through pull
+requests.
+
+Remaining choices:
+
+1. **Article list and taxonomy:** await the author's next list before drafting.
+2. **Publication timing and domain:** the author decides when to make the
+   repository public and enable Pages, and whether to use a custom subdomain.
+3. **Editorial refinements:** numbering and other presentation details can be
+   adjusted as the first articles are reviewed; preserve stable labels.
+4. **Bibliography and licensing:** citation format and licence for reuse of the
+   mathematical exposition.
+5. **Visual design:** further PyData layout and styling changes.
+6. **Contributors:** access and review arrangements for invited colleagues.
 
 ## 12. Implementation and acceptance criteria
 
