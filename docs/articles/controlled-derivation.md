@@ -6,7 +6,8 @@ Agent-generated, not reviewed yet
 ```
 
 Controlled derivations are infinitesimal operations which enlarge the support
-of an observable by a fixed entourage. In a local matrix net they can be
+of an observable by a fixed entourage. 
+In a local matrix net they can be
 written as sums of local commutators.
 
 ## Definition
