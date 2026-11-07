@@ -37,9 +37,9 @@ A *bornological space* is a set equipped with a bornology.
 
 For an entourage $E$ and a subset $Y\subseteq X$, the *$E$-fattening* of $Y$ is
 
-```{math}
-:label: eq-entourage-fattening
+(def-fattening)=
 
+```{math}
 Y_E:=\{x\in X:\exists y\in Y,\ (x,y)\in E\}.
 ```
 

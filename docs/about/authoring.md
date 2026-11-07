@@ -81,7 +81,8 @@ The first link opens the whole article and scrolls to the definition. The second
 opens the article at its labelled heading. These are normal page links, not
 embedded excerpts or popup definitions.
 
-Use `{eq}` for labelled equations and ordinary Markdown links for page paths.
+Use `{eq}` for numbered equations, `{ref}` with descriptive text for ordinary
+labels, and ordinary Markdown links for page paths.
 All labels must be unique across the project. Preserve labels and URLs as
 reviewed content evolves. Statements have no visible numbers: add `:nonumber:`
 to each statement directive and use descriptive text for its links.
@@ -144,17 +145,30 @@ unnecessary.
 ## Mathematical formatting and proofs
 
 Use `$x\in X$` for inline mathematics and `$$...$$` for a display. Use a
-`{math}` directive with `:label:` when an equation needs a stable target.
+`{math}` directive with `:label:` for a numbered equation. For an unnumbered
+equation with a text link, put an ordinary MyST target before the block and
+omit both `:label:` and `:name:` inside it; either option creates numbering.
 For a multiline `$$` display, put the delimiters on their own lines and leave
 a blank line before the opening delimiter and after the closing delimiter.
 This lets MyST recognize a display even when it follows a sentence or appears
 inside a definition.
 
-Write the $E$-fattening of a subset $Y$ as $Y_E$. The defining equation is
-{eq}`eq-entourage-fattening` on the Coarse space page. Refer to it using:
+Write the $E$-fattening of a subset $Y$ as $Y_E$. Its
+{ref}`defining equation <def-fattening>` on the Coarse space page is unnumbered
+and labelled as follows:
+
+````markdown
+(def-fattening)=
+
+```{math}
+Y_E:=\{x\in X:\exists y\in Y,\ (x,y)\in E\}.
+```
+````
+
+Refer to it using a word or phrase as the link text:
 
 ```markdown
-We use the fattening notation $Y_E$ from {eq}`eq-entourage-fattening`.
+The {ref}`thickening <def-fattening>` of $Y$ is denoted by $Y_E$.
 ```
 
 For a compound set, group it before adding the subscript, as in
