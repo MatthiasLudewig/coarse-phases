@@ -2,7 +2,7 @@
 
 A mathematical wiki built with **Sphinx, MyST Markdown, and the PyData theme**.
 The first requested collection contains 15 topic articles, three stubs, and
-three standalone theorem pages with proofs. Every mathematical page is marked
+four standalone theorem pages with proofs. Unreviewed mathematical pages retain
 `Agent-generated, not reviewed yet`. See the
 [draft review notes](docs/about/draft-review.md) for coverage and mathematical qualifications.
 
@@ -35,7 +35,8 @@ do not need to install Python or Sphinx on their computers.
 1. Open a Markdown page in `docs/` on GitHub and select the pencil to edit it.
 2. Commit the change to a **new branch** and open a pull request.
 3. Wait for **Wiki checks**. In its Actions run, download the `wiki-html` artifact.
-4. Extract the entire ZIP, then open `index.html` in your browser. Follow links,
+4. Refresh the fixed local preview as described below, or extract the entire ZIP
+   and open `index.html` in your browser. Follow links,
    inspect equations, and expand proofs. The `wiki-screenshots` artifact contains
    desktop, dark-mode, and mobile screenshots from the browser checks.
 5. Review the mathematics and merge when satisfied. A build success only verifies
@@ -44,6 +45,26 @@ do not need to install Python or Sphinx on their computers.
 Direct file previews support browsing and proofs. Sphinx search works best over
 HTTP, such as the eventual Pages site; MathJax rendering needs internet access.
 Artifacts expire after seven days; rerun a workflow to generate a fresh preview.
+
+### Fixed local HTML folder
+
+Always refresh the local preview in **`.preview/html/`**. Open
+`.preview/html/index.html` once and keep that browser tab: later updates
+overwrite the same files, so refreshing the browser shows the new build.
+Do not create a new dated preview folder for each edit.
+
+After **Wiki checks** succeeds, use its Actions run ID:
+
+```bash
+python3 scripts/update_preview.py --run RUN_ID
+```
+
+This helper requires Python 3 and an authenticated GitHub CLI (`gh`), but no
+local Sphinx installation. It downloads the successful run's `wiki-html`
+artifact into a temporary directory before replacing files in `.preview/html/`,
+removes obsolete generated files, and records the run and commit in
+`.preview/html/.build-info.json`. The preview stays out of Git. Refresh only
+after the command finishes; a failed download leaves the previous preview intact.
 
 ## Repository map
 
@@ -55,6 +76,7 @@ Artifacts expire after seven days; rerun a workflow to generate a fresh preview.
 | `docs/bibliography/` | Literature references for the articles as they are drafted |
 | `docs/conf.py`, `docs/_static/custom.css` | Sphinx configuration and appearance |
 | `.github/workflows/build-and-deploy.yml` | Validation, previews, optional deployment |
+| `scripts/update_preview.py` | Refresh the fixed `.preview/html/` folder from a successful CI run |
 | `tests/` | Build-failure checks and browser acceptance checks |
 
 `input/` contains local research material and is deliberately ignored by Git.

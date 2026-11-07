@@ -55,6 +55,10 @@
   drafts, make the repository public, or enable Pages without the author's request.
 - Sphinx builds and browser checks run on GitHub Actions. Do not require a local
   Sphinx installation. Local source editing and viewing downloaded HTML are fine.
+- Refresh downloaded HTML in the fixed `.preview/html/` directory using
+  `python3 scripts/update_preview.py --run RUN_ID` after a successful CI run.
+  Overwrite that preview for subsequent builds so existing browser tabs can
+  simply refresh; do not create new dated preview directories.
 - Keep `input/`, local environments, credentials, and generated builds out of Git.
 - Keep the build check named `Wiki checks` stable for future branch protection.
 - Do not run Homebrew installs, upgrades, or cleanup for ordinary wiki work.

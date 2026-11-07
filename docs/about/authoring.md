@@ -206,7 +206,11 @@ generated HTML differs from a titled admonition.
 - Check citations against original sources. Add the sources needed by the
   actual articles to the bibliography; do not import a speculative reading list.
 - Create a branch and pull request. GitHub Actions checks the build and reader
-  interactions. Download `wiki-html` from the run to review the rendered pages.
+  interactions. Refresh the fixed local preview from the successful run with
+  `python3 scripts/update_preview.py --run RUN_ID`. Open
+  `.preview/html/index.html` once and refresh the same browser tab after later
+  updates. The helper downloads `wiki-html` and overwrites the same folder;
+  no local Sphinx installation is needed.
 - The principal author reviews the mathematics before merging. AI-assisted
   changes follow the same process. Passing CI does not verify correctness.
 
