@@ -74,6 +74,7 @@ A *coarse homology theory* is a functor $E:\mathrm{BornCoarse}\to\mathcal D$ wit
 ```
 
 Equivalently, the excision square gives a cofiber sequence
+
 $$
 E(\mathcal Y\Cap\mathcal Z)\longrightarrow
 E(\mathcal Y)\oplus E(\mathcal Z)\longrightarrow E(\mathcal Y\Cup\mathcal Z).
@@ -96,6 +97,7 @@ example, including its stabilization and quotient conventions.
 
 The decomposition of $X\otimes\mathbb R$ into its positive and negative
 half-spaces gives
+
 $$
 E(X\otimes\mathbb R)\simeq\Sigma E(X).
 $$

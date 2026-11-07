@@ -55,12 +55,14 @@ An ordered coarsely transverse partition defines a coarse **cohomology** class.
 
 Let $(A_0,\ldots,A_n)$ be a coarsely transverse partition.
  Its *partition cocycle* is the coarse cocycle $\theta_A$ defined by
+
 $$
 \theta_A(x_0,\ldots,x_n)
  =\det\bigl(A_i(x_j)\bigr)_{0\leq i,j\leq n}
  =\sum_{\sigma\in S_{n+1}}\operatorname{sgn}(\sigma)
    \prod_{i=0}^n A_i(x_{\sigma(i)}),
 $$
+
 where we also write $A_i$ for the indicator function of the subset $A_i$.
 The corresponding *partition class* is its cohomology class $[\theta_A]\in HX^n(X;\mathbb R)$.
 ```
