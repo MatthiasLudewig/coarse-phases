@@ -9,7 +9,7 @@ theorem pages.
 Agent-generated, not reviewed yet
 ```
 
-The first collection contains 15 topic articles, three stubs, and three theorem
+The current collection contains 15 topic articles, three stubs, and four theorem
 pages with proofs. All await mathematical review. The
 [review notes](about/draft-review.md) record coverage and points
 requiring particular attention.
@@ -62,6 +62,7 @@ articles/freed-hopkins-classification
 
 theorems/local-objects-points
 theorems/controlled-derivations-locally-generated
+theorems/finite-body-stable-vanishing
 theorems/ample-modules
 ```
 

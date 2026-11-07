@@ -73,6 +73,67 @@ The proof uses normalized local implementers and the exact-support
 decomposition furnished by conditional expectations. It does not require a
 uniform bound on the dimensions of the point algebras.
 
+## Uniformly finite body order
+
+For the following algebraic construction, use complex derivations and write
+local implementers as $\operatorname{ad}(h)(a)=[h,a]$, without a
+self-adjointness requirement. Let $\Lambda$ be the locally finite support of
+the point algebras of $\mathcal A$.
+
+```{prf:definition} Uniformly finite body order
+:nonumber:
+:label: def-finite-body-controlled-derivation
+
+A controlled derivation has *uniformly finite body order* if it admits a
+presentation
+
+$$
+D=\sum_i\operatorname{ad}(h_i),\qquad
+h_i\in\mathcal A_{F_i},\quad F_i\subseteq\Lambda,
+$$
+
+where the family $(F_i)$ is locally finite and uniformly bounded, and there
+is a finite integer $k_D$ such that $|F_i|\leq k_D$ for every $i$.
+Denote these derivations by $\mathfrak d_{\mathrm{fb}}(\mathcal A)$.
+```
+
+The bound may depend on the derivation. There is no bound on the norms of the
+implementers or on the dimensions of the point algebras. The cardinality
+counts physical sites, even when a point algebra has several tensor factors.
+Equivalently, the nonzero terms in the
+{ref}`exact-support decomposition <article-spin-system>` have uniformly
+bounded cardinality: decomposing each $h_i$ by partial traces only replaces
+$F_i$ by its subsets.
+
+This is a complex Lie subalgebra. Terms with disjoint supports commute, and a
+bracket of terms supported on $F$ and $G$ is supported on $F\cup G$.
+If the original bounds are $k$ and $\ell$, the new bound is at most
+$k+\ell$. The unions of intersecting supports remain uniformly bounded and
+locally finite. Extending a derivation by zero on an additional tensor factor
+preserves finite body order.
+
+Onsite and two-site interactions are examples. On a discrete metric space of
+bounded geometry, every controlled derivation has uniformly finite body order:
+the number of sites in a support of fixed diameter is uniformly bounded.
+For arbitrary coarse spaces, controlled supports can have unbounded
+cardinality, so this can be a proper subalgebra of all controlled derivations.
+
+## Stable vanishing in a ray direction
+
+For a product $X=Y\otimes\mathbb N$, uniformly finite-body controlled
+derivations have stably vanishing positive-degree Lie algebra homology, without
+a bounded-geometry assumption on $Y$. One auxiliary local matrix net can be
+chosen for all positive degrees simultaneously. The full statement and proof
+are on {ref}`Stable vanishing for finite-body controlled derivations
+<theorem-finite-body-stable-vanishing>`.
+
+The theorem also kills classes in the homology of the full controlled
+derivation algebra that come from this subalgebra. Its proof does not establish
+stable vanishing for all controlled derivations on arbitrary $Y$: the
+finite-body condition is used to keep the chain homotopies algebraic.
+Degree zero is excluded, since a Lie algebra homomorphism induces the identity
+on $H_0(-;\mathbb C)=\mathbb C$.
+
 ## Results of Higson–Kato
 
 [Higson–Kato](https://arxiv.org/abs/2607.08455) study a stabilized
