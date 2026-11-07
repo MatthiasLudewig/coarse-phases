@@ -148,7 +148,10 @@ def check_article_collection(browser, errors):
     documents = sorted((ROOT / 'docs' / 'articles').glob('*.md'))
     documents += sorted((ROOT / 'docs' / 'theorems').glob('*.md'))
     warning = 'Agent-generated, not reviewed yet'
-    screenshots = {'coarse-space', 'coarse-index', 'controlled-derivations-locally-generated'}
+    screenshots = {
+        'coarse-space', 'coarse-index', 'controlled-derivations-locally-generated',
+        'controlled-derivation', 'finite-body-stable-vanishing',
+    }
     with serve(HTML) as base:
         for width, height, mode in [(1440, 1000, 'desktop'), (390, 844, 'mobile')]:
             context = browser.new_context(viewport={'width': width, 'height': height})
