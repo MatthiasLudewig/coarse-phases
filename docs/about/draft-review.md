@@ -7,8 +7,7 @@ Agent-generated, not reviewed yet
 
 The first draft follows the author's requested article list and subsection
 structure. It contains 15 full topic articles, three deliberately short stubs,
-and, with the finite-body stable-vanishing addition, four standalone theorem
-pages with proofs. Passing the website checks
+and three standalone theorem pages with proofs. Passing the website checks
 verifies references and rendering, not the mathematics.
 
 ## Coverage
@@ -20,12 +19,12 @@ verifies references and rendering, not the mathematics.
 | [Coarse transversality](../articles/coarse-transversality.md) | Transverse families, partitions, cocycles, and pairings |
 | [Flasque coarse space](../articles/flasque-coarse-space.md) | Iterated maps, generalized flasqueness, and ray factorization |
 | [Higson corona](../articles/higson-corona.md) | Compactifications, geometric boundaries, and big-family coronas |
-| [Coarse homology theory](../articles/coarse-homology-theory.md) | Group and spectrum axioms, coarsening, and cones |
+| [Coarse homology theory](../articles/coarse-homology-theory.md) | Group and spectrum axioms, excision, and suspension |
 | [Ordinary coarse homology](../articles/ordinary-coarse-homology.md) | Controlled chains, homology groups, and the measure model |
 | [Controlled objects](../articles/controlled-objects.md) | Coefficient categories, morphisms, local objects, and Azumaya objects |
 | [Spin system/local nets](../articles/spin-system.md) | Matrix nets and conditional expectations |
 | [Quantum cellular automaton](../articles/quantum-cellular-automaton.md) | Stable QCA, coarse homology, the GNVW index, and plane vanishing |
-| [Controlled derivation](../articles/controlled-derivation.md) | Local generation, finite body order, and Lie algebra homology |
+| [Controlled derivation](../articles/controlled-derivation.md) | Controlled derivations and local generation |
 | [Geometric module](../articles/geometric-module.md) | Point and continuous models, functional calculus, and ampleness |
 | [Roe algebra](../articles/roe-algebra.md) | Local compactness, propagation, and the local trace-class variant |
 | [Coarse index](../articles/coarse-index.md) | Boundary classes and finite-propagation representatives |
@@ -57,31 +56,18 @@ used without proof; the bibliography contains only publicly available papers.
    not necessarily an intertwining of the $C_0(X)$-representations.
 8. **Index representatives:** the trace condition is local. An odd polynomial
    representative need not be unitary or have a finite-propagation inverse.
-9. **Cone construction:** uniform structure and the stated hypotheses on the
-   coarse theory are needed; the local and ordinary topological theories are
-   distinguished.
-10. **All-module Roe categories:** these require locally compact morphisms and
+9. **All-module Roe categories:** these require locally compact morphisms and
     nonunital-category $K$-theory. The locally finite model is used for the
     general bornological coarse definition.
-11. **QCA:** the spectrum construction uses the stable coarse quotient.
+10. **QCA:** the spectrum construction uses the stable coarse quotient.
     The plane-vanishing discussion compares it with the one-dimensional Brauer
     group; it does not assert circuit triviality on a fixed spin system.
     The article links directly to the public papers for the results used.
-12. **Finite-body stable vanishing:** the new proof concerns algebraic homology
-    with trivial complex coefficients on $Y\otimes\mathbb N$, with $Y$
-    arbitrary and $\mathbb N$ carrying the finite-set bornology. It restricts
-    to uniformly finite body order. Review especially local nilpotence on
-    the source images of the paired-factor swaps, the degree induction using
-    fresh commuting factors, and the locally finite packing that produces
-    one auxiliary net for all positive degrees. The unrestricted
-    controlled-derivation statement is not claimed. This is a new draft
-    argument, not an attribution of the stronger statement to the literature.
 
 ## Standalone proof pages
 
 - [Local objects are determined by their point objects](../theorems/local-objects-points.md).
 - [Controlled derivations are locally generated](../theorems/controlled-derivations-locally-generated.md).
-- [Stable vanishing for finite-body controlled derivations](../theorems/finite-body-stable-vanishing.md).
 - [Controlled unitary equivalence of ample modules](../theorems/ample-modules.md).
 
 Each states its hypotheses and links to the owning definition articles. No

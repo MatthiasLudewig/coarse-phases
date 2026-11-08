@@ -44,12 +44,6 @@ Jeongwan Haah,
 [Invertible subalgebras](https://arxiv.org/abs/2211.02086v4),
 Communications in Mathematical Physics **403** (2023), 661–698.
 
-(bib-higson-kato)=
-## Higson–Kato: locally generated derivations
-
-Nigel Higson and Tsuyoshi Kato,
-[Homology of the Lie Algebra of Locally Generated Derivations of a Discrete and Proper Metric Space](https://arxiv.org/abs/2607.08455).
-
 (bib-freed-hopkins)=
 ## Freed–Hopkins: invertible topological phases
 

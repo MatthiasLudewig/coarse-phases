@@ -2,7 +2,7 @@
 
 A mathematical wiki built with **Sphinx, MyST Markdown, and the PyData theme**.
 The first requested collection contains 15 topic articles, three stubs, and
-four standalone theorem pages with proofs. Unreviewed mathematical pages retain
+three standalone theorem pages with proofs. Unreviewed mathematical pages retain
 `Agent-generated, not reviewed yet`. See the
 [draft review notes](docs/about/draft-review.md) for coverage and mathematical qualifications.
 

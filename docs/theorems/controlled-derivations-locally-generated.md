@@ -110,4 +110,4 @@ each local algebra and thus satisfies the Leibniz and $*$ identities there.
 ## Related articles
 
 See {ref}`Controlled derivation <article-controlled-derivation>` for the
-definitions and the Lie algebra homology of locally generated derivations.
+definitions of controlled and locally generated derivations.

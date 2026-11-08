@@ -150,7 +150,7 @@ def check_article_collection(browser, errors):
     warning = 'Agent-generated, not reviewed yet'
     screenshots = {
         'coarse-space', 'coarse-index', 'controlled-derivations-locally-generated',
-        'controlled-derivation', 'finite-body-stable-vanishing',
+        'controlled-derivation', 'controlled-objects',
     }
     with serve(HTML) as base:
         for width, height, mode in [(1440, 1000, 'desktop'), (390, 844, 'mobile')]:

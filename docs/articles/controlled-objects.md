@@ -10,16 +10,17 @@ Controlled objects provide a common language for geometric modules and local ope
 ## Controlled objects in a symmetric monoidal category
 
 Let $(X, \mathcal{B}, \mathcal{C})$ be a bornological coarse space. 
-Let C$ be a category with an initial object $\mathbf1$, and suppose the directed colimits used below exist, either in $C$ or in a specified ambient category.
+Let $C$ be a category with an initial object $\mathbf1$, and suppose the directed colimits used below exist, either in $C$ or in a specified ambient category.
 We regard the bornology as a category under inclusion.
 
 ```{prf:definition} Controlled object
 :nonumber:
 :label: def-controlled-object
 
-A *controlled object* over $X$ with values in $\mathcal C$ is a functor
-$V:\mathcal B_X\to\mathcal C$ such that its structure morphisms are
-monomorphisms, $V(\varnothing)=\mathbf1$, and for every directed collection $\mathcal{B}' \subseteq \mathcal{B}$ with $\bigcup \mathcal{B}' = B$, the canonical map
+A *controlled object* over $X$ with values in $C$ is a functor
+$V:\mathcal B\to C$ such that its structure morphisms are
+monomorphisms, $V(\varnothing)=\mathbf1$, and for every directed collection
+$\mathcal{B}'\subseteq\mathcal{B}$ whose union $B$ is bounded, the canonical map
 
 $$
 \operatorname*{colim}_{B' \in \mathcal{B}'}V(B')\longrightarrow V(B)
@@ -46,10 +47,10 @@ maps agree after passage to $W(B_F)$ for a common larger entourage $F$.
 ```
 
 Composing an $E$-controlled presentation with an $F$-controlled one gives an $F\circ E$-controlled presentation, hence the composition of controlled morphisms defines a controlled morphism again.
-This defines the category $\mathrm{Con}_{\mathcal C}(X)$. 
+This defines the category $\mathrm{Con}_{C}(X)$.
 A morphism is called *of propagation zero* if it has a presentation controlled by $\Delta_X$.
 
-In concrete categories one can often form a global object $V_X=\operatorname*{colim}_{B\in\mathcal B_X}V(B)$. 
+In concrete categories one can often form a global object $V_X=\operatorname*{colim}_{B\in\mathcal B}V(B)$.
 Then a controlled morphism is a morphism of global objects sending $V(B)$ into $W(B_E)$.
 For Hilbert spaces we additionally require global operators to be bounded;
 boundedness is not implied merely by boundedness on each local piece.
@@ -100,30 +101,30 @@ objects give the point-determined version of {ref}`geometric modules
 <article-geometric-module>`.
 
 To define Azumaya objects, fix a full symmetric monoidal inclusion
-$\mathcal C\subseteq\widehat{\mathcal C}$ with the same initial unit.
+$C\subseteq\widehat C$ with the same initial unit.
 
 ```{prf:definition} Azumaya controlled object
 :nonumber:
 :label: def-azumaya-controlled-object
 
-A semilocal $\widehat{\mathcal C}$-valued object $V$ is
-*Azumaya relative to $\mathcal C$* if there is a semilocal object $W$ such that
-$V\otimes W$ is controlled-isomorphic to a local $\mathcal C$-valued object.
+A semilocal $\widehat C$-valued object $V$ is
+*Azumaya relative to $C$* if there is a semilocal object $W$ such that
+$V\otimes W$ is controlled-isomorphic to a local $C$-valued object.
 ```
 
-For matrix nets, take $\mathcal C$ to be full matrix algebras and
-$\widehat{\mathcal C}$ finite-dimensional unital $C^*$-algebras. The tensor
+For matrix nets, take $C$ to be full matrix algebras and
+$\widehat C$ finite-dimensional unital $C^*$-algebras. The tensor
 complement and the controlled isomorphism are essential: Azumaya does not
 mean that the given local pieces already split pointwise as a matrix net.
 The definition depends on the chosen pair of coefficient categories.
 
 ## Categories of controlled, local, and Azumaya objects
 
-We use $\mathrm{Con}_{\mathcal C}(X)$ for all controlled morphisms.
-The notation $\mathrm{Loc}_{\mathcal C}(X)$ and
-$\mathrm{sLoc}_{\mathcal C}(X)$ denotes the groupoids of local and semilocal
+We use $\mathrm{Con}_{C}(X)$ for all controlled morphisms.
+The notation $\mathrm{Loc}_{C}(X)$ and
+$\mathrm{sLoc}_{C}(X)$ denotes the groupoids of local and semilocal
 objects and controlled isomorphisms preserving the tensor-extension data.
-The corresponding Azumaya groupoid is $\mathrm{Az}_{\mathcal C}(X)$.
+The corresponding Azumaya groupoid is $\mathrm{Az}_{C}(X)$.
 Compatibility is read in the ambient colimit object, after enlarging controls
 where necessary. In coefficient categories where tensor extensions are unique,
 this condition adds no further choices.
