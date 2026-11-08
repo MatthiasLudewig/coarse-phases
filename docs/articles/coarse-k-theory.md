@@ -5,10 +5,9 @@
 Agent-generated, not reviewed yet
 ```
 
-Coarse $K$-theory is the $K$-theory of the Roe algebra, made functorial in the
-underlying coarse space. Since it is covariant in the space, the same theory
-is often called *coarse $K$-homology*. We use $K\mathcal X$ for its
-spectrum-valued version.
+Coarse $K$-theory is the $K$-theory of the Roe algebra, made functorial in the underlying coarse space. 
+Since it is covariant in the space, the same theory is often called *coarse $K$-homology*. 
+We use $K\mathcal X$ for its spectrum-valued version.
 
 ## Classical group-valued definition
 
