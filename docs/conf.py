@@ -1,6 +1,10 @@
 """Configuration for the GitHub-hosted mathematical wiki."""
 
 import os
+from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).parent / "_ext"))
 
 project = "Coarse Geometry and Topological Phases"
 author = "Matthias Ludewig and contributors"
@@ -15,6 +19,7 @@ extensions = [
     "sphinx_togglebutton",
     "sphinx_design",
     "sphinxcontrib.tikz",
+    "wiki_tikz",
     "sphinx.ext.mathjax",
     "sphinx.ext.githubpages",
 ]

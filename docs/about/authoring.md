@@ -219,6 +219,11 @@ Do not put the directive or `tikzcd` environment inside `$$...$$` or a `{math}` 
 Those blocks use MathJax; the `{tikz}` directive uses `sphinxcontrib.tikz` to compile the diagram to SVG during the GitHub Actions build.
 The downloaded HTML preview includes the resulting image, so authors and readers do not need a local TeX installation.
 
+Diagrams follow the surrounding text size and color and have transparent backgrounds in both light and dark mode.
+Use the normal TeX font size; a manual `\Large` adjustment is unnecessary.
+Explicit TikZ colors are retained.
+Wide diagrams scroll horizontally on small screens so their labels remain readable.
+
 Give each diagram a plain-text `:alt:` description of its objects, arrows, and relevant relationships.
 Explain any mathematical conclusion in the surrounding text as well.
 Other TikZ diagrams can use a complete `tikzpicture` environment in the same directive.

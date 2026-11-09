@@ -63,7 +63,6 @@ For an entourage $E$, an *$E$-controlled morphism* $V \to W$ is a morphism $f:V(
 :libs: cd
 :alt: The local map f_B from V(B) to W(B_E) agrees with f after the canonical maps to V(X) and W(X).
 
-\Large
 \begin{tikzcd}
 V(B) \arrow[r, "f_B", dashed] \arrow[d, "j_B^V"']
   & W(B_E) \arrow[d, "j_{B_E}^W"] \\
@@ -98,7 +97,6 @@ A *presentation* consists of an entourage $E$ and maps $f_B:V(B)\to W(B_E)$ comp
 :libs: cd
 :alt: The local maps f_B and f_B' commute with the structure maps for an inclusion B contained in B'.
 
-\Large
 \begin{tikzcd}
 V(B) \arrow[d] \arrow[r, "f_B"] & W(B_E) \arrow[d] \\
 V(B') \arrow[r, "f_{B'}"'] & W(B'_E)
@@ -139,7 +137,6 @@ Here $\lambda$ and $\rho$ are the left and right unit isomorphisms.
 :libs: cd
 :alt: Inserting the unit into the second factor and then applying tau gives the structure map from V(B) to V(B disjoint union B').
 
-\Large
 \begin{tikzcd}
 V(B)\otimes\mathbf1 \arrow[r, "\mathrm{id}\otimes u_{B'}"]
   \arrow[d, "\rho_{V(B)}"']
@@ -152,7 +149,6 @@ V(B) \arrow[r, "s_{B,B\sqcup B'}"'] & V(B\sqcup B')
 :libs: cd
 :alt: Inserting the unit into the first factor and then applying tau gives the structure map from V(B') to V(B disjoint union B').
 
-\Large
 \begin{tikzcd}
 \mathbf1\otimes V(B') \arrow[r, "u_B\otimes\mathrm{id}"]
   \arrow[d, "\lambda_{V(B')}"']
@@ -169,7 +165,6 @@ The unit condition is
 :libs: cd
 :alt: Tensor extension with the empty region agrees with the left and right unit isomorphisms.
 
-\Large
 \begin{tikzcd}
 \mathbf1\otimes A \arrow[r, "\tau_{\varnothing,B}"]
   \arrow[dr, "\lambda_A"'] & A
@@ -185,7 +180,6 @@ For disjoint $B,B'$, symmetry requires the following square to commute, where $\
 :libs: cd
 :alt: Swapping the two tensor factors before tensor extension gives the same map to the union.
 
-\Large
 \begin{tikzcd}
 A\otimes A' \arrow[r, "\beta_{A,A'}"] \arrow[d, "\tau_{B,B'}"']
   & A'\otimes A \arrow[d, "\tau_{B',B}"] \\
@@ -199,7 +193,6 @@ For pairwise disjoint $B,B',B''$, associativity requires the following diagram t
 :libs: cd
 :alt: Combining three disjoint regions in either order gives the same tensor-extension map, after the associativity isomorphism.
 
-\Large
 \begin{tikzcd}[row sep=large, column sep=large]
 (A\otimes A')\otimes A'' \arrow[r, "\alpha_{A,A',A''}"]
   \arrow[d, "\tau_{B,B'}\otimes\mathrm{id}"']
