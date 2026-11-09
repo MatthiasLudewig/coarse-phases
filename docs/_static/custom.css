@@ -46,12 +46,17 @@ html[data-theme="dark"] {
 
 /* TeX fixes the diagram colors. A white backing keeps black strokes legible
    in dark mode while retaining any colors chosen by the author. */
+.bd-article div.figure:has(img[src*="/tikz-"][src$=".svg"]) {
+  display: block;
+  margin: 1.5rem 0;
+}
 img[src*="/tikz-"][src$=".svg"] {
   background-color: #fff;
   border-radius: 0.25rem;
-  box-sizing: border-box;
+  /* Padding must not shrink the SVG's natural dimensions and math labels. */
+  box-sizing: content-box;
   padding: 0.75rem;
-  max-width: 100%;
+  max-width: calc(100% - 1.5rem);
   height: auto;
 }
 

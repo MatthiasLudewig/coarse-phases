@@ -164,6 +164,17 @@ def check_diagrams(browser, base, errors):
             assert svg.tag == '{http://www.w3.org/2000/svg}svg'
             assert svg.findall('.//{http://www.w3.org/2000/svg}path'), response.url
 
+        square = page.get_by_role('img', name=DIAGRAM_ALTS[0], exact=True)
+        arrow = page.get_by_role('img', name=DIAGRAM_ALTS[1], exact=True)
+        square_box, arrow_box = square.bounding_box(), arrow.bounding_box()
+        assert arrow_box['y'] >= square_box['y'] + square_box['height'], mode
+        # A small square fits naturally; CSS padding must not shrink its labels.
+        assert square.evaluate('''(img) => {
+            const style = getComputedStyle(img);
+            const contentWidth = img.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+            return Math.abs(contentWidth - img.naturalWidth) <= 1;
+        }'''), mode
+
         for theme in ['light', 'dark']:
             # Set the same theme attribute as the theme switcher, also on mobile.
             page.evaluate('(theme) => document.documentElement.dataset.theme = theme', theme)
