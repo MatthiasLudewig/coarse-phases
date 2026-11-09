@@ -18,8 +18,8 @@ objects.
 
 Let $V$ be a local controlled object over a bornological coarse space $X$, with
 values in a symmetric monoidal category whose unit $\mathbf1$ is initial.
-Assume the directed colimits in the definition of a controlled object exist
-in the specified ambient category. Set $V_x=V(\{x\})$. Then, naturally in
+The directed colimits in the definition of a controlled object are taken
+in this coefficient category. Set $V_x=V(\{x\})$. Then, naturally in
 bounded $B$,
 
 $$
@@ -27,8 +27,9 @@ V(B)\cong\operatorname*{colim}_{F\subseteq B,\ F\text{ finite}}
                       \bigotimes_{x\in F}V_x.
 $$
 
-If the coefficient objects are finite-dimensional Hilbert spaces under direct
-sum, or full finite-dimensional complex matrix algebras under tensor product,
+If the coefficient category consists of finite-dimensional Hilbert spaces
+with isometric embeddings and direct sum, or full finite-dimensional complex
+matrix algebras with unital $*$-homomorphisms and tensor product,
 then $\Lambda=\{x:V_x\not\cong\mathbf1\}$ meets each bounded set in finitely
 many points. In these cases the formula reduces to
 
@@ -59,8 +60,10 @@ contradicting finite dimensionality of $V(B)$. Thus $B\cap\Lambda$ is finite.
 
 Conversely, a locally finite point assignment gives finite tensor products on
 bounded subsets. Inclusions insert the unique unit maps, and disjoint unions
-give the locality isomorphisms. For a directed cover of $B$, one member
-contains the finite set $B\cap\Lambda$, so the colimit axiom holds.
+give the locality isomorphisms. For a nonempty directed cover of $B$, one
+member contains the finite set $B\cap\Lambda$, so the colimit axiom holds.
+For the empty cover of the empty set, the colimit is the initial unit,
+which is also the empty tensor product.
 
 ## Why the qualification matters
 
