@@ -7,9 +7,11 @@ from pathlib import Path
 import os
 import re
 import threading
+from urllib.parse import urljoin
+from xml.etree import ElementTree
 
 from playwright.sync_api import expect, sync_playwright
-from support import ARTICLE, THEOREM, WITHOUT_PROOF, build, fixture_source
+from support import ARTICLE, DIAGRAMS, DIAGRAM_ALTS, THEOREM, WITHOUT_PROOF, build, fixture_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -140,7 +142,48 @@ def check_mathematical_pages(browser, errors):
         expect(plain_proof.locator('.proof').first).to_be_visible()
         context.close()
         plain.close()
+        check_diagrams(browser, base, errors)
         print('PASS: whole-article definition links; standalone results with/without proofs; inline results; lemma links; MathJax; proof toggles', flush=True)
+
+
+def check_diagrams(browser, base, errors):
+    """The HTML must contain usable SVG images, including without MathJax/JS."""
+    for width, height, mode in [(1440, 1000, 'desktop'), (390, 844, 'mobile')]:
+        context = browser.new_context(viewport={'width': width, 'height': height})
+        page = context.new_page()
+        page.on('pageerror', lambda error: errors.append(str(error)))
+        page.goto(f'{base}/{DIAGRAMS}.html')
+        for alt in DIAGRAM_ALTS:
+            diagram = page.get_by_role('img', name=alt, exact=True)
+            expect(diagram).to_be_visible()
+            expect(diagram).to_have_attribute('src', re.compile(r'\.svg$'))
+            assert diagram.evaluate('(img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0')
+            response = context.request.get(urljoin(page.url, diagram.get_attribute('src')))
+            assert response.ok, response.url
+            svg = ElementTree.fromstring(response.body())
+            assert svg.tag == '{http://www.w3.org/2000/svg}svg'
+            assert svg.findall('.//{http://www.w3.org/2000/svg}path'), response.url
+
+        for theme in ['light', 'dark']:
+            # Set the same theme attribute as the theme switcher, also on mobile.
+            page.evaluate('(theme) => document.documentElement.dataset.theme = theme', theme)
+            assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1'), (mode, theme)
+            for alt in DIAGRAM_ALTS:
+                diagram = page.get_by_role('img', name=alt, exact=True)
+                expect(diagram).to_be_visible()
+                assert diagram.evaluate('(img) => img.getBoundingClientRect().width <= img.closest("article").clientWidth'), (mode, theme, alt)
+            page.screenshot(path=str(SCREENSHOTS / f'tikz-{mode}-{theme}.png'), full_page=True)
+        context.close()
+
+    plain = browser.new_context(java_script_enabled=False)
+    page = plain.new_page()
+    page.goto(f'{base}/{DIAGRAMS}.html')
+    for alt in DIAGRAM_ALTS:
+        diagram = page.get_by_role('img', name=alt, exact=True)
+        expect(diagram).to_be_visible()
+        assert diagram.evaluate('(img) => img.complete && img.naturalWidth > 0')
+    plain.close()
+    print('PASS: TikZ-CD and TikZ SVGs; accessible descriptions; desktop/mobile light/dark layouts; no JavaScript required', flush=True)
 
 
 def check_article_collection(browser, errors):

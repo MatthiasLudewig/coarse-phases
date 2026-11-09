@@ -195,6 +195,35 @@ For a technical remark, an admonition with `:class: dropdown` uses
 `sphinx-togglebutton`. Do not attach that class directly to `prf:proof`, whose
 generated HTML differs from a titled admonition.
 
+## Commutative diagrams and TikZ
+
+Use a standalone `{tikz}` directive for a commutative diagram. Load the `cd`
+library and include the complete `tikzcd` environment:
+
+````markdown
+```{tikz}
+:libs: cd
+:alt: A commutative square with maps f from A to B, g from A to C, h from B to D, and k from C to D.
+
+\begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "g"'] & B \arrow[d, "h"] \\
+C \arrow[r, "k"'] & D
+\end{tikzcd}
+```
+````
+
+Do not put the directive or `tikzcd` environment inside `$$...$$` or a `{math}`
+block. Those blocks use MathJax; the `{tikz}` directive uses
+`sphinxcontrib.tikz` to compile the diagram to SVG during the GitHub Actions
+build. The downloaded HTML preview includes the resulting image, so authors
+and readers do not need a local TeX installation.
+
+Give each diagram a plain-text `:alt:` description of its objects, arrows, and
+relevant relationships. Explain any mathematical conclusion in the surrounding
+text as well. Other TikZ diagrams can use a complete `tikzpicture` environment
+in the same directive. Add the required TikZ library names to `:libs:`, separated
+by commas, for example `:libs: arrows.meta,positioning`.
+
 ## Conventions, navigation, and review
 
 - In this wiki, *coarse space* abbreviates *bornological coarse space*. A coarse

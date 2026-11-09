@@ -12,6 +12,11 @@ ROOT = Path(__file__).resolve().parents[1]
 ARTICLE = "articles/ci-object"
 THEOREM = "theorems/ci-result"
 WITHOUT_PROOF = "theorems/ci-statement"
+DIAGRAMS = "articles/ci-diagrams"
+DIAGRAM_ALTS = (
+    "Commutative square: A to B by f, A to C by g, B to D by h, C to D by k.",
+    "An arrow from the real numbers to the complex numbers.",
+)
 FIXTURES = {
     ARTICLE: r"""(article-ci-object)=
 # Fixture article
@@ -99,6 +104,26 @@ For any fixture object $x$, one has $0+x=x$.
 No proof is supplied on this test-only page.
 
 See the {prf:ref}`definition in its owning article <def-ci-object>`.
+""",
+    DIAGRAMS: r"""# Fixture diagrams
+
+These diagrams are test fixtures and never enter the published wiki.
+
+```{tikz}
+:libs: cd
+:alt: Commutative square: A to B by f, A to C by g, B to D by h, C to D by k.
+
+\begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "g"'] & B \arrow[d, "h"] \\
+C \arrow[r, "k"'] & D
+\end{tikzcd}
+```
+
+```{tikz}
+:alt: An arrow from the real numbers to the complex numbers.
+
+\draw[->] (0,0) node[left] {$\mathbb{R}$} -- (10,0) node[right] {$\mathbb{C}$};
+```
 """,
 }
 

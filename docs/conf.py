@@ -14,6 +14,7 @@ extensions = [
     "sphinx_proof",
     "sphinx_togglebutton",
     "sphinx_design",
+    "sphinxcontrib.tikz",
     "sphinx.ext.mathjax",
     "sphinx.ext.githubpages",
 ]
@@ -55,6 +56,10 @@ html_context = {
     "default_mode": "light",
 }
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
+# Compile diagram directives on the CI runner; readers receive ordinary SVGs.
+latex_engine = "pdflatex"
+tikz_proc_suite = "pdf2svg"
+tikz_latex_preamble = r"\usepackage{amsmath,amssymb}"
 togglebutton_hint = "Show details"
 togglebutton_hint_hide = "Hide details"
 

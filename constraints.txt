@@ -34,6 +34,7 @@ sphinxcontrib-htmlhelp==2.1.0
 sphinxcontrib-jsmath==2.0.0
 sphinxcontrib-qthelp==2.0.0
 sphinxcontrib-serializinghtml==2.0.0
+sphinxcontrib-tikz==0.4.20
 typing_extensions==4.16.0
 urllib3==2.8.0
 wheel==0.48.0

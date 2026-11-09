@@ -26,6 +26,10 @@ Coverage and mathematical qualifications are in `docs/about/draft-review.md`.
 
 - Private repository: `MatthiasLudewig/coarse-phases`.
 - Sphinx/MyST, pinned dependencies, PyData theme, MathJax, and custom styling.
+- TikZ and `tikzcd` diagrams through `sphinxcontrib.tikz`. Standalone `{tikz}`
+  directives compile to SVG on GitHub Actions using TeX and `pdf2svg`; no local
+  TeX installation is required for authoring or viewing the HTML preview.
+  The authoring guide documents the `cd` library and plain-text alternatives.
 - Full sidebar navigation, GitHub edit links, search, and light/dark modes.
 - Standalone articles and theorem pages use ordinary MyST headings and
   `sphinx-proof` labels. No new page-rendering extension is needed.

@@ -1,4 +1,4 @@
-"""Require actionable failures for common mathematical cross-reference mistakes.
+"""Require actionable failures for invalid references and diagram source.
 
 Runs on the GitHub runner. All mutations happen in temporary copies of docs/.
 """
@@ -34,6 +34,12 @@ CASES = [
         "duplicate heading label",
         "\n(article-ci-object)=\n## Duplicate heading\n",
         "duplicate label article-ci-object",
+    ),
+    (
+        "invalid TikZ source",
+        "\n```{tikz}\n:alt: Deliberately broken diagram.\n\n"
+        "\\IntentionallyInvalidTikzCommand\n```\n",
+        "Undefined control sequence",
     ),
 ]
 

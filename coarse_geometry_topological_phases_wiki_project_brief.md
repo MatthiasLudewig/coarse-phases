@@ -1,7 +1,7 @@
 # Project brief: A mathematical wiki for coarse geometry and topological phases
 
 **Status:** Infrastructure and first requested article collection drafted; mathematical review pending
-**Last updated:** 6 November 2026
+**Last updated:** 9 November 2026
 **Purpose of this document:** Record the intended features, the agreed technical direction, the implementation plan, and decisions that remain open. This specifies the intended system. See `SETUP.md` for implementation status. The editorial decision of 6 November 2026 replaces the original definition-fragment architecture.
 
 ## 1. Project vision
@@ -37,6 +37,7 @@ The current decision is to use **Sphinx + MyST Markdown + GitHub**, rather than 
 | Markdown dialect | MyST Parser (LaTeX and Sphinx directives) | Chosen |
 | Mathematical theorem environments | `sphinx-proof` | Proposed as part of initial setup |
 | Collapsible proofs | `sphinx-togglebutton` (optionally `sphinx-design`) | Proposed |
+| Commutative diagrams and TikZ graphics | `sphinxcontrib.tikz`, TeX, and `pdf2svg` | SVG rendering during the GitHub Actions build |
 | HTML theme | PyData Sphinx Theme | Preferred starting point; not final |
 | Automatic build and validation | GitHub Actions | Chosen |
 | Public website hosting | GitHub Pages | Preferred initial hosting |
@@ -63,6 +64,7 @@ Sphinx + MyST + extensions
   - parse Markdown and LaTeX
   - resolve and check cross-references
   - render definitions, theorems, proofs
+  - compile TikZ and tikzcd diagrams to SVG
   - produce HTML, CSS, JavaScript, search index
             |
             v
@@ -72,7 +74,7 @@ GitHub Pages (static hosting)
 Public reader's web browser
 ```
 
-Sphinx runs **when triggered by GitHub Actions**, not whenever a visitor opens a page. Visitors receive the generated HTML. MathJax may render mathematics on the visitor's device. Sphinx supports incremental local builds, though hosted CI jobs may perform clean builds; performance is not expected to be an obstacle for an initial, modest-sized wiki.
+Sphinx runs **when triggered by GitHub Actions**, not whenever a visitor opens a page. Visitors receive the generated HTML. MathJax may render mathematics on the visitor's device. TikZ and `tikzcd` diagrams are compiled to SVG during the build and displayed as images. Sphinx supports incremental local builds, though hosted CI jobs may perform clean builds; performance is not expected to be an obstacle for an initial, modest-sized wiki.
 
 ### URLs
 
@@ -186,6 +188,18 @@ and link directly to it beside the claim; publication on arXiv suffices.
 Do not cite private notes or inaccessible manuscripts. The bibliography lists
 only public papers actually cited in the articles.
 
+### Commutative diagrams and TikZ
+
+Author diagrams in standalone MyST `{tikz}` directives. For a commutative
+diagram, set `:libs: cd`, provide a plain-text `:alt:` description, and include
+the full `\begin{tikzcd}...\end{tikzcd}` environment. Do not place TikZ source in
+`$$...$$` or `{math}` blocks. Other TikZ diagrams and libraries use the same
+directive; see `docs/about/authoring.md` for syntax.
+
+The GitHub Actions build uses `sphinxcontrib.tikz`, TeX, and `pdf2svg` to produce
+SVG images. Authors and readers can use the generated HTML without installing
+TeX locally.
+
 ### Labels and linking rules
 
 - Every canonical label must be unique across the complete project.
@@ -286,6 +300,7 @@ A build job typically performs:
 Check out repository
 → Set up Python
 → Install requirements.txt
+→ Install TeX and pdf2svg for TikZ diagrams
 → sphinx-build -b html -n -W --keep-going ...
 → On main only, upload generated HTML as a Pages artifact
 → Deploy to GitHub Pages
@@ -305,7 +320,9 @@ The implemented configuration is in `docs/conf.py`. Website dependencies and
 transitive version pins are in `requirements.txt` and `constraints.txt`.
 
 The extensions are MyST Parser, sphinx-proof, sphinx-togglebutton, sphinx-design,
-MathJax, and Sphinx's GitHub Pages support. The theme is PyData. The configuration
+sphinxcontrib.tikz, MathJax, and Sphinx's GitHub Pages support. TikZ diagrams use
+the SVG output mode, with TeX and `pdf2svg` installed on the GitHub Actions runner.
+The theme is PyData. The configuration
 uses the actual `MatthiasLudewig/coarse-phases` repository and links preview edits
 to the pull-request branch; published pages will link edits to `main`.
 
@@ -338,7 +355,6 @@ The Markdown source remains portable. The Sphinx-specific directive syntax is no
 - **Automatic indexes:** all definitions, theorems, conjectures, examples, and open problems.
 - **Bibliography management:** consistent BibTeX/DOI citations, possibly via a Sphinx citation extension.
 - **Improved editing UI:** a Git-backed front end for less technically experienced contributors, if the GitHub workflow becomes a barrier.
-- **Advanced diagrams:** reliable handling of commutative diagrams and TikZ-derived graphics (probably by pre-rendering SVG for content not supported directly by browser-side MathJax).
 - **Global proof toggle:** a JavaScript control to open or close all proofs on a page.
 
 These are achievable with extensions or custom development but should not be mistaken for built-in capabilities of a fresh Sphinx installation.
