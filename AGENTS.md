@@ -6,6 +6,12 @@
   `docs/articles/` and standalone theorem pages in `docs/theorems/`. Both are
   complete, independently navigable pages. Preserve labels and URLs of retained
   content; the initial demonstration articles have intentionally been deleted.
+- Write prose with one sentence per source line, without wrapping a sentence across lines.
+  Apply this throughout the wiki, including articles, theorem pages, and prose inside directives and list items.
+  Keep paragraph breaks between paragraphs; preserve the syntax of code, tables, and mathematical blocks.
+- Put display-math `$$` delimiters on their own lines, directly adjacent to the surrounding prose with no blank lines before or after the display.
+  A display may interrupt a sentence; keep each surrounding prose portion on one line.
+  Keep inline mathematics in `$...$` and preserve structural spacing needed by MyST targets and directives.
 - Put each definition directly in its owning article, alongside motivation,
   related definitions, examples, and discussion. For example, the Coarse space
   article defines coarse structure, bornological space, and bornological coarse

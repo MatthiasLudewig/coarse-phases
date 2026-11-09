@@ -139,6 +139,11 @@ while preserving URLs and semantic identifiers of retained content.
 
 ## 4. Mathematical writing and cross-references
 
+Write prose with one sentence per source line, without hard wrapping within a sentence, throughout the wiki.
+Put display-math `$$` delimiters on their own lines with no blank lines separating the display from surrounding prose, including inside directives and list items.
+When a display interrupts a sentence, keep each surrounding prose portion on one line.
+Keep inline mathematics in `$...$`, paragraph breaks between paragraphs, and structural spacing required by MyST targets and directives.
+
 Use MyST Markdown for prose and LaTeX mathematics, with `sphinx-proof` for
 statements. A definition is authored directly in the appropriate article:
 
