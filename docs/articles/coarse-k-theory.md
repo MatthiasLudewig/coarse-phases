@@ -17,7 +17,7 @@ $$
 K\mathcal X_n(X)=K_n(C^*(X;H_X)),\qquad n\in\mathbb Z.
 $$
 Here $K_n$ is complex topological $K$-theory, with its two-periodic grading.
-The {ref}`ample-module comparison <theorem-ample-modules>` makes these groups independent of the chosen module under the canonical comparison in $K$-theory.
+The {ref}`ample-module comparison <article-geometric-module>` makes these groups independent of the chosen module under the canonical comparison in $K$-theory.
 
 For a coarse map $f:X\to Y$, choose a covering isometry $V:H_X\to H_Y$ after stabilization.
 Its support is within a controlled neighbourhood of the graph of $f$.

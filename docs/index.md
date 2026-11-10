@@ -8,7 +8,7 @@ Longer arguments have standalone theorem pages.
 Agent-generated, not reviewed yet
 ```
 
-The current collection contains 15 topic articles, three stubs, and three theorem pages with proofs.
+The current collection contains 16 topic articles, three stubs, and two theorem pages with proofs.
 All await mathematical review.
 The [review notes](about/draft-review.md) record coverage and points requiring particular attention.
 
@@ -17,6 +17,7 @@ The [review notes](about/draft-review.md) record coverage and points requiring p
 :caption: Articles — coarse geometry
 
 articles/coarse-space
+articles/collections-of-bounded-subsets
 articles/big-family
 articles/coarse-transversality
 articles/flasque-coarse-space
@@ -60,7 +61,6 @@ articles/freed-hopkins-classification
 
 theorems/local-objects-points
 theorems/controlled-derivations-locally-generated
-theorems/ample-modules
 ```
 
 ```{toctree}

@@ -3,19 +3,12 @@
 
 Controlled objects provide a common language for geometric modules and local operator algebras.
 
-Throughout, we fix a symmetric monoidal category $\widehat{C}$ together with a full symmetric monoidal subcategory $C$.
-These are required to have the following properties:
-
-1. $\widehat{C}$ admits all filtered colimits.
-2. The tensor product functor preserves filtered colimits in each variable
-3. The inclusion $C \hookrightarrow \widehat{C}$ preserves all filtered colimits already existing in $C$.
-4. The tensor unit is an initial object of $\widehat{C}$.
-5. If for a filtered diagram in $C$, all connecting morphisms are monomorphisms, then for each vertex of the diagram, the canonical map to the colimit is also a monomorphism.
+Throughout, we fix a category $C$.
 
 
 ## Controlled objects in a symmetric monoidal category
 
-Let $(X, \mathcal{C}, \mathcal{B})$ be a bornological coarse space and let $C$ be a category.
+Let $(X, \mathcal{C}, \mathcal{B})$ be a {ref}`bornological coarse space <def-bornological-coarse-space>` and let $C$ be a category.
 We regard the bornology as a category under inclusion.
 
 ```{prf:definition} Controlled object
@@ -36,15 +29,18 @@ So having an initial object is a necessary requirement for controlled objects va
 
 This condition is weaker than the cosheaf condition for the Grothendieck topology whose covers are jointly surjective families of inclusions of bounded sets.
 For disjoint bounded $B_1, B_2$, that cosheaf condition would require $V(B_1\sqcup B_2)$ to be the coproduct of $V(B_1)$ and $V(B_2)$ in $C$, which is usually not satisfied by the relevant examples if $C$ is not an abelian category.
+The relaxation present in the {ref}`definition above <def-controlled-object>` is akin to that used for factorization algebras, which are required to satisfy the cosheaf condition for Weiss covers.
 
-The tensor product $V \otimes W$ of two $X$-controlled objects $V$ and $W$ is given by
+If $C$ has a monoidal structure, we may define the tensor product $V \otimes W$ of two $X$-controlled objects $V$ and $W$ by
 $$
 (V \otimes W)(B) = V(B) \otimes W(B).
 $$
 
 ## Controlled morphisms
 
-For any subset $Y\subseteq X$, we may define an object of $\widehat C$ by
+The notion of controlled morphism depends on the choice of a larger category $\widehat{C}$ containing $C$ as a full subcategory.
+We assume that $\widehat{C}$ is closed under filtered colimits and that the inclusion $C \hookrightarrow \widehat{C}$ preserves filtered colimits that already exist in $C$.
+Then for any subset $Y\subseteq X$, we may define an object of $\widehat C$ by
 $$
 V(Y):=\operatorname*{colim}_{\substack{B\in\mathcal B\\B\subseteq Y}}V(B).
 $$
@@ -75,13 +71,11 @@ A morphism is called *of propagation zero* if it is controlled by the diagonal $
 ````
 
 Here $B_E$ denotes the {ref}`fattening <def-fattening>` of $B$, which is bounded by compatibility of the bornology and coarse structure.
-Since the map $W(B_E) \to W(X)$ is a monomorphism by the ambient-category assumption, $f_B$ is unique if it exists.
-The same assumption implies that these local maps are natural under inclusions of bounded sets.
 
 The identity morphism is always of propagation zero, hence in particular controlled.
 If $f:V\to W$ is $E$-controlled and $g:W\to U$ is $F$-controlled, then $g\circ f$ is $(F\circ E)$-controlled: its local maps are $g_{B_E}\circ f_B$, and $(B_E)_F=B_{F\circ E}$.
 This defines the *category of $X$-controlled objects in $C$*, denoted $\mathrm{Con}_C(X)$.
-The global colimit objects depend on $\widehat C$, but the presentation description below identifies the controlled-morphism categories for ambient categories satisfying our assumptions.
+The dependence on the category $\widehat{C}$ will usually be suppressed.
 
 ## Local and semilocal objects
 
@@ -105,6 +99,9 @@ Moreover, they are also required to satisfy obvious compatibility conditions wit
 The object is *local* if all $\tau_{B,B'}$ are isomorphisms.
 ````
 
+The full subcategory of $\mathrm{Con}_C(X)$ consisting of local objects is denoted by $\mathrm{Loc}_C(X)$.
+
+
 Given objects $V_x$ of $C$ for each $x\in X$, consider the formula
 $$
 V(B)=\operatorname*{colim}_{F\subseteq B,\ F\text{ finite}}
@@ -113,3 +110,12 @@ $$
 The transition maps insert the unique maps from the unit.
 This gives a local controlled object provided the colimits exist in $C$, tensor products preserve them in each variable, and the induced maps $V(B)\to V(B')$ for $B\subseteq B'$ are monomorphisms.
 Conversely, every local controlled object has the displayed point-object description; see the proof of {ref}`Local objects are determined by their point objects <theorem-local-objects-points>`.
+
+## Examples
+
+1. Taking $C$ to be the category of separable Hilbert spaces with morphisms isometric embeddings and monoidal structure direct sum, local $X$-controlled objects in $C$ are precisely {ref}`geometric modules <def-geometric-module>`.
+Tensor-extension maps are unique in this case.
+The category $\widehat{C}$ can be taken to be the category of all Hilbert spaces.
+Notice, however, that the category $\mathrm{Hilb}(X)$ described in the article {ref}`geometric module <article-geometric-module>` has more morphisms than $\mathrm{Loc}_C(X)$: It contains arbitrary controlled operators, while $\mathrm{Loc}_C(X)$ only contains isometric embeddings.
+
+2. Taking $C$ to be the category of matrix algebras over $\mathbb{C}$ with $*$-homomorphisms and $\widehat{C}$ the category of all $C^*$-algebras, one obtains the notion of a local net {ref}`geometric modules <article-spin-system>`

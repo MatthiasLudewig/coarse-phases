@@ -124,14 +124,20 @@ Here local compactness is equivalent to compactness of $fT$ and $Tf$ for every $
 One direction uses a compactly supported continuous function equal to one on the closure of a bounded set, which is compact by properness.
 The other first writes $fT=f\chi_BT$ and $Tf=T\chi_Bf$ for compactly supported $f$ and a bounded Borel set $B$ containing its support, and then uses uniform approximation in $C_0(X)$.
 
+(sec-roe-metric-partition)=
+
 The relation to the point-determined model can be made explicit without assigning spectral projections to non-Borel sets.
-Choose a countable uniformly bounded Borel partition $(D_j)$ such that every bounded set meets only finitely many cells, as constructed in the {ref}`ample-module comparison <theorem-ample-modules>`, and select $x_j\in D_j$.
+Choose a countable maximal $1$-separated set of centers $(x_j)$, and assign each point to a nearest center, resolving ties by the enumeration.
+Properness ensures that nearest centers exist and that bounded sets contain only finitely many centers.
+The resulting Borel partition $(D_j)$ has cells of diameter at most $2$, each containing the open ball of radius $1/2$ about its center.
+Every bounded set meets only finitely many cells, since their centers lie in its bounded $1$-neighborhood.
 Regard $\chi_{D_j}H$ as the fiber at $x_j$, with zero fibers elsewhere.
 If every cell has diameter at most $D$, this replacement changes propagation bounds by at most $2D$.
 Each bounded-set projection for either model is dominated by a bounded-set projection for the other: take the union of cells meeting the set, or the set of their chosen points.
 Thus both models give exactly the same locally compact controlled operators, and the same Roe algebra on $H$.
 
-For separable ample topological modules, the {ref}`ample-module theorem <theorem-ample-modules>` supplies a controlled unitary comparison.
+For separable ample topological modules, every cell subspace is infinite-dimensional: a nonzero compactly supported continuous function in the cell's interior acts noncompactly and has range in that subspace.
+Discretization followed by [Bunke–Engel, Lemma 8.21](https://arxiv.org/abs/1607.03657) therefore supplies a controlled unitary comparison.
 Under these hypotheses their Roe algebras are noncanonically isomorphic, and the notation $C^*(X)$ can suppress the module.
 For a discrete proper metric space, ampleness requires infinite-dimensional point fibers, so the scalar-fiber uniform Roe algebra is a different module choice.
 
@@ -194,7 +200,7 @@ The operator $P$ is $F$-controlled, because it only moves vectors within a cell,
 For bounded $B$, the operators $\chi_BP$ and $P\chi_B$ have finite rank: only finitely many cells meet $B$.
 Thus $\chi_BPTP$ and $PTP\chi_B$ have finite rank, so $PTP$ is locally trace-class.
 This proves the density assertion.
-For a topological module the same argument uses Borel projections; a partition with these properties is provided by the {ref}`proper metric partition construction <theorem-ample-modules>`.
+For a topological module the same argument uses Borel projections; a partition with these properties is provided by the {ref}`proper metric partition construction above <sec-roe-metric-partition>`.
 ```
 ````
 

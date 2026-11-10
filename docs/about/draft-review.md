@@ -6,7 +6,7 @@ Agent-generated, not reviewed yet
 ```
 
 The first draft follows the author's requested article list and subsection structure.
-It contains 15 full topic articles, three deliberately short stubs, and three standalone theorem pages with proofs.
+The current collection contains 16 topic articles, three deliberately short stubs, and two standalone theorem pages with proofs.
 Passing the website checks verifies references and rendering, not the mathematics.
 
 ## Coverage
@@ -14,6 +14,7 @@ Passing the website checks verifies references and rendering, not the mathematic
 | Article | Scope |
 | --- | --- |
 | [Coarse space](../articles/coarse-space.md) | Coarse structures, bornologies, tensor products, and coarse maps |
+| [Collections of bounded subsets](../articles/collections-of-bounded-subsets.md) | Uniform density, uniformly bounded collections, and locally finite collections |
 | [Big family](../articles/big-family.md) | Support families, union/intersection, generated families, and sparsity |
 | [Coarse transversality](../articles/coarse-transversality.md) | Transverse families, partitions, cocycles, and pairings |
 | [Flasque coarse space](../articles/flasque-coarse-space.md) | Iterated maps, generalized flasqueness, and ray factorization |
@@ -64,7 +65,6 @@ Literature links are reserved for nontrivial results used without proof; the bib
 
 - [Local objects are determined by their point objects](../theorems/local-objects-points.md).
 - [Controlled derivations are locally generated](../theorems/controlled-derivations-locally-generated.md).
-- [Controlled unitary equivalence of ample modules](../theorems/ample-modules.md).
 
 Each states its hypotheses and links to the owning definition articles.
 No mathematical statements are transcluded between pages.

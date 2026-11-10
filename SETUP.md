@@ -16,10 +16,8 @@ This decision replaces the original separation of canonical definition pages
 and expository articles, and the reuse of definitions through include fragments.
 There is no transclusion of mathematical statements between pages.
 
-The five sample mathematical articles, shared definition fragment, and sample
-bibliography records have been removed. The author's requested replacement
-collection is now drafted: 15 articles, three stubs, and three theorem pages
-with proofs.
+The five sample mathematical articles, shared definition fragment, and sample bibliography records have been removed.
+The current collection contains 16 topic articles, three stubs, and two theorem pages with proofs.
 Unreviewed agent-authored pages retain the warning `Agent-generated, not reviewed yet`.
 Coverage and mathematical qualifications are in `docs/about/draft-review.md`.
 

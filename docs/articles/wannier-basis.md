@@ -1,8 +1,4 @@
 (article-wannier-basis)=
 # Wannier basis
 
-```{warning}
-Agent-generated, not reviewed yet
-```
-
-This is a stub.
+This article is a stub.
