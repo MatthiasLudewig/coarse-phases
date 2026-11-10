@@ -1,0 +1,10 @@
+{# A wiki needs the full subject tree on every page, including top-level leaves. #}
+<nav class="bd-docs-nav bd-links" aria-label="Wiki navigation">
+  <p class="bd-links__title" role="heading" aria-level="2">Explore the wiki</p>
+  <div class="bd-toc-item navbar-nav">
+    {{ generate_toctree_html(
+      "sidebar", startdepth=0, show_nav_level=2, maxdepth=2,
+      collapse=False, includehidden=True, titles_only=True
+    ) }}
+  </div>
+</nav>

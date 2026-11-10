@@ -1,0 +1,11 @@
+# Research material stays local unless explicitly selected for publication.
+/input/
+/.venv/
+/.preview/
+/artifacts/
+**/_build/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
