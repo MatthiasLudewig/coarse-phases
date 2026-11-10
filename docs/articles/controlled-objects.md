@@ -113,5 +113,3 @@ $$
 The transition maps insert the unique maps from the unit.
 This gives a local controlled object provided the colimits exist in $C$, tensor products preserve them in each variable, and the induced maps $V(B)\to V(B')$ for $B\subseteq B'$ are monomorphisms.
 Conversely, every local controlled object has the displayed point-object description; see the proof of {ref}`Local objects are determined by their point objects <theorem-local-objects-points>`.
-
-

@@ -59,4 +59,3 @@ That this cochain is closed with respect to the Alexander--Spanier differential 
 That it satisfies the support condition for coarse cochains follows from coarse transversality of the partition.
 
  Pairing the partition class with the coarse Chern character of an operator $K$-class is the source of the trace formulae in [Ludewig–Thiang, Large-scale quantization of trace I](https://arxiv.org/abs/2506.10957).
-
