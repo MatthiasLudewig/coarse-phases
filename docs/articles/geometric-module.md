@@ -1,19 +1,19 @@
 (article-geometric-module)=
 # Geometric module
 
-A geometric module is a Hilbert space with a locality structure depending on a {ref}`bornological coarse space <def-bornological-coarse-space>`.
-Concisely, it is a {ref}`controlled object <def-controlled-object>` in Hilbert spaces.
+A geometric module is a Hilbert space with a locality structure depending on a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
+Concisely, it is a {prf:ref}`controlled object <def-controlled-object>` in Hilbert spaces.
 There is also a notion for metric spaces, which is slightly more general and uses the topological structure induced by the metric.
 
 ## Hilbert-space-valued controlled objects
 
-Let $(X, \mathcal{C}, \mathcal{B})$ be a {ref}`bornological coarse space <def-bornological-coarse-space>`.
+Let $(X, \mathcal{C}, \mathcal{B})$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
 
 ```{prf:definition} Point-determined geometric module
 :nonumber:
 :label: def-geometric-module
 
-A *geometric module* over $X$ or *$X$-module* is a {ref}`local <def-local-controlled-object>` {ref}`controlled object <def-controlled-object>` in the category of separable Hilbert spaces.
+A *geometric module* over $X$ or *$X$-module* is a {prf:ref}`local <def-local-controlled-object>` {prf:ref}`controlled object <def-controlled-object>` in the category of separable Hilbert spaces.
 ```
 
 Spelling out the definition, we obtain the following:
@@ -30,7 +30,7 @@ A *geometric module* over $X$ is a Hilbert space $H$ together with a closed subs
 5. $H_X = H$.
 ```
 
-Being determined on points is equivalent to the cocontinuity hypothesis in the {ref}`definition of controlled objects <def-controlled-object>`.
+Being determined on points is equivalent to the cocontinuity hypothesis in the {prf:ref}`definition of controlled objects <def-controlled-object>`.
 
 ```{prf:definition} Controlled operator
 :nonumber:
@@ -55,7 +55,7 @@ On any $X$-module $H$, there is a unique action of the algebra of bounded functi
 An $X$-module $H$ is called *ample* if there exists an entourage $E$ such that $H_{E[x]}$ is infinite-dimensional for each $x \in X$, where $E[x] = \{y \in X \mid (x, y) \in E\}$.
 ```
 
-Ample $X$-modules exist if and only if there exists an entourage $E$ such that every {ref}`$E$-separated subset <def-E-separated>` meets each bounded subset in at most countably many points.
+Ample $X$-modules exist if and only if there exists an entourage $E$ such that every {prf:ref}`$E$-separated subset <def-E-separated>` meets each bounded subset in at most countably many points.
 Any two ample $X$-modules are isomorphic, in the sense that there exists a controlled unitary isomorphism between them.
 For a proof, see [Bunke–Engel, Homotopy theory with bornological coarse spaces, Section 8.2, Definition 8.13, Proposition 8.20, and Lemma 8.21](https://arxiv.org/abs/1607.03657).
 

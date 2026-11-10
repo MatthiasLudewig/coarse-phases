@@ -8,7 +8,7 @@ Throughout, we fix a category $C$.
 
 ## Controlled objects in a symmetric monoidal category
 
-Let $(X, \mathcal{C}, \mathcal{B})$ be a {ref}`bornological coarse space <def-bornological-coarse-space>` and let $C$ be a category.
+Let $(X, \mathcal{C}, \mathcal{B})$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>` and let $C$ be a category.
 We regard the bornology as a category under inclusion.
 
 ```{prf:definition} Controlled object
@@ -29,7 +29,7 @@ So having an initial object is a necessary requirement for controlled objects va
 
 This condition is weaker than the cosheaf condition for the Grothendieck topology whose covers are jointly surjective families of inclusions of bounded sets.
 For disjoint bounded $B_1, B_2$, that cosheaf condition would require $V(B_1\sqcup B_2)$ to be the coproduct of $V(B_1)$ and $V(B_2)$ in $C$, which is usually not satisfied by the relevant examples if $C$ is not an abelian category.
-The relaxation present in the {ref}`definition above <def-controlled-object>` is akin to that used for factorization algebras, which are required to satisfy the cosheaf condition for Weiss covers.
+The relaxation present in the {prf:ref}`definition above <def-controlled-object>` is akin to that used for factorization algebras, which are required to satisfy the cosheaf condition for Weiss covers.
 
 If $C$ has a monoidal structure, we may define the tensor product $V \otimes W$ of two $X$-controlled objects $V$ and $W$ by
 $$
@@ -113,7 +113,7 @@ Conversely, every local controlled object has the displayed point-object descrip
 
 ## Examples
 
-1. Taking $C$ to be the category of separable Hilbert spaces with morphisms isometric embeddings and monoidal structure direct sum, local $X$-controlled objects in $C$ are precisely {ref}`geometric modules <def-geometric-module>`.
+1. Taking $C$ to be the category of separable Hilbert spaces with morphisms isometric embeddings and monoidal structure direct sum, local $X$-controlled objects in $C$ are precisely {prf:ref}`geometric modules <def-geometric-module>`.
 Tensor-extension maps are unique in this case.
 The category $\widehat{C}$ can be taken to be the category of all Hilbert spaces.
 Notice, however, that the category $\mathrm{Hilb}(X)$ described in the article {ref}`geometric module <article-geometric-module>` has more morphisms than $\mathrm{Loc}_C(X)$: It contains arbitrary controlled operators, while $\mathrm{Loc}_C(X)$ only contains isometric embeddings.
