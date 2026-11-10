@@ -61,7 +61,6 @@ For an entourage $E$, an *$E$-controlled morphism* $V \to W$ is a morphism $f:V(
 :libs: cd
 :alt: The local map f_B from V(B) to W(B_E) agrees with f after the canonical maps to V(X) and W(X).
 
-\Large
 \begin{tikzcd}
 V(B) \arrow[r, "f_B", dashed] \arrow[d]
   & W(B_E) \arrow[d] \\

@@ -7,8 +7,6 @@ from pathlib import Path
 import os
 import re
 import threading
-from urllib.parse import urljoin
-from xml.etree import ElementTree
 
 from playwright.sync_api import expect, sync_playwright
 from support import ARTICLE, DIAGRAMS, DIAGRAM_ALTS, THEOREM, WITHOUT_PROOF, build, fixture_source
@@ -146,44 +144,105 @@ def check_mathematical_pages(browser, errors):
         print('PASS: whole-article definition links; standalone results with/without proofs; inline results; lemma links; MathJax; proof toggles', flush=True)
 
 
+def diagram_paints(diagram):
+    """Inspect rendered shapes, excluding glyph definitions referenced by use."""
+    return diagram.evaluate('''(svg) => [...svg.querySelectorAll('path, use')]
+        .filter(node => !node.closest('defs, mask, clipPath'))
+        .flatMap(node => {
+            const style = getComputedStyle(node);
+            return [style.fill, style.stroke].filter(paint => paint !== 'none');
+        })''')
+
+
 def check_diagrams(browser, base, errors):
-    """The HTML must contain usable SVG images, including without MathJax/JS."""
+    """Inline diagrams follow text styling and retain readable labels on mobile."""
+    desktop_sizes = {}
     for width, height, mode in [(1440, 1000, 'desktop'), (390, 844, 'mobile')]:
         context = browser.new_context(viewport={'width': width, 'height': height})
         page = context.new_page()
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(f'{base}/{DIAGRAMS}.html')
-        for alt in DIAGRAM_ALTS:
-            diagram = page.get_by_role('img', name=alt, exact=True)
-            expect(diagram).to_be_visible()
-            expect(diagram).to_have_attribute('src', re.compile(r'\.svg$'))
-            assert diagram.evaluate('(img) => img.complete && img.naturalWidth > 0 && img.naturalHeight > 0')
-            response = context.request.get(urljoin(page.url, diagram.get_attribute('src')))
-            assert response.ok, response.url
-            svg = ElementTree.fromstring(response.body())
-            assert svg.tag == '{http://www.w3.org/2000/svg}svg'
-            assert svg.findall('.//{http://www.w3.org/2000/svg}path'), response.url
+        expect(page.locator('svg.wiki-tikz-svg')).to_have_count(len(DIAGRAM_ALTS))
+        assert page.evaluate(r'''() => {
+            const diagrams = [...document.querySelectorAll('svg.wiki-tikz-svg')];
+            const ids = diagrams.flatMap(svg => [svg, ...svg.querySelectorAll('[id]')])
+                .map(node => node.id).filter(Boolean);
+            if (!ids.length || new Set(ids).size !== ids.length) return false;
+            let references = 0;
+            for (const svg of diagrams) {
+                for (const node of [svg, ...svg.querySelectorAll('*')]) {
+                    for (const attr of node.attributes) {
+                        const targets = [...attr.value.matchAll(/url\(["']?#([^\s)"']+)["']?\)/g)]
+                            .map(match => match[1]);
+                        if (attr.localName === 'href' && attr.value.startsWith('#')) {
+                            targets.push(attr.value.slice(1));
+                        }
+                        for (const id of targets) {
+                            references++;
+                            const target = document.getElementById(id);
+                            if (!target || !svg.contains(target)) return false;
+                        }
+                    }
+                }
+            }
+            return references > 0;
+        }'''), 'SVG IDs must be unique, and all references must resolve within their own diagram'
 
-        square = page.get_by_role('img', name=DIAGRAM_ALTS[0], exact=True)
-        arrow = page.get_by_role('img', name=DIAGRAM_ALTS[1], exact=True)
+        diagrams = [page.get_by_role('img', name=alt, exact=True) for alt in DIAGRAM_ALTS]
+        for alt, diagram in zip(DIAGRAM_ALTS, diagrams):
+            expect(diagram).to_be_visible()
+            expect(diagram).to_have_attribute('width', re.compile(r'^[0-9.]+em$'))
+            expect(diagram).to_have_attribute('height', re.compile(r'^[0-9.]+em$'))
+            assert diagram.locator('path').count() > 0
+            assert diagram.locator('use').count() > 0
+            assert diagram.evaluate('(svg) => svg.getBBox().width > 0 && svg.getBBox().height > 0')
+            size = diagram.evaluate('(svg) => svg.getBoundingClientRect().width / parseFloat(getComputedStyle(svg).fontSize)')
+            if mode == 'desktop':
+                desktop_sizes[alt] = size
+            else:
+                assert abs(size - desktop_sizes[alt]) < 0.1, ('mobile must not shrink diagram labels', alt)
+
+        square, arrow, repeated_square = diagrams
+        assert square.locator('mask').count() > 0, 'Equal arrows need transparent gaps'
+        assert repeated_square.locator('mask').count() > 0
         square_box, arrow_box = square.bounding_box(), arrow.bounding_box()
         assert arrow_box['y'] >= square_box['y'] + square_box['height'], mode
-        # A small square fits naturally; CSS padding must not shrink its labels.
-        assert square.evaluate('''(img) => {
-            const style = getComputedStyle(img);
-            const contentWidth = img.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
-            return Math.abs(contentWidth - img.naturalWidth) <= 1;
-        }'''), mode
+        assert abs(square_box['width'] - repeated_square.bounding_box()['width']) <= 1
+        if mode == 'mobile':
+            assert arrow.evaluate('''(svg) => {
+                const scroll = svg.parentElement;
+                if (!scroll || scroll.scrollWidth <= scroll.clientWidth) return false;
+                scroll.scrollLeft = scroll.scrollWidth;
+                const canScroll = scroll.scrollLeft > 0;
+                scroll.scrollLeft = 0;
+                return canScroll;
+            }'''), 'Wide mobile diagrams must scroll inside the article'
 
         for theme in ['light', 'dark']:
-            # Set the same theme attribute as the theme switcher, also on mobile.
             page.evaluate('(theme) => document.documentElement.dataset.theme = theme', theme)
             assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1'), (mode, theme)
-            for alt in DIAGRAM_ALTS:
-                diagram = page.get_by_role('img', name=alt, exact=True)
-                expect(diagram).to_be_visible()
-                assert diagram.evaluate('(img) => img.getBoundingClientRect().width <= img.closest("article").clientWidth'), (mode, theme, alt)
+            text_color = page.locator('article').evaluate('(article) => getComputedStyle(article).color')
+            for diagram in [square, repeated_square]:
+                paints = diagram_paints(diagram)
+                assert paints and set(paints) == {text_color}, (mode, theme, paints, text_color)
+            assert 'rgb(255, 0, 0)' in diagram_paints(arrow), 'Explicit TikZ red must survive both themes'
+            for diagram in diagrams:
+                assert diagram.evaluate('''(svg) => {
+                    for (let node = svg; node && node.tagName.toLowerCase() !== 'article'; node = node.parentElement) {
+                        const style = getComputedStyle(node);
+                        if (style.backgroundColor !== 'rgba(0, 0, 0, 0)' || style.filter !== 'none') return false;
+                    }
+                    return true;
+                }'''), 'Diagrams must use the article background without color filters'
             page.screenshot(path=str(SCREENSHOTS / f'tikz-{mode}-{theme}.png'), full_page=True)
+
+        # Changing the surrounding text size must scale diagrams, including wide ones.
+        sizes_before = [diagram.bounding_box()['width'] for diagram in diagrams]
+        article = page.locator('article')
+        article.evaluate('(article) => article.style.fontSize = `${parseFloat(getComputedStyle(article).fontSize) * 1.25}px`')
+        for before, diagram in zip(sizes_before, diagrams):
+            assert abs(diagram.bounding_box()['width'] / before - 1.25) < 0.02
+        assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1')
         context.close()
 
     plain = browser.new_context(java_script_enabled=False)
@@ -192,9 +251,9 @@ def check_diagrams(browser, base, errors):
     for alt in DIAGRAM_ALTS:
         diagram = page.get_by_role('img', name=alt, exact=True)
         expect(diagram).to_be_visible()
-        assert diagram.evaluate('(img) => img.complete && img.naturalWidth > 0')
+        assert diagram.evaluate('(svg) => svg.getBBox().width > 0')
     plain.close()
-    print('PASS: TikZ-CD and TikZ SVGs; accessible descriptions; desktop/mobile light/dark layouts; no JavaScript required', flush=True)
+    print('PASS: inline TikZ SVGs; unique IDs; accessible labels; inherited size/colors; explicit colors; mobile scrolling; no JavaScript required', flush=True)
 
 
 def check_article_collection(browser, errors):
@@ -238,6 +297,13 @@ def check_article_collection(browser, errors):
                 assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1'), path
                 if source.stem in screenshots:
                     page.screenshot(path=str(SCREENSHOTS / f'{source.stem}-{mode}.png'), full_page=True)
+                    if source.stem == 'controlled-objects':
+                        definition = page.locator('#def-controlled-morphism')
+                        definition.screenshot(path=str(SCREENSHOTS / f'controlled-morphism-{mode}-light.png'))
+                        page.evaluate('document.documentElement.dataset.theme = "dark"')
+                        page.screenshot(path=str(SCREENSHOTS / f'{source.stem}-{mode}-dark.png'), full_page=True)
+                        definition.screenshot(path=str(SCREENSHOTS / f'controlled-morphism-{mode}-dark.png'))
+                        page.evaluate('document.documentElement.dataset.theme = "light"')
 
             # Check a real definition link loads its owning article, then a
             # real result link loads its separate statement and proof.

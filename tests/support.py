@@ -14,8 +14,9 @@ THEOREM = "theorems/ci-result"
 WITHOUT_PROOF = "theorems/ci-statement"
 DIAGRAMS = "articles/ci-diagrams"
 DIAGRAM_ALTS = (
-    "Commutative square: A to B by f, A to C by g, B to D by h, C to D by k.",
-    "An arrow from the real numbers to the complex numbers.",
+    "Commutative square: A to B by f, A to C by g, B to D by h, C equals D.",
+    "A red arrow from the real numbers to the complex numbers.",
+    "Second occurrence of the same commutative square.",
 )
 FIXTURES = {
     ARTICLE: r"""(article-ci-object)=
@@ -111,18 +112,28 @@ These diagrams are test fixtures and never enter the published wiki.
 
 ```{tikz}
 :libs: cd
-:alt: Commutative square: A to B by f, A to C by g, B to D by h, C to D by k.
+:alt: Commutative square: A to B by f, A to C by g, B to D by h, C equals D.
 
 \begin{tikzcd}
 A \arrow[r, "f"] \arrow[d, "g"'] & B \arrow[d, "h"] \\
-C \arrow[r, "k"'] & D
+C \arrow[r, equal] & D
 \end{tikzcd}
 ```
 
 ```{tikz}
-:alt: An arrow from the real numbers to the complex numbers.
+:alt: A red arrow from the real numbers to the complex numbers.
 
-\draw[->] (0,0) node[left] {$\mathbb{R}$} -- (10,0) node[right] {$\mathbb{C}$};
+\draw[->,draw=red] (0,0) node[left] {$\mathbb{R}$} -- (10,0) node[right] {$\mathbb{C}$};
+```
+
+```{tikz}
+:libs: cd
+:alt: Second occurrence of the same commutative square.
+
+\begin{tikzcd}
+A \arrow[r, "f"] \arrow[d, "g"'] & B \arrow[d, "h"] \\
+C \arrow[r, equal] & D
+\end{tikzcd}
 ```
 """,
 }

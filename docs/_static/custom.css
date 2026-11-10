@@ -44,20 +44,27 @@ html[data-theme="dark"] {
 .proof-dropdown .proof { box-shadow: none; }
 .math { overflow-x: auto; }
 
-/* TeX fixes the diagram colors. A white backing keeps black strokes legible
-   in dark mode while retaining any colors chosen by the author. */
-.bd-article div.figure:has(img[src*="/tikz-"][src$=".svg"]) {
+/* Inline diagrams inherit the surrounding text color and font-relative size. */
+.bd-article div.figure:has(.wiki-tikz-svg) {
   display: block;
   margin: 1.5rem 0;
 }
-img[src*="/tikz-"][src$=".svg"] {
-  background-color: #fff;
-  border-radius: 0.25rem;
-  /* Padding must not shrink the SVG's natural dimensions and math labels. */
-  box-sizing: content-box;
-  padding: 0.75rem;
-  max-width: calc(100% - 1.5rem);
+.bd-article div.figure > p:has(.wiki-tikz-svg) {
+  /* Keep wide diagrams readable on mobile instead of shrinking their labels. */
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+.wiki-tikz-svg {
+  display: inline-block;
+  vertical-align: middle;
+  /* Match the optical size of the surrounding MathJax mathematics. */
+  font-size: 1.2em;
+  max-width: none;
   height: auto;
+  background: transparent;
+  filter: none;
 }
 
 @media (max-width: 575px) {
