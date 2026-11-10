@@ -57,8 +57,11 @@
 - Mathematical content is a draft until the principal author reviews it. Verify
   literature citations against original sources. Passing CI is not mathematical
   verification. Do not invent references, claims of completeness, or reviews.
-- Make changes on a branch and submit a pull request. Do not merge mathematical
-  drafts, make the repository public, or enable Pages without the author's request.
+- For the author's work in this workspace, commit and push completed changes directly to `main`.
+  The author requested this workflow on 10 November 2026; routine edits do not require a pull request or a separate merge approval.
+  Run the GitHub Actions checks after pushing and repair failures.
+  Saving drafts on `main` does not constitute mathematical review or authorize publication.
+  Do not make the repository public or enable Pages without the author's request.
 - Sphinx builds and browser checks run on GitHub Actions. Do not require a local
   Sphinx installation. Local source editing and viewing downloaded HTML are fine.
 - Refresh downloaded HTML in the fixed `.preview/html/` directory using

@@ -32,15 +32,20 @@ preprints.
 The repository starts **private**. Sphinx runs on **GitHub Actions**; contributors
 do not need to install Python or Sphinx on their computers.
 
-1. Open a Markdown page in `docs/` on GitHub and select the pencil to edit it.
-2. Commit the change to a **new branch** and open a pull request.
+1. Edit a Markdown page in `docs/` in this workspace or in GitHub's browser editor.
+2. Commit and push completed changes directly to **`main`**.
+   Routine work in this workspace does not require a pull request or a separate merge approval.
 3. Wait for **Wiki checks**. In its Actions run, download the `wiki-html` artifact.
 4. Refresh the fixed local preview as described below, or extract the entire ZIP
    and open `index.html` in your browser. Follow links,
    inspect equations, and expand proofs. The `wiki-screenshots` artifact contains
    desktop, dark-mode, and mobile screenshots from the browser checks.
-5. Review the mathematics and merge when satisfied. A build success only verifies
-   the website's structure and tested interactions.
+5. Repair any failed checks and review the mathematics before publication.
+   Saving a draft on `main` does not mark it as reviewed.
+   A build success only verifies the website's structure and tested interactions.
+
+This direct-push workflow follows the author's decision of 10 November 2026.
+Pull requests remain available when explicitly requested or for future collaboration.
 
 Direct file previews support browsing and proofs. Sphinx search works best over
 HTTP, such as the eventual Pages site; MathJax rendering needs internet access.
@@ -93,17 +98,15 @@ Publication is disabled by default. When the author requests publication:
 2. Under **Settings → Pages**, choose **GitHub Actions** as the publishing source.
 3. Under **Settings → Secrets and variables → Actions → Variables**, create the
    repository variable `ENABLE_PAGES` with value `true`.
-4. Run **Build and deploy wiki** on `main`, or merge an approved change into `main`.
+4. Run **Build and deploy wiki** on `main`, or push a change to `main`.
 
 The workflow deploys only from `main`, only for a public repository, and only
 when `ENABLE_PAGES` is `true`. Pull requests never deploy. The expected URL is
 <https://matthiasludewig.github.io/coarse-phases/>; it is not live during drafting.
 
 On GitHub Free, Pages and enforced branch protection require a public repository.
-Until then, follow the pull-request review procedure manually. After publication,
-protect `main`, require `Wiki checks`, disable force pushes and deletion, and
-require reviews once a second reviewer is available. A pull-request author cannot
-approve their own pull request, so a mandatory approval can block a sole author.
+The current sole-author workflow uses direct pushes to `main`.
+Revisit branch protection and review requirements when preparing publication or inviting collaborators.
 See [Pages eligibility](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
 and [branch protection](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
 

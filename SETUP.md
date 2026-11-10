@@ -19,8 +19,16 @@ There is no transclusion of mathematical statements between pages.
 The five sample mathematical articles, shared definition fragment, and sample
 bibliography records have been removed. The author's requested replacement
 collection is now drafted: 15 articles, three stubs, and three theorem pages
-with proofs. Every page carries the warning `Agent-generated, not reviewed yet`.
+with proofs.
+Unreviewed agent-authored pages retain the warning `Agent-generated, not reviewed yet`.
 Coverage and mathematical qualifications are in `docs/about/draft-review.md`.
+
+## Saving work — 10 November 2026
+
+The author works in this workspace and requested that completed edits be committed and pushed directly to `main`.
+Routine changes no longer require a pull request or a separate merge approval.
+GitHub Actions checks each push, and the fixed HTML preview is refreshed from a successful run.
+Mathematical review remains separate from saving drafts, and publication remains disabled until requested.
 
 ## Infrastructure retained
 
@@ -44,7 +52,6 @@ Coverage and mathematical qualifications are in `docs/about/draft-review.md`.
 ## Deliberately pending
 
 - Mathematical review of the requested article collection and its proof pages.
-- Approval and merge of the setup pull request.
 - Public visibility, enabling Pages, and verification of the live site.
 - Branch protection, unavailable for this private repository on GitHub Free.
 - A reuse licence, invited contributors, and any custom domain.

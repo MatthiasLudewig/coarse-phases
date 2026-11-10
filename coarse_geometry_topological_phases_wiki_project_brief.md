@@ -1,7 +1,7 @@
 # Project brief: A mathematical wiki for coarse geometry and topological phases
 
 **Status:** Infrastructure and first requested article collection drafted; mathematical review pending
-**Last updated:** 9 November 2026
+**Last updated:** 10 November 2026
 **Purpose of this document:** Record the intended features, the agreed technical direction, the implementation plan, and decisions that remain open. This specifies the intended system. See `SETUP.md` for implementation status. The editorial decision of 6 November 2026 replaces the original definition-fragment architecture.
 
 ## 1. Project vision
@@ -42,7 +42,7 @@ The current decision is to use **Sphinx + MyST Markdown + GitHub**, rather than 
 | Automatic build and validation | GitHub Actions | Chosen |
 | Public website hosting | GitHub Pages | Preferred initial hosting |
 | Custom URL | Subdomain of existing personal website | Possible later; undecided |
-| AI-supported editing | Codex working on the Git repository, using pull requests | Intended workflow |
+| AI-supported editing | Codex commits and pushes the author's workspace edits directly to `main` | Author's decision of 10 November 2026 |
 | MySQL/PHP | Not required for this Sphinx website | Not needed |
 
 **Important distinction:** Sphinx is a *static-site generator*, not a live wiki server. The public site displays pre-generated HTML. Browser-based editing normally follows an **Edit this page → GitHub** link, rather than happening inside the published website itself.
@@ -55,7 +55,7 @@ Author, colleague, or Codex
             v
 GitHub repository (Markdown source, images, config, workflow)
             |
-            | pull request: build and validate; merge to main: publish
+            | push to main: build and validate; publish only when enabled
             v
 GitHub Actions (temporary build machine)
             |
@@ -264,18 +264,19 @@ Also desirable:
 
 Initially the principal author will be the primary contributor. Selected colleagues may be granted access; outside contributions can be considered later.
 
-Recommended editorial workflow:
+On 10 November 2026, the author chose a direct-push workflow for work in this workspace:
 
 1. An author or Codex edits `.md` files locally or in GitHub's browser editor.
-2. Changes are submitted as a **pull request** rather than pushed directly to the publication branch.
-3. GitHub Actions runs Sphinx and displays success or failure checks on the pull request.
-4. The author reviews mathematical claims, notation, references, and the rendered output, then approves or revises the change.
-5. An approved pull request is merged into `main`.
-6. A successful build of `main` automatically publishes the updated site to GitHub Pages.
+2. Codex commits and pushes completed changes directly to **`main`**, without requiring a pull request or a separate merge approval.
+3. GitHub Actions runs Sphinx and browser checks after each push; Codex repairs failures and refreshes the fixed local preview from a successful run.
+4. Saving a draft does not mark the mathematics as reviewed; the author reviews mathematical claims, notation, references, and the rendered output before publication.
+5. Publication remains disabled until explicitly requested by the author.
+6. Once publication is enabled, successful builds of `main` publish the updated site to GitHub Pages.
 
 A theme-provided **Edit this page** link can lead from a public article to its source on GitHub. This is not a built-in, direct on-site editor; contributors generally need a GitHub account to propose changes. The PyData Sphinx Theme supports configuring source-edit links through `html_theme_options` and `html_context`.
 
-Set a repository branch protection rule so that required build checks and, when collaborators are involved, review requirements must pass before merging. Direct pushes to `main` should be restricted for a reliable approval process.
+Pull requests remain available when explicitly requested or when collaborators need a separate review process.
+Revisit branch protection when preparing publication or inviting collaborators.
 
 ### Codex policy
 
@@ -287,7 +288,7 @@ Codex may help to:
 - search for existing terms and labels before creating new ones;
 - identify missing links, duplications, and structural inconsistencies;
 - run Sphinx builds and propose repairs;
-- create pull requests for editorial approval.
+- commit and push completed workspace edits to `main`, using pull requests only when requested or needed for collaboration.
 
 Codex should **not** be given an unrestricted autonomous publishing role initially. Automatically passing a build test does not certify that a theorem, argument, citation, or physical interpretation is correct. Literature references should be checked against original sources.
 
@@ -296,7 +297,7 @@ Codex should **not** be given an unrestricted autonomous publishing role initial
 GitHub Actions is a workflow system configured with YAML files in `.github/workflows/`. A workflow can run:
 
 - when a pull request is opened or updated: **validate** only;
-- when a change reaches `main`: **validate and deploy**;
+- when a change reaches `main`: **validate**, and deploy only when publication is enabled;
 - optionally, when launched manually from the repository's Actions tab.
 
 A build job typically performs:
@@ -329,7 +330,7 @@ sphinxcontrib.tikz, MathJax, and Sphinx's GitHub Pages support. TikZ diagrams us
 the SVG output mode, with TeX and `pdf2svg` installed on the GitHub Actions runner.
 The theme is PyData. The configuration
 uses the actual `MatthiasLudewig/coarse-phases` repository and links preview edits
-to the pull-request branch; published pages will link edits to `main`.
+to the branch used for that build; the normal workspace preview and published pages link edits to `main`.
 
 `docs/index.md` supplies navigation. Mathematical pages belong in subject-grouped
 Articles toctrees and a separate Theorems toctree. The first requested collection
@@ -370,8 +371,9 @@ The repository is `MatthiasLudewig/coarse-phases`, private during drafting.
 The site title is **Coarse Geometry and Topological Phases**. PyData is the
 current theme; its HTML layout can be changed later. The two mathematical page
 types and definition ownership rules are specified above and in the authoring
-guide. Builds run on GitHub Actions, and changes are reviewed through pull
-requests.
+guide.
+Builds run on GitHub Actions, and completed workspace changes are committed and pushed directly to `main`.
+Mathematical review remains a separate step before publication.
 
 Remaining choices:
 
@@ -399,19 +401,19 @@ Article collection and remaining steps:
 - [x] Add standalone theorem pages where a full statement or longer proof is
       useful; include intermediate lemmas as needed. Proofs are optional.
 - [x] Link informal discussions to full results and prerequisite definitions.
-- [ ] Review the mathematics and rendered output before merging.
+- [ ] Review the mathematics and rendered output before publication.
 - [ ] Decide on a licence and eventual public visibility.
 - [ ] Enable Pages and verify the live site when publication is requested.
-- [ ] Enable branch protection when available for the repository's plan and
-      visibility; use the pull-request procedure manually while private.
+- [ ] Revisit branch protection and collaboration requirements when preparing publication or inviting contributors.
 
 Acceptance criteria: readers can navigate to full articles, follow links to
 labelled definitions in those articles, and open standalone theorem pages with
 or without proofs. Articles can retain short results and proofs. Longer theorem
 pages can organize arguments using intermediate lemmas. Mathematical content is
-not transcluded between pages. Contributors propose edits through pull requests;
-GitHub checks the build and the author reviews the mathematics. After publication
-is explicitly enabled, approved changes on `main` produce the public static site.
+not transcluded between pages.
+The author's workspace edits are committed and pushed directly to `main`; pull requests remain available for collaboration.
+GitHub checks the build, and the author reviews the mathematics before publication.
+After publication is explicitly enabled, successful builds of `main` produce the public static site.
 
 ## 13. Reference documentation
 

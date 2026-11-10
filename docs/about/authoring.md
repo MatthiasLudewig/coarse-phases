@@ -239,16 +239,18 @@ Add the required TikZ library names to `:libs:`, separated by commas, for exampl
   No empty mathematical toctrees are needed before pages exist.
 - Check citations against original sources.
   Add the sources needed by the actual articles to the bibliography; do not import a speculative reading list.
-- Create a branch and pull request.
-  GitHub Actions checks the build and reader interactions.
+- For the author's work in this workspace, commit and push completed edits directly to `main`.
+  Routine edits do not require a pull request or a separate merge approval.
+  GitHub Actions checks the build and reader interactions after each push; repair any failures.
   Refresh the fixed local preview from the successful run with `python3 scripts/update_preview.py --run RUN_ID`.
   Open `.preview/html/index.html` once and refresh the same browser tab after later updates.
   The helper downloads `wiki-html` and overwrites the same folder; no local Sphinx installation is needed.
-- The principal author reviews the mathematics before merging.
-  AI-assisted changes follow the same process.
+- The principal author reviews the mathematics before publication.
+  Saving a draft on `main` does not mark it as reviewed.
   Passing CI does not verify correctness.
 
-While the repository is private on GitHub Free, the review procedure is manual; enforced branch protection is reserved for the public stage.
+The author chose this direct-push workflow on 10 November 2026 for work carried out in this workspace.
+Pull requests remain available when explicitly requested or when collaborators need a separate review process.
 Publication remains disabled until the author requests it.
 
 The sample articles were deleted following the editorial decision of 6 November 2026.
