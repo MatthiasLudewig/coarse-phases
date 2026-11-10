@@ -25,7 +25,7 @@ Passing the website checks verifies references and rendering, not the mathematic
 | [Quantum cellular automaton](../articles/quantum-cellular-automaton.md) | Stable QCA, coarse homology, the GNVW index, and plane vanishing |
 | [Controlled derivation](../articles/controlled-derivation.md) | Controlled derivations and local generation |
 | [Geometric module](../articles/geometric-module.md) | Point and continuous models, functional calculus, and ampleness |
-| [Roe algebra](../articles/roe-algebra.md) | Local compactness, propagation, and the local trace-class variant |
+| [Roe algebra](../articles/roe-algebra.md) | Entourage control and bornological local compactness on arbitrary coarse spaces, metric comparison, and the local trace-class variant |
 | [Coarse index](../articles/coarse-index.md) | Boundary classes and finite-propagation representatives |
 | [Coarse K-theory](../articles/coarse-k-theory.md) | Classical groups and categorical spectra |
 
@@ -55,6 +55,10 @@ Literature links are reserved for nontrivial results used without proof; the bib
 10. **QCA:** the spectrum construction uses the stable coarse quotient.
     The plane-vanishing discussion compares it with the one-dimensional Brauer group; it does not assert circuit triviality on a fixed spin system.
     The article links directly to the public papers for the results used.
+11. **General Roe algebras:** the definition uses a chosen point-determined module on any bornological coarse space, without countability or metrizability assumptions.
+    Module independence is only asserted under the stated controlled-unitary or proper-metric ample-module hypotheses.
+    Boundedness alone does not imply that the Roe algebra contains every compact operator.
+    The trace-class density argument assumes a finite or countable uniformly controlled partition whose cells meet each bounded set only finitely often; no unconditional density claim is made for arbitrary coarse spaces.
 
 ## Standalone proof pages
 
