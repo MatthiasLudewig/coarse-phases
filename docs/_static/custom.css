@@ -65,3 +65,13 @@ img[src*="/tikz-"][src$=".svg"] {
   .navbar-brand { max-width: 13rem; }
   .bd-article { overflow-wrap: break-word; }
 }
+
+@counter-style parenthesized {
+  system: extends decimal;
+  prefix: "(";
+  suffix: ") ";
+}
+
+article ol {
+  list-style-type: parenthesized;
+}
