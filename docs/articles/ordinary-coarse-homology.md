@@ -82,8 +82,7 @@ is a coarse homology theory, where $D(\mathbb{Z})$ is the *derived category of* 
 For $X = \mathrm{pt}$ a point, the only non-trivial coarse homology group is $H \mathcal{X}_0(\mathrm{pt}, A) = A$.
 Consequently, the coarse homology groups of Euclidean spaces are
 $$
-H\mathcal{X}_k(\mathbb{Z}^n, A) = H\mathcal{X}_k(\mathbb{R}^n, A)
-=
+H\mathcal{X}_k(\mathbb{Z}^n, A) = H\mathcal{X}_k(\mathbb{R}^n, A) =
 \begin{cases}
 A & k = n
 \\
