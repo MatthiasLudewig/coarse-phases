@@ -41,7 +41,7 @@ def math_ready(page):
         timeout=45000,
     )
     page.evaluate('() => MathJax.startup.promise')
-    expect(page.locator('mjx-container').first).to_be_visible()
+    expect(page.locator('article mjx-container').first).to_be_visible()
     assert page.locator('mjx-merror, [data-mjx-error]').count() == 0
 
 
