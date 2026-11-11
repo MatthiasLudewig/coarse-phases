@@ -327,7 +327,7 @@ def check_kubo_redirect(browser):
         for root in (base, HTML.as_uri()):
             page.goto(f'{root}/articles/kubo-formula.html')
             expect(page).to_have_url(f'{root}/articles/kitaev-pairing.html')
-            expect(page.locator('#article-kitaev-pairing')).to_be_visible()
+            expect(page.get_by_role('heading', name='Kitaev pairing', exact=True)).to_be_visible()
         context.close()
     print('PASS: Kubo formula redirects to Kitaev pairing over HTTP and local files without JavaScript', flush=True)
 
