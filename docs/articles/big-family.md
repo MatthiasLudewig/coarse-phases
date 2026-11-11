@@ -22,7 +22,7 @@ The bornology of $X$ and the whole power set are also big families.
 (sec-elementwise-intersection-union)=
 ## Elementwise intersection and union
 
-For big families $\mathcal Y,\mathcal Z$, define their elementwise intersection, respectively union, by
+For {prf:ref}`big families <def-big-family>` $\mathcal Y,\mathcal Z$, define their elementwise intersection, respectively union, by
 $$
 \begin{aligned}
 \mathcal Y\Cap\mathcal Z

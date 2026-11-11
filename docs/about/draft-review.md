@@ -14,7 +14,7 @@ Passing the website checks verifies references and rendering, not the mathematic
 | Article | Scope |
 | --- | --- |
 | [Coarse space](../articles/coarse-space.md) | Coarse structures, bornologies, tensor products, and coarse maps |
-| [Collections of bounded subsets](../articles/collections-of-bounded-subsets.md) | Uniform density, uniformly bounded collections, and locally finite collections |
+| [Properties of subsets](../articles/collections-of-bounded-subsets.md) | Uniform density, uniformly bounded collections, and locally finite collections |
 | [Big family](../articles/big-family.md) | Support families, union/intersection, generated families, and sparsity |
 | [Coarse transversality](../articles/coarse-transversality.md) | Transverse families, partitions, cocycles, and pairings |
 | [Flasque coarse space](../articles/flasque-coarse-space.md) | Iterated maps, generalized flasqueness, and ray factorization |

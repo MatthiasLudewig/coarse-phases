@@ -9,11 +9,11 @@ Coarse transversality expresses that several support conditions can meet only in
 :nonumber:
 :label: def-coarse-transversality
 
-Big families $\mathcal Y_0,\ldots,\mathcal Y_n$ on $X$ are *coarsely transverse* if every member of $\mathcal Y_0\Cap\cdots\Cap\mathcal Y_n$ is bounded:
+{prf:ref}`Big families <def-big-family>` $\mathcal Y_0,\ldots,\mathcal Y_n$ on $X$ are *coarsely transverse* if every member of $\mathcal Y_0\Cap\cdots\Cap\mathcal Y_n$ is bounded:
 $$
 \mathcal Y_0\Cap\cdots\Cap\mathcal Y_n\subseteq\mathcal B.
 $$
-Subsets $A_0,\ldots,A_n$ are *coarsely transverse* if their generated big families are coarsely transverse.
+Subsets $A_0,\ldots,A_n$ are *coarsely transverse* if their generated {prf:ref}`big families <def-big-family>` are coarsely transverse.
 ```
 
 For metric spaces this is equivalent to boundedness of $(A_0)_{E_R}\cap\cdots\cap (A_n)_{E_R}$ for every finite $R$.

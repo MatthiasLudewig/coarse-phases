@@ -34,7 +34,7 @@ Here the sum is actually a finite sum by the support conditions on $c$.
 The *coarse homology groups* of $X$ with coefficients in $A$ are the homology groups $H\mathcal{X}_n(X, A)$ of the chain complex $C\mathcal{X}(X, A)$.
 ```
 
-If $\mathcal{Y}$ is a big family in $X$, then
+If $\mathcal{Y}$ is a {prf:ref}`big family <def-big-family>` in $X$, then
 $$
 C\mathcal{X}_n(\mathcal{Y}, A) = \operatorname*{colim}_{Y \in \mathcal{Y}} C\mathcal{X}_n(Y, A)
 $$
@@ -58,7 +58,7 @@ This functor has the following properties ([Bunke–Engel, Homotopy theory with 
 
 1. If $f, g: X \to Y$ are close maps, then $f_*$ and $g_*$ are chain homotopic.
 2. If $X$ is flasque, then $C\mathcal{X}(X, A)$ is acyclic (has zero homology).
-3. If $\mathcal{Y}$ and $\mathcal{Z}$ are big families in $X$, there is a long exact sequence
+3. If $\mathcal{Y}$ and $\mathcal{Z}$ are {prf:ref}`big families <def-big-family>` in $X$, there is a long exact sequence
    $$
    \cdots\longrightarrow H\mathcal{X}_n(\mathcal Y\Cap\mathcal Z)
    \xrightarrow{(i_*,-j_*)}H\mathcal{X}_n(\mathcal Y)\oplus H\mathcal{X}_n(\mathcal Z)

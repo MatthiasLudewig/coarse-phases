@@ -1,5 +1,6 @@
+(article-properties-of-subsets)=
 (article-collections-of-bounded-subsets)=
-# Collections of bounded subsets
+# Properties of subsets
 
 Let $(X, \mathcal{C}, \mathcal{B})$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
 
