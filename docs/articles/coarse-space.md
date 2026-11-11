@@ -33,7 +33,7 @@ Its members are called *bounded sets*.
 A *bornological space* is a set equipped with a bornology.
 ```
 
-For an entourage $E$ and a subset $Y\subseteq X$, the *$E$-fattening* of $Y$ is
+For an entourage $E$ and a subset $Y\subseteq X$, the $E$-*fattening* of $Y$ is
 
 (def-fattening)=
 

@@ -1,105 +1,92 @@
 (article-ordinary-coarse-homology)=
 # Ordinary coarse homology
 
-```{warning}
-Agent-generated, not reviewed yet
-```
+Ordinary coarse homology is the coarse analog of Alexander–Spanier homology of topological spaces.
 
-Ordinary coarse homology is built from locally finite chains whose simplices have uniformly controlled diameter.
-The local finiteness condition permits infinite chains, while the control condition retains the large-scale geometry.
+## Coarse homology groups
 
-## The chain-complex-valued functor
+Let $(X, \mathcal{C}, \mathcal{B})$ be a bornological coarse space and let $A$ be an abelian group.
 
-Let $X$ be a coarse space and $A$ an abelian group.
-Write a chain formally as
-$$
-c=\sum_{(x_0,\ldots,x_n)\in X^{n+1}}
-       c(x_0,\ldots,x_n)(x_0,\ldots,x_n),\qquad c(x_0,\ldots,x_n)\in A.
-$$
-No convergence of this sum is intended.
-
-```{prf:definition} Locally finite controlled chain
+```{prf:definition} Coarse chains
 :nonumber:
 :label: def-coarse-chain
 
-A chain is *locally finite* if, for each bounded $B\subseteq X$, only finitely many tuples with nonzero coefficient have a coordinate in $B$.
-It is *controlled* if there is an entourage $E$ such that every pair of coordinates of every nonzero tuple lies in $E$.
-Let $CX_n(X;A)$ be the group of chains satisfying both conditions.
+A *coarse chain of degree* $n$ is a function $c : X^{n+1} \to A$ whose support is {prf:ref}`locally finite <def-locally-finite-subset>` and contained in the $E$-{ref}`fattening <def-fattening>` of the multidiagonal $\Delta \subset X^{n+1}$ for some entourage $E$.
+
+We denote the group of degree $n$ chains by $C\mathcal{X}_n(X, A)$.
 ```
 
-The boundary is the alternating deletion of coordinates:
+Here by $X^{n+1}$, we mean the coarse space obtained by taking the $(n+1)$-fold {prf:ref}`tensor product <def-coarse-tensor-product>` of $X$ with itself.
+The spaces of chains assemble to a chain complex $C\mathcal{X}(X, A)$ with the usual Alexander–Spanier boundary map
 $$
-\partial(x_0,\ldots,x_n)
- =\sum_{j=0}^n(-1)^j(x_0,\ldots,\widehat{x_j},\ldots,x_n),
-\qquad n>0,
+(\partial c) (x_0,\ldots,x_n)
+ =\sum_{j=0}^{n+1} (-1)^j \sum_{y \in X} (x_0,\ldots,x_{j-1}, y, x_j,\ldots,x_n)
 $$
-and $\partial:C X_0\to0$ is zero.
-The coefficient of any fixed tuple in this formula is a finite sum, because a singleton is bounded and the original chain is locally finite.
-The boundary preserves local finiteness and control, and $\partial^2=0$.
+for chains $c$ of positive degree $n+1$ and the zero boundary map in degree zero.
+Here the sum is actually a finite sum by the support conditions on $c$.
 
-A coarse map $f:X\to Y$ induces a chain map by
-$$
-f_*(x_0,\ldots,x_n)=(f(x_0),\ldots,f(x_n)).
-$$
-Properness makes the sums over fibers finite, and controlledness preserves the control condition.
-Thus
-$$
-CX(-;A):\mathrm{BornCoarse}\longrightarrow\mathrm{Ch}(\mathrm{Ab})
-$$
-is a functor.
-Ordered tuples are used here; repeated vertices are permitted.
-Passing to the normalized chain complex gives the same homology.
+(def-coarse-homology-groups)=
 
-Close coarse maps give chain-homotopic maps.
-Explicitly, the usual prism operator is
-$$
-P(x_0,\ldots,x_n)=\sum_{i=0}^n(-1)^i
-(f(x_0),\ldots,f(x_i),g(x_i),\ldots,g(x_n)),
-$$
-and satisfies $\partial P+P\partial=g_*-f_*$.
-Closeness supplies a uniform control for its support.
-
-## The classical homology groups
-
-```{prf:definition} Ordinary coarse homology
+```{prf:definition} Coarse homology groups
 :nonumber:
 :label: def-ordinary-coarse-homology
 
-The *ordinary coarse homology groups* with coefficients in $A$ are
-$$
-HX_n(X;A)=H_n(CX_\bullet(X;A)).
-$$
-The derived version is the image of $CX_\bullet(X;A)$ in the stable $\infty$-category obtained by inverting quasi-isomorphisms of chain complexes.
+The *coarse homology groups* of $X$ with coefficients in $A$ are the homology groups $H\mathcal{X}_n(X, A)$ of the chain complex $C\mathcal{X}(X, A)$.
 ```
 
-The derived functor is a {prf:ref}`coarse homology theory <def-stable-coarse-homology>`.
-In particular, its homology groups satisfy coarse invariance, excision, vanishing on flasques, and $u$-continuity.
-The raw chain complex need not literally be zero on a flasque space; it becomes zero after passing to the derived category.
-A proof of the coarse homology axioms is given in [Bunke–Engel, Homotopy theory with bornological coarse spaces, §6.3](https://arxiv.org/abs/1607.03657).
-
-For a big family $\mathcal Y$, take the subcomplex
+If $\mathcal{Y}$ is a big family in $X$, then
 $$
-CX_\bullet(\mathcal Y;A)
- =\bigcup_{Y\in\mathcal Y}CX_\bullet(Y;A).
+C\mathcal{X}_n(\mathcal{Y}, A) = \operatorname*{colim}_{Y \in \mathcal{Y}} C\mathcal{X}_n(Y, A)
 $$
-Its chains must be supported in one member of the family.
-Since filtered colimits are exact in abelian groups, $HX_n(\mathcal Y;A)=\operatorname*{colim}_{Y\in\mathcal Y}HX_n(Y;A)$.
+may be described as the subgroup of $C\mathcal{X}(X, A)$ consisting of chains that are supported on $Y^{n+1}$ for some member $Y$ of $\mathcal{Y}$.
+Because taking homology groups commutes with filtered colimits, the homology groups $H\mathcal{X}(\mathcal{Y}, A)$ of this complex may be computed as the colimit of the coarse homology groups $H\mathcal{X}(Y, A)$.
 
-For the point, $HX_0(*;A)=A$ and all higher groups vanish.
-The ray has zero coarse homology.
-On the line, the chain $\sum_{k\in\mathbb Z}(k,k+1)$ is a cycle and represents the orientation class in $HX_1(\mathbb Z;\mathbb Z)\cong\mathbb Z$.
-Its coefficients are locally finite, even though the chain has infinite support.
+## The coarse homology theory
 
-## The measure model used for trace pairings
+Throughout, let $A$ be an abelian group.
+A map of coarse spaces $f:X\to Y$ induces a chain map $f_* : C\mathcal{X}(X, A) \to C\mathcal{X}(Y, A)$ given by
+$$
+(f_*c)(y_0, \ldots, y_n)
+= \sum_{x_0 \in f^{-1}(y_0)} \cdots \sum_{x_n \in f^{-1}(y_n)} c(x_0, \ldots, x_n).
+$$
+Properness of $f$ makes the sums over fibers finite, and controlledness of $f$ preserves the control condition.
+We therefore obtain a functor
+$$
+C\mathcal{X}(-;A):\mathrm{BornCoarse} \longrightarrow \mathrm{Ch}(\mathrm{Ab}).
+$$
+This functor has the following properties ([Bunke–Engel, Homotopy theory with bornological coarse spaces, §6.3](https://arxiv.org/abs/1607.03657)):
 
-For proper metric spaces and complex coefficients, one can also use locally finite complex regular Borel measures on $X^{n+1}$ supported within a fixed neighbourhood of the multidiagonal.
-The boundary is the alternating sum of pushforwards along coordinate-deletion maps.
-An atomic chain embeds as a sum of Dirac measures.
+1. If $f, g: X \to Y$ are close maps, then $f_*$ and $g_*$ are chain homotopic.
+2. If $X$ is flasque, then $C\mathcal{X}(X, A)$ is acyclic (has zero homology).
+3. If $\mathcal{Y}$ and $\mathcal{Z}$ are big families in $X$, there is a long exact sequence
+   $$
+   \cdots\longrightarrow H\mathcal{X}_n(\mathcal Y\Cap\mathcal Z)
+   \xrightarrow{(i_*,-j_*)}H\mathcal{X}_n(\mathcal Y)\oplus H\mathcal{X}_n(\mathcal Z)
+   \longrightarrow H\mathcal{X}_n(\mathcal Y\Cup\mathcal Z)
+   \xrightarrow{\partial}H\mathcal{X}_{n-1}(\mathcal Y\Cap\mathcal Z)
+   \longrightarrow\cdots,
+   $$
+4. For an entourage $E$ of $X$, denoting by $X_{\langle E\rangle}$ the space with coarse structure generated by $E$, we have
+   $$
+   C\mathcal{X}(X, A) = \operatorname*{colim}_{E \in \mathcal{C}} C\mathcal{X}(X_{\langle E \rangle}, A).
+   $$
 
-The two models have the same homology: they agree on proper discrete spaces, and both are invariant under measurable coarse equivalences to a discretization.
-The measure model is useful for continuous spaces and operator kernels; the atomic model above works directly on all bornological coarse spaces.
-For measures, local finiteness means finite total variation on compact subsets.
-The comparison is proved in [Ludewig–Thiang, Large-scale quantization of trace I, §3.1](https://arxiv.org/abs/2506.10957).
+Consequently, the composition
+$$
+\mathrm{BornCoarse} \xrightarrow{~C\mathcal{X}(-, A)~} \mathrm{Ch}(\mathrm{Ab}) \longrightarrow D(\mathbb{Z})
+$$
+is a coarse homology theory, where $D(\mathbb{Z})$ is the *derived category of* $\mathbb{Z}$, i.e., the $\infty$-category obtained from the category of chain complexes of abelian groups by inverting quasi-isomorphisms.
 
-{ref}`Coarsely transverse partitions <article-coarse-transversality>` define cohomology classes paired with these chains or measures.
-This is separate from specifying an orientation or a homology class on $X$.
+## Coeffients
+
+For $X = \mathrm{pt}$ a point, the only non-trivial coarse homology group is $H \mathcal{X}_0(\mathrm{pt}, A) = A$.
+Consequently, the coarse homology groups of Euclidean spaces are
+$$
+H\mathcal{X}_k(\mathbb{Z}^n, A) = H\mathcal{X}_k(\mathbb{R}^n, A)
+=
+\begin{cases}
+A & k = n
+\\
+0 & k \neq n.
+\end{cases}
+$$

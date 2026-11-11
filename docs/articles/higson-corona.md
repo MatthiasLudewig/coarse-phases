@@ -1,31 +1,37 @@
 (article-higson-corona)=
 # Higson corona
 
-```{warning}
-Agent-generated, not reviewed yet
-```
-
-The Higson corona records functions whose oscillation on controlled pairs vanishes at infinity.
-It is usually much larger than a familiar geometric boundary, but often maps onto such a boundary.
+The Higson corona is a compact Hausdorff space associated to any bornological coarse space $X$ that can be viewed as the boundary of a compactification of $X$, akin to the Stone–Čech compactification.
 
 ## Higson functions and the corona
 
-First let $X$ be a proper metric space.
-For a bounded function $f$ and an entourage $E$, put
-$$
-\operatorname{Var}_E(f;W)
- =\sup\{|f(x)-f(y)|:(x,y)\in E\cap(W\times W)\}.
-$$
-The supremum of an empty set of nonnegative variations is understood as zero.
+Let $(X, \mathcal{C}, \mathcal{B})$ be a bornological coarse space.
 
-```{prf:definition} Higson function
+```{prf:definition} Vanishing at infinity
+:nonumber:
+:label: def-vanishing-at-infinity
+
+A bounded complex-valued function $f$ on $X$ *vanishes at infinity* if for each $\varepsilon > 0$, there exists a bounded set $B \subseteq X$ such that $|f(x)| \leq \varepsilon$ whenever $x \in X \setminus B$.
+The $C^*$-algebra
+```
+
+For a bounded complex-valued function $f$ on $X$ and an entourage $E$, the $E$-variation of $f$ is
+$$
+\operatorname{Var}_E(f, Y)
+ =\sup\{|f(x)-f(y)|:(x,y)\in E\cap(Y \times Y)\},
+ \qquad
+ Y \subseteq X.
+$$
+
+```{prf:definition} Vanishing variation at infinity
 :nonumber:
 :label: def-higson-function
 
-A bounded continuous function $f:X\to\mathbb C$ is a *Higson function* if, for every entourage $E$ and every $\varepsilon>0$, there is a bounded $B$ such that $\operatorname{Var}_E(f;X\setminus B)<\varepsilon$.
+A bounded function $f:X\to\mathbb C$ has *bounded variation at infinity* if, for every entourage $E$ and every $\varepsilon>0$, there is a bounded $B$ such that $\operatorname{Var}_E(f, X\setminus B)<\varepsilon$.
+Such functions are also called *Higson functions*.
 ```
 
-These functions form a unital $C^*$-algebra $C_h(X)\subseteq C_b(X)$ containing $C_0(X)$ as an ideal.
+These functions form a unital $C^*$-algebra $B_h(X)\subseteq B(X)$ containing $C_0(X)$ as an ideal.
 
 ```{prf:definition} Higson compactification and corona
 :nonumber:

@@ -12,6 +12,13 @@ A subset $Y \subseteq X$ is *uniformly dense* if there exists an entourage $E$ s
 
 Here $Y_E$ denotes the {ref}`fattening <def-fattening>` of $Y$ by $E$.
 
+```{prf:definition} Locally finite subset
+:nonumber:
+:label: def-locally-finite-subset
+
+A subset $Y \subseteq X$ is *locally finite* if $Y \cap B$ is finite for each bounded set $B \subseteq X$.
+```
+
 ```{prf:definition} $E$-separated
 :nonumber:
 :label: def-E-separated
