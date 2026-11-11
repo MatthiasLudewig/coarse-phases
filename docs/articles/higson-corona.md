@@ -1,19 +1,18 @@
 (article-higson-corona)=
 # Higson corona
 
-The Higson corona is a compact Hausdorff space associated to any bornological coarse space $X$ that can be viewed as the boundary of a compactification of $X$, akin to the Stone–Čech compactification.
+The Higson corona is a compact Hausdorff space which may be viewed as the "boundary at infinity" of a coarse space $X$, akin to the Stone–Čech compactification of a topological space.
 
 ## Higson functions and the corona
 
 Let $(X, \mathcal{C}, \mathcal{B})$ be a bornological coarse space.
 
-```{prf:definition} Vanishing at infinity
-:nonumber:
-:label: def-vanishing-at-infinity
+(def-vanishing-at-infinity)=
 
 A bounded complex-valued function $f$ on $X$ *vanishes at infinity* if for each $\varepsilon > 0$, there exists a bounded set $B \subseteq X$ such that $|f(x)| \leq \varepsilon$ whenever $x \in X \setminus B$.
-The $C^*$-algebra
-```
+The $C^*$-algebra of functions vanishing at infinity is denoted by $\ell^\infty(\mathcal{B})$.
+It may be written as the norm closure of the set of functions in $\ell^\infty(X)$ with bounded support.
+
 
 For a bounded complex-valued function $f$ on $X$ and an entourage $E$, the $E$-variation of $f$ is
 $$
@@ -23,47 +22,23 @@ $$
  Y \subseteq X.
 $$
 
-```{prf:definition} Vanishing variation at infinity
-:nonumber:
-:label: def-higson-function
+(def-higson-function)=
 
-A bounded function $f:X\to\mathbb C$ has *bounded variation at infinity* if, for every entourage $E$ and every $\varepsilon>0$, there is a bounded $B$ such that $\operatorname{Var}_E(f, X\setminus B)<\varepsilon$.
+A bounded function $f:X\to\mathbb C$ has *vanishing variation at infinity* if, for every entourage $E$ and every $\varepsilon>0$, there is a bounded $B$ such that $\operatorname{Var}_E(f, X\setminus B)\leq\varepsilon$.
 Such functions are also called *Higson functions*.
-```
 
-These functions form a unital $C^*$-algebra $B_h(X)\subseteq B(X)$ containing $C_0(X)$ as an ideal.
+Functions with vanishing variation at infinity form a unital $C^*$-algebra $\ell^\infty_h(X)\subseteq \ell^\infty(X)$ containing $\ell^\infty(\mathcal{B})$ as an ideal.
+
+
 
 ```{prf:definition} Higson compactification and corona
 :nonumber:
 :label: def-higson-corona
 
-The *Higson compactification* is $hX=\operatorname{Spec}C_h(X)$.
-Evaluation identifies $X$ with a dense open subspace of $hX$.
-Its remainder
-$$
-\nu X=hX\setminus X
- =\operatorname{Spec}\bigl(C_h(X)/C_0(X)\bigr)
-$$
-is the *Higson corona*.
+The *Higson corona* $\partial X$ is the Gelfand spectrum of the commutative unital $C^*$-algebra $\ell^\infty_h(X) / \ell^\infty(\mathcal{B})$.
 ```
 
-Compact $X$ has empty corona.
-For a general coarse map, pullback is most conveniently expressed using the bounded-function description below; continuity of the map is unnecessary there.
-Close coarse maps induce the same map on the corona because their pullbacks of a Higson function differ by a function vanishing at infinity.
-
-## Relation to the Stone–Čech compactification
-
-The Stone–Čech compactification of the underlying topological space is $\beta X=\operatorname{Spec}C_b(X)$.
-Inclusion $C_h(X)\hookrightarrow C_b(X)$ dualizes to a continuous surjection
-$$
-\beta X\longrightarrow hX
-$$
-which restricts to the identity on $X$.
-Thus $hX$ is a quotient of $\beta X$: only those bounded continuous functions satisfying the Higson condition are retained.
-The induced map on remainders is also surjective.
-
-For a discrete space $C_b(X)=\ell^\infty(X)$.
-For a nondiscrete space, $\operatorname{Spec}\ell^\infty(X)$ instead compactifies the set with the **discrete** topology and should not be confused with $\beta X$ above.
+By the Gelfand--Naimark theorem, $\partial X$ is a compact Hausdorff space.
 
 ## Higson-dominated coronas
 
@@ -71,56 +46,28 @@ For a nondiscrete space, $\operatorname{Spec}\ell^\infty(X)$ instead compactifie
 :nonumber:
 :label: def-higson-dominated-corona
 
-A compactification $\overline X$ is *Higson-dominated* if the identity on $X$ extends to a continuous map $hX\to\overline X$.
-Its boundary $\partial\overline X$ is then a continuous image of $\nu X$.
-Equivalently, every restriction to $X$ of a function in $C(\overline X)$ is Higson.
+A *Higson-dominated corona* is the Gelfand spectrum of the commutative $C^*$-algebra $A /\ell^\infty(\mathcal{B})$, where $A \subseteq \ell^\infty_h(X)$ is some unital $C^*$-subalgebra containing $\ell^\infty(\mathcal{B})$.
 ```
 
-For $\mathbb R^n$, the radial compactification is the closed unit ball obtained from $x\mapsto x/(1+|x|)$.
-Its boundary is $S^{n-1}$.
-If $|x-y|$ remains bounded while $|x|,|y|\to\infty$, the images of $x$ and $y$ in the closed ball approach each other.
-Uniform continuity on the compact ball therefore implies that every continuous function on the radial compactification is Higson.
-Consequently there is a surjection
-$$
-\nu\mathbb R^n\longrightarrow S^{n-1}.
-$$
-The sphere is a Higson-dominated corona, not an identification of the Higson corona itself.
-For instance, a continuous extension over the origin of $\sin(\log |x|)$ is Higson but has no limit along a radial ray.
+For $\mathbb R^n$, the bounded transforms $y_i := x_i/(1+|x|)$, $i=1, \dots, n$ of the coordinate functions have vanishing variation at infinity.
+Letting $A$ be the commutative $C^*$-algebra generated by $y_i$ and $\ell^\infty(\mathcal{B})$, we obtain a Higson-dominated corona of $\mathbb{R}^n$ homeomorphic to $S^{n-1}$, called the *spherical corona* of $\mathbb{R}^n$.
+
 
 ## Coronas associated to big families
 
 The construction extends to coarse spaces without a topology.
 Let $X$ be a coarse space and $\mathcal Y$ a {prf:ref}`big family <def-big-family>`.
-Define
-$$
-\begin{aligned}
-\ell^\infty(\mathcal Y)
- &=\{f\in\ell^\infty(X):
-       \lim_{Y\in\mathcal Y}\|f|_{X\setminus Y}\|=0\},\\
-\ell^\infty_{\mathcal Y}(X)
- &=\{f\in\ell^\infty(X):\forall E\in\mathcal C_X,
-       \lim_{Y\in\mathcal Y}\operatorname{Var}_E(f;X\setminus Y)=0\}.
-\end{aligned}
-$$
-Limits are over inclusion in the directed family.
-The first algebra is an ideal in the second.
+We define $\ell^\infty(\mathcal{Y})$ as the norm closure in $\ell^\infty(X)$ of those functions supported on some member of $\mathcal{Y}$.
+
+A complex-valued function $f \in \ell^\infty(X)$ has *bounded variation at infinity away from* $\mathcal{Y}$ if for each $\varepsilon >0$, there exists $Y \in \mathcal{Y}$ such that $\operatorname{Var}_E(f, X \setminus Y) \leq \varepsilon$.
+The set $\ell^\infty_{\mathcal{Y}}(X)$ of functions with bounded variation away from $\mathcal{Y}$ is a unital $C^*$-subalgebra of $\ell^\infty(X)$ containing $\ell^\infty(\mathcal{Y})$ as an ideal.
 
 ```{prf:definition} Coarse corona of a big family
 :nonumber:
 :label: def-big-family-corona
 
-The *coarse $\mathcal Y$-corona* is the compact Hausdorff space defined by
-$$
-C(\partial^{\mathcal Y}X)
- =\ell^\infty_{\mathcal Y}(X)/\ell^\infty(\mathcal Y).
-$$
+The *coarse $\mathcal Y$-corona* is the compact Hausdorff space defined as the Gelfand spectrum of the unital commutative $C^*$-algebra $\ell^\infty_{\mathcal{Y}}(X)/\ell^\infty(\mathcal{Y})$.
 ```
 
-For a proper metric space and $\mathcal Y=\mathcal B_X$, this is the Higson corona.
-Passing from bounded functions to continuous functions does not change this quotient: a partition of unity on a uniformly bounded open cover replaces a bounded slowly varying function by a continuous one modulo a function vanishing at infinity.
-Indeed, at large distance the values averaged by the partition of unity differ from the original value by arbitrarily little, because the cover has uniformly bounded diameter.
-
-For $\mathcal Y=\mathcal P(X)$ the quotient is zero and the corona is empty.
-For $\mathcal Y=\partial W$, the indicator of $W$ has zero variation away from a sufficiently thickened coarse boundary.
-Its class is a projection in the corona algebra and separates the two sides at infinity, whenever both classes are nonzero.
-This is one reason big-family coronas are useful for Callias-type operators and support conditions in index theory; this application is developed in [Bunke–Ludewig, Coronas and Callias type operators in coarse geometry](https://arxiv.org/abs/2411.01646).
+This specializes to the Higson corona if $\mathcal Y=\mathcal B$.
+This notion was introduced in [Bunke–Ludewig, Coronas and Callias type operators in coarse geometry](https://arxiv.org/abs/2411.01646).

@@ -42,13 +42,13 @@ However, the terminology comes from the standard example, where $H_i=\{x_i\geq0\
 A *coarsely transverse $n$-partition* of a proper metric space $X$ is an ordered collection $(A_0,\ldots,A_n)$ of pairwise disjoint Borel subsets with union $X$, which is coarsely transverse.
 ```
 
-Here the standard example is where $X = \partial \mathbb{R}^{n+1}$ is the boundary of the "positive corner"
+Here the standard example is where $X = \partial \mathbb{R}^{n+1}_+$ is the boundary of the "positive corner"
 $$
-\mathbb{R}_+^{d+1} := \{(x_0, \dots, x_n) \in \mathbb{R}^{n+1} \mid x_i > 0\},
+\mathbb{R}_+^{n+1} := \{(x_0, \dots, x_n) \in \mathbb{R}^{n+1} \mid x_i \geq 0\},
 $$
 in $\mathbb{R}^{n+1}$, and
 $$
-A_i := \{(x_0, \dots, x_n) \in \mathbb{R}^+ \mid x_i = 0, x_{i+1}, \dots, x_n > 0\}
+A_i := \{(x_0, \dots, x_n) \in X \mid x_i = 0, x_{i+1}, \dots, x_n > 0\}
 $$
 
 

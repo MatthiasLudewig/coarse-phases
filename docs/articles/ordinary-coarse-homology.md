@@ -20,7 +20,7 @@ Here by $X^{n+1}$, we mean the coarse space obtained by taking the $(n+1)$-fold 
 The spaces of chains assemble to a chain complex $C\mathcal{X}(X, A)$ with the usual Alexander–Spanier boundary map
 $$
 (\partial c) (x_0,\ldots,x_n)
- =\sum_{j=0}^{n+1} (-1)^j \sum_{y \in X} (x_0,\ldots,x_{j-1}, y, x_j,\ldots,x_n)
+ =\sum_{j=0}^{n+1} (-1)^j \sum_{y \in X} c(x_0,\ldots,x_{j-1}, y, x_j,\ldots,x_n)
 $$
 for chains $c$ of positive degree $n+1$ and the zero boundary map in degree zero.
 Here the sum is actually a finite sum by the support conditions on $c$.
@@ -38,7 +38,7 @@ If $\mathcal{Y}$ is a {prf:ref}`big family <def-big-family>` in $X$, then
 $$
 C\mathcal{X}_n(\mathcal{Y}, A) = \operatorname*{colim}_{Y \in \mathcal{Y}} C\mathcal{X}_n(Y, A)
 $$
-may be described as the subgroup of $C\mathcal{X}(X, A)$ consisting of chains that are supported on $Y^{n+1}$ for some member $Y$ of $\mathcal{Y}$.
+may be described as the subgroup of $C\mathcal{X}_n(X, A)$ consisting of chains that are supported on $Y^{n+1}$ for some member $Y$ of $\mathcal{Y}$.
 Because taking homology groups commutes with filtered colimits, the homology groups $H\mathcal{X}(\mathcal{Y}, A)$ of this complex may be computed as the colimit of the coarse homology groups $H\mathcal{X}(Y, A)$.
 
 ## The coarse homology theory
