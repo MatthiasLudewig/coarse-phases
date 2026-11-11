@@ -9,7 +9,7 @@ The [review notes](about/draft-review.md) record coverage and points requiring p
 :caption: Articles — coarse geometry
 
 articles/coarse-space
-articles/collections-of-bounded-subsets
+articles/properties-of-subsets
 articles/big-family
 articles/coarse-transversality
 articles/flasque-coarse-space
