@@ -118,4 +118,4 @@ Tensor-extension maps are unique in this case.
 The category $\widehat{C}$ can be taken to be the category of all Hilbert spaces.
 Notice, however, that the category $\mathrm{Hilb}(X)$ described in the article {ref}`geometric module <article-geometric-module>` has more morphisms than $\mathrm{Loc}_C(X)$: It contains arbitrary controlled operators, while $\mathrm{Loc}_C(X)$ only contains isometric embeddings.
 
-2. Taking $C$ to be the category of matrix algebras over $\mathbb{C}$ with $*$-homomorphisms and $\widehat{C}$ the category of all $C^*$-algebras, one obtains the notion of a local net {ref}`geometric modules <article-spin-system>`
+2. Taking $C$ to be the category of matrix algebras over $\mathbb{C}$ with $*$-homomorphisms and $\widehat{C}$ the category of all $C^*$-algebras, one obtains the notion of a {prf:ref}`quantum spin system <def-quantum-spin-system>`.

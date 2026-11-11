@@ -5,7 +5,7 @@
 Agent-generated, not reviewed yet
 ```
 
-The statement concerns derivations on the algebraic local algebra of a {prf:ref}`local matrix net <def-local-matrix-net>`.
+The statement concerns derivations on the algebraic local algebra of a {prf:ref}`quantum spin system <def-quantum-spin-system>`.
 It makes no assertion about existence of a dynamics on its norm completion.
 
 ## Statement

@@ -10,7 +10,7 @@ In a local matrix net they can be written as sums of local commutators.
 
 ## Definition
 
-Let $\mathcal A$ be a {prf:ref}`local matrix net <def-local-matrix-net>` on $X$, and work on its algebraic union $\mathcal A_X^{\mathrm{alg}}$.
+Let $\mathcal A$ be a {prf:ref}`quantum spin system <def-quantum-spin-system>` on $X$, and work on its algebraic union $\mathcal A_X^{\mathrm{alg}}$.
 
 ```{prf:definition} Controlled derivation
 :nonumber:

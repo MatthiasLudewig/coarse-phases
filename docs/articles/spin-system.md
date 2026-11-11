@@ -1,74 +1,62 @@
 (article-spin-system)=
-# Spin system and local nets
+(article-local-net)=
+# Quantum spin system
 
-```{warning}
-Agent-generated, not reviewed yet
-```
+A quantum spin system on a {prf:ref}`coarse space <def-bornological-coarse-space>` is a {prf:ref}`local controlled object <def-local-controlled-object>` valued in matrix algebras.
+They are relevant for {ref}`quantum cellular automata <article-quantum-cellular-automaton>` and {ref}`gapped phases <article-gapped-phase>`.
 
-A spin system assigns a finite-dimensional matrix algebra to each bounded region of a coarse space.
-Disjoint regions carry independent tensor factors.
-This is the algebra-valued instance of a local controlled object, but it can be defined without the categorical terminology.
+## Definition
 
-## Independent definition
+Let $(X, \mathcal{C}, \mathcal{B})$ be a bornological coarse space.
+A quantum spin system is a {prf:ref}`local controlled object <def-local-controlled-object>` valued in the symmetric monoidal category of matrix algebras.
+Spelling out the details leads to the following definition.
 
-Let $X$ be a coarse space.
-
-```{prf:definition} Local matrix net
+```{prf:definition} Quantum spin system
 :nonumber:
-:label: def-local-matrix-net
+:label: def-quantum-spin-system
 
-A *local matrix net* on $X$ assigns a full matrix algebra $\mathcal A_B$ to each bounded $B\subseteq X$, with compatible unital injective $*$-homomorphisms for inclusions, such that:
+A *quantum spin system* $\mathcal{A}$ on $X$ consists of a $C^*$-algebra $\mathcal{A}_X$ over $X$ together with an assignment of $C^*$-subalgebras $\mathcal{A}_Y$ for each subset $Y \subseteq X$ such that the following holds:
 
-1. $\mathcal A_\varnothing=\mathbb C$;
-2. for disjoint bounded $B,C$, the two local algebras commute and multiplication gives $\mathcal A_B\otimes\mathcal A_C\cong\mathcal A_{B\sqcup C}$;
-3. if $(B_i)$ is directed with bounded union $B$, then $\operatorname*{colim}_i\mathcal A_{B_i}\cong\mathcal A_B$.
+1. If $Y_1 \subseteq Y_2$, then $\mathcal{A}_{Y_1} \subseteq \mathcal{A}_{Y_2}$;
+2. For disjoint subsets $Y,Y'$, the subalgebras $\mathcal{A}_Y$ and $\mathcal{A}_{Y'}$ commute;
+3. Whenever $(Y_i)_{i \in I}$ is a collection of disjoint subsets with union $Y$, then linear combinations of finite products of elements in the subalgebras $\mathcal{A}_{Y_i}$ form a dense subset of $\mathcal{A}_Y$.
+4. If $B \subseteq X$ is bounded, then $\mathcal{A}_B$ is isomorphic to a full matrix algebra.
 
-A *spin system*, in the present convention, is a local matrix net.
+The union $\mathcal{A}_X^{\mathrm{alg}}$ of all subalgebras $\mathcal{A}_B$ for bounded subsets $B \subseteq X$ is called the *local algebra* of the spin system.
+Its $C^*$-closure $\mathcal{A}_X$ is the *quasi-local algebra*.
 ```
 
-The tensor product is unambiguous for matrix algebras.
-For a general subset $Y\subseteq X$, let $\mathcal A_Y^{\mathrm{alg}}$ be the union of the local algebras over bounded subsets of $Y$, and let $\mathcal A_Y$ be its norm completion.
-The global algebra $\mathcal A_X$ is the *quasi-local algebra*.
-Keeping the algebraic union distinct from its completion is useful when working with {ref}`derivations <article-controlled-derivation>`.
-
-Choose a locally finite subset $\Lambda\subseteq X$ and integers $q_x\geq2$ for $x\in\Lambda$.
-Then
+In particular, whenever $Y, Y' \subseteq X$ are disjoint subsets, we have an isomorphism
 $$
-\mathcal A_B=\bigotimes_{x\in B\cap\Lambda}M_{q_x}(\mathbb C)
+\mathcal{A}_Y \otimes \mathcal{A}_{Y'} \cong \mathcal{A}_{Y \sqcup Y'},
 $$
-defines a local matrix net.
-Every local matrix net has this form up to a propagation-zero isomorphism, as proved in {ref}`the point-object proposition <theorem-local-objects-points>`.
-No uniform bound on the $q_x$ is imposed here.
+given by multiplication in $\mathcal{A}_X$.
 
-## Relation to controlled objects and morphisms
 
-Taking unital algebras as coefficient objects and tensor product as monoidal operation identifies the preceding definition with the matrix-algebra case of {prf:ref}`local controlled objects <def-local-controlled-object>`.
-
-A *controlled homomorphism* $\varphi:\mathcal A\to\mathcal B$ is a unital $*$-homomorphism of quasi-local algebras with
+A function $q : X \to \mathbb{N}$ with locally finite support (meaning that each $B \subseteq X$ bounded contains only finitely many points $x$ with $q(x) \neq 1$) determines a spin system by setting
 $$
-\varphi(\mathcal A_B)\subseteq\mathcal B_{B_E}
+\mathcal A_Y=\bigotimes_{x \in Y} M_{q_x}(\mathbb C).
 $$
-for every bounded $B$, for one fixed entourage $E$.
-It restricts to a map of the algebraic unions.
-The local matrix nets and these morphisms form a symmetric monoidal category.
-Controlled isomorphisms, with controlled inverses, form its maximal subgroupoid.
-A {ref}`quantum cellular automaton <article-quantum-cellular-automaton>` is an automorphism in this subgroupoid.
+If $Y$ is bounded, only finitely many factors are not equal to $\mathbb{C}$, so the tensor product is finite.
+Otherwise, the right-hand-side is to be understood as the $C^*$-algebraic infinite tensor product.
+Every spin system is isomorphic to one of this form, as proved in {ref}`the point-object proposition <theorem-local-objects-points>`.
 
 ## Conditional expectations for subsets
 
 Each matrix algebra has a unique normalized trace.
-Their compatible tensor products determine a tracial state $\tau_Y$ on $\mathcal A_Y$ for every subset $Y$.
+Their tensor product determines a tracial state $\tau_Y$ on $\mathcal A_Y$ for every subset $Y$.
 Locality gives a canonical identification
 $$
-\mathcal A_X\cong\mathcal A_Y\otimes\mathcal A_{X\setminus Y}.
+\mathcal A_X\cong\mathcal A_Y \otimes \mathcal A_{X\setminus Y}.
 $$
+
 ```{prf:definition} Conditional expectation onto a subset
 :nonumber:
 :label: def-subset-conditional-expectation
 
 The *conditional expectation onto $\mathcal A_Y$* is
 $$
-\mathbb E_Y=\mathrm{id}_{\mathcal A_Y}\otimes\tau_{X\setminus Y}:
+\mathbb E_Y = \mathrm{id}_{\mathcal A_Y}\otimes\tau_{X\setminus Y}:
 \mathcal A_X\longrightarrow\mathcal A_Y.
 $$
 ```
@@ -77,7 +65,7 @@ It is a unital completely positive contraction, fixes $\mathcal A_Y$, and satisf
 Furthermore, $\mathbb E_Y\mathbb E_Z=\mathbb E_{Y\cap Z}$ and $\mathbb E_Y(\mathcal A_B)\subseteq\mathcal A_{B\cap Y}$.
 All these statements follow first on finite tensor products by partial trace and then on the completion by continuity.
 
-Write $\mathcal A_x^\circ=\ker\tau_x$ for $x\in\Lambda$, and set $\mathcal A_F^\circ=\bigotimes_{x\in F}\mathcal A_x^\circ$, with $\mathcal A_\varnothing^\circ=\mathbb C\mathbf1$.
+Write $\mathcal A_x^\circ=\ker\tau_x$ for $x\in X$, and set $\mathcal A_F^\circ=\bigotimes_{x\in F}\mathcal A_x^\circ$, with $\mathcal A_\varnothing^\circ=\mathbb C\mathbf1$.
 Then
 $$
 \mathcal A_X^{\mathrm{alg}}

@@ -59,4 +59,4 @@ Thus the pointwise description is general; local finiteness follows from the fin
 
 ## Related articles
 
-See {ref}`Spin system and local nets <article-spin-system>` and {ref}`Geometric module <article-geometric-module>` for the two principal cases.
+See {ref}`Quantum spin system <article-spin-system>` and {ref}`Geometric module <article-geometric-module>` for the two principal cases.
