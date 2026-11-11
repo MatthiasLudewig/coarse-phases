@@ -8,8 +8,8 @@ Longer arguments have standalone theorem pages.
 Agent-generated, not reviewed yet
 ```
 
-The current collection contains 16 topic articles, three stubs, and two theorem pages with proofs.
-All await mathematical review.
+The current collection contains 14 topic articles, 18 stubs, one redirect, and two theorem pages with proofs.
+The mathematical drafts await review.
 The [review notes](about/draft-review.md) record coverage and points requiring particular attention.
 
 ```{toctree}
@@ -53,6 +53,20 @@ articles/coarse-k-theory
 articles/wannier-basis
 articles/coarse-cyclic-homology
 articles/freed-hopkins-classification
+articles/kitaev-pairing
+articles/kubo-formula
+articles/chern-number
+articles/algebraic-k-theory-functor
+articles/topological-k-theory-functor
+articles/coarse-algebraic-k-theory
+articles/coarse-tracial-k-theory
+articles/e8-phase
+articles/free-fermion
+articles/toric-code
+articles/ising-model
+articles/invertible-functorial-field-theory
+articles/ground-state
+articles/gapped-phase
 ```
 
 ```{toctree}

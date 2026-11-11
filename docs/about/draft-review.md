@@ -6,7 +6,7 @@ Agent-generated, not reviewed yet
 ```
 
 The first draft follows the author's requested article list and subsection structure.
-The current collection contains 16 topic articles, three deliberately short stubs, and two standalone theorem pages with proofs.
+The current collection contains 14 topic articles, 18 stubs, one redirect, and two standalone theorem pages with proofs.
 Passing the website checks verifies references and rendering, not the mathematics.
 
 ## Coverage
@@ -26,11 +26,28 @@ Passing the website checks verifies references and rendering, not the mathematic
 | [Quantum cellular automaton](../articles/quantum-cellular-automaton.md) | Stable QCA, coarse homology, the GNVW index, and plane vanishing |
 | [Controlled derivation](../articles/controlled-derivation.md) | Controlled derivations and local generation |
 | [Geometric module](../articles/geometric-module.md) | Point and continuous models, functional calculus, and ampleness |
-| [Roe algebra](../articles/roe-algebra.md) | Entourage control and bornological local compactness on arbitrary coarse spaces, metric comparison, and the local trace-class variant |
+| [Roe algebra](../articles/roe-algebra.md) | Stub |
 | [Coarse index](../articles/coarse-index.md) | Boundary classes and finite-propagation representatives |
-| [Coarse K-theory](../articles/coarse-k-theory.md) | Classical groups and categorical spectra |
+| [Coarse K-theory](../articles/coarse-k-theory.md) | Stub |
 
 The Wannier basis, coarse cyclic homology, and Freed–Hopkins pages remain explicitly labelled stubs.
+On 11 November 2026, the author requested the following additional stubs, each containing only “This article is a stub.” beneath its title, without an agent-generated warning:
+
+- [Kitaev pairing](../articles/kitaev-pairing.md).
+- [Chern number](../articles/chern-number.md).
+- [Algebraic K-theory functor](../articles/algebraic-k-theory-functor.md).
+- [Topological K-theory functor](../articles/topological-k-theory-functor.md).
+- [Coarse algebraic K-theory](../articles/coarse-algebraic-k-theory.md).
+- [Coarse tracial K-theory](../articles/coarse-tracial-k-theory.md).
+- [$E_8$-phase](../articles/e8-phase.md).
+- [Free fermion](../articles/free-fermion.md).
+- [Toric code](../articles/toric-code.md).
+- [Ising model](../articles/ising-model.md).
+- [Invertible functorial field theory](../articles/invertible-functorial-field-theory.md).
+- [Ground state](../articles/ground-state.md).
+- [Gapped phase](../articles/gapped-phase.md).
+
+[Kubo formula](../articles/kubo-formula.md) redirects to Kitaev pairing.
 Literature links are reserved for nontrivial results used without proof; the bibliography contains only publicly available papers.
 
 ## Mathematical qualifications made explicit
@@ -51,15 +68,11 @@ Literature links are reserved for nontrivial results used without proof; the bib
 7. **Ample modules:** their comparison is a controlled unitary equivalence, not necessarily an intertwining of the $C_0(X)$-representations.
 8. **Index representatives:** the trace condition is local.
    An odd polynomial representative need not be unitary or have a finite-propagation inverse.
-9. **All-module Roe categories:** these require locally compact morphisms and nonunital-category $K$-theory.
-   The locally finite model is used for the general bornological coarse definition.
+9. **Roe algebra and coarse K-theory:** the author has replaced these drafts with stubs.
+   Their earlier definitions and arguments are no longer supplied in the current collection.
 10. **QCA:** the spectrum construction uses the stable coarse quotient.
     The plane-vanishing discussion compares it with the one-dimensional Brauer group; it does not assert circuit triviality on a fixed spin system.
     The article links directly to the public papers for the results used.
-11. **General Roe algebras:** the definition uses a chosen point-determined module on any bornological coarse space, without countability or metrizability assumptions.
-    Module independence is only asserted under the stated controlled-unitary or proper-metric ample-module hypotheses.
-    Boundedness alone does not imply that the Roe algebra contains every compact operator.
-    The trace-class density argument assumes a finite or countable uniformly controlled partition whose cells meet each bounded set only finitely often; no unconditional density claim is made for arbitrary coarse spaces.
 
 ## Standalone proof pages
 

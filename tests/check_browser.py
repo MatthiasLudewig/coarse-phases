@@ -274,6 +274,8 @@ def check_article_collection(browser, errors):
                 text = source.read_text()
                 path = source.relative_to(ROOT / 'docs').with_suffix('.html').as_posix()
                 page.goto(f'{base}/{path}')
+                if source.stem == 'kubo-formula':
+                    expect(page).to_have_url(f'{base}/articles/kitaev-pairing.html')
                 expect(page.locator('article h1')).to_be_visible()
                 for title in page.locator('article .proof > .admonition-title').all_inner_texts():
                     assert not re.match(r'\s*(Definition|Proposition|Theorem|Lemma|Corollary)\s+\d', title), (path, title)
@@ -318,6 +320,18 @@ def check_article_collection(browser, errors):
     print(f'PASS: {len(documents)} mathematical pages on desktop and mobile; review warnings; MathJax; actual definition and theorem links', flush=True)
 
 
+def check_kubo_redirect(browser):
+    with serve(HTML) as base:
+        context = browser.new_context(java_script_enabled=False)
+        page = context.new_page()
+        for root in (base, HTML.as_uri()):
+            page.goto(f'{root}/articles/kubo-formula.html')
+            expect(page).to_have_url(f'{root}/articles/kitaev-pairing.html')
+            expect(page.locator('#article-kitaev-pairing')).to_be_visible()
+        context.close()
+    print('PASS: Kubo formula redirects to Kitaev pairing over HTTP and local files without JavaScript', flush=True)
+
+
 def main():
     SCREENSHOTS.mkdir(parents=True, exist_ok=True)
     errors = []
@@ -326,6 +340,7 @@ def main():
         try:
             check_site(browser, errors)
             check_article_collection(browser, errors)
+            check_kubo_redirect(browser)
             check_mathematical_pages(browser, errors)
             assert not errors, f'Browser script errors: {errors}'
         finally:

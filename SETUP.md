@@ -17,7 +17,7 @@ and expository articles, and the reuse of definitions through include fragments.
 There is no transclusion of mathematical statements between pages.
 
 The five sample mathematical articles, shared definition fragment, and sample bibliography records have been removed.
-The current collection contains 16 topic articles, three stubs, and two theorem pages with proofs.
+The current collection contains 14 topic articles, 18 stubs, one redirect, and two theorem pages with proofs.
 Unreviewed agent-authored pages retain the warning `Agent-generated, not reviewed yet`.
 Coverage and mathematical qualifications are in `docs/about/draft-review.md`.
 
