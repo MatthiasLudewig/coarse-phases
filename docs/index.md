@@ -1,15 +1,7 @@
 # Coarse Geometry and Topological Phases
 
-A mathematical wiki about locality, large-scale geometry, and the topology of quantum systems.
-Definitions live in their relevant articles; references open the whole article at the labelled statement.
-Longer arguments have standalone theorem pages.
+A mathematical wiki about coarse geometry and its applications in condensed matter physics.
 
-```{warning}
-Agent-generated, not reviewed yet
-```
-
-The current collection contains 14 topic articles, 18 stubs, one redirect, and two theorem pages with proofs.
-The mathematical drafts await review.
 The [review notes](about/draft-review.md) record coverage and points requiring particular attention.
 
 ```{toctree}
