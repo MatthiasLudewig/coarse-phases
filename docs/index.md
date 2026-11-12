@@ -2,8 +2,6 @@
 
 A mathematical wiki about coarse geometry and its applications in condensed matter physics.
 
-The [review notes](about/draft-review.md) record coverage and points requiring particular attention.
-
 ```{toctree}
 :maxdepth: 1
 :caption: Articles — coarse geometry
@@ -76,6 +74,5 @@ theorems/controlled-derivations-locally-generated
 :caption: About this wiki
 
 about/authoring
-about/draft-review
 bibliography/index
 ```

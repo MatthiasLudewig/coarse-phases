@@ -258,4 +258,3 @@ Publication remains disabled until the author requests it.
 The sample articles were deleted following the editorial decision of 6 November 2026.
 The first replacement collection follows the author's requested article list.
 Every agent-authored article, stub, and theorem page must retain the warning `Agent-generated, not reviewed yet` until reviewed by the author.
-See {ref}`draft-review` for coverage and mathematical qualifications.

@@ -52,8 +52,7 @@
   requested collection is now drafted from `input/requested_articles.txt` and the
   supplied mathematical sources. Keep the exact warning
   `Agent-generated, not reviewed yet` on every agent-authored article, stub, and
-  theorem page until the author has reviewed it. See `docs/about/draft-review.md`
-  for coverage and mathematical qualifications requiring review.
+  theorem page until the author has reviewed it.
 - Test-only fixtures belong under `tests/` or in temporary build directories,
   never in the published documentation or its navigation.
 - Mathematical content is a draft until the principal author reviews it. Verify

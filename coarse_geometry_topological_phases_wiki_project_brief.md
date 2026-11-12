@@ -107,12 +107,10 @@ to its labelled target. Do not transclude definitions or theorem pages into othe
 articles. The previous separate definition-reference layer and shared-fragment
 idea have been retired.
 
-The homepage, authoring guide, bibliography, and review notes support these two
-mathematical page types. The initial sample articles have been deleted. Their
-replacement follows `input/requested_articles.txt`: 15 topic articles, three
-stubs, and three standalone theorem pages with proofs. Every agent-authored
-article, stub, and theorem page carries the warning
-**Agent-generated, not reviewed yet** until the author reviews it.
+The homepage, authoring guide, and bibliography support these two mathematical page types.
+The initial sample articles have been deleted.
+Their replacement follows `input/requested_articles.txt`: 15 topic articles, three stubs, and three standalone theorem pages with proofs.
+Every agent-authored article, stub, and theorem page carries the warning **Agent-generated, not reviewed yet** until the author reviews it.
 
 ```text
 coarse-phases/
@@ -332,10 +330,9 @@ The theme is PyData. The configuration
 uses the actual `MatthiasLudewig/coarse-phases` repository and links preview edits
 to the branch used for that build; the normal workspace preview and published pages link edits to `main`.
 
-`docs/index.md` supplies navigation. Mathematical pages belong in subject-grouped
-Articles toctrees and a separate Theorems toctree. The first requested collection
-is drafted; `docs/about/draft-review.md` lists its coverage and records mathematical
-qualifications for the author's review.
+`docs/index.md` supplies navigation.
+Mathematical pages belong in subject-grouped Articles toctrees and a separate Theorems toctree.
+The first requested collection is drafted.
 There is no shared definition-fragment directory or special source exclusion
 for one. Keep generated `_build` directories excluded from source discovery.
 
