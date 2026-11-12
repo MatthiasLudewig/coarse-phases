@@ -42,6 +42,7 @@ html_theme_options = {
     "show_nav_level": 2,
     "navigation_depth": 2,
     "show_toc_level": 2,
+    "show_prev_next": False,
     "use_edit_page_button": True,
     "navbar_center": [],
     "navbar_end": ["theme-switcher", "navbar-icon-links"],
