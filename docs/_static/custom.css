@@ -7,7 +7,7 @@ html {
 html[data-theme="light"] {
   --pst-color-primary: #17645e;
   --pst-color-secondary: #465c83;
-  --pst-color-background: #fcfcfa;
+  --pst-color-background: #ffffff;
   --pst-color-on-background: #ffffff;
 }
 
