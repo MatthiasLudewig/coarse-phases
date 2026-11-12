@@ -79,6 +79,7 @@ html[data-theme="dark"] {
   suffix: ") ";
 }
 
-article ol {
+/* Match Sphinx's ol.arabic specificity so this later rule takes precedence. */
+.bd-article ol {
   list-style-type: parenthesized;
 }
