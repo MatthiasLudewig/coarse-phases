@@ -7,7 +7,7 @@ There is also a notion for metric spaces, which is slightly more general and use
 
 ## Hilbert-space-valued controlled objects
 
-Let $(X, \mathcal{C}, \mathcal{B})$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
+Let $(X, \mathcal{B}, \mathcal{C})$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
 
 ```{prf:definition} Point-determined geometric module
 :nonumber:

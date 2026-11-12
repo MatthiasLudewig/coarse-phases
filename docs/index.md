@@ -44,6 +44,7 @@ articles/coarse-k-theory
 
 articles/wannier-basis
 articles/coarse-cyclic-homology
+articles/coarse-qca-homology
 articles/freed-hopkins-classification
 articles/kitaev-pairing
 articles/kubo-formula
@@ -57,6 +58,7 @@ articles/free-fermion
 articles/toric-code
 articles/ising-model
 articles/invertible-functorial-field-theory
+articles/state
 articles/ground-state
 articles/gapped-phase
 ```

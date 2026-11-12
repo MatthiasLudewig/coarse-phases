@@ -142,6 +142,8 @@ Apply this to all wiki pages, including prose inside definitions, proofs, other 
 Keep blank lines between paragraphs, and preserve the syntax of code blocks, tables, and mathematics.
 
 Use `$x\in X$` for inline mathematics and `$$...$$` for a display.
+Put braces around every calligraphic letter, as in `\mathcal{A}`.
+Write bornological coarse spaces as $(X, \mathcal{B}, \mathcal{C})$, with the bornology before the coarse structure.
 Use a `{math}` directive with `:label:` for a numbered equation.
 For an unnumbered equation with a text link, put an ordinary MyST target before the block and omit both `:label:` and `:name:` inside it; either option creates numbering.
 Put the `$$` delimiters on their own lines, with no blank line between the display and the surrounding prose:

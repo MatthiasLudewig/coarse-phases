@@ -38,9 +38,9 @@ Ordinary flasqueness as above supplies such a factorization, but the converse is
 
 A coarse space is *flasque in the generalized sense* if there are coarse maps $f_n:X\to X$, $n\geq0$, with $f_0=\mathrm{id}_X$, such that
 $$
-\bigcup_{n\geq0}\{(f_n(x),f_{n+1}(x)):x\in X\}\in\mathcal C_X,
+\bigcup_{n\geq0}\{(f_n(x),f_{n+1}(x)):x\in X\}\in\mathcal{C}_X,
 \qquad
-\bigcup_{n\geq0}(f_n\times f_n)(E)\in\mathcal C_X
+\bigcup_{n\geq0}(f_n\times f_n)(E)\in\mathcal{C}_X
 $$
 for every entourage $E$, and for every bounded $B$ there is an $N$ such that $f_n(X)\cap B=\varnothing$ for all $n\geq N$.
 ```

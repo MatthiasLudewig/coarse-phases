@@ -12,6 +12,8 @@
 - Put display-math `$$` delimiters on their own lines, directly adjacent to the surrounding prose with no blank lines before or after the display.
   A display may interrupt a sentence; keep each surrounding prose portion on one line.
   Keep inline mathematics in `$...$` and preserve structural spacing needed by MyST targets and directives.
+- Put braces around every calligraphic letter, as in `\mathcal{A}`.
+- Write bornological coarse spaces as $(X, \mathcal{B}, \mathcal{C})$, with the bornology before the coarse structure.
 - Put each definition directly in its owning article, alongside motivation,
   related definitions, examples, and discussion. For example, the Coarse space
   article defines coarse structure, bornological space, and bornological coarse

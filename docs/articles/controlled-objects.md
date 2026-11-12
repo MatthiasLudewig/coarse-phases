@@ -8,14 +8,14 @@ Throughout, we fix a category $C$.
 
 ## Controlled objects in a symmetric monoidal category
 
-Let $(X, \mathcal{C}, \mathcal{B})$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>` and let $C$ be a category.
+Let $(X, \mathcal{B}, \mathcal{C})$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>` and let $C$ be a category.
 We regard the bornology as a category under inclusion.
 
 ```{prf:definition} Controlled object
 :nonumber:
 :label: def-controlled-object
 
-An *$X$-controlled object* in $C$ is a functor $V:\mathcal B\to C$ such that its structure morphisms are monomorphisms and which satisfies the following continuity property: for every directed subcollection $\mathcal{B}' \subseteq \mathcal{B}$ whose union $B = \bigcup \mathcal{B}'$ is bounded, the canonical map
+An *$X$-controlled object* in $C$ is a functor $V:\mathcal{B}\to C$ such that its structure morphisms are monomorphisms and which satisfies the following continuity property: for every directed subcollection $\mathcal{B}' \subseteq \mathcal{B}$ whose union $B = \bigcup \mathcal{B}'$ is bounded, the canonical map
 $$
 \operatorname*{colim}_{B' \in \mathcal{B}'}V(B')\longrightarrow V(B)
 $$
@@ -42,7 +42,7 @@ The notion of controlled morphism depends on the choice of a larger category $\w
 We assume that $\widehat{C}$ is closed under filtered colimits and that the inclusion $C \hookrightarrow \widehat{C}$ preserves filtered colimits that already exist in $C$.
 Then for any subset $Y\subseteq X$, we may define an object of $\widehat C$ by
 $$
-V(Y):=\operatorname*{colim}_{\substack{B\in\mathcal B\\B\subseteq Y}}V(B).
+V(Y):=\operatorname*{colim}_{\substack{B\in\mathcal{B}\\B\subseteq Y}}V(B).
 $$
 
 

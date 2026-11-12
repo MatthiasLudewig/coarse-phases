@@ -15,7 +15,7 @@ Moreover, not every coarse structure on a set is induced by a metric space.
 :nonumber:
 :label: def-coarse-structure
 
-A *coarse structure* on a set $X$ is a collection $\mathcal C$ of subsets of $X\times X$ containing the diagonal $\Delta_X = \{(x, x) \mid x \in X\}$, which is closed under subsets, finite unions, inverses, and compositions.
+A *coarse structure* on a set $X$ is a collection $\mathcal{C}$ of subsets of $X\times X$ containing the diagonal $\Delta_X = \{(x, x) \mid x \in X\}$, which is closed under subsets, finite unions, inverses, and compositions.
 Its members are called *entourages*.
 ```
 
@@ -28,7 +28,7 @@ $$
 :nonumber:
 :label: def-bornology
 
-A *bornology* on a set $X$ is a collection $\mathcal B$ of subsets of $X$, closed under subsets and finite unions, which contains every singleton.
+A *bornology* on a set $X$ is a collection $\mathcal{B}$ of subsets of $X$, closed under subsets and finite unions, which contains every singleton.
 Its members are called *bounded sets*.
 A *bornological space* is a set equipped with a bornology.
 ```
@@ -47,18 +47,18 @@ This concept is used to formulate the following compatibility condition between 
 :nonumber:
 :label: def-bornological-coarse-space
 
-A *bornological coarse space* is a triple $(X,\mathcal C,\mathcal B)$ such that $B_E\in\mathcal B$ whenever $E\in\mathcal C$ and $B\in\mathcal B$.
+A *bornological coarse space* is a triple $(X, \mathcal{B}, \mathcal{C})$ such that $B_E\in\mathcal{B}$ whenever $E\in\mathcal{C}$ and $B\in\mathcal{B}$.
 ```
 
 ## The canonical bornology
 
 For a general coarse structure $\mathcal{C}$ on a set $X$, the *canonical bornology* is the bornology consisting of finite unions of subsets $B \subseteq X$ such that $B \times B$ is an entourage.
 
-If $X$ is *coarsely connected*, meaning that $\bigcup\mathcal C=X\times X$, finite unions of coarsely bounded sets are again coarsely bounded.
-In that case the canonical bornology is simply $\{B:B\times B\in\mathcal C\}$.
+If $X$ is *coarsely connected*, meaning that $\bigcup\mathcal{C}=X\times X$, finite unions of coarsely bounded sets are again coarsely bounded.
+In that case the canonical bornology is simply $\{B:B\times B\in\mathcal{C}\}$.
 Without coarse connectedness the finite-union qualification is necessary.
 
-The maximal bornology $\mathcal P(X)$ is compatible with every coarse structure.
+The maximal bornology $\mathcal{P}(X)$ is compatible with every coarse structure.
 Thus the bornology is genuinely additional data, even when a natural choice is available.
 
 
@@ -69,7 +69,7 @@ However, it is sometimes convenient to allow this additional flexibility of choo
 
 A metric $d$ defines the *metric coarse structure*
 $$
-\mathcal C_d=\{E\subseteq X\times X:\exists R<\infty,\
+\mathcal{C}_d=\{E\subseteq X\times X:\exists R<\infty,\
 E\subseteq E_R\},\qquad E_R=\{(x,y):d(x,y)\leq R\}.
 $$
 Together with the finite-diameter subsets this gives the usual bornological coarse structure on a metric space.

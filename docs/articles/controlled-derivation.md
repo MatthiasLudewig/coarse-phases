@@ -10,19 +10,19 @@ In a local matrix net they can be written as sums of local commutators.
 
 ## Definition
 
-Let $\mathcal A$ be a {prf:ref}`quantum spin system <def-quantum-spin-system>` on $X$, and work on its algebraic union $\mathcal A_X^{\mathrm{alg}}$.
+Let $\mathcal{A}$ be a {prf:ref}`quantum spin system <def-quantum-spin-system>` on $X$, and work on its algebraic union $\mathcal{A}_X^{\mathrm{alg}}$.
 
 ```{prf:definition} Controlled derivation
 :nonumber:
 :label: def-controlled-derivation
 
-A *controlled $*$-derivation* is a complex-linear map $D:\mathcal A_X^{\mathrm{alg}}\to\mathcal A_X^{\mathrm{alg}}$ satisfying
+A *controlled $*$-derivation* is a complex-linear map $D:\mathcal{A}_X^{\mathrm{alg}}\to\mathcal{A}_X^{\mathrm{alg}}$ satisfying
 $$
 D(ab)=D(a)b+aD(b),\qquad D(a^*)=D(a)^*,
 $$
 and, for some entourage $E$,
 $$
-D(\mathcal A_B)\subseteq\mathcal A_{B_E}
+D(\mathcal{A}_B)\subseteq\mathcal{A}_{B_E}
 \quad\text{for every bounded }B.
 $$
 ```
@@ -33,7 +33,7 @@ The real vector space of controlled $*$-derivations is a real Lie algebra under 
 :nonumber:
 :label: def-locally-generated-derivation
 
-A derivation is *locally generated* if there are self-adjoint $h_i\in\mathcal A_{B_i}$ with the family $(B_i)$ locally finite and uniformly bounded, such that
+A derivation is *locally generated* if there are self-adjoint $h_i\in\mathcal{A}_{B_i}$ with the family $(B_i)$ locally finite and uniformly bounded, such that
 $$
 D(a)=i\sum_i[h_i,a].
 $$

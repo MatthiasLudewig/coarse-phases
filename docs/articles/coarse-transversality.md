@@ -9,9 +9,9 @@ Coarse transversality expresses that several support conditions can meet only in
 :nonumber:
 :label: def-coarse-transversality
 
-{prf:ref}`Big families <def-big-family>` $\mathcal Y_0,\ldots,\mathcal Y_n$ on $X$ are *coarsely transverse* if every member of $\mathcal Y_0\Cap\cdots\Cap\mathcal Y_n$ is bounded:
+{prf:ref}`Big families <def-big-family>` $\mathcal{Y}_0,\ldots,\mathcal{Y}_n$ on $X$ are *coarsely transverse* if every member of $\mathcal{Y}_0\Cap\cdots\Cap\mathcal{Y}_n$ is bounded:
 $$
-\mathcal Y_0\Cap\cdots\Cap\mathcal Y_n\subseteq\mathcal B.
+\mathcal{Y}_0\Cap\cdots\Cap\mathcal{Y}_n\subseteq\mathcal{B}.
 $$
 Subsets $A_0,\ldots,A_n$ are *coarsely transverse* if their generated {prf:ref}`big families <def-big-family>` are coarsely transverse.
 ```
@@ -28,7 +28,7 @@ The inclusion formulation also accommodates empty subsets and coarse spaces with
 :nonumber:
 :label: def-coarsely-transverse-half-spaces
 
-A collection of subsets $H_1,\ldots,H_n$ is a collection of *coarsely transverse half spaces* if $\partial H_1\Cap\cdots\Cap\partial H_n\subseteq\mathcal B_X$, with $\partial H_i$ the {ref}`coarse boundary <article-big-family>`.
+A collection of subsets $H_1,\ldots,H_n$ is a collection of *coarsely transverse half spaces* if $\partial H_1\Cap\cdots\Cap\partial H_n\subseteq\mathcal{B}_X$, with $\partial H_i$ the {ref}`coarse boundary <article-big-family>`.
 ```
 
 Here the term "half space" is essentially void: the sets $H_i$ may be, in general, arbitrary subsets of $X$.
