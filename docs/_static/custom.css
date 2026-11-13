@@ -11,6 +11,10 @@ html[data-theme="light"] {
   --pst-color-on-background: #ffffff;
 }
 
+html[data-theme="light"] .bd-sidebar-primary {
+  background-color: #f0f7ff;
+}
+
 html[data-theme="dark"] {
   --pst-color-primary: #84d6c4;
   --pst-color-secondary: #adbee6;
