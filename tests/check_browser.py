@@ -9,7 +9,7 @@ import re
 import threading
 
 from playwright.sync_api import expect, sync_playwright
-from support import ARTICLE, DIAGRAMS, DIAGRAM_ALTS, THEOREM, WITHOUT_PROOF, build, fixture_source
+from support import ARTICLE, DIAGRAMS, DIAGRAM_ALTS, MACROS, MACRO_CASES, THEOREM, WITHOUT_PROOF, build, fixture_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -171,7 +171,41 @@ def check_mathematical_pages(browser, errors):
         context.close()
         plain.close()
         check_diagrams(browser, base, errors)
+        check_macros(browser, base, errors)
         print('PASS: whole-article definition links; standalone results with/without proofs; inline results; lemma links; MathJax; proof toggles', flush=True)
+
+
+def check_macros(browser, base, errors):
+    """All requested commands render like their expansions in both engines."""
+    for width, height, mode in [(1440, 1000, 'desktop'), (390, 844, 'mobile')]:
+        context = browser.new_context(viewport={'width': width, 'height': height})
+        page = context.new_page()
+        page.on('pageerror', lambda error: errors.append(str(error)))
+        page.goto(f'{base}/{MACROS}.html')
+        math_ready(page)
+        expect(page.locator('article h1 mjx-container')).to_have_count(1)
+        rows = page.locator('article table tbody tr')
+        expect(rows).to_have_count(len(MACRO_CASES))
+        for row, (name, _) in zip(rows.all(), MACRO_CASES):
+            formulas = row.locator('mjx-math')
+            expect(formulas).to_have_count(2)
+            actual, expected = formulas.evaluate_all('''(nodes) => nodes.map(node => ({
+                glyphs: [...node.querySelectorAll('mjx-c')].map(glyph => glyph.className),
+                width: node.getBoundingClientRect().width,
+                height: node.getBoundingClientRect().height,
+            }))''')
+            assert actual['glyphs'] == expected['glyphs'], (mode, name, actual, expected)
+            for dimension in ('width', 'height'):
+                assert abs(actual[dimension] - expected[dimension]) < 0.1, (mode, name, actual, expected)
+        # The migrated starred colimits must retain their display limits.
+        expect(page.locator('article div.math mjx-munder')).to_have_count(2)
+        diagram = page.get_by_role('img', name='All requested macros rendered by LaTeX.', exact=True)
+        expect(diagram).to_be_visible()
+        assert diagram.locator('use').count() >= len(MACRO_CASES)
+        assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1')
+        page.screenshot(path=str(SCREENSHOTS / f'macros-{mode}.png'), full_page=True)
+        context.close()
+    print(f'PASS: all {len(MACRO_CASES)} shared macros in MathJax and TikZ; script capitals; display limits', flush=True)
 
 
 def diagram_paints(diagram):

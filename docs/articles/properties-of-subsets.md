@@ -2,7 +2,7 @@
 (article-collections-of-bounded-subsets)=
 # Properties of subsets
 
-Let $(X, \mathcal{B}, \mathcal{C})$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
+Let $(X, \cB, \cC)$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
 
 ```{prf:definition} Uniformly dense
 :nonumber:

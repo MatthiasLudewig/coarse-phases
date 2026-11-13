@@ -19,7 +19,7 @@ The directed colimits in the definition of a controlled object are taken in this
 Set $V_x=V(\{x\})$.
 Then, naturally in bounded $B$,
 $$
-V(B)\cong\operatorname*{colim}_{F\subseteq B,\ F\text{ finite}}
+V(B)\cong\colim\displaylimits_{F\subseteq B,\ F\text{ finite}}
                       \bigotimes_{x\in F}V_x.
 $$
 If the coefficient category consists of finite-dimensional Hilbert spaces with isometric embeddings and direct sum, or full finite-dimensional complex matrix algebras with unital $*$-homomorphisms and tensor product, then $\Lambda=\{x:V_x\not\cong\mathbf1\}$ meets each bounded set in finitely many points.
@@ -40,8 +40,8 @@ The directed union of all finite subsets of $B$ is $B$; the continuity axiom now
 
 For finite-dimensional Hilbert spaces, the mutually orthogonal nonzero subspaces $V_x$ for $x\in B$ lie in the finite-dimensional space $V(B)$.
 There can therefore be only finitely many of them.
-For a matrix net write $V_x=M_{q_x}(\mathbb C)$.
-For every finite $F\subseteq B$, the tensor product $\bigotimes_{x\in F}M_{q_x}(\mathbb C)$ embeds into $V(B)$.
+For a matrix net write $V_x=M_{q_x}(\C)$.
+For every finite $F\subseteq B$, the tensor product $\bigotimes_{x\in F}M_{q_x}(\C)$ embeds into $V(B)$.
 If there were arbitrarily many points with $q_x\geq2$, its dimension would be unbounded, contradicting finite dimensionality of $V(B)$.
 Thus $B\cap\Lambda$ is finite.
 

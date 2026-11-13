@@ -13,6 +13,7 @@ ARTICLE = "articles/ci-object"
 THEOREM = "theorems/ci-result"
 WITHOUT_PROOF = "theorems/ci-statement"
 DIAGRAMS = "articles/ci-diagrams"
+MACROS = "articles/ci-macros"
 DIAGRAM_ALTS = (
     "Commutative square: A to B by f, A to C by g, B to D by h, C equals D.",
     "A red arrow from the real numbers to the complex numbers.",
@@ -137,6 +138,38 @@ C \arrow[r, equal] & D
 ```
 """,
 }
+
+
+# Exercise the requested vocabulary independently of the production definitions.
+MACRO_CASES = [
+    (prefix + letter, rf"\{font}{{{letter}}}")
+    for prefix, font in (("c", "mathcal"), ("s", "mathscr"))
+    for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+] + [(letter, rf"\mathbb{{{letter}}}") for letter in "NZQRC"] + [
+    (name, rf"\operatorname{{{name}}}")
+    for name in (
+        "Mat End Hom Aut Inn id Der ind tr str Tr Str supp ch ker coker spec "
+        "colim Var Exp dom ran Loc Az Con CAR Cl Fun Ad ad Tot"
+    ).split()
+] + [("lim", r"\operatorname*{lim}")] + [
+    (name, rf"\mathrm{{{name}}}")
+    for name in "BornCoarse Set Cat Ab Grp Vect Hilb Top Sp".split()
+]
+FIXTURES[MACROS] = (
+    "# Fixture macros $\\sH$\n\n"
+    "| Command | Macro | Expansion |\n| --- | --- | --- |\n"
+    + "\n".join(rf"| `\{name}` | $x\{name} y$ | $x{expansion} y$ |"
+                for name, expansion in MACRO_CASES)
+    + "\n\nDisplay limits:\n$$\n"
+    + r"\colim\displaylimits_{i\in I} V_i = \operatorname*{colim}_{i\in I} V_i"
+    + "\n$$\n\n```{tikz}\n:alt: All requested macros rendered by LaTeX.\n\n"
+    + "\n".join(
+        rf"\node[anchor=west] at ({(index % 4) * 3}, {-(index // 4)}) "
+        rf"{{$\{name} = {expansion}$}};"
+        for index, (name, expansion) in enumerate(MACRO_CASES)
+    )
+    + "\n```\n"
+)
 
 
 @contextmanager

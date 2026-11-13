@@ -15,8 +15,10 @@
 - Put display-math `$$` delimiters on their own lines, directly adjacent to the surrounding prose with no blank lines before or after the display.
   A display may interrupt a sentence; keep each surrounding prose portion on one line.
   Keep inline mathematics in `$...$` and preserve structural spacing needed by MyST targets and directives.
-- Put braces around every calligraphic letter, as in `\mathcal{A}`.
-- Write bornological coarse spaces as $(X, \mathcal{B}, \mathcal{C})$, with the bornology before the coarse structure.
+- Use the shared mathematical macros in `docs/_ext/wiki_macros.py` throughout articles and theorem pages, including TikZ diagrams.
+  Use `\cA` through `\cZ`, `\sA` through `\sZ`, the number-system macros, and the listed operator and category macros instead of their expanded forms.
+  Keep braces around letters in macro definitions, as in `\mathcal{A}`.
+- Write bornological coarse spaces as $(X, \cB, \cC)$, with the bornology before the coarse structure.
 - Put each definition directly in its owning article, alongside motivation,
   related definitions, examples, and discussion. For example, the Coarse space
   article defines coarse structure, bornological space, and bornological coarse

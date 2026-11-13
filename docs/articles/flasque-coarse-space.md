@@ -16,15 +16,15 @@ Such a motion implements the coarse version of the Eilenberg swindle.
 
 A coarse space $X$ is *flasque* if there is a coarse map $f:X\to X$ such that:
 
-1. $f$ is close to $\mathrm{id}_X$;
+1. $f$ is close to $\id_X$;
 2. for every entourage $E$, the union $\bigcup_{n\geq0}(f^n\times f^n)(E)$ is an entourage;
 3. for every bounded $B\subseteq X$, there is an $N$ with $f^N(X)\cap B=\varnothing$.
 ```
 
 The images $f^n(X)$ decrease with $n$, so the last condition holds for all $n\geq N$.
-The shift $n\mapsto n+1$ makes $\mathbb N$ flasque.
-More generally, $(x,n)\mapsto(x,n+1)$ makes $X\otimes\mathbb N$ flasque for every $X$.
-Translation on $\mathbb Z$ does not witness flasqueness: it is surjective, so no iterate moves the whole space away from a nonempty bounded set.
+The shift $n\mapsto n+1$ makes $\N$ flasque.
+More generally, $(x,n)\mapsto(x,n+1)$ makes $X\otimes\N$ flasque for every $X$.
+Translation on $\Z$ does not witness flasqueness: it is surjective, so no iterate moves the whole space away from a nonempty bounded set.
 
 ## Factorization of the identity through a ray
 
@@ -36,11 +36,11 @@ Ordinary flasqueness as above supplies such a factorization, but the converse is
 :nonumber:
 :label: def-generalized-flasqueness
 
-A coarse space is *flasque in the generalized sense* if there are coarse maps $f_n:X\to X$, $n\geq0$, with $f_0=\mathrm{id}_X$, such that
+A coarse space is *flasque in the generalized sense* if there are coarse maps $f_n:X\to X$, $n\geq0$, with $f_0=\id_X$, such that
 $$
-\bigcup_{n\geq0}\{(f_n(x),f_{n+1}(x)):x\in X\}\in\mathcal{C}_X,
+\bigcup_{n\geq0}\{(f_n(x),f_{n+1}(x)):x\in X\}\in\cC_X,
 \qquad
-\bigcup_{n\geq0}(f_n\times f_n)(E)\in\mathcal{C}_X
+\bigcup_{n\geq0}(f_n\times f_n)(E)\in\cC_X
 $$
 for every entourage $E$, and for every bounded $B$ there is an $N$ such that $f_n(X)\cap B=\varnothing$ for all $n\geq N$.
 ```
@@ -49,10 +49,10 @@ for every entourage $E$, and for every bounded $B$ there is an $N$ such that $f_
 :nonumber:
 :label: prop-flasque-ray-factorization
 
-Generalized flasqueness is equivalent to the existence of a coarse map $F:X\otimes\mathbb N\to X$ such that $F(x,0)=x$.
+Generalized flasqueness is equivalent to the existence of a coarse map $F:X\otimes\N\to X$ such that $F(x,0)=x$.
 Equivalently,
 $$
-\mathrm{id}_X=F\circ i_0,\qquad i_0(x)=(x,0).
+\id_X=F\circ i_0,\qquad i_0(x)=(x,0).
 $$
 ```
 
@@ -79,5 +79,5 @@ This is the precise additional condition recovering the iterated-map definition.
 ## Consequence for coarse homology
 
 A {ref}`coarse homology theory <article-coarse-homology-theory>` vanishes on flasque spaces by definition.
-It also vanishes on generalized flasque spaces: the identity on $E(X)$ factors through $E(X\otimes\mathbb N)=0$, so $E(X)$ is zero.
+It also vanishes on generalized flasque spaces: the identity on $E(X)$ factors through $E(X\otimes\N)=0$, so $E(X)$ is zero.
 No choice of a homology theory is needed in the factorization criterion.

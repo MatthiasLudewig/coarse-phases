@@ -14,46 +14,46 @@ It makes no assertion about existence of a dynamics on its norm completion.
 :nonumber:
 :label: thm-controlled-locally-generated
 
-Let $\mathcal{A}$ be a local matrix net on a bornological coarse space $X$.
-A $*$-derivation of $\mathcal{A}_X^{\mathrm{alg}}$ is {prf:ref}`controlled <def-controlled-derivation>` if and only if it is {prf:ref}`locally generated <def-locally-generated-derivation>`.
+Let $\cA$ be a local matrix net on a bornological coarse space $X$.
+A $*$-derivation of $\cA_X^{\mathrm{alg}}$ is {prf:ref}`controlled <def-controlled-derivation>` if and only if it is {prf:ref}`locally generated <def-locally-generated-derivation>`.
 ```
 
 ## Normalized local implementers
 
 Use the {ref}`point-object description <theorem-local-objects-points>` to write the net on a locally finite support $\Lambda$.
 Fix a symmetric control $E$ containing the diagonal.
-For bounded $B$, there is a unique self-adjoint $h_B\in\mathcal{A}_{B_E}$ such that
+For bounded $B$, there is a unique self-adjoint $h_B\in\cA_{B_E}$ such that
 $$
-D(a)=i[h_B,a]\quad(a\in\mathcal{A}_B),\qquad
+D(a)=i[h_B,a]\quad(a\in\cA_B),\qquad
 \mathbb E_{X\setminus B}(h_B)=0.
 $$
-To see existence, regard $D|_{\mathcal{A}_B}$ as a derivation from the matrix algebra $M_d(\mathbb C)=\mathcal{A}_B$ into the bimodule $\mathcal{A}_{B_E}$.
+To see existence, regard $D|_{\cA_B}$ as a derivation from the matrix algebra $M_d(\C)=\cA_B$ into the bimodule $\cA_{B_E}$.
 For matrix units $e_{ij}$, set
 $$
 K=\sum_i D(e_{i1})e_{1i}.
 $$
 The identity $e_{kl}e_{i1}=\delta_{li}e_{k1}$, after applying $D$, gives $[K,e_{kl}]=D(e_{kl})$.
 Thus $D(a)=[K,a]$.
-Since $D$ preserves the involution, $K+K^*$ commutes with $\mathcal{A}_B$, so replacing $K$ by $(K-K^*)/2$ does not change its commutator.
+Since $D$ preserves the involution, $K+K^*$ commutes with $\cA_B$, so replacing $K$ by $(K-K^*)/2$ does not change its commutator.
 Write this skew-adjoint implementer as $ih$ with $h=h^*$, and subtract $\mathbb E_{X\setminus B}(h)$.
 The subtracted term lies in the relative commutant and does not change $D$.
 
-For uniqueness, two normalized implementers differ by an element of $\mathcal{A}_B'\cap\mathcal{A}_{B_E}=\mathcal{A}_{B_E\setminus B}$.
+For uniqueness, two normalized implementers differ by an element of $\cA_B'\cap\cA_{B_E}=\cA_{B_E\setminus B}$.
 Conditional expectation onto $X\setminus B$ fixes this difference and also annihilates it, so it is zero.
 
 ## Construction of the interaction
 
 Use the exact-support vector-space decomposition
 $$
-\mathcal{A}_X^{\mathrm{alg}}
- =\bigoplus_{F\subseteq\Lambda,\ F\text{ finite}}\mathcal{A}_F^\circ
+\cA_X^{\mathrm{alg}}
+ =\bigoplus_{F\subseteq\Lambda,\ F\text{ finite}}\cA_F^\circ
 $$
 from the {ref}`conditional expectation construction <article-spin-system>`.
 Let $p_F$ be projection onto the $F$-summand.
 These projections preserve self-adjointness.
 Normalization of $h_B$ implies $p_F(h_B)=0$ if $F\cap B=\varnothing$.
 
-If $B\subseteq C$, then $h_C-h_B$ commutes with $\mathcal{A}_B$ and hence has only components supported away from $B$.
+If $B\subseteq C$, then $h_C-h_B$ commutes with $\cA_B$ and hence has only components supported away from $B$.
 Consequently $p_F(h_C)=p_F(h_B)$ whenever $F\cap B\neq\varnothing$.
 Using $B\cup C$ gives the same comparison for arbitrary $B,C$ both meeting $F$.
 
@@ -62,12 +62,12 @@ $$
 h^F=p_F(h_F).
 $$
 For every $x\in F$ the compatibility just proved gives $h^F=p_F(h_{\{x\}})$.
-Since $h_{\{x\}}\in\mathcal{A}_{\{x\}_E}$, a nonzero $h^F$ requires $F\subseteq \{x\}_E$ for every $x\in F$.
+Since $h_{\{x\}}\in\cA_{\{x\}_E}$, a nonzero $h^F$ requires $F\subseteq \{x\}_E$ for every $x\in F$.
 In particular $F\times F\subseteq E$, so the nonzero interaction supports are uniformly bounded.
 
 They are locally finite as a family: if $F$ meets a bounded set $B$, then $F\subseteq B_E\cap\Lambda$, a finite set.
 There are only finitely many possible nonempty subsets $F$ of that finite set.
-Finally, for $a\in\mathcal{A}_B$,
+Finally, for $a\in\cA_B$,
 $$
 D(a)=i[h_B,a]
     =i\sum_{F\cap B\neq\varnothing}[h^F,a].
@@ -78,10 +78,10 @@ This is the desired locally finite, uniformly controlled interaction.
 ## The converse
 
 Suppose $D(a)=i\sum_i[h_i,a]$ with the prescribed support conditions.
-If $a\in\mathcal{A}_B$, only terms with $B_i\cap B\neq\varnothing$ contribute.
+If $a\in\cA_B$, only terms with $B_i\cap B\neq\varnothing$ contribute.
 Choose a symmetric entourage $E$ containing the diagonal and every $B_i\times B_i$.
 Each such $B_i$ lies in $B_E$.
-Hence $D(a)\in\mathcal{A}_{B_E}$, proving controlledness.
+Hence $D(a)\in\cA_{B_E}$, proving controlledness.
 The sum is finite on each local algebra and thus satisfies the Leibniz and $*$ identities there.
 
 ## Related articles

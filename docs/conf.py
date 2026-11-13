@@ -6,6 +6,8 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).parent / "_ext"))
 
+from wiki_macros import LATEX_PREAMBLE, MATH_MACROS
+
 project = "Coarse Geometry and Topological Phases"
 author = "Matthias Ludewig and contributors"
 copyright = "2026, Matthias Ludewig and contributors"
@@ -64,10 +66,11 @@ html_context = {
     "default_mode": "light",
 }
 mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"
+mathjax3_config = {"tex": {"macros": MATH_MACROS}}
 # Compile diagram directives on the CI runner; readers receive ordinary SVGs.
 latex_engine = "pdflatex"
 tikz_proc_suite = "pdf2svg"
-tikz_latex_preamble = r"\usepackage{amsmath,amssymb}"
+tikz_latex_preamble = LATEX_PREAMBLE
 togglebutton_hint = "Show details"
 togglebutton_hint_hide = "Hide details"
 

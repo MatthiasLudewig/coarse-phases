@@ -9,9 +9,9 @@ Coarse transversality expresses that several support conditions can meet only in
 :nonumber:
 :label: def-coarse-transversality
 
-{prf:ref}`Big families <def-big-family>` $\mathcal{Y}_0,\ldots,\mathcal{Y}_n$ on $X$ are *coarsely transverse* if every member of $\mathcal{Y}_0\Cap\cdots\Cap\mathcal{Y}_n$ is bounded:
+{prf:ref}`Big families <def-big-family>` $\cY_0,\ldots,\cY_n$ on $X$ are *coarsely transverse* if every member of $\cY_0\Cap\cdots\Cap\cY_n$ is bounded:
 $$
-\mathcal{Y}_0\Cap\cdots\Cap\mathcal{Y}_n\subseteq\mathcal{B}.
+\cY_0\Cap\cdots\Cap\cY_n\subseteq\cB.
 $$
 Subsets $A_0,\ldots,A_n$ are *coarsely transverse* if their generated {prf:ref}`big families <def-big-family>` are coarsely transverse.
 ```
@@ -28,11 +28,11 @@ The inclusion formulation also accommodates empty subsets and coarse spaces with
 :nonumber:
 :label: def-coarsely-transverse-half-spaces
 
-A collection of subsets $H_1,\ldots,H_n$ is a collection of *coarsely transverse half spaces* if $\partial H_1\Cap\cdots\Cap\partial H_n\subseteq\mathcal{B}_X$, with $\partial H_i$ the {ref}`coarse boundary <article-big-family>`.
+A collection of subsets $H_1,\ldots,H_n$ is a collection of *coarsely transverse half spaces* if $\partial H_1\Cap\cdots\Cap\partial H_n\subseteq\cB_X$, with $\partial H_i$ the {ref}`coarse boundary <article-big-family>`.
 ```
 
 Here the term "half space" is essentially void: the sets $H_i$ may be, in general, arbitrary subsets of $X$.
-However, the terminology comes from the standard example, where $H_i=\{x_i\geq0\}$ are the standard half spaces in $\mathbb R^n$.
+However, the terminology comes from the standard example, where $H_i=\{x_i\geq0\}$ are the standard half spaces in $\R^n$.
 
 
 ```{prf:definition} Coarsely transverse partition
@@ -42,11 +42,11 @@ However, the terminology comes from the standard example, where $H_i=\{x_i\geq0\
 A *coarsely transverse $n$-partition* of a proper metric space $X$ is an ordered collection $(A_0,\ldots,A_n)$ of pairwise disjoint Borel subsets with union $X$, which is coarsely transverse.
 ```
 
-Here the standard example is where $X = \partial \mathbb{R}^{n+1}_+$ is the boundary of the "positive corner"
+Here the standard example is where $X = \partial \R^{n+1}_+$ is the boundary of the "positive corner"
 $$
-\mathbb{R}_+^{n+1} := \{(x_0, \dots, x_n) \in \mathbb{R}^{n+1} \mid x_i \geq 0\},
+\R_+^{n+1} := \{(x_0, \dots, x_n) \in \R^{n+1} \mid x_i \geq 0\},
 $$
-in $\mathbb{R}^{n+1}$, and
+in $\R^{n+1}$, and
 $$
 A_i := \{(x_0, \dots, x_n) \in X \mid x_i = 0, x_{i+1}, \dots, x_n > 0\}
 $$
@@ -70,7 +70,7 @@ $$
    \prod_{i=0}^n A_i(x_{\sigma(i)}),
 $$
 where we also write $A_i$ for the indicator function of the subset $A_i$.
-The corresponding *partition class* is its cohomology class $[\theta_A]\in HX^n(X;\mathbb R)$.
+The corresponding *partition class* is its cohomology class $[\theta_A]\in HX^n(X;\R)$.
 ```
 
 That this cochain is closed with respect to the Alexander–Spanier differential is a simple calculation.

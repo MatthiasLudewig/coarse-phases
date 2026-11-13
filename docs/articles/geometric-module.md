@@ -7,7 +7,7 @@ There is also a notion for metric spaces, which is slightly more general and use
 
 ## Hilbert-space-valued controlled objects
 
-Let $(X, \mathcal{B}, \mathcal{C})$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
+Let $(X, \cB, \cC)$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
 
 ```{prf:definition} Point-determined geometric module
 :nonumber:
@@ -41,7 +41,7 @@ A bounded operator $T: H_X \to H'_X$ is *$E$-controlled* if it sends $H_Y$ to $H
 $T$ is *controlled* if it is $E$-controlled for some entourage $E$.
 ```
 
-$X$-modules and controlled operators form a category $\mathrm{Hilb}(X)$.
+$X$-modules and controlled operators form a category $\Hilb(X)$.
 It is a dagger category with the usual adjoint of linear maps.
 
 On any $X$-module $H$, there is a unique action of the algebra of bounded functions on $X$ with the property that the indicator function of a subset $Y \subseteq X$ acts as the orthogonal projection onto $H_Y$.

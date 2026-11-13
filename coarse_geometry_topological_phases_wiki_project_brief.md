@@ -142,6 +142,10 @@ Put display-math `$$` delimiters on their own lines with no blank lines separati
 When a display interrupts a sentence, keep each surrounding prose portion on one line.
 Keep inline mathematics in `$...$`, paragraph breaks between paragraphs, and structural spacing required by MyST targets and directives.
 
+Use the shared mathematical macros defined in `docs/_ext/wiki_macros.py` throughout articles and theorem pages.
+The same definitions configure MathJax and the TikZ LaTeX preamble, including script capitals through `mathrsfs`.
+The authoring guide lists the calligraphic, script, number-system, operator, and category commands.
+
 Use MyST Markdown for prose and LaTeX mathematics, with `sphinx-proof` for
 statements. A definition is authored directly in the appropriate article:
 

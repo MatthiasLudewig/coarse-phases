@@ -142,8 +142,9 @@ Apply this to all wiki pages, including prose inside definitions, proofs, other 
 Keep blank lines between paragraphs, and preserve the syntax of code blocks, tables, and mathematics.
 
 Use `$x\in X$` for inline mathematics and `$$...$$` for a display.
-Put braces around every calligraphic letter, as in `\mathcal{A}`.
-Write bornological coarse spaces as $(X, \mathcal{B}, \mathcal{C})$, with the bornology before the coarse structure.
+Use the shared macros below, such as `\cA` for $\cA$.
+Keep braces around letters in macro definitions, as in `\mathcal{A}`.
+Write bornological coarse spaces as $(X, \cB, \cC)$, with the bornology before the coarse structure.
 Use a `{math}` directive with `:label:` for a numbered equation.
 For an unnumbered equation with a text link, put an ordinary MyST target before the block and omit both `:label:` and `:name:` inside it; either option creates numbering.
 Put the `$$` delimiters on their own lines, with no blank line between the display and the surrounding prose:
@@ -199,6 +200,41 @@ This starts closed and also works without JavaScript.
 On a long theorem page, use ordinary sections for the supporting lemmas and stages of the argument; collapsible proof blocks are optional and should preserve readability.
 For a technical remark, an admonition with `:class: dropdown` uses `sphinx-togglebutton`.
 Do not attach that class directly to `prf:proof`, whose generated HTML differs from a titled admonition.
+
+## Shared mathematical macros
+
+The definitions in `docs/_ext/wiki_macros.py` are available on every page, including mathematics in headings and navigation, and inside TikZ diagrams.
+The configuration loads the same definitions into MathJax and the diagram LaTeX preamble, with `mathrsfs` supplying script letters in diagrams.
+Add or update a macro in this central file so the two renderers stay consistent.
+Use these macros instead of spelling out their expansions in articles and theorem pages.
+
+| Macros | Meaning | Example |
+| --- | --- | --- |
+| `\cA` through `\cZ` | Calligraphic capitals, `\mathcal{A}` through `\mathcal{Z}` | $\cA,\cB,\cC$ |
+| `\sA` through `\sZ` | Script capitals, `\mathscr{A}` through `\mathscr{Z}` | $\sA,\sB,\sH$ |
+| `\N`, `\Z`, `\Q`, `\R`, `\C` | Blackboard-bold number systems | $\N,\Z,\Q,\R,\C$ |
+| `\BornCoarse`, `\Set`, `\Cat`, `\Ab`, `\Grp`, `\Vect`, `\Hilb`, `\Top`, `\Sp` | Upright category names | $\BornCoarse,\Hilb,\Sp$ |
+
+The following commands produce upright mathematical operators with operator spacing:
+
+```latex
+\Mat \End \Hom \Aut \Inn \id \Der
+\ind \tr \str \Tr \Str \supp \ch \ker \coker \spec
+\lim \colim \Var \Exp \dom \ran
+\Loc \Az \Con \CAR \Cl \Fun \Ad \ad \Tot
+```
+
+The standard commands `\ker` and `\lim` already exist and retain their usual definitions.
+Write `\colim\displaylimits_{i\in I}` when an index should appear below a colimit in display style, as with `\operatorname*{colim}`.
+Command names are case-sensitive: for example, `\tr` and `\Tr` are distinct.
+Before an immediately following letter, end the command with braces, as in `\cA{}x`.
+
+For example:
+
+```markdown
+A coarse space is written $(X, \cB, \cC)$.
+For $V\in\Vect$, consider $\End(V)$ and $\id_V$.
+```
 
 ## Commutative diagrams and TikZ
 

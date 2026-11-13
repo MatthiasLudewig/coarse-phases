@@ -26,13 +26,13 @@ The latter is a local compactness statement, not in general global compactness.
 In the ungraded case, $p=(F+1)/2$ is a projection modulo $C^*(M)$.
 The *coarse index* is
 $$
-\operatorname{Ind}_{\mathrm c}(D)
+\ind_{\mathrm c}(D)
  =\partial[p]\in K_1(C^*(M)),
 $$
 where $\partial$ is the boundary map of $0\to C^*(M)\to D^*(M)\to D^*(M)/C^*(M)\to0$.
 
 In the graded case, write $F$ as an odd operator.
-Its off-diagonal part is invertible modulo the Roe ideal, and its boundary class is $\operatorname{Ind}_{\mathrm c}(D)\in K_0(C^*(M))$.
+Its off-diagonal part is invertible modulo the Roe ideal, and its boundary class is $\ind_{\mathrm c}(D)\in K_0(C^*(M))$.
 ```
 
 These are the odd and even complex index classes.
@@ -69,7 +69,7 @@ The idempotent need not be self-adjoint; replacing it by an orthogonal projectio
 
 In odd degree, the boundary is represented in the completed Roe algebra by $\exp(2\pi i(F+1)/2)$.
 Exponentiation generally loses finite propagation.
-Put $A=(F+1)/2$ and choose a polynomial $q$ satisfying $q(0)=q(1)=1$ which approximates $e^{2\pi it}$ closely enough on an interval containing $\operatorname{spec}(A)$ to remain nonzero there.
+Put $A=(F+1)/2$ and choose a polynomial $q$ satisfying $q(0)=q(1)=1$ which approximates $e^{2\pi it}$ closely enough on an interval containing $\spec(A)$ to remain nonzero there.
 Then $q(A)$ is invertible, has finite propagation, and represents the same $K_1$-class by a straight-line homotopy through invertibles.
 Moreover,
 $$
