@@ -15,6 +15,11 @@ from support import ARTICLE, DIAGRAMS, DIAGRAM_ALTS, MACROS, MACRO_CASES, THEORE
 ROOT = Path(__file__).resolve().parents[1]
 HTML = ROOT / 'docs' / '_build' / 'html'
 SCREENSHOTS = ROOT / 'artifacts' / 'screenshots'
+REDIRECTS = {
+    'articles/kubo-formula.html': ('articles/kitaev-pairing.html', 'Kitaev pairing'),
+    'articles/anderson-dual.html': ('articles/dual-of-sphere-spectrum.html', 'Dual of sphere spectrum'),
+    'articles/brown-comenetz-dual.html': ('articles/dual-of-sphere-spectrum.html', 'Dual of sphere spectrum'),
+}
 
 
 class QuietHandler(SimpleHTTPRequestHandler):
@@ -344,8 +349,11 @@ def check_article_collection(browser, errors):
                 text = source.read_text()
                 path = source.relative_to(ROOT / 'docs').with_suffix('.html').as_posix()
                 page.goto(f'{base}/{path}')
-                if source.stem == 'kubo-formula':
-                    expect(page).to_have_url(f'{base}/articles/kitaev-pairing.html')
+                if path in REDIRECTS:
+                    destination, _ = REDIRECTS[path]
+                    expect(page).to_have_url(f'{base}/{destination}')
+                    # Warnings and equations belong to the page we landed on.
+                    text = (ROOT / 'docs' / Path(destination).with_suffix('.md')).read_text()
                 expect(page.locator('article h1')).to_be_visible()
                 check_navigation(page)
                 for title in page.locator('article .proof > .admonition-title').all_inner_texts():
@@ -355,8 +363,11 @@ def check_article_collection(browser, errors):
                 )
                 for label in labels:
                     expect(page.locator(f'[id="{label}"]')).to_have_count(1)
+                review_warning = page.locator('article .warning').get_by_text(warning, exact=True)
                 if warning in text:
-                    expect(page.locator('article .warning').get_by_text(warning, exact=True)).to_be_visible()
+                    expect(review_warning).to_be_visible()
+                else:
+                    expect(review_warning).to_have_count(0)
                 # MyST can misread $$ adjacent to prose as inline mathematics,
                 # producing malformed text without a Sphinx or MathJax error.
                 delimiters = re.findall(r'^\s*\$\$\s*$', text, re.MULTILINE)
@@ -391,16 +402,17 @@ def check_article_collection(browser, errors):
     print(f'PASS: {len(documents)} mathematical pages on desktop and mobile; review warnings; MathJax; actual definition and theorem links', flush=True)
 
 
-def check_kubo_redirect(browser):
+def check_redirects(browser):
     with serve(HTML) as base:
         context = browser.new_context(java_script_enabled=False)
         page = context.new_page()
         for root in (base, HTML.as_uri()):
-            page.goto(f'{root}/articles/kubo-formula.html')
-            expect(page).to_have_url(f'{root}/articles/kitaev-pairing.html')
-            expect(page.get_by_role('heading', name='Kitaev pairing', exact=True)).to_be_visible()
+            for source, (destination, title) in REDIRECTS.items():
+                page.goto(f'{root}/{source}')
+                expect(page).to_have_url(f'{root}/{destination}')
+                expect(page.get_by_role('heading', name=title, exact=True)).to_be_visible()
         context.close()
-    print('PASS: Kubo formula redirects to Kitaev pairing over HTTP and local files without JavaScript', flush=True)
+    print(f'PASS: all {len(REDIRECTS)} article redirects over HTTP and local files without JavaScript', flush=True)
 
 
 def main():
@@ -411,7 +423,7 @@ def main():
         try:
             check_site(browser, errors)
             check_article_collection(browser, errors)
-            check_kubo_redirect(browser)
+            check_redirects(browser)
             check_mathematical_pages(browser, errors)
             assert not errors, f'Browser script errors: {errors}'
         finally:
