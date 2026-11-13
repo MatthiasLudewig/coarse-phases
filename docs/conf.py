@@ -55,7 +55,6 @@ html_theme_options = {
             "icon": "fa-brands fa-github",
         }
     ],
-    "announcement": "Working draft — mathematical review in progress.",
 }
 html_context = {
     "github_user": "MatthiasLudewig",
