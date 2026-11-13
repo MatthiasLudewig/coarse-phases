@@ -5,8 +5,9 @@ html {
 }
 
 html[data-theme="light"] {
-  --pst-color-primary: #17645e;
+  --pst-color-primary: #1e3a8a;
   --pst-color-secondary: #465c83;
+  --pst-color-link-higher-contrast: var(--pst-color-primary);
   --pst-color-background: #ffffff;
   --pst-color-on-background: #ffffff;
 }
@@ -16,8 +17,9 @@ html[data-theme="light"] .bd-sidebar-primary {
 }
 
 html[data-theme="dark"] {
-  --pst-color-primary: #84d6c4;
+  --pst-color-primary: #93b4e8;
   --pst-color-secondary: #adbee6;
+  --pst-color-link-higher-contrast: var(--pst-color-primary);
 }
 
 .bd-main .bd-content .bd-article-container { max-width: 50rem; }
