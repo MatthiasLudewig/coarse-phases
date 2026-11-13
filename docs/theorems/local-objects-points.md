@@ -22,7 +22,7 @@ $$
 V(B)\cong\mathop{\colim}_{F\subseteq B,\ F\text{ finite}}
                       \bigotimes_{x\in F}V_x.
 $$
-If the coefficient category consists of finite-dimensional Hilbert spaces with isometric embeddings and direct sum, or full finite-dimensional complex matrix algebras with unital $*$-homomorphisms and tensor product, then $\Lambda=\{x:V_x\not\cong\mathbf1\}$ meets each bounded set in finitely many points.
+If the coefficient category consists of finite-dimensional Hilbert spaces with isometric embeddings and direct sum, or full finite-dimensional complex matrix algebras with unital $*$-homomorphisms and tensor product, then $\Lambda=\{x \mid V_x\not\cong\mathbf1\}$ meets each bounded set in finitely many points.
 In these cases the formula reduces to
 $$
 V(B)\cong\bigotimes_{x\in B\cap\Lambda}V_x,

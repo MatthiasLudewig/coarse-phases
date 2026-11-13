@@ -186,6 +186,9 @@ Copy those lines too, including the blank line between the options and the state
 You can generally use ordinary LaTeX mathematics between `$...$`, for example `$x\in X$`, `$\frac{a}{b}$`, or `$\alpha+\beta$`.
 You do not need a LaTeX document header or a `\begin{document}` command.
 
+Use `\mid` between the element expression and its defining condition in set-builder notation.
+For example, write `$\{x \mid x^2 = x\}$` to obtain $\{x \mid x^2 = x\}$.
+
 Use `$$...$$` for an ordinary display equation.
 Put each `$$` delimiter on its own line, directly beside the surrounding prose without intervening blank lines:
 

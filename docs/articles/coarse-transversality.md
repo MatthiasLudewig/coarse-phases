@@ -32,7 +32,7 @@ A collection of subsets $H_1,\ldots,H_n$ is a collection of *coarsely transverse
 ```
 
 Here the term "half space" is essentially void: the sets $H_i$ may be, in general, arbitrary subsets of $X$.
-However, the terminology comes from the standard example, where $H_i=\{x_i\geq0\}$ are the standard half spaces in $\R^n$.
+However, the terminology comes from the standard example, where $H_i=\{x\in\R^n \mid x_i\geq0\}$ are the standard half spaces in $\R^n$.
 
 
 ```{prf:definition} Coarsely transverse partition

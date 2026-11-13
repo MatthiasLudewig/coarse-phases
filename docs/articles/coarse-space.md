@@ -20,7 +20,7 @@ Its members are called *entourages*.
 Here for subsets $E, F\subseteq X\times X$, the inverse and composition are defined by
 $$
 E^{-1}=\{(y,x) \mid (x,y)\in E\},\qquad
-E\circ F=\{(x,z):\exists y,\ (x,y)\in E,\ (y,z)\in F\}.
+E\circ F=\{(x,z) \mid \exists y,\ (x,y)\in E,\ (y,z)\in F\}.
 $$
 ```{prf:definition} Bornological space
 :nonumber:
@@ -53,7 +53,7 @@ A *bornological coarse space* is a triple $(X, \cB, \cC)$ such that $B_E\in\cB$ 
 For a general coarse structure $\cC$ on a set $X$, the *canonical bornology* is the bornology consisting of finite unions of subsets $B \subseteq X$ such that $B \times B$ is an entourage.
 
 If $X$ is *coarsely connected*, meaning that $\bigcup\cC=X\times X$, finite unions of coarsely bounded sets are again coarsely bounded.
-In that case the canonical bornology is simply $\{B:B\times B\in\cC\}$.
+In that case the canonical bornology is simply $\{B \mid B\times B\in\cC\}$.
 Without coarse connectedness the finite-union qualification is necessary.
 
 The maximal bornology $\cP(X)$ is compatible with every coarse structure.
@@ -94,7 +94,7 @@ In an analytic construction which uses Borel functional calculus, measurability 
 :nonumber:
 :label: def-coarse-equivalence
 
-Maps $f,g:X\to Y$ are *close* if $\{(f(x),g(x)):x\in X\}$ is an entourage of $Y$.
+Maps $f,g:X\to Y$ are *close* if $\{(f(x),g(x)) \mid x\in X\}$ is an entourage of $Y$.
 A coarse map $f$ is a *coarse equivalence* if it has a coarse inverse up to closeness: there is a coarse map $g:Y\to X$ with $gf$ and $fg$ close to the respective identity maps.
 ```
 

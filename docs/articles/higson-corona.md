@@ -14,7 +14,7 @@ It may be written as the norm closure of the set of functions in $\ell^\infty(X)
 For a bounded complex-valued function $f$ on $X$ and an entourage $E$, the $E$-variation of $f$ is
 $$
 \Var_E(f, Y)
- =\sup\{|f(x)-f(y)|:(x,y)\in E\cap(Y \times Y)\},
+ =\sup\{|f(x)-f(y)| \mid (x,y)\in E\cap(Y \times Y)\},
  \qquad
  Y \subseteq X.
 $$
