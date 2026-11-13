@@ -17,7 +17,7 @@ A *coarse structure* on a set $X$ is a collection $\cC$ of subsets of $X\times X
 Its members are called *entourages*.
 ```
 
-Here for subsets $E, F\subseteq X\times X$, the inverse and composition is defined by
+Here for subsets $E, F\subseteq X\times X$, the inverse and composition are defined by
 $$
 E^{-1}=\{(y,x):(x,y)\in E\},\qquad
 E\circ F=\{(x,z):\exists y,\ (x,y)\in E,\ (y,z)\in F\}.
