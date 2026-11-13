@@ -47,7 +47,8 @@ def math_ready(page):
 
 def check_navigation(page, source=ROOT / 'docs'):
     """Every file appears once in its folder list, including newly added pages."""
-    navigation = page.get_by_role('navigation', name='Wiki navigation')
+    # Inspect the full list even while the mobile sidebar is closed.
+    navigation = page.get_by_role('navigation', name='Wiki navigation', include_hidden=True)
     expect(navigation.locator('.caption-text')).to_have_text(['Articles', 'Theorem pages'])
     lists = navigation.locator('.bd-toc-item > ul')
     expect(lists).to_have_count(2)
