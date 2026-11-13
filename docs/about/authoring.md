@@ -237,8 +237,8 @@ Add the required TikZ library names to `:libs:`, separated by commas, for exampl
   A coarse map is controlled and proper.
   State other conventions where first needed.
 - Distinguish definitions, established results, conjectures, and physical interpretations, and state the hypotheses of each result explicitly.
-- Add each new mathematical page to an **Articles** or **Theorems** toctree in `index.md`.
-  No empty mathematical toctrees are needed before pages exist.
+- Navigation lists all pages in `docs/articles/` under **Articles**, followed by all pages in `docs/theorems/` under **Theorem pages**, in filename order.
+  The lists update automatically at each build, including stubs; adding or removing a page requires no menu edit.
 - Check citations against original sources.
   Add the sources needed by the actual articles to the bibliography; do not import a speculative reading list.
 - For the author's work in this workspace, commit and push completed edits directly to `main`.

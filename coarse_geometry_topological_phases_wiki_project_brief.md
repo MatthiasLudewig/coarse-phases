@@ -250,7 +250,7 @@ additional implementation.
 Also desirable:
 
 - responsive layout on desktop and mobile;
-- left navigation across subject areas;
+- left navigation listing all articles followed by all theorem pages;
 - central, readable mathematical article column;
 - right-hand table of contents and **Edit this page** link;
 - customizable colors, fonts, article width, theorem boxes, and dark mode;
@@ -331,7 +331,9 @@ uses the actual `MatthiasLudewig/coarse-phases` repository and links preview edi
 to the branch used for that build; the normal workspace preview and published pages link edits to `main`.
 
 `docs/index.md` supplies navigation.
-Mathematical pages belong in subject-grouped Articles toctrees and a separate Theorems toctree.
+Its glob toctrees automatically list all pages in `docs/articles/` under **Articles**, followed by all pages in `docs/theorems/` under **Theorem pages**, in filename order.
+Stubs belong to the article list, and adding or removing files requires no menu edit.
+The sidebar displays only these two lists; the authoring guide and bibliography are linked from the homepage.
 The first requested collection is drafted.
 There is no shared definition-fragment directory or special source exclusion
 for one. Keep generated `_build` directories excluded from source discovery.

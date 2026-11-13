@@ -148,9 +148,7 @@ def fixture_source():
             path = source / f"{name}.md"
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(content, encoding="utf-8")
-        with (source / "index.md").open("a", encoding="utf-8") as index:
-            index.write("\n```{toctree}\n:caption: Test fixtures\n\n")
-            index.write("\n".join(FIXTURES) + "\n```\n")
+        # Folder globs discover the fixtures without any index or menu edits.
         yield source
 
 

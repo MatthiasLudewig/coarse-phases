@@ -45,6 +45,24 @@ def math_ready(page):
     assert page.locator('mjx-merror, [data-mjx-error]').count() == 0
 
 
+def check_navigation(page, source=ROOT / 'docs'):
+    """Every file appears once in its folder list, including newly added pages."""
+    navigation = page.get_by_role('navigation', name='Wiki navigation')
+    expect(navigation.locator('.caption-text')).to_have_text(['Articles', 'Theorem pages'])
+    lists = navigation.locator('.bd-toc-item > ul')
+    expect(lists).to_have_count(2)
+    for group, folder in enumerate(('articles', 'theorems')):
+        expected = [
+            '/' + path.relative_to(source).with_suffix('.html').as_posix()
+            for path in sorted((source / folder).glob('*.md'))
+        ]
+        actual = lists.nth(group).locator('a').evaluate_all(
+            '(links) => links.map(link => new URL(link.href).pathname)'
+        )
+        assert actual == expected, (page.url, folder, actual, expected)
+    return navigation
+
+
 def check_site(browser, errors):
     with serve(HTML) as base:
         context = browser.new_context(viewport={'width': 1440, 'height': 1000})
@@ -52,12 +70,14 @@ def check_site(browser, errors):
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(f'{base}/index.html')
         expect(page.get_by_role('heading', name='Coarse Geometry and Topological Phases', exact=True)).to_be_visible()
-        navigation = page.get_by_role('navigation', name='Wiki navigation')
-        guide = navigation.get_by_role('link', name='Writing and reviewing articles', exact=True)
+        check_navigation(page)
+        guide = page.locator('article').get_by_role('link', name='Writing and reviewing articles', exact=True)
         expect(guide).to_be_visible()
+        expect(page.locator('article').get_by_role('link', name='Bibliography', exact=True)).to_be_visible()
         page.screenshot(path=str(SCREENSHOTS / 'home-desktop.png'), full_page=True)
         guide.click()
         expect(page).to_have_url(f'{base}/about/authoring.html')
+        check_navigation(page)
         edit = page.locator("a[href*='github.com/MatthiasLudewig/coarse-phases/edit/']").first
         branch = os.environ.get('WIKI_EDIT_BRANCH', 'main')
         expect(edit).to_have_attribute(
@@ -71,6 +91,7 @@ def check_site(browser, errors):
         page.screenshot(path=str(SCREENSHOTS / 'authoring-dark.png'), full_page=True)
         page.goto(f'{base}/search.html?q=articles')
         expect(page.locator('#search-results li').first).to_be_visible(timeout=30000)
+        check_navigation(page)
 
         mobile = browser.new_context(viewport={'width': 390, 'height': 844}, is_mobile=True, has_touch=True)
         mobile_page = mobile.new_page()
@@ -80,9 +101,9 @@ def check_site(browser, errors):
             assert mobile_page.evaluate('document.documentElement.scrollWidth <= window.innerWidth + 1'), path
             mobile_page.screenshot(path=str(SCREENSHOTS / name), full_page=True)
         mobile_page.get_by_role('button', name='Site navigation', exact=True).click()
-        nav = mobile_page.get_by_role('navigation', name='Wiki navigation')
-        nav.get_by_role('link', name='Bibliography', exact=True).click()
-        expect(mobile_page).to_have_url(f'{base}/bibliography/index.html')
+        nav = check_navigation(mobile_page)
+        nav.get_by_role('link', name='Controlled derivations are locally generated', exact=True).click()
+        expect(mobile_page).to_have_url(f'{base}/theorems/controlled-derivations-locally-generated.html')
         context.close()
         mobile.close()
         print('PASS: real site navigation, edit URL, search, dark mode, mobile layout', flush=True)
@@ -95,6 +116,11 @@ def check_mathematical_pages(browser, errors):
         page = context.new_page()
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(f'{base}/{THEOREM}.html')
+        navigation = check_navigation(page, source)
+        navigation.get_by_role('link', name='Fixture article', exact=True).click()
+        expect(page).to_have_url(f'{base}/{ARTICLE}.html')
+        check_navigation(page, source).get_by_role('link', name='Fixture result', exact=True).click()
+        expect(page).to_have_url(f'{base}/{THEOREM}.html')
         page.locator("article a[href='../articles/ci-object.html#def-ci-object']").click()
         expect(page).to_have_url(f'{base}/{ARTICLE}.html#def-ci-object')
         expect(page.locator('#def-ci-object')).to_be_visible()
@@ -277,6 +303,7 @@ def check_article_collection(browser, errors):
                 if source.stem == 'kubo-formula':
                     expect(page).to_have_url(f'{base}/articles/kitaev-pairing.html')
                 expect(page.locator('article h1')).to_be_visible()
+                check_navigation(page)
                 for title in page.locator('article .proof > .admonition-title').all_inner_texts():
                     assert not re.match(r'\s*(Definition|Proposition|Theorem|Lemma|Corollary)\s+\d', title), (path, title)
                 labels = page.locator('article .proof > .admonition-title').evaluate_all(
