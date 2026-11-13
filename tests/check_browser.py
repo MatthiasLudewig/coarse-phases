@@ -190,7 +190,10 @@ def check_macros(browser, base, errors):
             formulas = row.locator('mjx-math')
             expect(formulas).to_have_count(2)
             actual, expected = formulas.evaluate_all('''(nodes) => nodes.map(node => ({
-                glyphs: [...node.querySelectorAll('mjx-c')].map(glyph => glyph.className),
+                // Native operators can carry an invisible function-application marker.
+                glyphs: [...node.querySelectorAll('mjx-c')]
+                    .filter(glyph => !glyph.classList.contains('mjx-c2061'))
+                    .map(glyph => glyph.className),
                 width: node.getBoundingClientRect().width,
                 height: node.getBoundingClientRect().height,
             }))''')
