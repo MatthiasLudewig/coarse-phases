@@ -417,6 +417,50 @@ Do not wrap the diagram block in dollar delimiters.
 GitHub converts it into an image during the build, so no local LaTeX installation is needed.
 Give `:alt:` a short description for readers who cannot see the diagram, and explain its mathematical meaning in the text.
 
+### Bibliography entries and citations
+
+The [bibliography](../bibliography/index.md) is maintained in `docs/bibliography/index.md`.
+Entries use ordinary Markdown and a unique label beginning with `bib-`.
+Before adding a paper, check whether it is already listed and reuse its existing label if so.
+Add only sources actually cited in the wiki.
+
+**Add a bibliography entry.**
+Open `docs/bibliography/index.md` on GitHub or in your text editor and add an entry using this pattern:
+
+```markdown
+(bib-freed-hopkins)=
+## Freed–Hopkins: invertible topological phases
+
+Daniel S. Freed and Michael J. Hopkins, [Reflection positivity and invertible topological phases](https://arxiv.org/abs/1604.06527), Geometry & Topology **25** (2021), 1165–1330.
+```
+
+This example uses a paper already in the bibliography; do not add it a second time.
+For a new paper, replace the label, heading, authors, title, link, and publication details.
+Use a label that is unique across the whole wiki, such as `bib-surname-short-title`, and keep it stable once other pages cite it.
+Link the title directly to a publicly accessible version of the paper, such as its arXiv page.
+Give the journal, volume, year, and page range when available; for an unpublished preprint, give its arXiv identifier and year instead.
+Verify these details against the paper or its publication record.
+
+**Cite the entry in an article or theorem page.**
+Use `{ref}` with the entry's label and descriptive link text:
+
+```markdown
+See {ref}`Freed–Hopkins <bib-freed-hopkins>`.
+```
+
+This opens the bibliography at that entry; it does not generate a numbered citation.
+For a nontrivial result used without proof, also link directly to the paper beside the claim.
+You can combine the paper link with a link to the bibliography:
+
+```markdown
+See [Freed–Hopkins](https://arxiv.org/abs/1604.06527) ({ref}`bibliographic details <bib-freed-hopkins>`).
+```
+
+When citing a specific result, include its theorem, section, or page number and check that it supports the exact claim.
+Submit the bibliography edit and the article edit together in the same pull request or commit.
+If you commit directly to `main` using GitHub's single-file editor, save the bibliography entry first, then the article citation, so that the label exists when the article is built.
+In the generated preview, follow both the bibliography link and the paper link to check their destinations.
+
 ### References and review
 
 Keep explanations self-contained and link to prerequisite definitions in their owning articles.
