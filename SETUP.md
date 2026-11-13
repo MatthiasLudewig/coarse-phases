@@ -25,11 +25,20 @@ Unreviewed agent-authored pages retain the warning `Agent-generated, not reviewe
 The author works in this workspace and requested that completed edits be committed and pushed directly to `main`.
 Routine changes no longer require a pull request or a separate merge approval.
 GitHub Actions checks each push, and the fixed HTML preview is refreshed from a successful run.
-Mathematical review remains separate from saving drafts, and publication remains disabled until requested.
+Mathematical review remains separate from saving drafts.
+
+## Publication — 13 November 2026
+
+The author requested publication of the wiki on GitHub Pages.
+The repository is public, Pages uses GitHub Actions, and the repository variable `ENABLE_PAGES` is `true`.
+Successful builds of `main` publish at <https://matthiasludewig.github.io/coarse-phases/>.
+Both **Wiki checks** and **Publish approved main branch** must succeed for an update to go live.
+Existing mathematical review warnings remain in place; publication does not constitute mathematical review.
+The direct-push workflow remains in use, and drafts that should stay outside the live site can use a branch and pull request.
 
 ## Infrastructure retained
 
-- Private repository: `MatthiasLudewig/coarse-phases`.
+- Public repository: `MatthiasLudewig/coarse-phases`.
 - Sphinx/MyST, pinned dependencies, PyData theme, MathJax, and custom styling.
 - TikZ and `tikzcd` diagrams through `sphinxcontrib.tikz`. Standalone `{tikz}`
   directives compile to SVG on GitHub Actions using TeX and `pdf2svg`; no local
@@ -44,13 +53,12 @@ Mathematical review remains separate from saving drafts, and publication remains
   the actual articles on desktop and mobile, including their mathematics and
   review warnings. Additional interaction checks use temporary test fixtures
   that never enter the website preview or its search/navigation.
-- Downloadable HTML and screenshot artifacts. Pages deployment stays disabled.
+- Downloadable HTML and screenshot artifacts, plus GitHub Pages deployment after successful checks on `main`.
 
 ## Deliberately pending
 
 - Mathematical review of the requested article collection and its proof pages.
-- Public visibility, enabling Pages, and verification of the live site.
-- Branch protection, unavailable for this private repository on GitHub Free.
+- Branch protection and collaboration requirements for future contributors.
 - A reuse licence, invited contributors, and any custom domain.
 - Bibliography automation, backlinks, dependency graphs, automatic object
   indexes, and a global proof switch.

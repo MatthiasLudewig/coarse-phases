@@ -66,8 +66,9 @@
 - For the author's work in this workspace, commit and push completed changes directly to `main`.
   The author requested this workflow on 10 November 2026; routine edits do not require a pull request or a separate merge approval.
   Run the GitHub Actions checks after pushing and repair failures.
-  Saving drafts on `main` does not constitute mathematical review or authorize publication.
-  Do not make the repository public or enable Pages without the author's request.
+  The author requested public GitHub Pages publication on 13 November 2026.
+  Successful builds of `main` now publish automatically; routine completed edits remain authorized under the direct-push workflow.
+  Saving or publishing content does not constitute mathematical review; retain the required review warnings.
 - Sphinx builds and browser checks run on GitHub Actions. Do not require a local
   Sphinx installation. Local source editing and viewing downloaded HTML are fine.
 - Refresh downloaded HTML in the fixed `.preview/html/` directory using

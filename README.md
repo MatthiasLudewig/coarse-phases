@@ -1,7 +1,7 @@
 # Coarse Geometry and Topological Phases
 
 A mathematical wiki built with **Sphinx, MyST Markdown, and the PyData theme**.
-The first requested collection contains 15 topic articles, three stubs, and three standalone theorem pages with proofs.
+Read the wiki at <https://matthiasludewig.github.io/coarse-phases/>.
 Unreviewed mathematical pages retain `Agent-generated, not reviewed yet`.
 
 ## Content model
@@ -27,8 +27,8 @@ preprints.
 
 ## Drafting and previewing
 
-The repository starts **private**. Sphinx runs on **GitHub Actions**; contributors
-do not need to install Python or Sphinx on their computers.
+The repository and wiki are public following the author's publication request of 13 November 2026.
+Sphinx runs on **GitHub Actions**; contributors do not need to install Python or Sphinx on their computers.
 
 1. Edit a Markdown page in `docs/` in this workspace or in GitHub's browser editor.
 2. Commit and push completed changes directly to **`main`**.
@@ -38,15 +38,18 @@ do not need to install Python or Sphinx on their computers.
    and open `index.html` in your browser. Follow links,
    inspect equations, and expand proofs. The `wiki-screenshots` artifact contains
    desktop, dark-mode, and mobile screenshots from the browser checks.
-5. Repair any failed checks and review the mathematics before publication.
+5. Repair any failed checks and arrange mathematical review before committing changes intended for publication.
    Saving a draft on `main` does not mark it as reviewed.
    A build success only verifies the website's structure and tested interactions.
+
+Successful builds of `main` publish automatically to GitHub Pages.
+Use a branch and pull request when a draft should remain outside the live wiki.
 
 This direct-push workflow follows the author's decision of 10 November 2026.
 Pull requests remain available when explicitly requested or for future collaboration.
 
 Direct file previews support browsing and proofs. Sphinx search works best over
-HTTP, such as the eventual Pages site; MathJax rendering needs internet access.
+HTTP, such as the public Pages site; MathJax rendering needs internet access.
 Artifacts expire after seven days; rerun a workflow to generate a fresh preview.
 
 ### Fixed local HTML folder
@@ -88,19 +91,21 @@ requirements, including the revised architecture of 6 November 2026;
 implementation status and remaining decisions are in
 [`SETUP.md`](SETUP.md).
 
-## Publishing later
+## Publishing
 
-Publication is disabled by default. When the author requests publication:
+The author requested publication on 13 November 2026.
+The deployment settings are:
 
-1. Review the draft, choose a licence, and make this repository public.
-2. Under **Settings → Pages**, choose **GitHub Actions** as the publishing source.
-3. Under **Settings → Secrets and variables → Actions → Variables**, create the
-   repository variable `ENABLE_PAGES` with value `true`.
-4. Run **Build and deploy wiki** on `main`, or push a change to `main`.
+1. The repository is public.
+2. **Settings → Pages** uses **GitHub Actions** as the publishing source.
+3. The repository Actions variable `ENABLE_PAGES` is `true`.
+4. **Build and deploy wiki** runs on pushes to `main` and can also be started manually.
 
-The workflow deploys only from `main`, only for a public repository, and only
-when `ENABLE_PAGES` is `true`. Pull requests never deploy. The expected URL is
-<https://matthiasludewig.github.io/coarse-phases/>; it is not live during drafting.
+The workflow deploys only from `main`, only for a public repository, and only when `ENABLE_PAGES` is `true`.
+Pull requests never deploy.
+Wait for both **Wiki checks** and **Publish approved main branch** to succeed before checking the [live wiki](https://matthiasludewig.github.io/coarse-phases/).
+To pause future deployments, set `ENABLE_PAGES` to `false`; this leaves the existing site online.
+Publication does not mark mathematical content as reviewed, and existing review warnings remain in place.
 
 On GitHub Free, Pages and enforced branch protection require a public repository.
 The current sole-author workflow uses direct pushes to `main`.
@@ -128,4 +133,4 @@ edits on temporary failures at literature sites.
 
 ## Licence
 
-No reuse licence has been selected yet. Choose one before wider publication.
+No reuse licence has been selected yet.
