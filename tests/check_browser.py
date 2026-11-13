@@ -72,6 +72,7 @@ def check_site(browser, errors):
         page.goto(f'{base}/index.html')
         expect(page.get_by_role('heading', name='Coarse Geometry and Topological Phases', exact=True)).to_be_visible()
         check_navigation(page)
+        expect(page.locator('article a[href^="articles/"], article a[href^="theorems/"]')).to_have_count(0)
         guide = page.locator('article').get_by_role('link', name='Writing and reviewing articles', exact=True)
         expect(guide).to_be_visible()
         expect(page.locator('article').get_by_role('link', name='Bibliography', exact=True)).to_be_visible()

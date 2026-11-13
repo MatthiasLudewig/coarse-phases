@@ -8,6 +8,7 @@
   content; the initial demonstration articles have intentionally been deleted.
 - Generate navigation automatically from `docs/articles/` and `docs/theorems/`, with flat lists labelled **Articles** and **Theorem pages**, in filename order.
   Do not add thematic groups, a separate stub list, or manually maintained page entries.
+  Display these lists only in the sidebar; keep their toctrees hidden in the homepage content.
 - Write prose with one sentence per source line, without wrapping a sentence across lines.
   Apply this throughout the wiki, including articles, theorem pages, and prose inside directives and list items.
   Keep paragraph breaks between paragraphs; preserve the syntax of code, tables, and mathematical blocks.

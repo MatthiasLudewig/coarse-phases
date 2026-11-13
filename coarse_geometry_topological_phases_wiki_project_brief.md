@@ -331,9 +331,9 @@ uses the actual `MatthiasLudewig/coarse-phases` repository and links preview edi
 to the branch used for that build; the normal workspace preview and published pages link edits to `main`.
 
 `docs/index.md` supplies navigation.
-Its glob toctrees automatically list all pages in `docs/articles/` under **Articles**, followed by all pages in `docs/theorems/` under **Theorem pages**, in filename order.
+Its hidden glob toctrees automatically list all pages in `docs/articles/` under **Articles**, followed by all pages in `docs/theorems/` under **Theorem pages**, in filename order.
 Stubs belong to the article list, and adding or removing files requires no menu edit.
-The sidebar displays only these two lists; the authoring guide and bibliography are linked from the homepage.
+Only the sidebar displays these two lists; the homepage contains the introduction and links to the authoring guide and bibliography.
 The first requested collection is drafted.
 There is no shared definition-fragment directory or special source exclusion
 for one. Keep generated `_build` directories excluded from source discovery.

@@ -2,9 +2,14 @@
 <nav class="bd-docs-nav bd-links" aria-label="Wiki navigation">
   <p class="bd-links__title" role="heading" aria-level="2">Explore the wiki</p>
   <div class="bd-toc-item navbar-nav">
-    {{ generate_toctree_html(
+    {% set navigation = generate_toctree_html(
       "sidebar", startdepth=0, show_nav_level=1, maxdepth=1,
-      collapse=False, includehidden=False, titles_only=True
-    ) }}
+      collapse=False, includehidden=True, titles_only=True
+    ) %}
+    {# Only the two folder lists have captions; supporting pages stay on the homepage. #}
+    {% for caption in navigation.select("p.caption") %}
+      {{ caption }}
+      {{ caption.find_next_sibling("ul") }}
+    {% endfor %}
   </div>
 </nav>
