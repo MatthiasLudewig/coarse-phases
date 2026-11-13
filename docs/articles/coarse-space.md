@@ -7,9 +7,7 @@ However, metric spaces also carry the information of a topology, even a uniform 
 This information on small scale structure is discarded when passing to the corresponding coarse space.
 Moreover, not every coarse structure on a set is induced by a metric space.
 
-
 ## Definitions
-
 
 ```{prf:definition} Coarse structure
 :nonumber:
