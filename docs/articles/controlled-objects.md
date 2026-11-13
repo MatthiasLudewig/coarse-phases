@@ -17,7 +17,7 @@ We regard the bornology as a category under inclusion.
 
 An *$X$-controlled object* in $C$ is a functor $V:\cB\to C$ such that its structure morphisms are monomorphisms and which satisfies the following continuity property: for every directed subcollection $\cB' \subseteq \cB$ whose union $B = \bigcup \cB'$ is bounded, the canonical map
 $$
-\colim\displaylimits_{B' \in \cB'}V(B')\longrightarrow V(B)
+\mathop{\colim}_{B' \in \cB'}V(B')\longrightarrow V(B)
 $$
 is an isomorphism.
 In particular, we require these colimits to exist in $C$.
@@ -42,7 +42,7 @@ The notion of controlled morphism depends on the choice of a larger category $\w
 We assume that $\widehat{C}$ is closed under filtered colimits and that the inclusion $C \hookrightarrow \widehat{C}$ preserves filtered colimits that already exist in $C$.
 Then for any subset $Y\subseteq X$, we may define an object of $\widehat C$ by
 $$
-V(Y):=\colim\displaylimits_{\substack{B\in\cB\\B\subseteq Y}}V(B).
+V(Y):=\mathop{\colim}_{\substack{B\in\cB\\B\subseteq Y}}V(B).
 $$
 
 
@@ -104,7 +104,7 @@ The full subcategory of $\Con_C(X)$ consisting of local objects is denoted by $\
 
 Given objects $V_x$ of $C$ for each $x\in X$, consider the formula
 $$
-V(B)=\colim\displaylimits_{F\subseteq B,\ F\text{ finite}}
+V(B)=\mathop{\colim}_{F\subseteq B,\ F\text{ finite}}
                        \bigotimes_{x\in F}V_x.
 $$
 The transition maps insert the unique maps from the unit.

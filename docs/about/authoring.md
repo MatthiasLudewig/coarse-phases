@@ -225,7 +225,7 @@ The following commands produce upright mathematical operators with operator spac
 ```
 
 The standard commands `\ker` and `\lim` already exist and retain their usual definitions.
-Write `\colim\displaylimits_{i\in I}` when an index should appear below a colimit in display style, as with `\operatorname*{colim}`.
+Write `\mathop{\colim}_{i\in I}` when an index should appear below a colimit in display style, as with `\operatorname*{colim}`.
 Command names are case-sensitive: for example, `\tr` and `\Tr` are distinct.
 Before an immediately following letter, end the command with braces, as in `\cA{}x`.
 

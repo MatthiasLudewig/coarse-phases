@@ -19,7 +19,7 @@ The directed colimits in the definition of a controlled object are taken in this
 Set $V_x=V(\{x\})$.
 Then, naturally in bounded $B$,
 $$
-V(B)\cong\colim\displaylimits_{F\subseteq B,\ F\text{ finite}}
+V(B)\cong\mathop{\colim}_{F\subseteq B,\ F\text{ finite}}
                       \bigotimes_{x\in F}V_x.
 $$
 If the coefficient category consists of finite-dimensional Hilbert spaces with isometric embeddings and direct sum, or full finite-dimensional complex matrix algebras with unital $*$-homomorphisms and tensor product, then $\Lambda=\{x:V_x\not\cong\mathbf1\}$ meets each bounded set in finitely many points.

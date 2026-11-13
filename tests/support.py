@@ -161,7 +161,7 @@ FIXTURES[MACROS] = (
     + "\n".join(rf"| `\{name}` | $x\{name} y$ | $x{expansion} y$ |"
                 for name, expansion in MACRO_CASES)
     + "\n\nDisplay limits:\n$$\n"
-    + r"\colim\displaylimits_{i\in I} V_i = \operatorname*{colim}_{i\in I} V_i"
+    + r"\mathop{\colim}_{i\in I} V_i = \operatorname*{colim}_{i\in I} V_i"
     + "\n$$\n\n```{tikz}\n:alt: All requested macros rendered by LaTeX.\n\n"
     + "\n".join(
         rf"\node[anchor=west] at ({(index % 4) * 3}, {-(index // 4)}) "

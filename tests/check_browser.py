@@ -43,6 +43,9 @@ def math_ready(page):
     page.evaluate('() => MathJax.startup.promise')
     expect(page.locator('article mjx-container').first).to_be_visible()
     assert page.locator('mjx-merror, [data-mjx-error]').count() == 0
+    # MathJax's noundefined extension prints unknown commands in red instead
+    # of producing merror nodes, so reject that fallback as well.
+    assert page.locator('mjx-mtext[style*="color: red"]').count() == 0
 
 
 def check_navigation(page, source=ROOT / 'docs'):
