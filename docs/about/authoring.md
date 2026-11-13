@@ -1,11 +1,67 @@
 # Writing and reviewing articles
 
-This guide explains how to contribute to the wiki using Git, a text editor, and a GitHub account.
+You can edit the wiki directly on GitHub using only a web browser and a GitHub account.
+Alternatively, use Git and a text editor on your own computer.
 You do not need to install Python, Sphinx, or LaTeX: GitHub builds the website for you.
 The files are plain text with the extension `.md`.
 They use Markdown for ordinary text, LaTeX for mathematics, and a few extra commands shown below.
 
 ## Technical instructions
+
+### Option 1: Edit directly on GitHub
+
+1. Sign in to GitHub and click **Edit on GitHub** on the wiki page you want to change.
+   You can also open its `.md` file in the [repository](https://github.com/MatthiasLudewig/coarse-phases), select the `main` branch, and click the pencil icon.
+2. Edit the text in your browser using the syntax examples in this guide.
+   To create a page instead, open the [articles folder](https://github.com/MatthiasLudewig/coarse-phases/tree/main/docs/articles) or [theorem pages folder](https://github.com/MatthiasLudewig/coarse-phases/tree/main/docs/theorems), choose **Add file → Create new file**, and use one of the stubs below.
+3. Click **Commit changes**, enter a short description, and choose one of the following ways to submit your work.
+
+**Commit directly to `main`.**
+If you have write access and the repository's branch rules allow it, select **Commit directly to the main branch** and confirm.
+The source changes immediately, and GitHub automatically runs **Wiki checks**, rebuilds the website, and publishes the update when the checks pass.
+This option does not require a pull request or wait for a separate review.
+
+**Create a branch and pull request.**
+Choose to create a new branch, give it a descriptive name, and follow the prompts to **Create pull request**, with `main` in `MatthiasLudewig/coarse-phases` as the destination.
+A *pull request* proposes your changes for review before they enter `main`.
+If you do not have write access, GitHub offers to create a *fork*, a copy of the repository in your own account, from which you can submit the pull request.
+GitHub runs the checks on the proposal; a maintainer reviews and merges it, after which the website is rebuilt and updated.
+The live wiki stays unchanged while the pull request is open.
+
+See GitHub's instructions for [editing files](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files) and [creating new files](https://docs.github.com/en/repositories/working-with-files/managing-files/creating-new-files) for the individual screens.
+
+### Option 2: Edit locally with Git
+
+Clone the repository once:
+If you do not have permission to push to this repository, use **Fork** on GitHub first and replace the address below with your fork's address.
+
+```bash
+git clone https://github.com/MatthiasLudewig/coarse-phases.git
+cd coarse-phases
+```
+
+For each contribution, start from an up-to-date `main` branch and create a branch with a descriptive name:
+Save or commit any work already in progress before switching branches.
+When working in a fork, use [**Sync fork → Update branch**](https://docs.github.com/en/pull-requests/how-tos/work-with-forks/syncing-a-fork) on GitHub before pulling so that your `main` includes the wiki's latest changes.
+
+```bash
+git switch main
+git pull --ff-only
+git switch -c add-my-topic
+```
+
+Edit or create the `.md` files in your text editor, using the file locations and stubs below.
+Then commit and push your changes, substituting your own filenames and branch name:
+
+```bash
+git add docs/articles/my-topic.md
+git commit -m "Add an article on my topic"
+git push -u origin add-my-topic
+```
+
+On GitHub, open a pull request from your branch to `main` in `MatthiasLudewig/coarse-phases`.
+The checks, review, and website update work as described in Option 1.
+Further commits pushed to the same branch update the pull request and run the checks again.
 
 ### Where files live
 
@@ -23,33 +79,9 @@ Put a definition in the article that explains the corresponding concept.
 A theorem page is useful when a statement or proof would make an article too long.
 Link between the two pages instead of copying the same formal statement into both.
 
-### Start a contribution
-
-Clone the repository once:
-
-```bash
-git clone https://github.com/MatthiasLudewig/coarse-phases.git
-cd coarse-phases
-```
-
-For each contribution, start from an up-to-date `main` branch and create a branch with a descriptive name:
-
-```bash
-git switch main
-git pull --ff-only
-git switch -c add-my-topic
-```
-
-Save or commit any work already in progress before switching branches.
-If you do not have permission to push to this repository, fork it on GitHub and clone your fork instead.
-A *pull request* proposes merging your branch into the wiki's `main` branch, so the maintainer can review the contribution.
-The branch workflow here is intended for collaborators; follow the maintainer's instructions if you have been asked to edit `main` directly.
-
-For a small correction, you can also use **Edit on GitHub** on the relevant wiki page, edit the file in your browser, and propose the change on a new branch.
-
 ### Add or edit an article or theorem page
 
-To edit a page, open its `.md` file in your text editor.
+To edit a page, open its `.md` file on GitHub or in your text editor.
 To add an article, create a new file directly in `docs/articles/`, with a short filename in lowercase and hyphens, such as `my-topic.md`.
 Start with this article stub:
 
@@ -82,24 +114,14 @@ The sidebar automatically lists every article under **Articles** and every theor
 Stubs are included in the same lists.
 Adding or removing a file requires no manual menu edit.
 
-### Submit your work and check the result
+### Check and review your changes
 
-Commit the files you changed and push your branch; substitute your own filenames and branch name:
+A commit to `main`, or opening or updating a pull request, starts **Wiki checks**, which builds the website and checks its links, mathematics rendering, and navigation.
+In a pull request, briefly describe what you changed and identify any mathematical questions that still need review.
 
-```bash
-git add docs/articles/my-topic.md
-git commit -m "Add an article on my topic"
-git push -u origin add-my-topic
-```
+To inspect the generated HTML, including proposed changes before a pull request is merged:
 
-On GitHub, open a pull request from your branch to `main` in `MatthiasLudewig/coarse-phases`.
-Briefly describe what you changed and identify any mathematical questions that still need review.
-Opening the pull request starts **Wiki checks**, which builds the website and checks its links, mathematics rendering, and navigation.
-Further commits pushed to the same branch update the pull request and run the checks again.
-
-To inspect the result without installing anything:
-
-1. Open the repository's [Actions tab](https://github.com/MatthiasLudewig/coarse-phases/actions) and select the **Build and deploy wiki** run for your pull request and latest commit.
+1. Open the repository's [Actions tab](https://github.com/MatthiasLudewig/coarse-phases/actions) and select the **Build and deploy wiki** run for your latest commit on `main` or your pull request.
 2. Wait for **Wiki checks** to succeed.
    If it fails, open the failed step and read the error messages; duplicate labels and missing reference targets are common causes.
 3. In the run's **Artifacts** section, download **wiki-html** while signed in to GitHub.
@@ -115,7 +137,8 @@ Commit source files only, not the downloaded HTML or generated build files.
 For help finding the download, see [GitHub's artifact instructions](https://docs.github.com/en/actions/how-tos/manage-workflow-runs/download-workflow-artifacts).
 
 Passing the checks does not verify mathematical correctness.
-Ask the maintainer to review the mathematics and merge the pull request when it is ready.
+For a pull request, ask the maintainer to review the mathematics and merge it when it is ready.
+For a direct commit, arrange any needed mathematical review before submitting, since a successful build publishes the change automatically.
 
 ### Update the homepage and the public website
 
@@ -124,11 +147,15 @@ The sidebar is regenerated from the two folders at each build.
 Its hidden `toctree` blocks in `docs/index.md` supply the navigation; leave these blocks in place even though they produce no lists in the homepage content.
 Edit the introduction or the “About this wiki” links in that file only when you want to change the homepage itself.
 
-Once website hosting is enabled, merging into `main` automatically starts another build and publishes the updated website after the checks pass.
+Committing directly to `main` or merging a pull request into `main` automatically starts a build and publishes the updated website after the checks pass.
 In the Actions run for `main`, wait for both **Wiki checks** and **Publish approved main branch** to succeed, then refresh the website in your browser.
 There is no separate HTML upload or homepage-generation command for contributors to run.
-If the publishing job is skipped, hosting has not been enabled for that run; the maintainer handles this setup.
-Before hosting is enabled, the same workflow still produces the downloadable preview.
+If the checks fail, the source change remains saved on GitHub, but the previous published website stays online.
+Correct the reported errors and commit the fix to run the checks again.
+
+If you also keep a local copy of the repository, edits made on GitHub reach it when you switch to `main` and run `git pull --ff-only`.
+Sync your fork first if you use one.
+Previously downloaded HTML previews do not update themselves; download a new preview to see later changes.
 
 ## Writing the source
 
