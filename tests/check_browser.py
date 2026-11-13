@@ -61,6 +61,8 @@ def check_navigation(page, source=ROOT / 'docs'):
             '(links) => links.map(link => new URL(link.href).pathname)'
         )
         assert actual == expected, (page.url, folder, actual, expected)
+    for formula in navigation.locator('.math').all():
+        expect(formula.locator('mjx-container')).to_have_count(1, timeout=45000)
     return navigation
 
 

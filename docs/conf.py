@@ -91,4 +91,6 @@ def unique_statement_anchors(app, pagename, templatename, context, doctree):
 
 
 def setup(app):
+    # Sidebar titles can contain mathematics even on pages with no body math.
+    app.set_html_assets_policy("always")
     app.connect("html-page-context", unique_statement_anchors)
