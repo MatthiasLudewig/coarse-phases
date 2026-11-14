@@ -3,7 +3,7 @@
 # Quantum spin system
 
 A quantum spin system on a {prf:ref}`coarse space <def-bornological-coarse-space>` is a {prf:ref}`local controlled object <def-local-controlled-object>` valued in matrix algebras.
-They are relevant for {ref}`quantum cellular automata <article-quantum-cellular-automaton>` and {ref}`gapped phases <article-gapped-phase>`.
+They are relevant for {ref}`quantum cellular automata <article-quantum-cellular-automaton>` and gapped phases.
 
 ## Definition
 
