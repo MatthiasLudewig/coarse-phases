@@ -17,7 +17,7 @@ and expository articles, and the reuse of definitions through include fragments.
 There is no transclusion of mathematical statements between pages.
 
 The five sample mathematical articles, shared definition fragment, and sample bibliography records have been removed.
-The current collection contains 14 topic articles, 18 stubs, one redirect, and two theorem pages with proofs.
+The current collection contains 38 article pages, including 22 marked as stubs, and two theorem pages with proofs.
 Unreviewed agent-authored pages retain the warning `Agent-generated, not reviewed yet`.
 
 ## Saving work — 10 November 2026
@@ -44,7 +44,10 @@ The direct-push workflow remains in use, and drafts that should stay outside the
   directives compile to SVG on GitHub Actions using TeX and `pdf2svg`; no local
   TeX installation is required for authoring or viewing the HTML preview.
   The authoring guide documents the `cd` library and plain-text alternatives.
-- Full sidebar navigation, GitHub edit links, search, and light/dark modes.
+- Automatic sidebar navigation under **Articles**, **Theorems**, and **Stubs**, as requested on 14 November 2026.
+  Pages marked `stub: true` in YAML front matter appear only in the final group; pages without the field remain in their regular group.
+  Each list is sorted by filename, and all page URLs and search entries are retained.
+- GitHub edit links, search, and light/dark modes.
 - Standalone articles and theorem pages use ordinary MyST headings and
   `sphinx-proof` labels. No new page-rendering extension is needed.
 - Optional native `sphinx-design` dropdowns for proofs and `sphinx-togglebutton`

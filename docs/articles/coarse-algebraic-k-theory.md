@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-coarse-algebraic-k-theory)=
 # Coarse algebraic K-theory
 

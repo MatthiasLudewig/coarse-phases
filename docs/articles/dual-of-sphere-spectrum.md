@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-dual-of-sphere-spectrum)=
 # Dual of sphere spectrum
 

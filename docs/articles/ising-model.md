@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-ising-model)=
 # Ising model
 

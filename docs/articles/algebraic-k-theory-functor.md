@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-algebraic-k-theory-functor)=
 # Algebraic K-theory functor
 

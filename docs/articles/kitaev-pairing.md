@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-kitaev-pairing)=
 # Kitaev pairing
 

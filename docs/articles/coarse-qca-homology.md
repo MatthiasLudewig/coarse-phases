@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-coarse-qca-homology)=
 # Coarse QCA homology
 

@@ -1,4 +1,5 @@
 ---
+stub: true
 myst:
   html_meta:
     "http-equiv=refresh": "0; url=kitaev-pairing.html"

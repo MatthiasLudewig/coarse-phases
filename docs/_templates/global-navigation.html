@@ -1,4 +1,4 @@
-{# Show both automatic folder lists on every page, including top-level leaves. #}
+{# Show all automatic groups on every page, including top-level leaves. #}
 <nav class="bd-docs-nav bd-links" aria-label="Wiki navigation">
   <p class="bd-links__title" role="heading" aria-level="2">Explore the wiki</p>
   <div class="bd-toc-item navbar-nav">
@@ -6,10 +6,13 @@
       "sidebar", startdepth=0, show_nav_level=1, maxdepth=1,
       collapse=False, includehidden=True, titles_only=True
     ) %}
-    {# Only the two folder lists have captions; supporting pages stay on the homepage. #}
-    {% for caption in navigation.select("p.caption") %}
-      {{ caption }}
-      {{ caption.find_next_sibling("ul") }}
+    {% for group in group_wiki_navigation(navigation) %}
+      <p aria-level="2" class="caption" role="heading"><span class="caption-text">{{ group.title }}</span></p>
+      <ul class="nav bd-sidenav{% if group.current %} current{% endif %}">
+        {% for entry in group.entries %}
+          {{ entry | safe }}
+        {% endfor %}
+      </ul>
     {% endfor %}
   </div>
 </nav>

@@ -6,8 +6,10 @@
   `docs/articles/` and standalone theorem pages in `docs/theorems/`. Both are
   complete, independently navigable pages. Preserve labels and URLs of retained
   content; the initial demonstration articles have intentionally been deleted.
-- Generate navigation automatically from `docs/articles/` and `docs/theorems/`, with flat lists labelled **Articles** and **Theorem pages**, in filename order.
-  Do not add thematic groups, a separate stub list, or manually maintained page entries.
+- Generate navigation automatically from `docs/articles/` and `docs/theorems/`, with flat lists labelled **Articles**, **Theorems**, and **Stubs**, in that order and in filename order within each list.
+  Pages with `stub: true` in their YAML front matter appear only under **Stubs**, regardless of their folder.
+  Other pages need no `stub` field and appear in their folder's regular list.
+  Do not add thematic groups or manually maintained page entries.
   Display these lists only in the sidebar; keep their toctrees hidden in the homepage content.
 - Write prose with one sentence per source line, without wrapping a sentence across lines.
   Apply this throughout the wiki, including articles, theorem pages, and prose inside directives and list items.

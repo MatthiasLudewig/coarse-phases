@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-ground-state)=
 # Ground state
 

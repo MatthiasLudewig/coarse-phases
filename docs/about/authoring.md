@@ -86,6 +86,10 @@ To add an article, create a new file directly in `docs/articles/`, with a short 
 Start with this article stub:
 
 ```markdown
+---
+stub: true
+---
+
 (article-my-topic)=
 # My topic
 
@@ -99,6 +103,10 @@ Replace the stub sentence with your introduction, definitions, examples, and dis
 For a standalone theorem page, create a file directly in `docs/theorems/`, such as `my-result.md`:
 
 ```markdown
+---
+stub: true
+---
+
 (theorem-my-result)=
 # My result
 
@@ -110,8 +118,11 @@ State all hypotheses, link to prerequisite articles, and say whether a proof is 
 Before reusing either template, choose a new filename and a label that is not already used anywhere in `docs/`.
 Keep existing filenames and labels when editing a page, since other pages and readers may link to them.
 
-The sidebar automatically lists every article under **Articles** and every theorem page under **Theorem pages**, in filename order.
-Stubs are included in the same lists.
+The sidebar automatically lists articles under **Articles**, theorem pages under **Theorems**, and then stubs from either folder under **Stubs**, in filename order within each section.
+Mark a stub with `stub: true` in the YAML front matter at the very start of the file, as in the templates above.
+If the file already has a front matter block, add the field to that block.
+Remove the field when the page is ready to appear in its regular section; other pages need no `stub: false` field.
+The marker changes only the sidebar grouping, so the page keeps its URL, cross-references, and search entry.
 Adding or removing a file requires no manual menu edit.
 
 ### Check and review your changes

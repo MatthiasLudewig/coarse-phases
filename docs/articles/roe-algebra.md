@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-roe-algebra)=
 # Roe algebra
 

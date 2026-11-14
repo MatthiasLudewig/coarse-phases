@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-gapped-phase)=
 # Gapped phase
 

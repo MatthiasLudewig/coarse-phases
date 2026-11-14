@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-toric-code)=
 # Toric code
 

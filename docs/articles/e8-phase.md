@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-e8-phase)=
 # $E_8$-phase
 

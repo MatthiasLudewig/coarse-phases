@@ -22,6 +22,7 @@ extensions = [
     "sphinx_design",
     "sphinxcontrib.tikz",
     "wiki_tikz",
+    "wiki_navigation",
     "sphinx.ext.mathjax",
     "sphinx.ext.githubpages",
 ]

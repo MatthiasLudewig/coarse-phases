@@ -14,12 +14,32 @@ THEOREM = "theorems/ci-result"
 WITHOUT_PROOF = "theorems/ci-statement"
 DIAGRAMS = "articles/ci-diagrams"
 MACROS = "articles/ci-macros"
+ARTICLE_STUB = "articles/ci-stub"
+THEOREM_STUB = "theorems/ci-a-stub"
 DIAGRAM_ALTS = (
     "Commutative square: A to B by f, A to C by g, B to D by h, C equals D.",
     "A red arrow from the real numbers to the complex numbers.",
     "Second occurrence of the same commutative square.",
 )
 FIXTURES = {
+    ARTICLE_STUB: r"""---
+stub: true
+---
+
+(article-ci-stub)=
+# Fixture article stub $\sH$
+
+This fixture is classified by metadata, independently of its prose.
+""",
+    THEOREM_STUB: """---
+stub: true
+---
+
+(theorem-ci-stub)=
+# Fixture theorem stub
+
+This fixture belongs in the final sidebar section despite its theorem folder.
+""",
     ARTICLE: r"""(article-ci-object)=
 # Fixture article
 
@@ -38,6 +58,7 @@ The full article also contains this discussion after the definition.
 Informally, adding zero changes nothing; see
 {prf:ref}`the full result <thm-ci-result>` on its standalone page.
 There is also {prf:ref}`a statement without a supplied proof <thm-ci-statement>`.
+See the {ref}`article stub <article-ci-stub>` and {ref}`theorem stub <theorem-ci-stub>`.
 
 ```{prf:theorem} Short inline result
 :nonumber:
@@ -94,7 +115,11 @@ Apply {prf:ref}`the identity lemma <lem-ci-step>` to $x$, giving {eq}`eq-ci-iden
 ```
 ````
 """,
-    WITHOUT_PROOF: r"""# Fixture statement without proof
+    WITHOUT_PROOF: r"""---
+stub: false
+---
+
+# Fixture statement without proof
 
 ```{prf:theorem} Another identity
 :nonumber:

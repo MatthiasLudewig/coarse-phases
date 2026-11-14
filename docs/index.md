@@ -30,7 +30,7 @@ articles/*
 ```{toctree}
 :hidden:
 :maxdepth: 1
-:caption: Theorem pages
+:caption: Theorems
 :glob:
 :titlesonly:
 

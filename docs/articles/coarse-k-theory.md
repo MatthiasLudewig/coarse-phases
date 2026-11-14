@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-coarse-k-theory)=
 # Coarse K-theory
 

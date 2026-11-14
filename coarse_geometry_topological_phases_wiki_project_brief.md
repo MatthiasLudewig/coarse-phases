@@ -1,7 +1,7 @@
 # Project brief: A mathematical wiki for coarse geometry and topological phases
 
 **Status:** Infrastructure and first requested article collection drafted; mathematical review pending
-**Last updated:** 10 November 2026
+**Last updated:** 14 November 2026
 **Purpose of this document:** Record the intended features, the agreed technical direction, the implementation plan, and decisions that remain open. This specifies the intended system. See `SETUP.md` for implementation status. The editorial decision of 6 November 2026 replaces the original definition-fragment architecture.
 
 ## 1. Project vision
@@ -254,7 +254,7 @@ additional implementation.
 Also desirable:
 
 - responsive layout on desktop and mobile;
-- left navigation listing all articles followed by all theorem pages;
+- left navigation listing articles, theorem pages, and then stubs;
 - central, readable mathematical article column;
 - right-hand table of contents and **Edit this page** link;
 - customizable colors, fonts, article width, theorem boxes, and dark mode;
@@ -335,9 +335,11 @@ uses the actual `MatthiasLudewig/coarse-phases` repository and links preview edi
 to the branch used for that build; the normal workspace preview and published pages link edits to `main`.
 
 `docs/index.md` supplies navigation.
-Its hidden glob toctrees automatically list all pages in `docs/articles/` under **Articles**, followed by all pages in `docs/theorems/` under **Theorem pages**, in filename order.
-Stubs belong to the article list, and adding or removing files requires no menu edit.
-Only the sidebar displays these two lists; the homepage contains the introduction and links to the authoring guide and bibliography.
+Its hidden glob toctrees automatically discover all pages in `docs/articles/` and `docs/theorems/`.
+The sidebar groups them under **Articles**, **Theorems**, and **Stubs**, in that order and in filename order within each list.
+As requested by the author on 14 November 2026, pages with `stub: true` in YAML front matter appear only under **Stubs**, regardless of their folder.
+Other pages need no `stub` field, and adding or removing files requires no menu edit.
+Only the sidebar displays these three lists; the homepage contains the introduction and links to the authoring guide and bibliography.
 The first requested collection is drafted.
 There is no shared definition-fragment directory or special source exclusion
 for one. Keep generated `_build` directories excluded from source discovery.

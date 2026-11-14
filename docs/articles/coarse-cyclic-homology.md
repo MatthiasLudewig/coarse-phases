@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-coarse-cyclic-homology)=
 # Coarse cyclic homology
 

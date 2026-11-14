@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-free-fermion)=
 # Free fermion
 

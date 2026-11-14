@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-coarse-tracial-k-theory)=
 # Coarse tracial K-theory
 

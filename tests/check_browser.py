@@ -9,7 +9,8 @@ import re
 import threading
 
 from playwright.sync_api import expect, sync_playwright
-from support import ARTICLE, DIAGRAMS, DIAGRAM_ALTS, MACROS, MACRO_CASES, THEOREM, WITHOUT_PROOF, build, fixture_source
+import yaml
+from support import ARTICLE, ARTICLE_STUB, DIAGRAMS, DIAGRAM_ALTS, MACROS, MACRO_CASES, THEOREM, THEOREM_STUB, WITHOUT_PROOF, build, fixture_source
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -54,17 +55,22 @@ def math_ready(page):
 
 
 def check_navigation(page, source=ROOT / 'docs'):
-    """Every file appears once in its folder list, including newly added pages."""
+    """Every file appears once, with metadata-marked stubs in the final list."""
     # Inspect the full list even while the mobile sidebar is closed.
     navigation = page.get_by_role('navigation', name='Wiki navigation', include_hidden=True)
-    expect(navigation.locator('.caption-text')).to_have_text(['Articles', 'Theorem pages'])
+    expect(navigation.locator('.caption-text')).to_have_text(['Articles', 'Theorems', 'Stubs'])
     lists = navigation.locator('.bd-toc-item > ul')
-    expect(lists).to_have_count(2)
+    expect(lists).to_have_count(3)
+    groups = [[], [], []]
     for group, folder in enumerate(('articles', 'theorems')):
-        expected = [
-            '/' + path.relative_to(source).with_suffix('.html').as_posix()
-            for path in sorted((source / folder).glob('*.md'))
-        ]
+        for path in (source / folder).glob('*.md'):
+            text = path.read_text(encoding='utf-8')
+            metadata = (yaml.safe_load(text.split('---', 2)[1]) or {}) if text.startswith('---\n') else {}
+            destination = 2 if metadata.get('stub') is True else group
+            groups[destination].append(path)
+    for group, paths in enumerate(groups):
+        expected = ['/' + path.relative_to(source).with_suffix('.html').as_posix()
+                    for path in sorted(paths, key=lambda path: (path.name, path.as_posix()))]
         actual = lists.nth(group).locator('a').evaluate_all(
             '(links) => links.map(link => new URL(link.href).pathname)'
         )
@@ -129,8 +135,19 @@ def check_mathematical_pages(browser, errors):
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(f'{base}/{THEOREM}.html')
         navigation = check_navigation(page, source)
+        for stub, title in [(ARTICLE_STUB, 'Fixture article stub'), (THEOREM_STUB, 'Fixture theorem stub')]:
+            navigation.locator('.bd-toc-item > ul').nth(2).get_by_role('link', name=re.compile(title)).click()
+            expect(page).to_have_url(f'{base}/{stub}.html')
+            navigation = check_navigation(page, source)
+            expect(navigation.locator('.bd-toc-item > ul').nth(2).locator('li.current > a')).to_have_count(1)
+            expect(page.locator('article')).not_to_contain_text('stub: true')
+        page.goto(f'{base}/search.html?q=Fixture%20theorem%20stub')
+        expect(page.locator('#search-results').get_by_role('link', name='Fixture theorem stub', exact=True)).to_be_visible(timeout=30000)
+        navigation = check_navigation(page, source)
         navigation.get_by_role('link', name='Fixture article', exact=True).click()
         expect(page).to_have_url(f'{base}/{ARTICLE}.html')
+        page.locator("article a[href='ci-stub.html#article-ci-stub']").click()
+        expect(page).to_have_url(f'{base}/{ARTICLE_STUB}.html#article-ci-stub')
         check_navigation(page, source).get_by_role('link', name='Fixture result', exact=True).click()
         expect(page).to_have_url(f'{base}/{THEOREM}.html')
         page.locator("article a[href='../articles/ci-object.html#def-ci-object']").click()

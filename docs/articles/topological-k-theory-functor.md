@@ -1,3 +1,7 @@
+---
+stub: true
+---
+
 (article-topological-k-theory-functor)=
 # Topological K-theory functor
 
