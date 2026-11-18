@@ -11,7 +11,7 @@ Let $A$ be a nonzero complex $C^*$-algebra, which need not be unital, and let $S
 :nonumber:
 :label: def-pure-state
 
-A state $\omega$ is *pure* if whenever 
+A state $\omega$ is *pure* if whenever
 $$
 \omega=t\varphi+(1-t)\psi,
 $$
@@ -41,7 +41,7 @@ For $A=C(K)$ with $K$ compact Hausdorff, the pure states are point evaluations, 
 A state $\omega$ on a $C^*$-algebra $A$ is pure if and only if its {prf:ref}`GNS representation <def-gns-representation>` is irreducible.
 ```
 
-If $(\cH, \omega, \Omega)$ is the GNS representation, the theorem states equivalently that the commutant of $\pi(A)$ in $\mathbf{B}(\cH)$ is trivial, 
+If $(\cH, \pi, \Omega)$ is the GNS representation, the theorem states equivalently that the commutant of $\pi(A)$ in $\mathbf{B}(\cH)$ is trivial,
 $$
 \pi(A)'=\C1.
 $$
@@ -73,7 +73,7 @@ Thus $\omega$ is not pure.
 (pure-state-products)=
 ## Products and pure restrictions
 
-If $\omega$ and $\nu$ are states on $C^*$-algebras $A$ and $B$, then $\omega \otimes \nu$ are states on the spatial tensor product of $A$ and $B$. 
+If $\omega$ and $\nu$ are states on $C^*$-algebras $A$ and $B$, then $\omega \otimes \nu$ is a state on the spatial tensor product of $A$ and $B$.
 
 ```{prf:theorem} Purity of product states
 :nonumber:

@@ -5,7 +5,7 @@ A coarse homology theory assigns algebraic invariants to a space in a way which 
 
 Throughout, if $E : \BornCoarse \to C$ is a functor to some (higher) category $C$, and $\cY$ is a {prf:ref}`big family <def-big-family>` in a bornological coarse space $X$, we write
 $$
-E(\cY) := \mathop{\colim}_{Y \in \cY} E(Y)
+E(\cY) := \mathop{\colim}_{Y \in \cY} E(Y).
 $$
 Here $Y \subseteq X$ inherits the structure of a bornological coarse space by cutting down entourages and bounded sets to $Y$ and the colimit is taken in the category $C$, observing that $\cY$ forms a directed set.
 Here we assume that all filtered colimits exist in $C$.
@@ -56,10 +56,11 @@ Let $\cD$ be a cocomplete stable $\infty$-category.
 :label: def-stable-coarse-homology
 
 A *coarse homology theory* is a functor $E:\BornCoarse\to\cD$ with the following properties:
+
 1. *Coarse invariance.*
-   Close maps induce equivalent homomorphisms in $D$.
+   Close maps induce homotopic morphisms in $\cD$.
 2. *Flasqueness.*
-   If $X$ is flasque, then $E_n(X)\simeq 0$, the zero object in $\cD$.
+   If $X$ is flasque, then $E(X)\simeq 0$, the zero object in $\cD$.
 3. *Excision.*
    For every pair of {prf:ref}`big families <def-big-family>` $\cY, \cZ$, the canonical square with vertices $E(\cY\Cap\cZ)$, $E(\cY)$, $E(\cZ)$, and $E(\cY\Cup\cZ)$ is a pushout.
 
@@ -75,13 +76,13 @@ $$
 In a stable category a pushout square is also a pullback square.
 This keeps track of the boundary maps and their compatibility.
 For $\cD=\Sp$, the stable $\infty$-category of spectra, taking homotopy groups gives the group-valued theory above.
-For $\cD$ the $\infty$-category of chain complexes over a ring, one  takes homology.
+For $\cD$ the $\infty$-category of chain complexes over a ring, one takes homology.
 
 
 ## Examples and suspension
 
 The basic examples are {ref}`ordinary coarse homology <article-ordinary-coarse-homology>`, with values in the derived category of abelian groups, and {ref}`coarse K-theory <article-coarse-k-theory>`, with values in spectra, more precisely $KU$-module spectra in the complex case.
-The {ref}`QCA article <article-quantum-cellular-automaton>` describes a further example, including its stabilization and quotient conventions.
+A further example is coarse QCA homology; its {ref}`article <article-coarse-qca-homology>` is currently a stub.
 
 The decomposition of $X\otimes\R$ into its positive and negative half-spaces gives
 $$

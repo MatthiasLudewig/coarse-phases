@@ -36,10 +36,10 @@ given by multiplication in $\cA_X$.
 
 A function $q : X \to \N$ with locally finite support (meaning that each $B \subseteq X$ bounded contains only finitely many points $x$ with $q(x) \neq 1$) determines a spin system by setting
 $$
-\cA_Y=\bigotimes_{x \in Y} M_{q_x}(\C).
+\cA_Y=\bigotimes_{x \in Y} \Mat_{q_x}(\C).
 $$
 If $Y$ is bounded, only finitely many factors are not equal to $\C$, so the tensor product is finite.
-Otherwise, the right-hand-side is to be understood as the $C^*$-algebraic infinite tensor product.
+Otherwise, the right-hand side is to be understood as the $C^*$-algebraic infinite tensor product.
 Every spin system is isomorphic to one of this form, as proved in {ref}`the point-object proposition <theorem-local-objects-points>`.
 
 ## Conditional expectations for subsets
@@ -66,6 +66,7 @@ It is a unital completely positive contraction, fixes $\cA_Y$, and satisfies $\m
 Furthermore, $\mathbb E_Y\mathbb E_Z=\mathbb E_{Y\cap Z}$ and $\mathbb E_Y(\cA_B)\subseteq\cA_{B\cap Y}$.
 All these statements follow first on finite tensor products by partial trace and then on the completion by continuity.
 
+Write $\Lambda=\{x\in X \mid \cA_x\not\cong\C\}$ for the support of the spin system.
 Write $\cA_x^\circ=\ker\tau_x$ for $x\in X$, and set $\cA_F^\circ=\bigotimes_{x\in F}\cA_x^\circ$, with $\cA_\varnothing^\circ=\C\mathbf1$.
 Then
 $$

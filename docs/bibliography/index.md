@@ -59,5 +59,5 @@ Shôichirô Sakai, [Derivations of simple $C^*$-algebras, II](https://www.numdam
 (bib-extremal-jacobi-extensions)=
 ## Ananieva–Goloshchapova: extremal extensions of Jacobi operators
 
-Aleksandra Ananieva and Nataly Goloshchapova, [On the extremal extensions of a non-negative Jacobi operator](https://arxiv.org/abs/1701.06371), arXiv:1701.06371 (2017).
+Aleksandra Ananieva and Nataly Goloshchapova, [On the extremal extensions of a non-negative Jacobi operator](https://arxiv.org/abs/1701.06371), Methods of Functional Analysis and Topology **19** (2013), no. 4, 310–318.
 The Introduction, especially equation (2), records the Friedrichs and Krein extensions used in the pure gapped spin-chain example.

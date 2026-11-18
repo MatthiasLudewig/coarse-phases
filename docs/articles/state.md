@@ -61,10 +61,8 @@ $$
 ```
 
 Inner products here are linear in the second variable.
-Cyclicity of $\Omega$ means that the set $\pi(a)\Omega$ is dense in $\cH$.
+Cyclicity of $\Omega$ means that the set $\{\pi(a)\Omega \mid a\in A\}$ is dense in $\cH$.
 The triple $(\cH,\pi,\Omega)$ is unique up to a unitary intertwiner preserving cyclic vectors.
 
-For unital $A$, $\cH$ is obtained by forming the quotient of $A$ by the left ideal $\{a:\omega(a^*a)=0\}$ and then completing it with respect to the inner product $\langle[a],[b]\rangle=\omega(a^*b)$.
+For unital $A$, $\cH$ is obtained by forming the quotient of $A$ by the left ideal $\{a\in A \mid \omega(a^*a)=0\}$ and then completing it with respect to the inner product $\langle[a],[b]\rangle=\omega(a^*b)$.
 Then $\pi$ is given by left multiplication and $\Omega=[1]$.
-
-

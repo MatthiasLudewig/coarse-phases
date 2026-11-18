@@ -34,5 +34,4 @@ where we used the {ref}`fattening notation <def-fattening>`.
 It is enough to test bounded supports, because local observables are norm dense in the corresponding subset algebras.
 In other words, the sets $Y$ and $Z$ are required to be $E$-separated.
 
-For a coarse structure obtained from a metric, choosing $E=\{(x,y):d(x,y)\leq R\}$ says that the factorization holds whenever every point of $Y$ is at distance greater than $R$ from every point of $Z$.
-
+For a coarse structure obtained from a metric, choosing $E=\{(x,y) \mid d(x,y)\leq R\}$ says that the factorization holds whenever every point of $Y$ is at distance greater than $R$ from every point of $Z$.

@@ -24,7 +24,7 @@ A subset $Y \subseteq X$ is *locally finite* if $Y \cap B$ is finite for each bo
 :nonumber:
 :label: def-E-separated
 
-For an entourage $E$, a subset $Y \subseteq X$ is *$E$-separated* whenever $x, y \in Y$ with $x \neq y$, we have $(x, y) \notin E$.
+For an entourage $E$, a subset $Y \subseteq X$ is *$E$-separated* if, whenever $x, y \in Y$ with $x \neq y$, we have $(x, y) \notin E$.
 ```
 
 ```{prf:definition} Uniformly bounded collections

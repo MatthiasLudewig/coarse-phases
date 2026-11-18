@@ -33,14 +33,14 @@ $$
 ## Implementing Hamiltonian
 
 Let $\omega$ be a gapped ground state for a derivation $D$ on a $C^*$-algebra $A$ and assume that $D$ generates a strongly continuous group of $*$-automorphisms of $A$.
-As explained {ref}`here <article-ground-state-energy-of-hamiltonian>`, $D$ is implemented in the {prf:ref}`GNS-representation <def-gns-representation>` $(\cH, \pi, \Omega)$ of $\omega$ be a positive self-adjoint operator $H$ annihilating the vacuum vector.
+As explained {ref}`here <article-ground-state-energy-of-hamiltonian>`, $D$ is implemented in the {prf:ref}`GNS-representation <def-gns-representation>` $(\cH, \pi, \Omega)$ of $\omega$ by a positive self-adjoint operator $H$ annihilating the vacuum vector.
 
 ```{prf:theorem} Nondegenerate gap and the GNS Hamiltonian
 :nonumber:
 :label: thm-gapped-ground-state-hamiltonian
 
-If $\omega$ has gap at least $\gamma$, then the implementing Hamiltonian $H$ for $D$ satisfies 
-$$ 
+If $\omega$ has gap at least $\gamma$, then the implementing Hamiltonian $H$ for $D$ satisfies
+$$
 \ker H =\C\Omega,
 \qquad
 \spec(H) \subseteq \{0\} \cup [\gamma, \infty).
@@ -51,7 +51,7 @@ $$
 ## Purity and degeneracy
 
 If $D$ generates a strongly continuous semigroup of $*$-automorphisms, then any gapped ground state for $D$ is necessarily pure, see {ref}`here <theorem-nondegenerate-ground-state-pure>`.
-The {ref}`weighted ferromagnetic counterexample <theorem-mixed-gapped-ground-state>` shows that without this assumption on $D$, a gapped ground state for $D$ need not be pure, even for {prf:ref}`spin systems <def-spin-system>`.
+The {ref}`weighted ferromagnetic counterexample <theorem-mixed-gapped-ground-state>` shows that without this assumption on $D$, a gapped ground state for $D$ need not be pure, even for {prf:ref}`spin systems <def-quantum-spin-system>`.
 
 Purity also does not ensure uniqueness of dynamics extending an algebraic derivation.
 The {ref}`pure spin-chain counterexample <theorem-pure-gapped-ground-state-nonunique-dynamics>` has two distinct generating extensions of the same controlled derivation on the full local algebra, with the same pure gapped ground state for both.

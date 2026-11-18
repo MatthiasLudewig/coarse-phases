@@ -85,5 +85,5 @@ On a noncompact manifold it does not say that the index representative differs f
 ## Relation to coarse K-theory
 
 The index lies in {ref}`coarse K-theory <article-coarse-k-theory>` and can be paired, through suitable Chern character constructions, with {ref}`partition cohomology classes <article-coarse-transversality>`.
-The {ref}`cone construction <article-coarse-homology-theory>` provides a homological formulation of the passage from local symbol data to the coarse index.
+The cone construction provides a homological formulation of the passage from local symbol data to the coarse index; see [Bunke–Ludewig, Section 2.1](https://arxiv.org/abs/2411.01646).
 Positivity away from a {prf:ref}`big family <def-big-family>` leads to localized index classes, as developed in [Bunke–Ludewig, Coronas and Callias type operators in coarse geometry](https://arxiv.org/abs/2411.01646).

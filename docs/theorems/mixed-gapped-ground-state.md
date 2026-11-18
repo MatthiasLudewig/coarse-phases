@@ -290,4 +290,3 @@ The support of each interaction $J_nh_n$ is the fixed-size bond $\{n,n+1\}$, whi
 Thus support control permits the growing coefficients used in the induction.
 At each stage the boundary term penalizes the new local GNS directions, and the previously chosen terms control the kernel of that boundary energy.
 The decreasing target gaps remain above $1$, which makes the estimate uniform over all finite supports.
-

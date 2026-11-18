@@ -18,8 +18,6 @@ HTML = ROOT / 'docs' / '_build' / 'html'
 SCREENSHOTS = ROOT / 'artifacts' / 'screenshots'
 REDIRECTS = {
     'articles/kubo-formula.html': ('articles/kitaev-pairing.html', 'Kitaev pairing'),
-    'articles/anderson-dual.html': ('articles/dual-of-sphere-spectrum.html', 'Dual of sphere spectrum'),
-    'articles/brown-comenetz-dual.html': ('articles/dual-of-sphere-spectrum.html', 'Dual of sphere spectrum'),
 }
 
 

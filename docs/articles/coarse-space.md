@@ -126,7 +126,7 @@ for entourages $E$ of $X$ and $E'$ of $Y$.
 
 ```
 
-This makes the category of bornological coarse space symmetric monoidal, with the one-point space as tensor unit.
+This makes the category of bornological coarse spaces symmetric monoidal, with the one-point space as tensor unit.
 For metric spaces it agrees with the structures induced by the maximum product metric.
 In particular, $\R^m\otimes\R^n\cong \R^{m+n}$.
 

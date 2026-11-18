@@ -7,7 +7,7 @@ Agent-generated, not reviewed yet
 
 This page proves the purity assertion used in the {ref}`Ground state article <article-ground-state>` for a general $C^*$-dynamical system.
 Nondegeneracy of the GNS ground space is sufficient; a spectral gap is not needed for this result.
-A gap above a degenerate ground space is insufficient, as the {ref}`matrix example in the Gapped ground state article <gapped-ground-state-purity>` shows.
+A gap above a degenerate ground space is insufficient; the nondegeneracy condition in the theorem below is essential.
 
 ```{prf:theorem} Purity of a nondegenerate ground state
 :nonumber:
@@ -22,7 +22,7 @@ Then $\omega$ is pure.
 Consequently, a {prf:ref}`nondegenerate gapped ground state <def-gapped-ground-state>` for a derivation whose closure generates $\alpha$, with the given domain as a core, is pure.
 ```
 
-The generator and core assumptions in the last sentence are the ones in the {prf:ref}`Hamiltonian characterization <thm-gapped-ground-state-hamiltonian>`.
+The last sentence uses the {prf:ref}`Hamiltonian characterization <thm-gapped-ground-state-hamiltonian>` after passing to the generating closure by graph-norm approximation.
 The theorem is not an assertion about arbitrary densely defined derivations without those analytic hypotheses.
 
 ## Positive-energy states form a face

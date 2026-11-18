@@ -40,7 +40,7 @@ For simple $A$, every nonzero representation is faithful, which verifies the ker
 Let $A$ be a nonzero unital separable simple $C^*$-algebra, and fix $\omega\in P(A)$.
 Let
 $$
-G=\Aut(A),\qquad H=\Aut_\omega(A)=\{\alpha\in G:\omega\circ\alpha=\omega\}.
+G=\Aut(A),\qquad H=\Aut_\omega(A)=\{\alpha\in G \mid \omega\circ\alpha=\omega\}.
 $$
 Then $H$ is closed and the map
 $$
@@ -74,7 +74,7 @@ Second, $P(A)$ is Polish.
 The {prf:ref}`state space <def-state-space>` $S(A)$ is compact metrizable; fix a compatible metric $d$.
 For $n\geq1$, let
 $$
-C_n=\left\{\tfrac12(\varphi+\psi):\varphi,\psi\in S(A),\ d(\varphi,\psi)\geq1/n\right\}.
+C_n=\left\{\tfrac12(\varphi+\psi) \mid \varphi,\psi\in S(A),\ d(\varphi,\psi)\geq1/n\right\}.
 $$
 Each $C_n$ is compact.
 Every nonextreme point is the midpoint of two distinct points on a segment through it, so

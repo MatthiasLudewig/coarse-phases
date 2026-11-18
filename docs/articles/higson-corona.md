@@ -18,7 +18,6 @@ $$
  \qquad
  Y \subseteq X.
 $$
-
 A bounded function $f:X\to\C$ has *vanishing variation at infinity* if, for every entourage $E$ and every $\varepsilon>0$, there is a bounded $B$ such that $\Var_E(f, X\setminus B)\leq\varepsilon$.
 Such functions are also called *Higson functions*.
 
@@ -26,18 +25,18 @@ Functions with vanishing variation at infinity form a unital $C^*$-algebra $\ell
 
 
 
-```{prf:definition} Higson compactification and corona
+```{prf:definition} Higson corona
 :nonumber:
 :label: def-higson-corona
 
 The *Higson corona* $\partial X$ is the Gelfand spectrum of the commutative unital $C^*$-algebra $\ell^\infty_h(X) / \ell^\infty(\cB)$.
 ```
 
-By the Gelfand--Naimark theorem, $\partial X$ is a compact Hausdorff space.
+By the Gelfand–Naimark theorem, $\partial X$ is a compact Hausdorff space.
 
 ## Higson-dominated coronas
 
-```{prf:definition} Higson-dominated compactification
+```{prf:definition} Higson-dominated corona
 :nonumber:
 :label: def-higson-dominated-corona
 

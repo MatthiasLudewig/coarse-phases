@@ -48,7 +48,7 @@ $$
 $$
 in $\R^{n+1}$, and
 $$
-A_i := \{(x_0, \dots, x_n) \in X \mid x_i = 0, x_{i+1}, \dots, x_n > 0\}
+A_i := \{(x_0, \dots, x_n) \in X \mid x_i = 0, x_{i+1}, \dots, x_n > 0\}.
 $$
 
 

@@ -70,7 +70,6 @@ This functor has the following properties ([Bunke–Engel, Homotopy theory with 
    $$
    C\cX(X, A) = \mathop{\colim}_{E \in \cC} C\cX(X_{\langle E \rangle}, A).
    $$
-
 Consequently, the composition
 $$
 \BornCoarse \xrightarrow{~C\cX(-, A)~} \mathrm{Ch}(\Ab) \longrightarrow D(\Z)
