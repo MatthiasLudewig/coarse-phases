@@ -17,7 +17,7 @@ jobs:
   build:
     name: Wiki checks
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 30
     env:
       WIKI_EDIT_BRANCH: ${{ github.head_ref || github.ref_name }}
     steps:
@@ -36,6 +36,12 @@ jobs:
         run: python -m pip install -r requirements.txt -r requirements-test.txt
       - name: Install TikZ and SVG rendering tools
         run: |
+          # Slow regional EC2 mirrors can exhaust the job before browser checks.
+          for apt_source in /etc/apt/sources.list /etc/apt/sources.list.d/ubuntu.sources; do
+            if [ -f "$apt_source" ]; then
+              sudo sed -i -E 's@https?://[[:alnum:].-]+\.ec2\.archive\.ubuntu\.com/ubuntu@https://archive.ubuntu.com/ubuntu@g' "$apt_source"
+            fi
+          done
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y texlive-latex-extra texlive-pictures texlive-fonts-recommended pdf2svg
       - name: Build with strict reference checking
