@@ -55,7 +55,7 @@ On any $X$-module $H$, there is a unique action of the algebra of bounded functi
 An $X$-module $H$ is called *ample* if there exists an entourage $E$ such that $H_{E[x]}$ is infinite-dimensional for each $x \in X$, where $E[x] = \{y \in X \mid (x, y) \in E\}$.
 ```
 
-Ample $X$-modules exist if and only if there exists an entourage $E$ such that every {prf:ref}`$E$-separated subset <def-E-separated>` meets each bounded subset in at most countably many points.
+Ample $X$-modules exist if and only if there exists an entourage $E$ such that every $E$-{prf:ref}`separated subset <def-E-separated>` meets each bounded subset in at most countably many points.
 Any two ample $X$-modules are isomorphic, in the sense that there exists a controlled unitary isomorphism between them.
 For a proof, see [Bunke–Engel, Homotopy theory with bornological coarse spaces, Section 8.2, Definition 8.13, Proposition 8.20, and Lemma 8.21](https://arxiv.org/abs/1607.03657).
 
