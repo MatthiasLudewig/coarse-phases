@@ -39,3 +39,25 @@ Jeongwan Haah, [Invertible subalgebras](https://arxiv.org/abs/2211.02086v4), Com
 ## Freed–Hopkins: invertible topological phases
 
 Daniel S. Freed and Michael J. Hopkins, [Reflection positivity and invertible topological phases](https://arxiv.org/abs/1604.06527).
+
+(bib-pure-state-homogeneity)=
+## Kishimoto–Ozawa–Sakai: homogeneity of pure states
+
+Akitaka Kishimoto, Narutaka Ozawa, and Shôichirô Sakai, [Homogeneity of the pure state space of a separable $C^*$-algebra](https://arxiv.org/abs/math/0110152), Canadian Mathematical Bulletin **46** (2003), 365–372.
+
+(bib-open-mapping-polish-actions)=
+## Gómez–Pinedo–Uzcátegui: the open mapping principle
+
+J. Gómez, H. Pinedo, and C. Uzcátegui, [The open mapping principle for partial actions of Polish groups](https://arxiv.org/abs/1709.01977).
+The global-action case of Theorem 3.5 is used for the pure-state automorphism quotient.
+
+(bib-sakai-simple-derivations)=
+## Sakai: derivations of simple C*-algebras
+
+Shôichirô Sakai, [Derivations of simple $C^*$-algebras, II](https://www.numdam.org/article/BSMF_1971__99__259_0.pdf), Bulletin de la Société Mathématique de France **99** (1971), 259–263.
+
+(bib-extremal-jacobi-extensions)=
+## Ananieva–Goloshchapova: extremal extensions of Jacobi operators
+
+Aleksandra Ananieva and Nataly Goloshchapova, [On the extremal extensions of a non-negative Jacobi operator](https://arxiv.org/abs/1701.06371), arXiv:1701.06371 (2017).
+The Introduction, especially equation (2), records the Friedrichs and Krein extensions used in the pure gapped spin-chain example.

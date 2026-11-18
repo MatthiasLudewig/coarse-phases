@@ -10,17 +10,13 @@ In a local matrix net they can be written as sums of local commutators.
 
 ## Definition
 
-Let $\cA$ be a {prf:ref}`quantum spin system <def-quantum-spin-system>` on $X$, and work on its algebraic union $\cA_X^{\mathrm{alg}}$.
+Let $\cA$ be a {prf:ref}`quantum spin system <def-quantum-spin-system>` on $X$.
 
 ```{prf:definition} Controlled derivation
 :nonumber:
 :label: def-controlled-derivation
 
-A *controlled $*$-derivation* is a complex-linear map $D:\cA_X^{\mathrm{alg}}\to\cA_X^{\mathrm{alg}}$ satisfying
-$$
-D(ab)=D(a)b+aD(b),\qquad D(a^*)=D(a)^*,
-$$
-and, for some entourage $E$,
+A *controlled $*$-derivation* is a {prf:ref}`derivation <def-derivation>` $D$ of the quasi-local algebra $\cA_X$ with domain $\dom(D)$ containing the local algebra $\cA_X^{\mathrm{alg}}$, which is *controlled*, meaning that for some entourage $E$,
 $$
 D(\cA_B)\subseteq\cA_{B_E}
 \quad\text{for every bounded }B.
