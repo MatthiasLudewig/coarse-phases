@@ -80,6 +80,7 @@ For a metric space this says: for each $r$ there is an $R$ such that every point
 Thus every fixed thickening of $S$ has bounded width.
 A line in $\R^2$ is sparse; the integer lattice in $\R$ is not, since a fixed thickening fills the line.
 
+
 For metric coarse structures the sparse subsets form a big family.
 Closure under subsets and thickening is immediate.
 Here is a direct verification of closure under unions.
