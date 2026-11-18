@@ -70,13 +70,15 @@ This functor has the following properties ([Bunke–Engel, Homotopy theory with 
    $$
    C\cX(X, A) = \mathop{\colim}_{E \in \cC} C\cX(X_{\langle E \rangle}, A).
    $$
+
 Consequently, the composition
 $$
 \BornCoarse \xrightarrow{~C\cX(-, A)~} \mathrm{Ch}(\Ab) \longrightarrow D(\Z)
 $$
 is a coarse homology theory, where $D(\Z)$ is the *derived category of* $\Z$, i.e., the $\infty$-category obtained from the category of chain complexes of abelian groups by inverting quasi-isomorphisms.
 
-## Coeffients
+(coeffients)=
+## Coefficients
 
 For $X = \mathrm{pt}$ a point, the only non-trivial coarse homology group is $H \cX_0(\mathrm{pt}, A) = A$.
 Consequently, the coarse homology groups of Euclidean spaces are
