@@ -342,7 +342,7 @@ A lemma uses the same pattern:
 ````markdown
 ```{prf:lemma} Negation preserves evenness
 :nonumber:
-:label: lem-example-even-negative
+:label: lem-even-negative
 
 If $n\in\Z$ is even, then $-n$ is even.
 ```
@@ -351,7 +351,7 @@ If $n\in\Z$ is even, then $-n$ is even.
 Reference it with:
 
 ```markdown
-By the {prf:ref}`negation lemma <lem-example-even-negative>`, the claim follows.
+By the {prf:ref}`negation lemma <lem-even-negative>`, the claim follows.
 ```
 
 The elementary statements here illustrate the syntax; replace them with the mathematics of your topic.
