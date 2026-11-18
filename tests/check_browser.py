@@ -389,7 +389,7 @@ def check_article_collection(browser, errors):
                 assert len(delimiters) % 2 == 0, path
                 displays = len(delimiters) // 2
                 displays += len(re.findall(r'^\s*`{3,}\{math\}', text, re.MULTILINE))
-                expect(page.locator('article div.math')).to_have_count(displays)
+                expect(page.locator('article div.math'), f'{path}: display equations').to_have_count(displays)
                 if page.locator('article .math').count():
                     math_ready(page)
                     expect(page.locator('article mjx-container[display="true"]')).to_have_count(displays)

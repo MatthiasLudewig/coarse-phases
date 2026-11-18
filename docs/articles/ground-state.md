@@ -88,7 +88,7 @@ Putting $a = 1$ in {eq}`eq-ground-state-implementation` yields that $U_t\Omega =
 For $a \in \dom(D)$, one now calculates
 $$
 \begin{aligned}
-- i \omega(a^*D(a))
+-i \omega(a^*D(a))
 &= - i\langle \pi(a)\Omega, \pi(Da)\Omega \rangle
 \\
 &= - i\langle \pi(a)\Omega, i [H, \pi(a)]\Omega \rangle
