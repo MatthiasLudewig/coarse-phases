@@ -299,7 +299,7 @@ For example:
 ````markdown
 ```{prf:definition} Even integer
 :nonumber:
-:label: def-example-even-integer
+:label: def-even-integer
 
 An integer $n\in\Z$ is *even* if $n=2k$ for some $k\in\Z$.
 ```
@@ -308,7 +308,7 @@ An integer $n\in\Z$ is *even* if $n=2k$ for some $k\in\Z$.
 To refer to this definition from another page:
 
 ```markdown
-Recall the definition of an {prf:ref}`even integer <def-example-even-integer>`.
+Recall the definition of an {prf:ref}`even integer <def-even-integer>`.
 ```
 
 ### Theorems
@@ -318,7 +318,7 @@ Use `{prf:theorem}` for a theorem, either inside an article or on a standalone t
 ````markdown
 ```{prf:theorem} Sum of even integers
 :nonumber:
-:label: thm-example-even-sum
+:label: thm-even-sum
 
 Let $m,n\in\Z$ be even.
 Then $m+n$ is even.
@@ -328,7 +328,7 @@ Then $m+n$ is even.
 To link to it:
 
 ```markdown
-Apply the {prf:ref}`sum theorem <thm-example-even-sum>`.
+Apply the {prf:ref}`sum theorem <thm-even-sum>`.
 ```
 
 Use `{prf:proposition}` or `{prf:corollary}` with the same options when those names fit the result better.
