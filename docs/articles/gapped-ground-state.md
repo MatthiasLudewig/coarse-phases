@@ -1,10 +1,6 @@
 (article-gapped-ground-state)=
 # Gapped ground state
 
-```{warning}
-Agent-generated, not reviewed yet
-```
-
 A gapped ground state strengthens the {prf:ref}`algebraic ground-state inequality <def-ground-state-derivation>` by a positive lower bound on the energy of centered observables.
 When the derivation generates dynamics, the condition used here expresses both a spectral gap and nondegeneracy of the ground space in the state's GNS representation.
 
