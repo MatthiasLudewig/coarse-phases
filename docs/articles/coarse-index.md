@@ -5,7 +5,7 @@
 Agent-generated, not reviewed yet
 ```
 
-The coarse index is the large-scale index class of an elliptic operator.
+The coarse index is the large-scale index class of an elliptic operator, on a possibly non-compact manifold.
 For a complete Riemannian manifold it takes values in the $K$-theory of the Roe algebra, without requiring the operator to be Fredholm on the whole $L^2$-space.
 
 ## Construction
