@@ -1,13 +1,9 @@
 (article-quantum-cellular-automaton)=
 # Quantum cellular automaton
 
-```{warning}
-Agent-generated, not reviewed yet
-```
-
 A quantum cellular automaton is an automorphism of a spin system which moves local observables only a controlled distance.
 
-## Controlled automorphisms of local nets
+## Definition
 
 Let $(X, \cB, \cC)$ be a bornological coarse space.
 
@@ -15,7 +11,7 @@ Let $(X, \cB, \cC)$ be a bornological coarse space.
 :nonumber:
 :label: def-qca
 
-Let $\cA$ be a local matrix net on $X$.
+Let $\cA$ be a spin system on $X$.
 A *quantum cellular automaton* (QCA) is a controlled $*$-automorphism $\alpha$ of $\cA_X$.
 Explicitly, there exists an entourage $E$ such that for each bounded set $B \subseteq X$, we have
 $$
