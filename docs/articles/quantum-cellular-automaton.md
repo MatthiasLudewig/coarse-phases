@@ -29,7 +29,7 @@ As above, let $(X, \cB, \cC)$ be a bornological coarse space and let $\cA$ be a 
 :nonumber:
 :label: def-partitioned-unitary
 
-Let $(B_i)_{i \in I}$ be a {prf:ref}`uniformly bounded <def-uniformly-bounded-collection>` and pairwise disjoint collection of subsets of $X$.
+Let $(B_i)_{i \in I}$ be a {prf:ref}`uniformly bounded <def-uniformly-bounded-collection>`, {prf:ref}`locally finite <def-locally-finite-collection>` and pairwise disjoint collection of subsets of $X$.
 A *partitioned unitary* subordinate to this collection is a collection $(u_i)_{i \in I}$ of unitaries $u_i \in \cA_{B_i}$.
 ```
 
@@ -37,6 +37,7 @@ A partitioned unitary as above gives rise to a QCA $\beta$ by setting
 $$
 \beta(a) := \left(\prod_{\substack{i \in I}{B_i \cap B}} u_i\right) a \left(\prod_{\substack{i \in I}{B_i \cap B}}u_i^*\right), \qquad a \in \cA_B.
 $$
+Here each product is finite by local finiteness of the supporting collection $(B_i)_{i \in I}$.
 
 ```{prf:definition} Quantum circuit
 :nonumber:
