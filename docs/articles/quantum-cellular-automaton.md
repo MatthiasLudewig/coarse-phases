@@ -35,7 +35,7 @@ A *partitioned unitary* subordinate to this collection is a collection $(u_i)_{i
 
 A partitioned unitary as above gives rise to a QCA $\beta$ by setting
 $$
-\beta(a) := \prod_{\substack{i \in I}{B_i \cap B}} u_i au_i^*, \qquad a \in \cA_B.
+\beta(a) := \left(\prod_{\substack{i \in I}{B_i \cap B}} u_i\right) a \left(\prod_{\substack{i \in I}{B_i \cap B}}u_i^*\right), \qquad a \in \cA_B.
 $$
 
 ```{prf:definition} Quantum circuit
