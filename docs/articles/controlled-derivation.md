@@ -16,7 +16,7 @@ Let $\cA$ be a {prf:ref}`quantum spin system <def-quantum-spin-system>` on $X$.
 :nonumber:
 :label: def-controlled-derivation
 
-A *controlled $*$-derivation* is a {prf:ref}`derivation <def-derivation>` $D$ of the quasi-local algebra $\cA_X$ with domain $\dom(D)$ containing the local algebra $\cA_X^{\mathrm{alg}}$, which is *controlled*, meaning that for some entourage $E$,
+A *controlled $*$-derivation* is a {prf:ref}`derivation <def-derivation>` $D$ of the quasi-local algebra $\cA_X$ with domain $\dom(D) = \cA_X^{\mathrm{alg}}$, which is *controlled*, meaning that for some entourage $E$,
 $$
 D(\cA_B)\subseteq\cA_{B_E}
 \quad\text{for every bounded }B.

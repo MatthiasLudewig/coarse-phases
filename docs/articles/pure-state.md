@@ -15,7 +15,7 @@ A state $\omega$ is *pure* if whenever
 $$
 \omega=t\varphi+(1-t)\psi,
 $$
-for $t \in [0, 1]$ and states $\varphi, \psi \in S(A)$, we have $\varphi=\psi=\omega$.
+for $t \in (0, 1)$ and states $\varphi, \psi \in S(A)$, we have $\varphi=\psi=\omega$.
 
 The space of pure states, with its weak-* subspace topology, is denoted by $P(A)$.
 ```

@@ -1,13 +1,7 @@
----
-stub: true
----
 
 (article-derivation)=
 # Derivation
 
-```{warning}
-Agent-generated, not reviewed yet
-```
 
 ## Definition
 
@@ -21,6 +15,7 @@ A *derivation* of $A$ is a densely defined linear map $D:A \supseteq \dom(D)\to 
 $$
 D(ab)=D(a)b+aD(b),\qquad D(a^*)=D(a)^*.
 $$
+Here $\dom(D)\subseteq A$ is required to be a $*$-subalgebra containing the unit.
 ```
 
 The first condition is the algebraic condition of being a derivation, which makes sense on any algebra; the second condition is the compatibility with the star operation.
@@ -40,7 +35,7 @@ A derivation $D:A\to A$ is *inner* if there is an element $b\in A$ such that
 $$
 D(a)=[b,a]=ba-ab, \qquad a \in A.
 $$
-The identity $D(a^*) = D(a)^*$ implies that the element $b$ is necessarily skew-adjoint.
+The identity $D(a^*) = D(a)^*$ implies that the element $b$ can be chosen to be skew-adjoint.
 Typically, it is written as $b =ih$ with $h \in A$ self-adjoint.
 
 The following gives a motivation to consider unbounded derivations.
