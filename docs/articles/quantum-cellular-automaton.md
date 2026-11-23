@@ -58,3 +58,33 @@ An automorphism is *coarsely local* if it is a finite product of elementary coar
 ```
 
 Coarsely local automorphisms form a normal subgroup of the group of controlled automorphisms; see [Ludewig, Lemma 2.32](https://arxiv.org/abs/2603.10501) ({ref}`bibliographic details <bib-qca>`).
+
+## QCA group
+
+Let $(X, \cB, \cC)$ be a bornological coarse space.
+For a {prf:ref}`spin system <def-quantum-spin-system>` $\cA$ on $X$, write $\CAut(\cA)$ for its group of controlled automorphisms (that is, quantum cellular automata on $\cA$) and $\LAut(\cA) \subseteq \CAut(\cA)$ for the normal subgroup of coarsely local automorphisms.
+The QCA group is defined by stabilizing the quotient group $\CAut(\cA)/\LAut(\cA)$ as the spin system $\cA$ varies.
+
+If $\cA \hookrightarrow \cD$ is a {prf:ref}`homomorphism of propagation zero <def-controlled-morphism>` between spin systems, then $\cD$ splits as a tensor product $\cD \cong \cA \otimes \cA'$ (where $\cA'$ is the commutant of $\cA$ in $\cD$) such that the homomorphism corresponds to the inclusion of the first tensor factor.
+Using this identification, the homomorphism
+$$
+\CAut(\cA)/\LAut(\cA) \longrightarrow \CAut(\cD)/\LAut(\cD), \qquad
+[\alpha] \longmapsto [\alpha \otimes \id_{\cA'}]
+$$
+is independent of the chosen homomorphism of propagation zero $\cA \hookrightarrow \cD$.
+For this stabilization construction and its independence of choices, see [Ludewig, §2.5, Lemma 2.34 and the discussion preceding Definition 2.35](https://arxiv.org/abs/2603.10501v3) ({ref}`bibliographic details <bib-qca>`).
+This gives the following definition.
+
+```{prf:definition} QCA group
+:nonumber:
+:label: def-qca-group
+
+The *QCA group* of $X$ is defined as the filtered colimit of groups
+$$
+\mathrm{QCA}(X) := \mathop{\colim}_{\cA} \CAut(\cA)/\LAut(\cA).
+$$
+```
+
+In the definition, the colimit is taken over the preorder of spin systems on $X$, where $\cA \preceq \cD$ if there exists a homomorphism of propagation zero $\cA \hookrightarrow \cD$.
+This preorder is directed, since $\cA \otimes \cA'$ is a common upper bound for $\cA$ and $\cA'$.
+For a small indexing category, one may restrict to the standard tensor-product spin systems described in {ref}`Quantum spin system <article-spin-system>`.
