@@ -176,7 +176,7 @@ MACRO_CASES = [
         "Mat End Hom Aut Inn id Der ind tr str Tr Str supp ch ker coker spec "
         "colim Var Exp dom ran Loc Az Con CAR Cl Fun Ad ad Tot"
     ).split()
-] + [("lim", r"\operatorname*{lim}")] + [
+] + [("lim", r"\operatorname*{lim}"), ("LAut", r"\mathrm{LAut}")] + [
     (name, rf"\mathrm{{{name}}}")
     for name in "BornCoarse Set Cat Ab Grp Vect Hilb Top Sp".split()
 ]

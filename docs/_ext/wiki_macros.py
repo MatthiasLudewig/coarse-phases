@@ -8,6 +8,7 @@ MATH_MACROS = {
     **{f"c{letter}": rf"\mathcal{{{letter}}}" for letter in ascii_uppercase},
     **{f"s{letter}": rf"\mathscr{{{letter}}}" for letter in ascii_uppercase},
     **{letter: rf"\mathbb{{{letter}}}" for letter in "NZQRC"},
+    "LAut": r"\mathrm{LAut}",
     **{
         name: rf"\operatorname{{{name}}}"
         for name in (
