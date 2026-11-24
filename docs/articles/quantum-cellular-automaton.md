@@ -11,7 +11,7 @@ Let $(X, \cB, \cC)$ be a bornological coarse space and let $\cA$ be a spin syste
 :nonumber:
 :label: def-qca
 
-A *quantum cellular automaton* (QCA) is a controlled $*$-automorphism $\alpha$ of $\cA_X$.
+A *quantum cellular automaton* (QCA) is a {prf:ref}`controlled <def-controlled-homomorphism-of-spin-system>` $*$-automorphism $\alpha$ of $\cA_X$.
 Explicitly, there exists an entourage $E$ such that for each bounded set $B \subseteq X$, we have
 $$
 \alpha(\cA_B) \subseteq \cA_{B_E}.
@@ -57,7 +57,10 @@ An automorphism $\alpha$ of $\cA_X$ is *elementary coarsely local* if there exis
 An automorphism is *coarsely local* if it is a finite product of elementary coarsely local automorphisms.
 ```
 
+
 Coarsely local automorphisms form a normal subgroup of the group of controlled automorphisms; see [Ludewig, Lemma 2.32](https://arxiv.org/abs/2603.10501) ({ref}`bibliographic details <bib-qca>`).
+Clearly, each quantum circuit is a coarsely local automorphism.
+Conversely, if $X$ has {prf:ref}`bounded geometry <def-bounded-geometry>`, then each coarsely local automorphism is a quantum circuit; compare [Ludewig, Proposition 2.43 and Remark 2.44](https://arxiv.org/abs/2603.10501v3) ({ref}`bibliographic details <bib-qca>`).
 
 ## QCA group
 
@@ -87,4 +90,4 @@ $$
 
 In the definition, the colimit is taken over the preorder of spin systems on $X$, where $\cA \preceq \cD$ if there exists a homomorphism of propagation zero $\cA \hookrightarrow \cD$.
 This preorder is directed, since $\cA \otimes \cA'$ is a common upper bound for $\cA$ and $\cA'$.
-For a small indexing category, one may restrict to the standard tensor-product spin systems described in {ref}`Quantum spin system <article-spin-system>`.
+If $X$ has {prf:ref}`bounded geometry <def-bounded-geometry>`, then this equals the group of stable quantum cellular automata modulo quantum circuits; see [Ludewig, Remark 2.44](https://arxiv.org/abs/2603.10501v3) ({ref}`bibliographic details <bib-qca>`).

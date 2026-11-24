@@ -42,6 +42,25 @@ If $Y$ is bounded, only finitely many factors are not equal to $\C$, so the tens
 Otherwise, the right-hand side is to be understood as the $C^*$-algebraic infinite tensor product.
 Every spin system is isomorphic to one of this form, as proved in {ref}`the point-object proposition <theorem-local-objects-points>`.
 
+## Controlled homomorphisms
+
+Let $(X, \cB, \cC)$ be a bornological coarse space and let $\cA$ and $\cD$ be spin systems over $X$.
+
+```{prf:definition} Controlled homomorphisms
+:nonumber:
+:label: def-controlled-homomorphism-of-spin-system
+
+For an entourage $E$, a unital $*$-homomorphism $\varphi : \cA_X \to \cD_X$ between the quasi-local algebras is $E$-*controlled*, if
+$$
+\varphi(\cA_B) \subseteq \cA_{B_E}
+$$
+for all bounded subsets $B \subseteq X$.
+It is *controlled* if it is $E$-controlled for some entourage $E$.
+It has *propagation zero* if it is $\Delta$-controlled, where $\Delta$ is the diagonal.
+```
+
+Controlled *auto*morphisms of spin systems are also called {ref}`quantum cellular automata <article-quantum-cellular-automaton>`.
+
 ## Conditional expectations for subsets
 
 Each matrix algebra has a unique normalized trace.

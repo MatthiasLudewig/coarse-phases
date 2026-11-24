@@ -4,11 +4,12 @@
 
 Let $(X, \cB, \cC)$ be a {prf:ref}`bornological coarse space <def-bornological-coarse-space>`.
 
-```{prf:definition} Uniformly dense
+(def-uniformly-dense)=
+```{prf:definition} Coarsely dense
 :nonumber:
-:label: def-uniformly-dense
+:label: def-coarsely-dense
 
-A subset $Y \subseteq X$ is *uniformly dense* if there exists an entourage $E$ such that $Y_E = X$.
+A subset $Y \subseteq X$ is *coarsely dense* if there exists an entourage $E$ such that $Y_E = X$.
 ```
 
 Here $Y_E$ denotes the {ref}`fattening <def-fattening>` of $Y$ by $E$.
@@ -18,6 +19,23 @@ Here $Y_E$ denotes the {ref}`fattening <def-fattening>` of $Y$ by $E$.
 :label: def-locally-finite-subset
 
 A subset $Y \subseteq X$ is *locally finite* if $Y \cap B$ is finite for each bounded set $B \subseteq X$.
+```
+
+```{prf:definition} Uniformly locally finite subset
+:nonumber:
+:label: def-uniformly-locally-finite-subset
+
+A subset $Y \subseteq X$ is *uniformly locally finite* if for each entourage $E$, there exists a number $n$ such that for all subsets $B \subseteq X$ with $B \times B \subseteq E$, we have
+$$
+\#(B \cap Y) \leq n.
+$$
+```
+
+```{prf:definition} Bounded geometry
+:nonumber:
+:label: def-bounded-geometry
+
+$X$ is said to have *bounded geometry* if it admits a {prf:ref}`coarsely dense <def-coarsely-dense>` and {prf:ref}`uniformly locally finite <def-uniformly-locally-finite-subset>` subset $Y \subseteq X$.
 ```
 
 ```{prf:definition} $E$-separated
