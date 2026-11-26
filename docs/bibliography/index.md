@@ -25,11 +25,6 @@ Matthias Ludewig and Guo Chuan Thiang, [Large-scale quantization of trace I: Fin
 
 Matthias Ludewig, [Quantum cellular automata are a coarse homology theory](https://arxiv.org/abs/2603.10501).
 
-(bib-seifnashri-shao-non-invertible-qca)=
-## Seifnashri–Shao: non-invertible quantum cellular automata
-
-Sahand Seifnashri and Shu-Heng Shao, [Non-Invertible Quantum Cellular Automata I: Microscopic Definition of Non-Invertible Symmetries](https://arxiv.org/abs/2611.22928), arXiv:2611.22928 (2026).
-
 (bib-gnvw)=
 ## Gross–Nesme–Vogts–Werner: the one-dimensional index
 
